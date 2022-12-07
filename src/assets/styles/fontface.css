@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "work-sans";
+  src: url(../fonts/workSans.ttf);
+}
+
+@font-face {
+  font-family: "work-sans-medium";
+  src: url(../fonts/WorkSans-Medium.ttf);
+}
+
+@font-face {
+  font-family: "albertus-nova";
+  src: url(../fonts/AlbertusNova.ttf);
+}
+
+@font-face {
+  font-family: "albertus-nova-bold";
+  src: url(../fonts/AlbertusNova-Bold.ttf);
+}
+
+@font-face {
+  font-family: "cabazon";
+  src: url(../fonts/CabazonRegular.ttf);
+}
+
+@font-face {
+  font-family: "black-rose";
+  src: url(../fonts/Black\ Rose.ttf);
+}

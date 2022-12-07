@@ -1,0 +1,64 @@
+{
+  "name": "XP.Challenges",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
+    "dotenv": "^16.0.3",
+    "react": "^17.0.2",
+    "react-alice-carousel": "^2.6.4",
+    "react-dom": "^17.0.2",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "4.0.3",
+    "run-script-os": "^1.1.6",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts  build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "startwin": "run-script-os",
+    "startwin:win32": "set NODE_OPTIONS=--openssl-legacy-provider && yarn start",
+    "buildwin": "run-script-os",
+    "buildwin:win32": "set NODE_OPTIONS=--openssl-legacy-provider && yarn run build",
+    "lint": "eslint . --ext .ts",
+    "fix": "eslint . --ext .ts --fix"
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.9",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.22",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1"
+  },
+  "description": "SPA of XP.NETWORK challenges",
+  "main": "index.ts",
+  "repository": "https://github.com/XP-NETWORK/xp_challenges",
+  "author": "Alex Golberg",
+  "license": "MIT"
+}

@@ -1,0 +1,1199 @@
+@media only screen and (min-width: 1500px) {
+  .homeSection.mainSection {
+    height: 879px;
+  }
+}
+
+@media (min-width: 800px) and (min-height: 975px) {
+  .homeSection.mainSection {
+    height: 1000px;
+  }
+}
+
+@media (min-width: 800px) and (min-height: 1100px) {
+  .homeSection.mainSection {
+    height: 1200px;
+  }
+}
+
+@media only screen and (min-width: 1500px), screen and (max-height: 771px) {
+}
+
+/*@media only screen and (max-width: 1450px) {
+  .cardWrapper {
+    width: calc(0.8 * 315px);
+    height: calc(0.8 * 486px);
+  }
+
+  .cardFrame {
+    top: -19px;
+  }
+
+  .rowSymbol {
+    width: 20px;
+    height: 20px;
+    right: 14px;
+    top: 16px;
+  }
+
+  .cardBasePower {
+    left: 10px;
+    top: 21px;
+    font-size: 22px;
+  }
+
+  .spellSymbol {
+    width: 37px;
+    height: 37px;
+    bottom: -11px;
+    transform: translateX(-50%);
+  }
+
+  footer::before {
+    background-size: unset;
+  }
+  .topFooter {
+    padding: 0 40px;
+  }
+
+  .scrollUp {
+    right: 80px;
+  }
+}*/
+
+@media only screen and (max-width: 1540px) {
+  .sliderCards {
+    transform: translateX(10%);
+  }
+
+  .sliderCardButton.fancyArrow.sliderCardButton-next {
+    right: 2%;
+  }
+
+  .sliderCardButton.fancyArrow.sliderCardButton-prev {
+    left: 2%;
+  }
+
+  .homePage .welcomePart video {
+    width: 320px;
+  }
+
+  .further {
+    bottom: 4%;
+  }
+  .further img {
+    width: 60px;
+    margin-bottom: -20px;
+  }
+  .scrollUp {
+    right: 2%;
+  }
+
+  .welcomePart p {
+    padding-bottom: 40px;
+  }
+
+  #portal .deckCard .cardWrapper > img {
+    transform: translateX(-1px);
+  }
+}
+
+@media only screen and (max-width: 1420px) {
+  .mechanicCard {
+    width: 900px;
+  }
+
+  .introductionCard img {
+    width: calc(var(--introPic) * 0.8);
+  }
+
+  .featureTemplate .cardText {
+    padding-right: 118px;
+  }
+
+  .sliderCardButton {
+    width: calc(0.9 * var(--sliderCardButton));
+    height: calc(0.9 * var(--sliderCardButton));
+  }
+
+  .cardWrapper {
+    width: calc(0.9 * var(--cardWrapperX));
+    height: calc(0.9 * var(--cardWrapperY));
+  }
+
+  .cardFrame {
+    top: -21px;
+  }
+
+  .rowSymbol {
+    width: 25px;
+    height: 25px;
+    right: 14px;
+    top: 18px;
+  }
+
+  .cardBasePower {
+    left: 12px;
+    top: 22px;
+    font-size: 35px;
+  }
+
+  .cardBasePower.longDigit {
+    left: 7px;
+    top: 19px;
+    font-size: 33px;
+  }
+
+  .cardLevel {
+    font-size: 16px;
+    top: 40px;
+  }
+
+  .spellSymbol {
+    width: 35px;
+    height: 35px;
+    bottom: -5px;
+    transform: translateX(-45%);
+  }
+}
+
+@media only screen and (max-width: 1215px) {
+  .cardWrapper {
+    width: calc(0.8 * var(--cardWrapperX));
+    height: calc(0.8 * var(--cardWrapperY));
+  }
+
+  .cardFrame {
+    top: -19px;
+  }
+
+  .rowSymbol {
+    right: 12px;
+    top: 15px;
+  }
+
+  .cardBasePower {
+    left: 6px;
+    top: 18px;
+  }
+
+  .cardLevel {
+    font-size: 15px;
+    top: 33px;
+    right: 1px;
+  }
+
+  .spellSymbol {
+    bottom: -3px;
+  }
+
+  .testimonialTemplate p {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+
+  .cardText {
+    font-size: 18px;
+  }
+
+  .cardText h3 {
+    font-size: 38px;
+  }
+
+  .sliderCardButton {
+    width: calc(0.8 * var(--sliderCardButton));
+    height: calc(0.8 * var(--sliderCardButton));
+  }
+
+  .flexRow.worldCard.oddItem {
+    flex-direction: column;
+  }
+
+  .cardText {
+    text-align: center;
+  }
+
+  .wordCard-picture-wrapper img {
+    width: 100%;
+  }
+
+  .volButton {
+    width: calc(var(--volButtonX) * 0.9);
+    height: calc(var(--volButtonY) * 0.9);
+    line-height: calc(var(--volButtonY) * 1);
+  }
+
+  .headerMenu-button.volButton {
+    width: calc(var(--volButtonX) * 0.6);
+    height: calc(var(--volButtonY) * 0.6);
+    font-size: 12px;
+  }
+
+  .headerContainer nav .hoverEffect {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .headerContainer .logo img {
+    width: 162px;
+  }
+
+  .sectionContainer > p {
+    font-size: 20px;
+  }
+
+  .featureTemplate img {
+    width: calc(var(--featureImg) * 0.8);
+  }
+
+  .allyCard {
+    width: 250px;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 1115px) {
+  .featureTemplate img {
+    width: calc(var(--featureImg) * 0.7);
+  }
+
+  .sectionContainer > h2 span {
+    font-size: calc(var(--section-title-size) * 0.8);
+  }
+
+  .mechanicCard {
+    width: 800px;
+  }
+
+  .introductionCard img {
+    width: calc(var(--introPic) * 0.7);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .headerMenu-button.volButton {
+    display: none;
+  }
+
+  .headerContainer .logo img {
+    width: 140px;
+  }
+
+  .headerContainer nav a {
+    font-size: 14px;
+  }
+
+  .welcomePart h1 {
+    font-size: 50px;
+  }
+
+  .welcomePart p {
+    font-size: 18px;
+  }
+
+  .testimonialTemplate img {
+    width: 65px;
+  }
+
+  .sliderCardButton-prev {
+    transform: translate(11%, 50%);
+  }
+
+  .sliderCardButton-next {
+    transform: translate(-14%, 50%) rotate(180deg);
+  }
+
+  .featureTemplate img {
+    width: calc(var(--featureImg) * 0.4);
+  }
+
+  .featureTemplate {
+    flex-direction: column;
+  }
+
+  .featureTemplate .cardText,
+  .testimonialTemplate.flexCol {
+    padding-right: 0;
+    width: 70%;
+  }
+
+  .cardText h3 {
+    font-size: 27px;
+    line-height: 35px;
+  }
+
+  .cardText p,
+  .testimonialTemplate p {
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .cardText a {
+    font-size: 18px;
+  }
+
+  .introductionCard img {
+    width: calc(var(--introPic) * 0.5);
+  }
+
+  .footerLinks {
+    gap: 20px;
+  }
+
+  footer {
+    height: 550px;
+  }
+
+  footer::before {
+    background-position: -253px 80%;
+  }
+
+  .sectionContainer.deckContainer > p {
+    width: 80%;
+  }
+
+  .mechanicCard {
+    width: 700px;
+  }
+
+  .factionCard img {
+    width: calc(112px * 0.8);
+  }
+
+  .factionCard {
+    margin-right: 57px;
+  }
+
+  .circleWrapper {
+    width: calc(137px * 0.8);
+    height: calc(137px * 0.8);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .decorHorMobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .pictureWrapper,
+  .oddItem .pictureWrapper {
+    transform: unset;
+  }
+
+  .pictureWrapper:not(.ios)::after {
+    display: none;
+  }
+
+  .introductionCard-video {
+    width: 100%;
+  }
+
+  .blazeAnimation {
+    width: 100%;
+    left: 0;
+    transform: scale(1.2);
+    bottom: -5%;
+  }
+
+  .unitCard .cardWrapper > img {
+    transform: translateX(-5px);
+  }
+
+  .wikiAnim {
+    width: 105%;
+    height: 105%;
+
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .wikiSection.visible .bookBg.ios {
+    background: none;
+  }
+
+  .mobileOnly {
+    display: block;
+  }
+
+  #portal.active #overlay {
+    display: none;
+  }
+
+  #portal .menuOpen .deckCard-infoCard {
+    background-size: 300% 200%;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform: unset;
+    padding-top: 20px;
+  }
+
+  #portal .unitCard.menuOpen .deckCard-infoCard {
+    height: 50%;
+  }
+
+  #portal.active .clickOut {
+    display: none;
+  }
+
+  #portal .deckCard.menuOpen,
+  #portal .unitCard.menuOpen {
+    position: fixed;
+    transform: unset;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    animation: unset;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 90vh;
+  }
+
+  body.freezeBodyScroll {
+    position: relative;
+  }
+
+  body.freezeBodyScroll::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainBg);
+    z-index: 2;
+  }
+
+  #portal .deckCard-infoCard {
+    background: none;
+  }
+
+  #portal .deckCard-infoCard-textWrapper {
+    padding-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-top: 30px;
+    width: 80%;
+  }
+
+  .featureTemplate .cardText,
+  .testimonialTemplate.flexCol {
+    width: 90%;
+  }
+
+  .hoverEffect:hover::after {
+    display: none;
+  }
+
+  nav.headerMenu {
+    display: none;
+  }
+
+  .headerContainer {
+    padding: 0 0;
+  }
+
+  .headerMenu-button.volButton {
+    display: inline-block;
+    width: 154px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 30px;
+    padding: 0;
+    transform: unset;
+  }
+
+  .headerContainer .logo img {
+    width: 132px;
+    height: auto;
+  }
+
+  .welcomePart img {
+    width: 183px;
+    height: auto;
+  }
+
+  .welcomePart h1 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  .welcomePart p {
+    font-size: 20px;
+    color: var(--card-text);
+  }
+
+  .welcomePart.flexCol {
+    justify-content: center;
+  }
+
+  .welcomePart p,
+  .welcomePart h1 {
+    text-align: center;
+  }
+
+  .mainSection .bgEffect2,
+  .mainSection .bgEffect {
+    background-size: contain;
+    background-position: bottom;
+    display: none;
+  }
+
+  .homeSection.mainSection::before {
+    background: linear-gradient(var(--mainBg) 30%, transparent 56%),
+      url(../img/home/mob/headerBgMobile.png) no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+
+  /*.homeSection.mainSection.ios::before {
+    background: linear-gradient(black 40%, transparent 62%),
+      url(../img/home/mob/headerBgMobile.png) no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }*/
+
+  .homeSection .textComposition {
+    margin-top: 30px;
+  }
+  .homeSection.mainSection {
+    height: initial;
+    padding-bottom: 115px;
+  }
+
+  .mainSection .mobileBg {
+    display: block;
+    background: url(../img/home/headerBg.png) no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 454px;
+    left: 0;
+  }
+
+  .sliderCards {
+    display: none;
+  }
+
+  .introductionCard.flexRow {
+    flex-direction: column;
+  }
+
+  .introductionCard img {
+    width: 100%;
+  }
+
+  .sectionContainer > h2 span {
+    font-size: 30px;
+    line-height: 35px;
+    width: 316px;
+  }
+
+  .sectionContainer > h2 span::before {
+    transform: translate(-88%, 58%);
+  }
+
+  .sectionContainer > h2 span::after {
+    transform: translate(76%, 54%);
+  }
+
+  .introductionCard img,
+  .introductionCard.oddItem img {
+    width: 111%;
+    transform: translateX(-5%);
+  }
+
+  .pictureWrapper .pictureEffect {
+    bottom: -55px;
+  }
+
+  .cardText {
+    margin-top: 30px;
+  }
+
+  .cardText h3 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .sectionContainer > h2 {
+    padding-bottom: 20px;
+    padding-top: 5px;
+  }
+
+  .cardText p {
+    padding-right: 0;
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .introductionCard {
+    margin-bottom: 40px;
+  }
+
+  .cardText .volButton {
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .sectionContainer > h2 span::before,
+  .sectionContainer > h2 span::after {
+    display: none;
+  }
+
+  .sectionContainer > h2 span.double::before {
+    transform: translate(-106%, 69%);
+  }
+
+  .sectionContainer > h2 span.double::after {
+    transform: translate(145%, 68%);
+  }
+
+  .homeSection {
+    padding-bottom: 70px;
+  }
+
+  .mechanicCard {
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  .mechanicPoints.flexRow {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  .flexCol ul li {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .mechanicPoint p {
+    padding: 0 10px 0 20px;
+    font-size: 21px;
+  }
+
+  .sectionContainer > h3 {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 6px;
+  }
+
+  .factionList {
+    justify-content: unset;
+    overflow-x: auto;
+    padding: 60px 20px 7px 20px;
+    margin-bottom: 70px;
+  }
+
+  .factionCard {
+    margin-right: 25px;
+  }
+
+  .factionCard img {
+    width: 65px;
+  }
+  .circleWrapper {
+    width: 88px;
+    height: 88px;
+  }
+
+  .wordCard-picture-wrapper {
+    width: 100%;
+  }
+
+  .deckSection {
+    padding-bottom: 0;
+  }
+
+  .aboutSection,
+  .alliesCradsWrapper {
+    height: auto;
+  }
+
+  .backersCard::before {
+    background-position: 0% 0%;
+  }
+
+  .allyCards.flexRow {
+    flex-direction: column;
+  }
+
+  .decorHor {
+    display: none;
+  }
+
+  .decorHorMobile {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(
+        to right,
+        var(--mainBg) 0%,
+        transparent 15%,
+        transparent 85%,
+        var(--mainBg) 100%
+      ),
+      url(../img/home/Illustration\ Hor.png) no-repeat;
+    position: absolute;
+    top: 30px;
+    z-index: -1;
+  }
+
+  .allyCard img {
+    width: 300px;
+  }
+
+  .allyCard p {
+    font-size: 17px;
+    line-height: 26px;
+    margin-top: 20px;
+  }
+
+  .cardText a {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .footerContent img {
+    width: 139px;
+  }
+
+  .wikiSection {
+    padding-bottom: 200px;
+  }
+
+  .wikiSection.visible .bookBg {
+    height: auto;
+    background-size: contain;
+    margin-bottom: 100px;
+  }
+
+  .wikiContainer > .container {
+    margin-top: 0;
+  }
+
+  .wikiSection .bookBg > .cardText {
+    width: 100%;
+    margin: 0;
+    transform: translateY(100%);
+  }
+
+  footer {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .featureSection {
+    padding-bottom: 119px;
+  }
+
+  .featureSection::before {
+    background: url(../img/home/mob/smokemob.png) no-repeat;
+    background-size: contain;
+    background-position: bottom;
+  }
+
+  .introductonSection::before {
+    background: linear-gradient(transparent 0 10%, var(--mainBg) 40% 100%),
+      url(../img/home/mob/castleMob.png) no-repeat;
+    background-size: contain;
+  }
+
+  .introductonsContainer,
+  .mechanicsContainer {
+    padding-top: 68px;
+  }
+
+  .factionSection::before {
+    /*background: linear-gradient(
+        var(--mainBg) 40%,
+        transparent 81%,
+        var(--mainBg) 97%
+      ),
+      url(../img/home/mob/mobGreyStone.png) no-repeat;*/
+    background-size: contain;
+    background-position: bottom;
+  }
+
+  .factionSection.visible::before {
+    background: linear-gradient(
+        var(--mainBg) 40%,
+        transparent 81%,
+        var(--mainBg) 97%
+      ),
+      url(../img/home/mob/mobGreyStone.png) no-repeat;
+    background-size: contain;
+    background-position: bottom;
+  }
+
+  .worldSection::before {
+    /*background: linear-gradient(
+        var(--mainBg) 19%,
+        transparent 25%,
+        var(--mainBg) 65%
+      ),
+      url(../img/home/mob/mobCastle2.png) no-repeat;*/
+    background-size: contain;
+    background-position: 0% 23%;
+  }
+
+  .worldSection.visible::before {
+    background: linear-gradient(
+        var(--mainBg) 19%,
+        transparent 25%,
+        var(--mainBg) 65%
+      ),
+      url(../img/home/mob/mobCastle2.png) no-repeat;
+    background-size: contain;
+    background-position: 0% 23%;
+  }
+
+  .worldContainer {
+    padding-top: 30px;
+  }
+
+  .alliesCradsWrapper::before {
+    /*background: url(../img/home/mob/mobThrone2.png) top no-repeat,
+      url(../img/home/mob/mobThrone3.png) bottom no-repeat;*/
+    background-size: contain;
+    z-index: -1;
+    opacity: 1;
+  }
+
+  .alliesCradsWrapper.visible::before {
+    background: url(../img/home/mob/mobThrone2.png) top no-repeat,
+      url(../img/home/mob/mobThrone3.png) bottom no-repeat;
+    background-size: contain;
+  }
+
+  .aboutSection::before {
+    background-position: bottom;
+  }
+
+  .featuresContainer {
+    padding-top: 20px;
+  }
+
+  .deckSection::before {
+    background: /*radial-gradient( 47.08% 47.08% at 49.89% 48.75%, #dd9b37 0%, rgba(115, 106, 74, 0) 97.01% ) no-repeat,*/ url(../img/home/Smoke.png)
+      no-repeat;
+    background-size: 189%;
+    background-position: -101px 53%;
+  }
+
+  .deckContainer::after {
+    background-position: 50% 53%;
+  }
+
+  .unitCarousel {
+    position: relative;
+  }
+
+  .unitCarousel::before,
+  .unitCarousel::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 23;
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(to right, var(--mainBg) 0%, transparent 100%);
+  }
+
+  .unitCarousel::after {
+    left: unset;
+    right: 0;
+    background: linear-gradient(to left, var(--mainBg) 0%, transparent 100%);
+  }
+
+  .bottomFooter span.copyRight {
+    transform: translateX(0);
+  }
+
+  .mechanicPoints.flexRow {
+    margin-top: 66px;
+  }
+
+  .mechanicPoint h2 {
+    transform: translateY(12%);
+  }
+
+  .welcomePart p {
+    font-family: work-sans-medium, sans-serif;
+  }
+
+  .boardWrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .ghosts {
+    overflow: hidden;
+  }
+
+  .boardBackground,
+  .ghosts .ghost {
+    opacity: 1;
+  }
+
+  .deckCard-infoCard-Close {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+@media only screen and (max-width: 548px) {
+}
+
+@media only screen and (max-width: 480px) {
+  #portal .deckCard .cardBasePower {
+    left: 8px;
+  }
+
+  #portal .unitCard .cardWrapper > img,
+  #portal .unitCard .cardWrapper > video {
+    width: calc(100% + 3.5px);
+  }
+
+  .homePage .welcomePart video {
+    width: 250px;
+  }
+
+  .pictureWrapper .pictureEffect {
+    transform: rotate(0deg) translate(-30%, 22%) scale(0.6);
+  }
+
+  .freezeBodyScroll #portal .cardWrapper {
+    margin: 0 auto;
+  }
+
+  .deckContainer .deckCards {
+    margin-top: 100px;
+  }
+
+  .scrollUp {
+    display: none;
+  }
+
+  .footerLinks {
+    margin: 0;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  footer .flexCol h3 {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 20px;
+  }
+
+  footer .flexCol ul {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  footer .flexCol ul li a {
+    font-size: 16px;
+  }
+
+  footer .flexCol ul li {
+    border-bottom: 1px solid #4d4437;
+    padding-bottom: 14px;
+    position: relative;
+  }
+
+  footer .flexCol ul li::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 12px;
+    background-image: url(../img/home/Vector.svg);
+    background-size: cover;
+  }
+
+  footer::before {
+    transform: translateY(-10%);
+  }
+
+  footer.visible::before {
+    background: url(../img/home/mob/footerBgMob.png) no-repeat;
+    background-size: cover;
+    background-position: 0 200%;
+  }
+
+  .animationContainer {
+    animation: spin 500s infinite linear;
+  }
+
+  .backersCard {
+    width: 183px;
+    height: 100px;
+  }
+
+  .backersCard img {
+    width: auto;
+    height: auto;
+    transform: scale(0.7);
+  }
+
+  .deckCards .cardWrapper {
+    width: 160px;
+    height: 250px;
+  }
+
+  .deckContainer .deckCards {
+    height: 232px;
+  }
+
+  .deckCards .cardWrapper .cardFrame {
+    width: 113%;
+    height: 113%;
+  }
+
+  .deckCard img {
+    transform: translateX(-3px);
+  }
+
+  .deckCards .cardWrapper .rowSymbol {
+    width: 19px;
+    height: 19px;
+    right: 3px;
+    top: 2px;
+  }
+
+  .deckCards .cardWrapper .cardBasePower {
+    font-size: 21px;
+    left: -3.5px;
+    top: -3px;
+  }
+
+  .deckCards .cardWrapper .cardLevel {
+    font-size: 9px;
+    top: 9px;
+    right: -7px;
+  }
+
+  .deckCards .cardWrapper .spellSymbol {
+    width: 25px;
+    height: 25px;
+    bottom: -5px;
+  }
+
+  .deckCards .cardWrapper .cardSpellShutter {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cardSpellShutter {
+    bottom: -3.8%;
+  }
+
+  .spellSymbol {
+    bottom: -1.5%;
+  }
+
+  ul.socials {
+    justify-content: center;
+    padding: 15px 0;
+  }
+
+  ul.socials > li {
+    margin-right: 10px;
+  }
+
+  .bottomFooter .misc *:first-child {
+    margin-right: 10px;
+  }
+
+  .bottomFooter span.copyRight,
+  .bottomFooter .misc {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .bottomFooter {
+    position: relative;
+    margin-top: 100px;
+  }
+
+  .mobileFeature .cardText p {
+    margin-bottom: 10px;
+  }
+
+  #portal .deckCard-infoCard-textWrapper {
+    margin: 20px 0 0 0;
+  }
+
+  .shine {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #portal .rowSymbol {
+    right: 12px;
+    top: 14px;
+  }
+
+  #portal .cardBasePower {
+    left: 8px;
+    top: 18px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .mobTestimonial .testimonialTemplate h3 {
+    font-size: 14px;
+  }
+  .mobileFeature {
+    height: 500px;
+    width: 300px;
+  }
+
+  .mobileFeature .cardText h3 {
+    font-size: 20px;
+  }
+
+  .mobileFeature .cardText p {
+    font-size: 14px;
+  }
+
+  .mobileFeature .cardText a {
+    font-size: 16px;
+  }
+
+  .mobileFeature-pic {
+    width: 200px;
+  }
+
+  .backersCard {
+    margin: 0 5px;
+  }
+}
+
+@media only screen and (max-width: 385px) {
+}
