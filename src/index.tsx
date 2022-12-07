@@ -6,38 +6,34 @@ import { ServiceProvider } from "./hocs/ServcieProvder";
 
 import { Provider } from "react-redux";
 
-import api from "./services/api";
-import ImageLoader from "./services/imageLoader";
-import DeckAnimator from "./services/deckAnimator";
-
 import store from "./store";
 
 import { ServiceContainer } from "./hocs/withServices";
 import { AppContainer } from "./components/containers/App";
 import { Router } from "./pages/router";
 
+import ImageLoader from "./services/imageLoader";
+
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
 import "./assets/styles/fontface.css";
 import "./assets/styles/animations.css";
 import "./assets/styles/main.css";
-import "./assets/styles/cards.css";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./assets/styles/media.css";
 
 const App = () => {
   const [serviceContainer, setContainer] = useState<ServiceContainer>({
-    api: api("https://dfiance-api.herokuapp.com"), //api("http://localhost:3011"), //api("https://dfiance-api.herokuapp.com"),
+    //api: api("https://dfiance-api.herokuapp.com"), //api("http://localhost:3011"), //api("https://dfiance-api.herokuapp.com"),
     imageLoader: ImageLoader(),
-    deck: DeckAnimator(),
+    //deck: DeckAnimator(),
   });
 
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    setLoaded(true);
-    serviceContainer.imageLoader.load();
-  }, [serviceContainer.imageLoader]);
+    serviceContainer && setLoaded(true);
+  }, [serviceContainer]);
 
   const router = AppContainer(Router);
 

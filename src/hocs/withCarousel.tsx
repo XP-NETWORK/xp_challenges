@@ -36,7 +36,7 @@ export const withAliceCarousel = (items: any[], options?: Options) => {
         async (entries: IntersectionObserverEntry[]) => {
           for (const entry of entries) {
             setAnimate(entry.isIntersecting);
-            entry.isIntersecting && carousel1.current?.slideNext(null);
+            entry.isIntersecting && carousel1.current?.slideNext();
           }
         },
         { root: null, rootMargin: "500px 0px 500px 0px", threshold: 0 }
@@ -49,44 +49,6 @@ export const withAliceCarousel = (items: any[], options?: Options) => {
     return () =>
       document.removeEventListener("visibilitychange", tabSwitchHandle);
   }, [carousel.current]);
-
-  /*useEffect(() => {
-    options?.autoPlay &&
-      document.querySelectorAll(".alice-carousel__stage").forEach((el) => {
-        const div = el as HTMLDivElement;
-
-        let xOffset: number;
-
-        false &&
-          div.addEventListener("mousedown", (e) => {
-            const offsett = div.style.transform
-              .match(/\S+\((\S+)(px.+)/)
-              ?.at(1);
-            const number = offsett && Number(offsett);
-            if (number) {
-              xOffset = number;
-              // setAnimate(false);
-              console.log(xOffset, "xOffset");
-            }
-          });
-        //20955
-
-        false &&
-          div.addEventListener("mouseup", (e) => {
-            const offsett = div.style.transform
-              .match(/\S+\((\S+)(px.+)/)
-              ?.at(1);
-            const number = offsett && Number(offsett);
-
-            //div.style.transform = `translate3d(-${number}px, 0px, 0px)`;
-            //div.style.cssText = `transition: transform 0ms ease 0ms; transform: translate3d(-${number}px, 0px, 0px)`;
-            setAnimate(true);
-            setTimeout(() => {
-              number && number > xOffset ? setDir("rtl") : setDir("ltr");
-            }, 8000);
-          });
-      });
-  }, []);*/
 
   return (
     <div className="unitCarousel" ref={carousel}>

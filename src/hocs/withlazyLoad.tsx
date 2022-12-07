@@ -1,13 +1,18 @@
 import React, { useRef, useEffect } from "react";
 
-import { withServices } from "./withServices";
-import { withServicesProps } from "../pages/types";
+import { withServices, ServiceContainer } from "./withServices";
 
 import { ImageLoaderOptions, ImageLoader } from "../services/imageLoader";
 
-import { ISection } from "../pages/types";
+export interface ISection {
+  mobile: boolean;
+  backgroundRef: React.RefObject<HTMLDivElement>;
+}
 
-type withLazyLoadProps = withServicesProps & { mobile: boolean };
+type withLazyLoadProps = {
+  mobile: boolean;
+  serviceContainer: ServiceContainer;
+};
 
 export const withLazyLoad =
   (Wrapped: React.FC<ISection>) =>

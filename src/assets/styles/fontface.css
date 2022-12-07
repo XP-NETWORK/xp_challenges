@@ -1,8 +1,8 @@
 @font-face {
-  font-family: "work-sans";
-  src: url(../fonts/workSans.ttf);
+  font-family: "chakra-petch";
+  src: url(../fonts/ChakraPetch-Regular.ttf);
 }
-
+/*
 @font-face {
   font-family: "work-sans-medium";
   src: url(../fonts/WorkSans-Medium.ttf);
@@ -26,4 +26,4 @@
 @font-face {
   font-family: "black-rose";
   src: url(../fonts/Black\ Rose.ttf);
-}
+}*/

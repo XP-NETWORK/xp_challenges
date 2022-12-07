@@ -1,28 +1,7 @@
 :root {
-  --blue: #1e90ff;
-  --accent: rgba(210, 144, 60, 1);
-  --accent-light: rgba(194, 140, 70, 1);
-  --gold: #d2903c;
-  --white: rgba(255, 255, 255, 1);
-  --mainBg: #1a1818;
-  --dimGrey: #dfd6d2;
-  --ligtGrey: #c1c1c1;
-  --section-title-color: rgba(234, 233, 228, 1);
-  --card-text: rgba(193, 193, 193, 1);
-  --section-title-size: 50px;
-  --baseSliderCard: 629px;
-  --sliderCardButton: 123px;
-  --cardWrapperX: 315px;
-  --cardWrapperY: 486px;
-  --volButtonX: 220px;
-  --volButtonY: 59px;
-  --introPic: 800px;
-  --featureImg: 494px;
-  --cardShadow: rgba(0, 0, 0, 0.7);
-}
-
-#backgrounds {
-  --introductonSection: "";
+  --accent: #c71a33;
+  --secondary: rgba(255, 255, 255, 0.2);
+  --mainBg: #0e0e11;
 }
 
 .noselect {
@@ -33,33 +12,17 @@
   user-select: none;
 }
 
-.cardContainer {
-  width: 1048px;
-}
-
 html,
 body {
   overflow-x: hidden;
 }
 
-.mobileBg {
-  display: none;
-}
-
 body {
-  font-size: 20px;
-  color: var(--white);
+  font-size: 17px;
+  color: #ffffff;
   overflow-x: hidden;
-  font-family: albertus-nova, sans-serif;
+  font-family: chakra-petch, sans-serif;
   font-weight: 400;
-}
-
-main {
-  background-color: #1a1818;
-}
-
-p {
-  line-height: 30px;
 }
 
 #overlay {
@@ -75,215 +38,4 @@ p {
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
   z-index: 2;
-}
-
-#portal.active #overlay {
-  display: block;
-}
-
-#portal .clickOut {
-  display: none;
-  position: fixed;
-  width: 20%;
-  height: 100%;
-  z-index: 99999;
-  left: 0;
-  top: 0;
-}
-
-#portal.active .clickOut {
-  display: block;
-}
-
-#portal .clickOut.right {
-  left: unset;
-  right: 0;
-}
-
-.flexRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.flexRow.oddItem {
-  flex-flow: row-reverse;
-}
-
-.flexCol {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-a {
-  text-decoration: none;
-  color: var(--dimGrey);
-}
-
-a:hover {
-  text-decoration: none;
-  color: var(--dimGrey);
-}
-
-.volButton {
-  font-family: albertus-nova-bold, sans-serif;
-  border: 0;
-  background: url(../img/icons/btnYellow.png) no-repeat;
-  background-size: cover;
-  width: 237px;
-  height: 70px;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 15px;
-  text-shadow: 2px 2px 3px #000000;
-  line-height: 73px;
-}
-
-.volButton.red {
-  background: url(../img/icons/btnRed.png) no-repeat;
-  width: 202px;
-  height: 54px;
-  line-height: 56px;
-}
-
-.ghostBg::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.bgEffect {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.pictureWrapper {
-  position: relative;
-}
-
-.pictureWrapper .pictureEffect {
-  position: absolute;
-  z-index: 5;
-  bottom: 0;
-  left: 0;
-}
-
-.upperText {
-  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--white);
-}
-
-.hoverEffect {
-  position: relative;
-}
-
-.hoverEffect:hover::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(243, 212, 120, 0) 0%,
-    rgba(156, 124, 27) 72.98%
-  );
-  opacity: 0.3;
-  filter: blur(15px);
-  position: absolute;
-  z-index: 2;
-}
-
-.trancentredX {
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-}
-
-.popOut {
-  animation: popOut 0.75s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-.powerDimond {
-  width: 29px;
-  height: 17px;
-  background: url(../img/card/dimond.png) no-repeat;
-  background-size: contain;
-}
-
-.powerDimond.empty {
-  filter: brightness(40%);
-}
-
-.freezeBodyScroll {
-  height: 100%;
-  overflow-y: hidden;
-}
-
-.mobileOnly {
-  display: none;
-}
-
-.shine {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.shine::after {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: -80%;
-  z-index: 2;
-  content: "";
-  width: 20%;
-  height: 100%;
-  background: -webkit-linear-gradient(
-    left,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.4) 100%
-  );
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.4) 100%
-  );
-  -webkit-transform: skewX(-25deg);
-  transform: skewX(-25deg);
-}
-
-.shineContainer:hover .shine::after {
-  display: block;
-  -webkit-animation: shine 2.75s;
-  animation: shine 2.75s infinite;
-}
-
-.videoContainer {
-  overflow: hidden;
-  height: calc(100% + 4px);
-  width: calc(100% + 5px);
-  transform: translate(0.2%);
-}
-
-.deckCard.dragOn {
-  cursor: grab;
 }
