@@ -2,12 +2,12 @@
   font-family: "chakra-petch";
   src: url(../fonts/ChakraPetch-Regular.ttf);
 }
-/*
-@font-face {
-  font-family: "work-sans-medium";
-  src: url(../fonts/WorkSans-Medium.ttf);
-}
 
+@font-face {
+  font-family: "rajdhani";
+  src: url(../fonts/Rajdhani-Regular.ttf);
+}
+/*
 @font-face {
   font-family: "albertus-nova";
   src: url(../fonts/AlbertusNova.ttf);

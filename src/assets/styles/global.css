@@ -1,7 +1,7 @@
 :root {
   --accent: #c71a33;
   --secondary: rgba(255, 255, 255, 0.2);
-  --mainBg: #0e0e11;
+  --mainBg: 14, 14, 17;
 }
 
 .noselect {
@@ -15,14 +15,25 @@
 html,
 body {
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  background: rgb(var(--mainBg));
 }
-
+#root {
+  height: 100%;
+}
 body {
   font-size: 17px;
   color: #ffffff;
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: chakra-petch, sans-serif;
   font-weight: 400;
+  line-height: 23px;
+}
+
+h1 {
+  text-align: center;
 }
 
 #overlay {
@@ -38,4 +49,73 @@ body {
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
   z-index: 2;
+}
+
+.ghostBg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.flexRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  padding: 17px 22px 17px 16px;
+  text-transform: uppercase;
+  border: none;
+  display: flex;
+  align-self: center;
+  justify-content: space-around;
+  color: #ffffff;
+  height: 56px;
+  cursor: pointer;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+button.accent {
+  background: var(--accent);
+}
+
+button.secondary {
+  background: var(--secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+button.accent > svg {
+  margin-right: 14px;
+}
+
+.progressLine {
+  width: 229px;
+  height: 2px;
+  background: linear-gradient(
+    89.98deg,
+    #c71a33 -126.97%,
+    rgba(208, 118, 132, 0.49632) -49.2%,
+    rgba(218, 210, 211, 0) 214.91%
+  );
+  border-radius: 40px;
+  margin: 0 50px;
+}
+
+.progressLine.bright {
+  background: linear-gradient(
+    90.14deg,
+    #f71d3d 49.88%,
+    rgba(218, 210, 211, 0) 129.95%
+  );
 }
