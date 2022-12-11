@@ -33,3 +33,13 @@ export const isSafari = /^((?!chrome|android).)*safari/i.test(
 
 export const sleep = (tm: number) =>
   new Promise((r) => setTimeout(r, tm * 1000));
+
+//decorator for timeout between function call
+export const throttle = (func: any, timeout: number) => {
+  let tm: any = undefined;
+  return (...args: any) => {
+    if (tm) return;
+    func(...args);
+    tm = setTimeout(() => clearTimeout(tm), timeout);
+  };
+};

@@ -150,3 +150,7 @@ header button {
 .controls {
   width: 400px;
 }
+
+.alice-carousel__wrapper .alice-carousel__stage-item.__active {
+  transition: transform 0.5s ease;
+}

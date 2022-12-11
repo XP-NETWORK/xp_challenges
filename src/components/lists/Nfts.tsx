@@ -5,7 +5,45 @@
 import React, { useState, useRef } from "react";
 import AliceCarousel from "react-alice-carousel";
 
+import { throttle } from "../../utils";
 import pic from "../../assets/img/Rectangle 20.png";
+
+function move(index: number) {
+  setTimeout(() => {
+    const elemetnsOnScreen = document.querySelectorAll(
+      ".alice-carousel__wrapper .alice-carousel__stage-item.__active"
+    );
+    console.log(elemetnsOnScreen.length);
+    const offset = Math.floor(elemetnsOnScreen.length / 2);
+    const center = index + offset; //11
+
+    // center = center > max ? 0 : center;//10
+
+    for (let i = 0; i < elemetnsOnScreen.length; i++) {
+      const element = elemetnsOnScreen[i] as HTMLDivElement;
+      const globalIndex = index + i; //9,10,11,12,13
+
+      const diffOp = 1 / Math.exp(Math.abs(center - globalIndex)) + 0.4;
+      const diff = 1 / Math.exp(Math.abs(center - globalIndex)) + 0.6;
+
+      switch (true) {
+        case globalIndex < center: {
+          element.style.transform = `perspective(1200px) rotateY(50deg) scale(${diff})`;
+          element.style.opacity = diffOp.toString();
+          break;
+        }
+        case globalIndex === center:
+          element.style.transform = "perspective(1200px) rotateY(0)";
+          element.style.opacity = "1";
+          break;
+        default: {
+          element.style.transform = `perspective(1200px) rotateY(-50deg) scale(${diff})`;
+          element.style.opacity = diffOp.toString();
+        }
+      }
+    }
+  }, 10);
+}
 
 const NFTList = () => {
   const [central, setCentral] = useState(0);
@@ -46,12 +84,11 @@ const NFTList = () => {
   ];
 
   const nfts = mock.map((item, idx) => (
-    <div style={{ position: "relative" }}>
+    <div className="nftWrapper">
       <img
         src={item.src}
         className={`nft ${idx === central ? "central" : ""}`}
       />
-      <span style={{ position: "absolute" }}>{Math.random()}</span>
     </div>
   ));
 
@@ -60,37 +97,27 @@ const NFTList = () => {
       <div className="controls flexRow">
         <button
           className="secondary"
-          onClick={() => carousel.current?.slidePrev()}
+          onClick={() => throttle(carousel.current?.slidePrev, 1000)()}
         >
           prev
         </button>
         <button
           className="accent"
-          onClick={() => carousel.current?.slideNext()}
+          onClick={() => throttle(carousel.current?.slideNext, 1000)()}
         >
           next
         </button>
       </div>
       <AliceCarousel
         onInitialized={(e) => {
-          //const c = document.querySelector(".alice-carousel") as HTMLDivElement;
-          //c.style.perspective = "1200px";
-
-          const elemetnsOnScreen = document.querySelectorAll(
-            ".alice-carousel__wrapper .alice-carousel__stage-item.__active"
-          );
-
-          for (let i = 0; i < elemetnsOnScreen.length; i++) {
-            const element = elemetnsOnScreen[i] as HTMLDivElement;
-
-            element.style.transform =
-              "perspective(1200px) rotateY(" + (i < 1 - 1 ? 40 : -40) + "deg)";
-          }
+          move(e.item);
         }}
         onSlideChange={(e) => {
-          const x = document.querySelectorAll(
-            ".alice-carousel__wrapper .alice-carousel__stage-item.__active"
-          );
+          e.item !== mock.length - 2 && move(e.item - 1);
+          e.item !== mock.length - 1 && move(e.item);
+        }}
+        onSlideChanged={(e) => {
+          (e.item === 0 || e.item === mock.length - 1) && move(e.item);
         }}
         infinite={true}
         ref={(node) => {
@@ -104,22 +131,15 @@ const NFTList = () => {
         items={nfts}
         responsive={{
           0: {
-            items: 1,
-          },
-          480: {
-            items: 2,
-          },
-          800: {
             items: 3,
           },
-          1124: {
-            items: 4,
-          },
+
           1650: {
             items: 5,
           },
+
           2000: {
-            items: 6,
+            items: 7,
           },
         }}
       />
