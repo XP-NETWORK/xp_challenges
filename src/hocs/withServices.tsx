@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 
 import { ServiceConsumer } from "./ServcieProvder";
 
@@ -8,7 +8,7 @@ export interface ServiceContainer {
   imageLoader: ImageLoader;
 }
 
-const withServices = (Wrapped: React.FC<any>) => {
+const withServices = (Wrapped: FC<any>) => {
   return (props: any) => (
     <ServiceConsumer>
       {({ serviceContainer, setContainer }: any) => (

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-constant-condition */
 
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import AliceCarousel from "react-alice-carousel";
 
 import { throttle } from "../../utils";

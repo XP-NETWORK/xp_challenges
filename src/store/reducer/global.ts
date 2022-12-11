@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { Action } from "..";
 
 export type Global = {
-  items: any[];
+  items: any;
 };
 
 export const initialState: Global = {
@@ -11,7 +11,7 @@ export const initialState: Global = {
 
 interface ALoadItems extends Action {
   payload: {
-    items: any[];
+    items: any;
   };
 }
 

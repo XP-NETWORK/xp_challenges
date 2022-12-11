@@ -1,5 +1,4 @@
-import React from "react";
-
+import { FC } from "react";
 import { Routes, Route } from "react-router";
 
 import HomePage from "./Home";
@@ -8,7 +7,7 @@ import { ReactComponent as LeftFrame } from "../assets/img/leftFrame.svg";
 import { ReactComponent as RightFrame } from "../assets/img/rightFrame.svg";
 import { ReactComponent as TopFrame } from "../assets/img/topFrame.svg";
 
-export const Router = () => {
+export const Router:FC = () => {
   return (
     <div className="app">
       <Routes>
