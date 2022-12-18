@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { Global, global } from "./reducer/global";
+import { GlobalState, global } from "./reducer/global";
 
 export interface ReduxState {
-  global: Global;
+  global: GlobalState;
 }
 
 export interface Action {

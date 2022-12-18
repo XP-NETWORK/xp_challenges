@@ -1,3 +1,5 @@
+import axios from "axios";
+
 class Api {
   base = "";
 
@@ -6,7 +8,7 @@ class Api {
   }
 
   async getData() {
-    return [];
+    return await axios.get(this.base + "/getAllAchievments");
   }
 }
 

@@ -29,8 +29,14 @@
 }
 
 @media only screen and (max-width: 800px) {
+  img.nft {
+    width: 200px;
+  }
 }
 @media only screen and (max-width: 548px) {
+  img.nft {
+    width: 120px;
+  }
 }
 
 @media only screen and (max-width: 480px) {

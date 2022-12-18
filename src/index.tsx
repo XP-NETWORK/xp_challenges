@@ -13,6 +13,8 @@ import { AppContainer } from "./components/containers/App";
 import { Router } from "./pages/router";
 
 import ImageLoader from "./services/imageLoader";
+import Api from "./services/api";
+import TelegramService from "./services/telegram";
 
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
@@ -23,10 +25,14 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import "./assets/styles/media.css";
 
 const App = () => {
+  console.log(process.env.REACT_APP_TOKEN);
   const [serviceContainer, setContainer] = useState<ServiceContainer>({
-    //api: api("https://dfiance-api.herokuapp.com"), //api("http://localhost:3011"), //api("https://dfiance-api.herokuapp.com"),
+    api: Api("https://xp-challenges.herokuapp.com"), //api("http://localhost:3011"), //api("https://dfiance-api.herokuapp.com"),
     imageLoader: ImageLoader(),
-    //deck: DeckAnimator(),
+    telegram: TelegramService(
+      "XpChallengeAuth12Bot",
+      process.env.REACT_APP_TOKEN as string
+    ),
   });
 
   const [loaded, setLoaded] = useState(false);

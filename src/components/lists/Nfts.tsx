@@ -8,6 +8,10 @@ import AliceCarousel from "react-alice-carousel";
 import { throttle } from "../../utils";
 import pic from "../../assets/img/Rectangle 20.png";
 
+import back from "../../assets/img/icons/btnForward.svg";
+import forward from "../../assets/img/icons/btnBack.svg";
+import glimer from "../../assets/img/icons/btnGlimer.svg";
+
 function move(index: number) {
   setTimeout(() => {
     const elemetnsOnScreen = document.querySelectorAll(
@@ -94,20 +98,6 @@ const NFTList = () => {
 
   return (
     <div className="nftList">
-      <div className="controls flexRow">
-        <button
-          className="secondary"
-          onClick={() => throttle(carousel.current?.slidePrev, 1000)()}
-        >
-          prev
-        </button>
-        <button
-          className="accent"
-          onClick={() => throttle(carousel.current?.slideNext, 1000)()}
-        >
-          next
-        </button>
-      </div>
       <AliceCarousel
         onInitialized={(e) => {
           move(e.item);
@@ -134,7 +124,7 @@ const NFTList = () => {
             items: 3,
           },
 
-          1650: {
+          1400: {
             items: 5,
           },
 
@@ -143,6 +133,18 @@ const NFTList = () => {
           },
         }}
       />
+      <div className="controls flexRow">
+        <img
+          src={back}
+          alt="pic2"
+          onClick={() => throttle(carousel.current?.slidePrev, 1000)()}
+        />
+        <img
+          src={forward}
+          alt="pic1"
+          onClick={() => throttle(carousel.current?.slideNext, 1000)()}
+        />
+      </div>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import Footer from "./common/footer";
 import { ReactComponent as TelegramWhite } from "../assets/img/icons/tgWhite.svg";
 
 import NFTList from "../components/lists/Nfts";
+import Achievements from "../components/lists/achievements";
 
 import challangeTm1 from "../assets/img/challangeTm1.png";
 import challangeTm2 from "../assets/img/challangeTm2.png";
@@ -51,6 +52,7 @@ const Home = () => {
         </div>
 
         <NFTList />
+        <Achievements />
       </main>
       <Footer />
     </div>

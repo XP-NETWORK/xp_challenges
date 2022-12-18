@@ -3,8 +3,10 @@ import React from "react";
 import logo from "../../assets/img/icons/logo.png";
 import { ReactComponent as Twitter } from "../../assets/img/icons/twit.svg";
 import { ReactComponent as Telegram } from "../../assets/img/icons/tg.svg";
-import { ReactComponent as TelegramWhite } from "../../assets/img/icons/tgWhite.svg";
+//import { ReactComponent as TelegramWhite } from "../../assets/img/icons/tgWhite.svg";
 import { ReactComponent as Hamburger } from "../../assets/img/icons/hamburger.svg";
+
+import TelegramLogin from "../../components/auth/TelegramLogin";
 
 type HeaderPros = {
   timeLeft?: string;
@@ -39,9 +41,7 @@ const Header = ({ timeLeft = "30:360:21600" }: HeaderPros) => {
           </div>
         </div>
         <div className="menu flexRow">
-          <button className="accent">
-            <TelegramWhite /> Sign up
-          </button>
+          <TelegramLogin />
           <Hamburger />
         </div>
       </div>

@@ -3,9 +3,13 @@ import { FC } from "react";
 import { ServiceConsumer } from "./ServcieProvder";
 
 import { ImageLoader } from "../services/imageLoader";
+import { Api } from "../services/api";
+import { TelegramService } from "../services/telegram";
 
 export interface ServiceContainer {
   imageLoader: ImageLoader;
+  api: Api;
+  telegram: TelegramService;
 }
 
 const withServices = (Wrapped: FC<any>) => {

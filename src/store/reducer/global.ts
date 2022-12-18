@@ -1,17 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Action } from "..";
+import { IACHIEVMENT, TelegramUser } from "store/types";
 
-export type Global = {
-  items: any;
+export type GlobalState = {
+  achievements: IACHIEVMENT[];
+  telegramUser: TelegramUser | undefined;
 };
 
-export const initialState: Global = {
-  items: [],
+export const initialState: GlobalState = {
+  achievements: [],
+  telegramUser: undefined,
 };
 
-interface ALoadItems extends Action {
+interface ALoadData extends Action {
   payload: {
-    items: any;
+    achievements: IACHIEVMENT[];
+  };
+}
+
+interface ALoadTelegramUser extends Action {
+  payload: {
+    telegramUser: TelegramUser;
   };
 }
 
@@ -19,10 +28,13 @@ export const global = createSlice({
   name: "global",
   initialState,
   reducers: {
-    loadItems: (state: Global, action: ALoadItems) => {
-      state.items = action.payload.items;
+    setAchievements: (state: GlobalState, action: ALoadData) => {
+      state.achievements = action.payload.achievements;
+    },
+    setTelegramUser: (state: GlobalState, action: ALoadTelegramUser) => {
+      state.telegramUser = action.payload.telegramUser;
     },
   },
 });
 
-export const { loadItems } = global.actions;
+export const { setAchievements, setTelegramUser } = global.actions;
