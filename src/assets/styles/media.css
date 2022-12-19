@@ -11,6 +11,9 @@
 }
 
 @media only screen and (max-width: 1540px) {
+  .progressLine {
+    width: 180px;
+  }
 }
 
 @media only screen and (max-width: 1420px) {

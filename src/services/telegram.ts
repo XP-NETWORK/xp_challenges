@@ -1,17 +1,14 @@
 import { TelegramUser } from "store/types";
-const SHA256 = require("crypto-js/sha256");
-const HMAC_SHA256 = require("crypto-js/hmac-sha256");
-const HEX = require("crypto-js/enc-hex");
+
+const ONE_DAY = 86_400_000;
 
 class TelegramService {
   botName: string;
   private widgetUrl = "https://telegram.org/js/telegram-widget.js?21";
   private storageKey = "__XPC-TELEGRAM-USER__";
-  private token: string;
 
-  constructor(botName: string, token: string) {
+  constructor(botName: string) {
     this.botName = botName;
-    this.token = token;
   }
 
   loadWidget(container: HTMLDivElement, callback: string) {
@@ -43,8 +40,7 @@ class TelegramService {
     if (user) {
       try {
         const userData = JSON.parse(user);
-        this.verify(userData);
-        return userData;
+        return this.verify(userData);
       } catch (e) {
         return undefined;
       }
@@ -61,24 +57,13 @@ class TelegramService {
     const now = +new Date();
     const authDate = Number(user.auth_date) * 1000;
 
-    if (now - authDate > 86400000) {
-      throw new Error("Telegram verify fail");
+    if (now - authDate > ONE_DAY) {
+      throw new Error("Telegram verify fail:expired");
     }
 
-    const verificationParams: TelegramUser = { ...user };
-    delete verificationParams.hash;
-    const message = Object.keys(verificationParams)
-      .map((key) => `${key}=${verificationParams[key as keyof TelegramUser]}`)
-      .sort()
-      .join("\n");
-    const secretKey = SHA256(this.token); // replace with the token of my bot
-    const hash = HEX.stringify(HMAC_SHA256(message, secretKey));
-    if (hash !== user.hash) {
-      throw new Error("Telegram verify fail");
-    }
+    return user;
   }
 }
 
-export default (botName: string, token: string) =>
-  new TelegramService(botName, token);
+export default (botName: string) => new TelegramService(botName);
 export { TelegramService };

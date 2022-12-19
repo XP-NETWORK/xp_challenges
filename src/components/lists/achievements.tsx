@@ -15,7 +15,6 @@ function Achievements() {
   const achievements = useSelector(
     (state: ReduxState) => state.global.achievements
   );
-  console.log(achievements, "achievements");
 
   const achievementsPics = {
     [AchivType.Telegram]: tgAchiv,
@@ -38,11 +37,11 @@ function Achievements() {
         <div className="row">
           {achievements.map(
             ({ achievmentNumber, description, name, progressBarLength }) => (
-              <div className="col-12 col-md-6 col-lg-4">
-                <div
-                  key={`achivCard-${achievmentNumber}`}
-                  className="achivCard flexCol"
-                >
+              <div
+                className="col-12 col-md-6 col-lg-4"
+                key={`achivCard-${achievmentNumber}`}
+              >
+                <div className="achivCard flexCol">
                   <img src={frame} alt="frame" className="frame" />
                   <div className="proggress">
                     <img src={achievementsPics[name]} alt="" />

@@ -13,11 +13,18 @@
   z-index: 1;
 }
 
+.glowEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
 .glowEffect.ghostBg::after {
   background: url(../img/glowEffect.png) no-repeat;
-
-  background-size: cover;
-  background-position: 0;
+  background-size: contain;
+  background-position: right;
   z-index: 2;
 }
 
@@ -116,7 +123,6 @@ header button {
 }
 
 .introComposition .introTimeline button {
-  text-transform: initial;
   padding: 10px 14px;
   height: unset;
   margin-top: 14px;
@@ -191,6 +197,10 @@ header button {
   width: 100%;
 }
 
+.introTimeline-item img {
+  width: 110px;
+}
+
 .proggress ul {
   margin-left: 15px;
   width: auto;
@@ -240,6 +250,7 @@ img.frame {
   position: absolute;
   width: 100%;
   height: 100%;
+  z-index: 56;
   left: 0;
   top: 0;
   cursor: pointer;
@@ -258,4 +269,159 @@ img.frame {
 
 .userAccount-tgWrapper span {
   font-size: 18px;
+}
+
+footer {
+  padding: 100px 0 30px 0;
+}
+
+footer .bridgeBanner {
+  background: url(../img/footerPic.png) no-repeat, #1c1d1e;
+  background-size: 50%;
+  background-position: right;
+  height: 496px;
+  display: flex;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+footer .bridgeBanner img.frame {
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  left: -2px;
+  top: -2px;
+}
+
+footer .bridgeBanner .bridgeBanner-text {
+  width: 500px;
+  margin: auto;
+  margin-left: 100px;
+}
+
+footer .bridgeBanner h3,
+.menuModal .banner h3 {
+  font-size: 34px;
+  font-family: chakra-petch-semibold;
+}
+
+footer .bridgeBanner p,
+.menuModal .banner p {
+  line-height: 30px;
+  color: var(--greyText);
+  margin: 24px 0 44px 0;
+}
+
+footer .bridgeBanner a.button {
+  width: 197px;
+}
+
+footer .media {
+  margin-top: 40px;
+  border-top: 1px solid var(--secondary);
+  padding-top: 20px;
+}
+
+footer .media ul li:not(:last-child) {
+  margin-right: 34px;
+}
+
+footer .media .bot {
+  text-align: right;
+  font-family: inter;
+  color: var(--secondary);
+  font-size: 13px;
+}
+
+.burgerBtn {
+  cursor: pointer;
+  position: relative;
+  z-index: 999999;
+  transition: all 0.4s ease;
+  width: 56px;
+  height: 56px;
+  background: url(../img/icons/hamburger.svg) no-repeat;
+  background-size: cover;
+}
+
+.burgerBtn.close {
+  background: url(../img/icons/close.svg) no-repeat;
+  background-size: cover;
+}
+
+body.showModal header .menu {
+  right: 14px;
+  position: relative;
+}
+
+.menuModal nav ul li {
+  font-size: 28px;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  color: var(--dimText);
+  padding: 24px 0;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  align-items: center;
+}
+
+.menuModal nav ul li svg {
+  width: 24px;
+}
+
+.menuModal nav ul li:hover {
+  background: rgba(199, 26, 51, 0.07);
+  border-bottom: 1px solid var(--accent);
+}
+
+.menuModal nav ul li:hover svg path {
+  fill: var(--accent);
+  fill-opacity: 1;
+}
+
+.menuModal .bottomContainer {
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+  left: 0;
+}
+
+.menuModal .banner {
+  height: 280px;
+  background: url(../img/menuBanner.png) no-repeat;
+  background-size: 100%;
+  background-position: right;
+  background-color: #1d1d1f;
+  padding: 0 44px;
+  display: flex;
+}
+
+.menuModal .banner .bridgeBanner-text {
+  width: 30%;
+  margin: auto 0;
+}
+
+.menuModal.customModal .container {
+  position: relative;
+  height: 100%;
+}
+
+.customModal .footer {
+  margin-top: 20px;
+  border-top: 1px solid var(--secondary);
+  padding-top: 35px;
+}
+
+.customModal .footer .links svg {
+  margin-right: 10px;
+}
+
+.customModal .footer .logo span {
+  color: var(--dimText);
+  position: relative;
+  top: 10px;
+  margin-left: 20px;
+}
+
+.signupPage {
+  height: 100vh;
 }

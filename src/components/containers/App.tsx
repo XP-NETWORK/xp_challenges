@@ -15,7 +15,6 @@ export const AppContainer = (App: FC) =>
     useEffect(() => {
       (async () => {
         const res = await api.getData();
-        console.log(res);
         dispatch(setAchievements({ achievements: res.data }));
       })();
 

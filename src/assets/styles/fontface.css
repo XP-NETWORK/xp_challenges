@@ -4,9 +4,20 @@
 }
 
 @font-face {
+  font-family: "chakra-petch-semibold";
+  src: url(../fonts/ChakraPetch-SemiBold.ttf);
+}
+
+@font-face {
   font-family: "rajdhani";
   src: url(../fonts/Rajdhani-Regular.ttf);
 }
+
+@font-face {
+  font-family: "inter";
+  src: url(../fonts/Inter-Regular.ttf);
+}
+
 /*
 @font-face {
   font-family: "albertus-nova";

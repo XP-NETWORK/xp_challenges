@@ -29,10 +29,7 @@ const App = () => {
   const [serviceContainer, setContainer] = useState<ServiceContainer>({
     api: Api("https://xp-challenges.herokuapp.com"), //api("http://localhost:3011"), //api("https://dfiance-api.herokuapp.com"),
     imageLoader: ImageLoader(),
-    telegram: TelegramService(
-      "XpChallengeAuth12Bot",
-      process.env.REACT_APP_TOKEN as string
-    ),
+    telegram: TelegramService("XpChallengeAuth12Bot"),
   });
 
   const [loaded, setLoaded] = useState(false);
