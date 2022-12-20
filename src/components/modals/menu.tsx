@@ -1,16 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { ReactComponent as Logo } from "../../assets/img/icons/xplogoText.svg";
-import { ReactComponent as Twitter } from "../../assets/img/icons/twit.svg";
-import { ReactComponent as Telegram } from "../../assets/img/icons/tg.svg";
-
 import { ReactComponent as Home } from "../../assets/img/icons/HOME.svg";
 import { ReactComponent as Leader } from "../../assets/img/icons/trophy-star.svg";
 import { ReactComponent as Collection } from "../../assets/img/icons/.svg";
 import { ReactComponent as History } from "../../assets/img/icons/clock-rotate-left.svg";
 import { ReactComponent as Upcoming } from "../../assets/img/icons/wand-magic-sparkles.svg";
 import { ReactComponent as FAQ } from "../../assets/img/icons/message-question.svg";
+
+import MoldalFooter from "pages/common/modalFooter";
 
 const Menu = () => {
   return (
@@ -83,16 +81,7 @@ const Menu = () => {
                 </div>
               </div>
 
-              <div className="footer flexRow">
-                <div className="links">
-                  <Twitter />
-                  <Telegram />
-                </div>
-                <div className="logo">
-                  <Logo />
-                  <span>© {new Date().getFullYear()}</span>
-                </div>
-              </div>
+              <MoldalFooter />
             </div>
           </div>
         </div>

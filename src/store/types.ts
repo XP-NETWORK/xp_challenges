@@ -28,3 +28,28 @@ export type TelegramUser = {
   username: string;
   hash?: string;
 };
+
+export type SignupState = {
+  telegram: TelegramUser | undefined;
+  email: string;
+  newsletter: boolean;
+  privatePolicy: boolean;
+};
+
+export type EmailValidFail = {
+  dublicate: string;
+  notemail: string;
+  empty: string;
+};
+
+export type FieldValidation<text> = {
+  text: text;
+  failedValid: boolean;
+  mondatoryIf?: keyof SignupState;
+};
+
+export type SignupValidation = {
+  telegram: FieldValidation<string>;
+  email: FieldValidation<EmailValidFail>;
+  privatePolicy: FieldValidation<string>;
+};

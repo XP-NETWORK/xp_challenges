@@ -6,6 +6,15 @@
   z-index: 0;
 }
 
+.app.noscroll {
+  overflow-y: hidden;
+}
+
+.app.noscroll .frame.left,
+.app.noscroll .frame.right {
+  max-height: 90vh;
+}
+
 .homePage.ghostBg::after {
   background: rgba(var(--mainBg), 0.8);
   height: 100vh;
@@ -19,6 +28,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
+  z-index: -1;
 }
 
 .glowEffect.ghostBg::after {
@@ -32,6 +42,7 @@
   position: absolute;
   top: 20px;
   z-index: 3;
+  transition: all 0.3s ease;
 }
 
 .frame.left {
@@ -246,6 +257,10 @@ img.frame {
   position: relative;
 }
 
+.signupPage .signUpContainer button {
+  margin: auto;
+}
+
 .authWrapper {
   position: absolute;
   width: 100%;
@@ -268,6 +283,7 @@ img.frame {
 }
 
 .userAccount-tgWrapper span {
+  font-family: kanit;
   font-size: 18px;
 }
 
@@ -400,22 +416,26 @@ body.showModal header .menu {
   margin: auto 0;
 }
 
-.menuModal.customModal .container {
+.customModal .container,
+.app.noscroll .container {
   position: relative;
   height: 100%;
 }
 
+.app.noscroll .footer,
 .customModal .footer {
   margin-top: 20px;
   border-top: 1px solid var(--secondary);
   padding-top: 35px;
 }
 
-.customModal .footer .links svg {
+.customModal .footer .links svg,
+.app.noscroll .footer .links svg {
   margin-right: 10px;
 }
 
-.customModal .footer .logo span {
+.customModal .footer .logo span,
+.app.noscroll .footer .logo span {
   color: var(--dimText);
   position: relative;
   top: 10px;
@@ -424,4 +444,93 @@ body.showModal header .menu {
 
 .signupPage {
   height: 100vh;
+  position: relative;
+}
+
+.app.noscroll .signupPage .footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: none;
+  padding-bottom: 40px;
+}
+
+.signupPage-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.signupPage .accountWrapper {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 300px;
+}
+
+.signupPage-form {
+  margin: auto;
+  width: 470px;
+  padding-top: 100px;
+}
+
+.signupPage .userAccount-tgWrapper.flexRow {
+  flex-direction: column-reverse;
+}
+
+.signupPage .userAccount-tgWrapper.flexRow img {
+  width: 98px;
+  height: 98px;
+  margin-bottom: 20px;
+}
+
+.signupPage .userAccount-tgWrapper.flexRow span {
+  font-size: 34px;
+}
+
+.signupPage .accountWrapper h2 {
+  font-size: 44px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.signupPage-form .flexCol {
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.signupPage-form .flexCol label {
+  font-size: 14px;
+  color: var(--dimText);
+}
+
+.signupPage-form .flexRow {
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.signupPage-form .flexRow .checkBoxWrapper {
+  margin-right: 20px;
+}
+
+.signupPage-form button {
+  width: 100%;
+}
+
+.signupPage-form button.accent {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.signupPage-form button.transparent {
+  transform: translateY(50px);
+}
+
+.signupPage a {
+  text-decoration: none;
 }

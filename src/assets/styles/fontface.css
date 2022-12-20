@@ -18,6 +18,11 @@
   src: url(../fonts/Inter-Regular.ttf);
 }
 
+@font-face {
+  font-family: "kanit";
+  src: url(../fonts/Kanit-Regular.ttf);
+}
+
 /*
 @font-face {
   font-family: "albertus-nova";
