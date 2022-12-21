@@ -3,7 +3,11 @@ import React, { FC, useEffect } from "react";
 import { withServices, ServiceContainer } from "../../hocs/withServices";
 
 import { useDispatch } from "react-redux";
-import { setAchievements, setTelegramUser } from "store/reducer/global";
+import {
+  setAchievements,
+  setTelegramUser,
+  toggleInit,
+} from "store/reducer/global";
 
 export const AppContainer = (App: FC) =>
   withServices(function Callback(props) {
@@ -13,15 +17,23 @@ export const AppContainer = (App: FC) =>
     const dispatch = useDispatch();
 
     useEffect(() => {
-      (async () => {
-        const res = await api.getData();
-        dispatch(setAchievements({ achievements: res.data }));
-      })();
+      dispatch(toggleInit(true));
+      Promise.all([
+        (async () => {
+          const res = await api.getData();
+          dispatch(setAchievements({ achievements: res.data }));
+        })(),
+        (async () => {
+          const telegramUser = telegram.getUser();
 
-      const telegramUser = telegram.getUser();
-      if (telegramUser) {
-        dispatch(setTelegramUser({ telegramUser }));
-      }
+          if (telegramUser) {
+            const verified = await api.verifyTelegramData(telegramUser);
+            verified && dispatch(setTelegramUser({ telegramUser }));
+          }
+        })(),
+      ]).then(() => {
+        dispatch(toggleInit(false));
+      });
     }, []);
 
     return <App />;

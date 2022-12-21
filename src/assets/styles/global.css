@@ -3,8 +3,9 @@
   --secondary: rgb(56, 56, 56);
   --greyText: rgba(255, 255, 255, 0.8);
   --dimText: rgba(255, 255, 255, 0.5);
-
+  --bar: #1e1c1c;
   --mainBg: 14, 14, 17;
+  --green: #12d460;
 }
 
 .noselect {
@@ -237,4 +238,8 @@ input[type="checkbox"] {
   height: 1px;
   width: 100%;
   margin-bottom: 30px;
+}
+
+button.completed {
+  color: var(--green);
 }

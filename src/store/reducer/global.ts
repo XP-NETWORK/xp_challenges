@@ -1,15 +1,40 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Action } from "..";
-import { IACHIEVMENT, TelegramUser } from "store/types";
+import {
+  IACHIEVMENT,
+  TelegramUser,
+  AchievementsUpdateEvent,
+} from "store/types";
+
+import { UserData } from "store/models/user";
 
 export type GlobalState = {
   achievements: IACHIEVMENT[];
   telegramUser: TelegramUser | undefined;
+  userData: UserData | undefined;
+  init: boolean;
+  currentProject: number;
+  justCompleted: number | undefined;
+};
+
+const mock = true && {
+  id: BigInt(1062713330),
+  first_name: "Alex",
+  last_name: "Teisheira",
+  username: "darylMussasi",
+  photo_url:
+    "https://t.me/i/userpic/320/NhgyFmJtk4F8zLFdeT4lrgEfSIyY9SS9UOMMiu88ud4.jpg",
+  auth_date: BigInt(1062713330),
+  hash: "876b55925d0281e291dae5f00a0e073915577c1edd4b4886e1101000322b546a",
 };
 
 export const initialState: GlobalState = {
   achievements: [],
-  telegramUser: undefined,
+  telegramUser: mock,
+  userData: undefined,
+  init: false,
+  currentProject: 1,
+  justCompleted: undefined,
 };
 
 interface ALoadData extends Action {
@@ -24,6 +49,20 @@ interface ALoadTelegramUser extends Action {
   };
 }
 
+interface ALoadUserData extends Action {
+  payload: {
+    userData: UserData;
+  };
+}
+
+interface AToggleInit extends Action {
+  payload: boolean;
+}
+
+interface AUpdateProgress extends Action {
+  payload: AchievementsUpdateEvent;
+}
+
 export const global = createSlice({
   name: "global",
   initialState,
@@ -34,7 +73,59 @@ export const global = createSlice({
     setTelegramUser: (state: GlobalState, action: ALoadTelegramUser) => {
       state.telegramUser = action.payload.telegramUser;
     },
+    setUserData: (state: GlobalState, action: ALoadUserData) => {
+      state.userData = action.payload.userData;
+    },
+    updateProgress: (state: GlobalState, action: AUpdateProgress) => {
+      const { achievements } = state;
+      const { payload } = action;
+      for (const progressIndex of payload.achievments) {
+        const achievementData = achievements.find(
+          (a) => a.achievmentNumber === progressIndex
+        );
+
+        const project = state.userData?.projectParticipations?.find(
+          (p) => p.projectNumber === payload.projectNumber
+        );
+
+        const achievement = project?.achievments.find(
+          (a) => a.achievmentNumber === progressIndex
+        );
+        console.log(achievement);
+        console.log(achievementData, "achievementData");
+        console.log(payload, "payload");
+        if (achievement && achievementData) {
+          const currentStatus =
+            payload.currentProgressNumber >= achievementData?.progressBarLength;
+
+          achievement.progressNumber = payload.currentProgressNumber;
+          if (currentStatus !== achievement.completed) {
+            state.justCompleted = achievements.findIndex(
+              (a) => a.achievmentNumber === achievement.achievmentNumber
+            );
+            console.log(
+              achievements.findIndex(
+                (a) => a.achievmentNumber === achievement.achievmentNumber
+              ),
+              "index"
+            );
+          }
+          achievement.completed = currentStatus;
+        }
+
+        //state.userData?.projectParticipations[action.payload.projectNumber].
+      }
+    },
+    toggleInit: (state: GlobalState, action: AToggleInit) => {
+      state.init = action.payload;
+    },
   },
 });
 
-export const { setAchievements, setTelegramUser } = global.actions;
+export const {
+  setAchievements,
+  setTelegramUser,
+  toggleInit,
+  setUserData,
+  updateProgress,
+} = global.actions;

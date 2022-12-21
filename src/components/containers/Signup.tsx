@@ -4,6 +4,10 @@ import { SignupState, SignupValidation, TelegramUser } from "../../store/types";
 
 import { useSelector } from "react-redux";
 import { ReduxState } from "../../store";
+import userFabric from "store/models/user";
+import { useNavigate } from "react-router";
+
+import { withServices, ServiceContainer } from "hocs/withServices";
 
 const initState: SignupState = {
   telegram: undefined,
@@ -40,14 +44,24 @@ export type SignUpProps = {
   formHandler: (value: any, key: keyof SignupState) => void;
 };
 
+type ContainerProps = {
+  serviceContainer: ServiceContainer;
+};
+
 function Container(SignUp: React.FC<SignUpProps>) {
-  return function CB() {
+  function CB(props: ContainerProps) {
+    const {
+      serviceContainer: { api },
+    } = props;
     const { telegramUser } = useSelector((state: ReduxState) => ({
       telegramUser: state.global.telegramUser,
     }));
 
     const [state, setState] = useState(initState);
     const [validation, setValidation] = useState(initValid);
+
+    const navigate = useNavigate();
+    console.log(navigate, "navigate");
 
     //handlers
     const formHandler = (value: any, key: keyof SignupState) =>
@@ -62,9 +76,17 @@ function Container(SignUp: React.FC<SignUpProps>) {
       if (
         Object.keys(data).every(
           (key) => data[key as keyof SignupValidation].failedValid === false
-        )
+        ) &&
+        telegramUser
       ) {
-        console.log("clear");
+        const user = userFabric(telegramUser, state);
+
+        const result = await api.signup(user);
+
+        if (result) {
+          console.log(result);
+          navigate("/");
+        }
       }
     };
 
@@ -126,7 +148,9 @@ function Container(SignUp: React.FC<SignUpProps>) {
         validation={validation}
       />
     );
-  };
+  }
+
+  return withServices(CB);
 }
 
 export default Container;

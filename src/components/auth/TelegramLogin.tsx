@@ -4,7 +4,7 @@ import { ReactComponent as TelegramWhite } from "../../assets/img/icons/tgWhite.
 import { useDispatch, useSelector } from "react-redux";
 import { ReduxState } from "store";
 
-import { setTelegramUser } from "store/reducer/global";
+import { setTelegramUser, setUserData } from "store/reducer/global";
 import { TelegramUser } from "store/types";
 
 import UserAccount from "./UserAccount";
@@ -15,11 +15,13 @@ import { useNavigate } from "react-router-dom";
 
 interface TelegramLoginProps {
   serviceContainer: ServiceContainer;
+  vert?: boolean;
 }
 
 function TelegramLogin(props: TelegramLoginProps) {
   const {
     serviceContainer: { telegram: telegramService, api },
+    vert = false,
   } = props;
   const { telegramUser } = useSelector((state: ReduxState) => ({
     telegramUser: state.global.telegramUser,
@@ -35,15 +37,24 @@ function TelegramLogin(props: TelegramLoginProps) {
     window.__GLOBAL_VAR__.onTelegramAuth = function (
       telegramUser: TelegramUser
     ) {
-      api.verifyTelegramData(telegramUser).then((res) => {
+      api.verifyTelegramData(telegramUser).then(async (res) => {
         if (res) {
+          //save in LS
+          telegramService.storeUser(telegramUser);
+          //check if user already exist in db
+          const res = await api.getUser(telegramUser.username);
+
+          if (res) {
+            dispatch(setUserData(res.data));
+          } else {
+            navigate("/signup");
+          }
+
           dispatch(
             setTelegramUser({
               telegramUser,
             })
           );
-          telegramService.storeUser(telegramUser);
-          navigate("/signup");
         }
       });
     };
@@ -77,7 +88,7 @@ function TelegramLogin(props: TelegramLoginProps) {
   }, [scriptLoaded]);
 
   return (
-    <div className="signUpContainer">
+    <div className={`signUpContainer ${vert ? "vertical" : ""}`}>
       {!telegramUser && (
         <>
           <button className="accent" ref={button}>

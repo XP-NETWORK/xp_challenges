@@ -15,6 +15,7 @@ import { Router } from "./pages/router";
 import ImageLoader from "./services/imageLoader";
 import Api from "./services/api";
 import TelegramService from "./services/telegram";
+import socket from "services/socket";
 
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
@@ -30,6 +31,7 @@ const App = () => {
     api: Api("https://xp-challenges.herokuapp.com"), //api("http://localhost:3011"), //api("https://dfiance-api.herokuapp.com"),
     imageLoader: ImageLoader(),
     telegram: TelegramService("XpChallengeAuth12Bot"),
+    socketWrapper: socket("wss://xp-challenges.herokuapp.com"),
   });
 
   const [loaded, setLoaded] = useState(false);

@@ -200,6 +200,17 @@ header button {
   text-align: center;
 }
 
+.achievements h2 {
+  font-size: 44px;
+  line-height: 67px;
+}
+
+.achievements > p {
+  font-size: 30px;
+  color: var(--greyText);
+  margin-bottom: 20px;
+}
+
 .proggress ul,
 .proggress {
   display: flex;
@@ -213,12 +224,16 @@ header button {
 }
 
 .proggress ul {
-  margin-left: 15px;
   width: auto;
 }
 
+.proggress .plusPic {
+  margin: 0 10px;
+}
+
 .proggress ul li img {
-  width: 32px;
+  width: 24px;
+  margin-right: 4px;
 }
 
 .achivCard {
@@ -230,7 +245,7 @@ header button {
 }
 
 .achivCard .proggress {
-  padding-bottom: 37px;
+  padding-bottom: 0px;
 }
 
 .achivCard p {
@@ -477,17 +492,17 @@ body.showModal header .menu {
   padding-top: 100px;
 }
 
-.signupPage .userAccount-tgWrapper.flexRow {
+.signUpContainer.vertical .userAccount-tgWrapper.flexRow {
   flex-direction: column-reverse;
 }
 
-.signupPage .userAccount-tgWrapper.flexRow img {
+.signUpContainer.vertical .userAccount-tgWrapper.flexRow img {
   width: 98px;
   height: 98px;
   margin-bottom: 20px;
 }
 
-.signupPage .userAccount-tgWrapper.flexRow span {
+.signUpContainer.vertical .userAccount-tgWrapper.flexRow span {
   font-size: 34px;
 }
 
@@ -533,4 +548,67 @@ body.showModal header .menu {
 
 .signupPage a {
   text-decoration: none;
+}
+
+.profile .signUpContainer {
+  padding-top: 100px;
+}
+
+.achivementBar {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.progressBar {
+  width: 370px;
+  display: inline-block;
+}
+
+.achivCard .progressBar {
+  width: 100%;
+}
+
+.barWrap {
+  padding: 18px;
+  width: 100%;
+  border-radius: 80px;
+  background-color: var(--bar);
+}
+.achivCard .barWrap {
+  padding: 0px;
+  background: transparent;
+}
+
+.progressBar .bar {
+  border-radius: 40px;
+  width: 80%;
+  padding: 6px;
+  background-color: #201f1f;
+}
+
+.progressBar .rate {
+  flex: 1;
+  text-align: right;
+}
+
+.progressBar .inner {
+  border-radius: 33px;
+  background-color: rgb(94, 91, 91);
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  height: 20px;
+}
+
+.achivCard .inner {
+  height: 6px;
+}
+
+.progressBar .inner .progress {
+  background-color: honeydew;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
 }

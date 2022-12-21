@@ -17,7 +17,7 @@ const Signup = ({ state, validation, signup, formHandler }: SignUpProps) => {
           <div className="accountWrapper">
             <h2>Sign up</h2>
 
-            <TelegramLogin />
+            <TelegramLogin vert={true} />
           </div>
           <div className="signupPage-form">
             <div

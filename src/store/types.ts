@@ -53,3 +53,9 @@ export type SignupValidation = {
   email: FieldValidation<EmailValidFail>;
   privatePolicy: FieldValidation<string>;
 };
+
+export type AchievementsUpdateEvent = {
+  projectNumber: number;
+  achievments: number[];
+  currentProgressNumber: number;
+};
