@@ -18,5 +18,5 @@
     "jsx": "react-jsx",
     "baseUrl": "src"
   },
-  "include": ["src", ".d.ts", "string.extensions.ts", "config-overrides.js"]
+  "include": ["src", ".d.ts", "string.extensions.ts"]
 }

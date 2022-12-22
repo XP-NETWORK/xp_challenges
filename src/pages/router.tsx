@@ -9,6 +9,7 @@ import SignupContainer from "components/containers/Signup";
 
 import Welcome from "./homeSections/Welcome";
 import Profile from "./homeSections/Profile";
+//import TwitterAuth from "./TwitterAuth";
 
 import { ReactComponent as LeftFrame } from "../assets/img/leftFrame.svg";
 import { ReactComponent as RightFrame } from "../assets/img/rightFrame.svg";
@@ -26,6 +27,7 @@ export const Router: FC = () => {
   );
 
   const SignUp = SignupContainer(Signup);
+
   const { telegramUser, init } = useSelector((state: ReduxState) => ({
     telegramUser: state.global.telegramUser,
     init: state.global.init,

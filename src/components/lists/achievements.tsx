@@ -53,6 +53,14 @@ const achievementsBtns = {
   [AchivType.Bridge]: "go to bridge",
 };
 
+const achievementsHandlers = {
+  [AchivType.Telegram]: () => false,
+  [AchivType.Twitter]: () => {
+    window.open("http://localhost:3100/twitterLogin");
+  },
+  [AchivType.Bridge]: () => false,
+};
+
 function Achievements({ userAchievements }: AchievementsProps) {
   console.log(userAchievements, "userAchievements");
   //const [justCompleted, setCompleted] = useState<number | undefined>(undefined);
@@ -66,8 +74,6 @@ function Achievements({ userAchievements }: AchievementsProps) {
   }));
 
   const dispatch = useDispatch();
-
-  console.log(justCompleted, "justCompleted");
 
   useEffect(() => {
     if (justCompleted.length) {
@@ -162,6 +168,11 @@ function Achievements({ userAchievements }: AchievementsProps) {
 
                     <p>{description}</p>
                     <button
+                      onClick={
+                        userProgress?.completed
+                          ? () => false
+                          : achievementsHandlers[name]
+                      }
                       className={`secondary ${
                         userProgress?.completed ? "completed" : ""
                       }`}

@@ -9,8 +9,6 @@ import {
   toggleInit,
 } from "store/reducer/global";
 
-//import { auth, Client } from "twitter-api-sdk";
-
 export const AppContainer = (App: FC) =>
   withServices(function Callback(props) {
     const {
@@ -19,19 +17,8 @@ export const AppContainer = (App: FC) =>
     const dispatch = useDispatch();
 
     useEffect(() => {
-      /* const authClient = new auth.OAuth2User({
-        client_id: "Nh4xMtJqBHGTuQRTVOyCPNyNi",
-        callback: "http://127.0.0.1:3000/",
-        scopes: ["tweet.read", "users.read", "offline.access"],
-      });
-
-     // const client = new Client(authClient);
-
-      console.log(client, "client");*/
-    }, []);
-
-    useEffect(() => {
       dispatch(toggleInit(true));
+
       Promise.all([
         (async () => {
           const res = await api.getData();
@@ -43,11 +30,28 @@ export const AppContainer = (App: FC) =>
           if (telegramUser) {
             const verified = await api.verifyTelegramData(telegramUser);
             verified && dispatch(setTelegramUser({ telegramUser }));
+
+            const params = new URLSearchParams(
+              location.search.replace("?", "")
+            );
+            const twitterParam = params.get("twitterCred");
+            if (twitterParam) {
+              const cred = JSON.parse(twitterParam);
+              console.log(cred, "cred");
+            }
           }
         })(),
-      ]).then(() => {
-        dispatch(toggleInit(false));
-      });
+      ])
+        .then(() => {
+          dispatch(toggleInit(false));
+        })
+        .catch((e: any) => {
+          console.log(e, "in AppContainer");
+          dispatch(toggleInit(false));
+        });
+
+      //const params = new URLSearchParams(location.search.replace("?", ""));
+      //const verifier = params.get("oauth_verifier");
     }, []);
 
     return <App />;
