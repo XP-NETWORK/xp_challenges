@@ -10,6 +10,8 @@ import { AchievementsUpdateEvent } from "store/types";
 
 import { IUserAchievments } from "store/models/user";
 
+import {} from "../../store/models/user";
+
 export type ProfileProps = {
   achievments: IUserAchievments[];
   completedAmout: number;
@@ -48,17 +50,6 @@ const Container = (Profile: FC<ProfileProps>) =>
           setLoading(false);
         });
       }
-
-      false &&
-        setTimeout(() => {
-          dispatch(
-            updateProgress({
-              projectNumber: 1,
-              currentProgressNumber: 4,
-              achievments: [3],
-            })
-          );
-        }, 5000);
     }, [userData, telegramUser]);
 
     useEffect(() => {
@@ -67,6 +58,15 @@ const Container = (Profile: FC<ProfileProps>) =>
         return () => socketWrapper.mute(telegramUser.username, eventHandler);
       }
     }, [telegramUser]);
+
+    useEffect(() => {
+      const params = new URLSearchParams(location.search.replace("?", ""));
+      const twitterParam = params.get("twitterCred");
+      if (twitterParam) {
+        const cred = JSON.parse(twitterParam).data;
+        console.log(cred, "cred");
+      }
+    }, []);
 
     const achievments =
       userData?.projectParticipations?.find(

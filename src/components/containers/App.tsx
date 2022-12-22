@@ -30,15 +30,6 @@ export const AppContainer = (App: FC) =>
           if (telegramUser) {
             const verified = await api.verifyTelegramData(telegramUser);
             verified && dispatch(setTelegramUser({ telegramUser }));
-
-            const params = new URLSearchParams(
-              location.search.replace("?", "")
-            );
-            const twitterParam = params.get("twitterCred");
-            if (twitterParam) {
-              const cred = JSON.parse(twitterParam);
-              console.log(cred, "cred");
-            }
           }
         })(),
       ])
