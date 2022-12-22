@@ -19,6 +19,12 @@ export enum AchivType {
   Bridge = "Bridge Interaction",
 }
 
+export enum ActionType {
+  Telegram = "Telegram Community",
+  Twitter = "Twitter Community",
+  Bridge = "Bridge Interaction",
+}
+
 export type TelegramUser = {
   auth_date: bigint;
   first_name: string;

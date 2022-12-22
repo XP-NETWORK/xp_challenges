@@ -14,7 +14,7 @@ export type GlobalState = {
   userData: UserData | undefined;
   init: boolean;
   currentProject: number;
-  justCompleted: number | undefined;
+  justCompleted: number[];
 };
 
 const mock = true && {
@@ -34,7 +34,7 @@ export const initialState: GlobalState = {
   userData: undefined,
   init: false,
   currentProject: 1,
-  justCompleted: undefined,
+  justCompleted: [],
 };
 
 interface ALoadData extends Action {
@@ -63,6 +63,10 @@ interface AUpdateProgress extends Action {
   payload: AchievementsUpdateEvent;
 }
 
+interface AJustCompleted extends Action {
+  payload: number[];
+}
+
 export const global = createSlice({
   name: "global",
   initialState,
@@ -75,6 +79,9 @@ export const global = createSlice({
     },
     setUserData: (state: GlobalState, action: ALoadUserData) => {
       state.userData = action.payload.userData;
+    },
+    setJustCompleted: (state: GlobalState, action: AJustCompleted) => {
+      state.justCompleted = action.payload;
     },
     updateProgress: (state: GlobalState, action: AUpdateProgress) => {
       const { achievements } = state;
@@ -100,15 +107,12 @@ export const global = createSlice({
 
           achievement.progressNumber = payload.currentProgressNumber;
           if (currentStatus !== achievement.completed) {
-            state.justCompleted = achievements.findIndex(
-              (a) => a.achievmentNumber === achievement.achievmentNumber
-            );
-            console.log(
+            state.justCompleted = [
+              ...state.justCompleted,
               achievements.findIndex(
                 (a) => a.achievmentNumber === achievement.achievmentNumber
               ),
-              "index"
-            );
+            ];
           }
           achievement.completed = currentStatus;
         }
@@ -128,4 +132,5 @@ export const {
   toggleInit,
   setUserData,
   updateProgress,
+  setJustCompleted,
 } = global.actions;

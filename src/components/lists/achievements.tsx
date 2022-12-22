@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { ReduxState } from "store";
 
 import { AchivType } from "store/types";
 
 import tgAchiv from "../../assets/img/icons/tgAchiv.svg";
+import twitAchiv from "../../assets/img/icons/twiter_mockup copy 1 (1).png";
+import bridgeAchiv from "../../assets/img/icons/xpicon.svg";
 
 import frame from "../../assets/img/icons/achivFrame.svg";
 
@@ -14,9 +16,14 @@ import { IUserAchievments } from "store/models/user";
 
 import ProgressBar from "components/elements/ProgressBar";
 
+import { setJustCompleted } from "../../store/reducer/global";
+
 import person from "../../assets/img/icons/AchivPerson.svg";
 import personCompleted from "../../assets/img/icons/Group 3324.svg";
 import plus from "../../assets/img/icons/+.svg";
+
+import nftIcon from "../../assets/img/icons/nftIcon.svg";
+import nftIconCompleted from "../../assets/img/icons/completedNftIcon.svg";
 
 type AchievementsProps = {
   userAchievements?: IUserAchievments[];
@@ -24,8 +31,20 @@ type AchievementsProps = {
 
 const achievementsPics = {
   [AchivType.Telegram]: tgAchiv,
-  [AchivType.Twitter]: tgAchiv,
-  [AchivType.Bridge]: tgAchiv,
+  [AchivType.Twitter]: twitAchiv,
+  [AchivType.Bridge]: bridgeAchiv,
+};
+
+type actionTypesImagesType = {
+  Invite: string[];
+  Send: string[];
+  Transfer: string[];
+};
+
+const actionTypesImages: actionTypesImagesType = {
+  Invite: [person, personCompleted],
+  Send: [person, personCompleted],
+  Transfer: [nftIcon, nftIconCompleted],
 };
 
 const achievementsBtns = {
@@ -46,27 +65,19 @@ function Achievements({ userAchievements }: AchievementsProps) {
     justCompleted: state.global.justCompleted,
   }));
 
+  const dispatch = useDispatch();
+
   console.log(justCompleted, "justCompleted");
 
   useEffect(() => {
-    //const completed = userAchievements?.filter((a) => a.completed) || [];
-    /*for (const achiv of completed) {
-      const prev = trailingCopy.find(
-        (a) => a.achievmentNumber === achiv.achievmentNumber
-      );
-      if (prev?.completed !== achiv.completed) {
-        console.log("we have a winner");
-        console.log(prev);
-        console.log(achiv);
-        const idx = userAchievements?.findIndex(
-          (a) => a.achievmentNumber === achiv.achievmentNumber
-        );
-        console.log(idx, "idx");
-        setCompleted(idx);
-      }
-    }*/
-    //userAchievements && setCopy(userAchievements);
-  }, [userAchievements]);
+    if (justCompleted.length) {
+      setTimeout(() => {
+        const completed = [...justCompleted];
+        completed.pop();
+        dispatch(setJustCompleted(completed));
+      }, 3000);
+    }
+  }, [justCompleted]);
 
   return (
     <div className="achievements">
@@ -76,7 +87,10 @@ function Achievements({ userAchievements }: AchievementsProps) {
       <div className="container">
         <div className="row">
           {achievements.map(
-            ({ achievmentNumber, description, name, progressBarLength }) => {
+            (
+              { achievmentNumber, description, name, progressBarLength },
+              index
+            ) => {
               const userProgress = userAchievements?.find(
                 (a) => a.achievmentNumber === achievmentNumber
               );
@@ -89,30 +103,50 @@ function Achievements({ userAchievements }: AchievementsProps) {
                   <div className="achivCard flexCol">
                     <div
                       className={`successOverlay ${
-                        justCompleted !== undefined ? "active" : ""
+                        justCompleted.includes(index) ? "active" : ""
                       }`}
-                    ></div>
+                    >
+                      <span>Completed</span>
+                    </div>
                     <img src={frame} alt="frame" className="frame" />
                     <div className="proggress">
-                      <img src={achievementsPics[name]} alt="achivPic" />
+                      <img
+                        src={achievementsPics[name]}
+                        alt="achivPic"
+                        className="achivCard-pic"
+                      />
                       <img src={plus} alt="plus" className="plusPic" />
                       <ul>
                         {Array(progressBarLength)
                           .fill(true)
-                          .map((_, idx) => (
-                            <li key={`achivCard-${achievmentNumber}-${idx}`}>
-                              <img
-                                src={
-                                  userProgress
-                                    ? idx < userProgress.progressNumber
-                                      ? personCompleted
-                                      : person
-                                    : personCompleted
-                                }
-                                alt={`manSilute-${achievmentNumber}-${idx}`}
-                              />
-                            </li>
-                          ))}
+                          .map((_, idx) => {
+                            const setKey =
+                              Object.keys(actionTypesImages).find((key) =>
+                                description.includes(key)
+                              ) || "Invite";
+                            const imageSet =
+                              actionTypesImages[
+                                setKey as keyof actionTypesImagesType
+                              ];
+
+                            return (
+                              <li
+                                className="flexRow"
+                                key={`achivCard-${achievmentNumber}-${idx}`}
+                              >
+                                <img
+                                  src={
+                                    userProgress
+                                      ? idx < userProgress.progressNumber
+                                        ? imageSet[1]
+                                        : imageSet[0]
+                                      : imageSet[1]
+                                  }
+                                  alt={`manSilute-${achievmentNumber}-${idx}`}
+                                />
+                              </li>
+                            );
+                          })}
                       </ul>
                     </div>
                     <ProgressBar

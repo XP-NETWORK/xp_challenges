@@ -233,6 +233,7 @@ header button {
 
 .proggress ul li img {
   width: 24px;
+  height: 30px;
   margin-right: 4px;
 }
 
@@ -262,7 +263,7 @@ img.frame {
   display: block;
   position: absolute;
   left: 0;
-  z-index: 12;
+  z-index: 70;
   top: 0;
   width: 100%;
   height: 100%;
@@ -611,4 +612,51 @@ body.showModal header .menu {
   top: 0;
   left: 0;
   height: 100%;
+}
+
+.successOverlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(14, 14, 17, 0.5);
+  z-index: 55;
+  transition: all 0.3s ease;
+}
+
+.successOverlay.active {
+  display: block;
+}
+
+.successOverlay span {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--green);
+  text-shadow: 0px 0.875963px 1.75193px rgba(0, 0, 0, 0.05);
+  font-size: 24px;
+  font-family: kanit;
+  text-transform: uppercase;
+}
+
+.successOverlay::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(../img/icons/success\ illustration.svg) no-repeat;
+  background-size: 40%;
+  background-position: 50% 30%;
+  z-index: 65;
+}
+
+.achivCard-pic {
+  width: 52px;
 }
