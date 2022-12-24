@@ -4,69 +4,23 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { ReduxState } from "store";
 
-import { AchivType } from "store/types";
 
-import tgAchiv from "../../assets/img/icons/tgAchiv.svg";
-import twitAchiv from "../../assets/img/icons/twiter_mockup copy 1 (1).png";
-import bridgeAchiv from "../../assets/img/icons/xpicon.svg";
+import frame from "../../../assets/img/icons/achivFrame.svg";
 
-import frame from "../../assets/img/icons/achivFrame.svg";
 
-import { IUserAchievments } from "store/models/user";
 
 import ProgressBar from "components/elements/ProgressBar";
 
-import { setJustCompleted } from "../../store/reducer/global";
+import { setJustCompleted } from "../../../store/reducer/global";
 
-import person from "../../assets/img/icons/AchivPerson.svg";
-import personCompleted from "../../assets/img/icons/Group 3324.svg";
-import plus from "../../assets/img/icons/+.svg";
 
-import nftIcon from "../../assets/img/icons/nftIcon.svg";
-import nftIconCompleted from "../../assets/img/icons/completedNftIcon.svg";
+import plus from "../../../assets/img/icons/+.svg";
 
-type AchievementsProps = {
-  userAchievements?: IUserAchievments[];
-};
+import {AchievementsProps, achievementsBtns, achievementsHandlers, achievementsPics, actionTypesImages, actionTypesImagesType} from './consts'
 
-const achievementsPics = {
-  [AchivType.Telegram]: tgAchiv,
-  [AchivType.Twitter]: twitAchiv,
-  [AchivType.Bridge]: bridgeAchiv,
-};
+function Achievements({ userAchievements, userData }: AchievementsProps) {
 
-type actionTypesImagesType = {
-  Invite: string[];
-  Send: string[];
-  Transfer: string[];
-};
 
-const actionTypesImages: actionTypesImagesType = {
-  Invite: [person, personCompleted],
-  Send: [person, personCompleted],
-  Transfer: [nftIcon, nftIconCompleted],
-};
-
-const achievementsBtns = {
-  [AchivType.Telegram]: "go to telegram",
-  [AchivType.Twitter]: "go to twitter",
-  [AchivType.Bridge]: "go to bridge",
-};
-
-const achievementsHandlers = {
-  [AchivType.Telegram]: () => false,
-  [AchivType.Twitter]: () => {
-    window.open("http://localhost:3100/twitterLogin");
-  },
-  [AchivType.Bridge]: () => false,
-};
-
-function Achievements({ userAchievements }: AchievementsProps) {
-  console.log(userAchievements, "userAchievements");
-  //const [justCompleted, setCompleted] = useState<number | undefined>(undefined);
-  //const [trailingCopy, setCopy] = useState<IUserAchievments[]>([]);
-
-  //all achievements
   const { achievements, justCompleted } = useSelector((state: ReduxState) => ({
     achievements: state.global.achievements,
     userData: state.global.userData,
@@ -94,7 +48,7 @@ function Achievements({ userAchievements }: AchievementsProps) {
         <div className="row">
           {achievements.map(
             (
-              { achievmentNumber, description, name, progressBarLength },
+              { achievmentNumber, description, name, progressBarLength ,link },
               index
             ) => {
               const userProgress = userAchievements?.find(
@@ -171,7 +125,7 @@ function Achievements({ userAchievements }: AchievementsProps) {
                       onClick={
                         userProgress?.completed
                           ? () => false
-                          : achievementsHandlers[name]
+                          : achievementsHandlers[name](userData, link)
                       }
                       className={`secondary ${
                         userProgress?.completed ? "completed" : ""

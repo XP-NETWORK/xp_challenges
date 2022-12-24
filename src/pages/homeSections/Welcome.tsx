@@ -5,7 +5,7 @@ import challangeTm3 from "../../assets/img/challangeTm3.png";
 import { ReactComponent as TelegramWhite } from "../../assets/img/icons/tgWhite.svg";
 
 import NFTList from "../../components/lists/Nfts";
-import Achievements from "../../components/lists/achievements";
+import Achievements from "../../components/lists/achievments/achievements";
 const Welcome = () => {
   return (
     <main>

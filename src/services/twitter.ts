@@ -1,13 +1,17 @@
-type TwitterUser = {
-  id: number;
+
+
+import { UserData } from "store/models/user";
+
+export type TwitterUser = {
+  id: string;
   name: string;
-  username: string;
-};
+  username: string
+}
 
 class Twitter {
-  user: TwitterUser;
+  user: UserData;
 
-  constructor(user: TwitterUser) {
+  constructor(user: UserData) {
     this.user = user;
   }
 
@@ -16,5 +20,5 @@ class Twitter {
     }*/
 }
 
-export default (user: TwitterUser) => new Twitter(user);
+export default (user: UserData) => new Twitter(user);
 export type { Twitter };

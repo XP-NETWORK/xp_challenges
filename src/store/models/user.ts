@@ -1,3 +1,4 @@
+
 import { TelegramUser, SignupState } from "store/types";
 
 export type IUserAchievments = {
@@ -32,8 +33,12 @@ export interface UserData {
 class User {
   data: UserData;
 
-  constructor(telegramUser: TelegramUser, state: SignupState) {
-    this.data = {
+  constructor(user: UserData) {
+    this.data = user
+  }
+
+  static getObject(telegramUser: TelegramUser, state: SignupState) {
+    return {
       telegramUsername: telegramUser.username,
       telegramFirstName: telegramUser.first_name,
       telegramLastName: telegramUser.last_name,
@@ -43,10 +48,10 @@ class User {
       telegramPhotoUrl: telegramUser.photo_url,
       email: state.email,
       newsletter: state.newsletter,
-    };
+    }
   }
 }
 
-export default (user: TelegramUser, state: SignupState) =>
-  new User(user, state);
-export type { User };
+export default (user: UserData) =>
+  new User(user);
+export { User };

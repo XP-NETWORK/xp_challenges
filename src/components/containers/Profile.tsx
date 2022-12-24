@@ -8,11 +8,14 @@ import { setUserData, updateProgress } from "store/reducer/global";
 
 import { AchievementsUpdateEvent } from "store/types";
 
-import { IUserAchievments } from "store/models/user";
+import { IUserAchievments, UserData } from "store/models/user";
 
-import {} from "../../store/models/user";
+import { TwitterUser } from "services/twitter";
+
+//import userFabric from "store/models/user";
 
 export type ProfileProps = {
+  userData: UserData | undefined;
   achievments: IUserAchievments[];
   completedAmout: number;
 };
@@ -42,11 +45,23 @@ const Container = (Profile: FC<ProfileProps>) =>
       if (telegramUser && !userData) {
         setLoading(true);
         api.getUser(telegramUser?.username).then((res) => {
-          dispatch(
-            setUserData({
-              userData: res?.data,
-            })
-          );
+          let userData = res?.data
+        
+            const twitterParam = new URLSearchParams(location.search.replace("?", "")).get("twitterCred");
+            if (twitterParam) {
+              const cred = JSON.parse(twitterParam).data as TwitterUser;
+              userData = {
+                ...userData,
+                twitterAcountId: cred.id,
+                twitterUserName: cred.username
+              }
+    
+
+             //api.updateUser(userFabric(user))
+            }
+          
+
+          dispatch(setUserData({userData}))
           setLoading(false);
         });
       }
@@ -57,17 +72,10 @@ const Container = (Profile: FC<ProfileProps>) =>
         socketWrapper.listen(telegramUser.username, eventHandler);
         return () => socketWrapper.mute(telegramUser.username, eventHandler);
       }
+
     }, [telegramUser]);
 
-    useEffect(() => {
-      const params = new URLSearchParams(location.search.replace("?", ""));
-      const twitterParam = params.get("twitterCred");
-      if (twitterParam) {
-        const cred = JSON.parse(twitterParam).data;
-        console.log(cred, "cred");
-      }
-    }, []);
-
+  
     const achievments =
       userData?.projectParticipations?.find(
         (p) => p.projectNumber === currentProject
@@ -81,7 +89,7 @@ const Container = (Profile: FC<ProfileProps>) =>
     return loading ? (
       <div className="loader"></div>
     ) : (
-      <Profile achievments={achievments} completedAmout={completedAmout} />
+      <Profile userData={userData} achievments={achievments} completedAmout={completedAmout} />
     );
   });
 

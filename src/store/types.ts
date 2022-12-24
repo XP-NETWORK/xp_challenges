@@ -11,6 +11,7 @@ export interface IACHIEVMENT {
   description: string;
   progressBarLength: number;
   rewardAmount: number;
+  link?: string
 }
 
 export enum AchivType {

@@ -17,7 +17,7 @@ class Api {
     try {
       return await axios.get(
         this.base +
-          `/getByTelegramUsername?telegramUsername=${encodeURIComponent(name)}`
+        `/getByTelegramUsername?telegramUsername=${encodeURIComponent(name)}`
       );
     } catch (e) {
       console.log(e, "in getUser");
@@ -40,6 +40,24 @@ class Api {
     } catch (e) {
       console.log(e, "e in user");
       return undefined;
+    }
+  }
+
+  async updateUser(user: User) {
+    try {
+      return await axios.patch(this.base + "/updateUser", user.data);
+    } catch (e: any) {
+      console.log(e, 'in updateUser');
+    }
+  }
+
+  async updateWallet(user: User, wallet: {
+    chain: string; address: string
+  }) {
+    try {
+      return await axios.patch(this.base + `/updateUser?user=${user.data.telegramUsername}&wallet=${wallet.address}&chain=${wallet.chain}`);
+    } catch (e) {
+      console.log(e, 'in updateWallet')
     }
   }
 }

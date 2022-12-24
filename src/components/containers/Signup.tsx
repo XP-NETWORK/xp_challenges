@@ -4,7 +4,7 @@ import { SignupState, SignupValidation, TelegramUser } from "../../store/types";
 
 import { useSelector } from "react-redux";
 import { ReduxState } from "../../store";
-import userFabric from "store/models/user";
+import userFabric, {User} from "store/models/user";
 import { useNavigate } from "react-router";
 
 import { withServices, ServiceContainer } from "hocs/withServices";
@@ -79,8 +79,7 @@ function Container(SignUp: React.FC<SignUpProps>) {
         ) &&
         telegramUser
       ) {
-        const user = userFabric(telegramUser, state);
-
+        const user = userFabric(User.getObject(telegramUser, state));
         const result = await api.signup(user);
 
         if (result) {
