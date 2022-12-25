@@ -5,9 +5,10 @@ import {
   TelegramUser,
   AchievementsUpdateEvent,
   IModal,
+  IPROJECT,
 } from "store/types";
 
-import { UserData } from "store/models/user";
+import { UserData, IWallet } from "store/models/user";
 
 export type GlobalState = {
   achievements: IACHIEVMENT[];
@@ -17,6 +18,8 @@ export type GlobalState = {
   currentProject: number;
   justCompleted: number[];
   modal: IModal | undefined;
+  project: IPROJECT | undefined;
+  wallet: IWallet | undefined;
 };
 
 const mock = undefined && {
@@ -31,6 +34,7 @@ const mock = undefined && {
 };
 
 export const initialState: GlobalState = {
+  project: undefined,
   achievements: [],
   telegramUser: mock,
   userData: undefined,
@@ -38,11 +42,18 @@ export const initialState: GlobalState = {
   currentProject: 1,
   justCompleted: [],
   modal: undefined,
+  wallet: undefined,
 };
 
 interface ALoadData extends Action {
   payload: {
     achievements: IACHIEVMENT[];
+  };
+}
+
+interface ALoadProject extends Action {
+  payload: {
+    project: IPROJECT;
   };
 }
 
@@ -74,10 +85,17 @@ interface AModal extends Action {
   payload: IModal | undefined;
 }
 
+interface ASetWallet extends Action {
+  payload: IWallet | undefined;
+}
+
 export const global = createSlice({
   name: "global",
   initialState,
   reducers: {
+    setProject: (state: GlobalState, action: ALoadProject) => {
+      state.project = action.payload.project;
+    },
     setAchievements: (state: GlobalState, action: ALoadData) => {
       state.achievements = action.payload.achievements;
     },
@@ -93,7 +111,9 @@ export const global = createSlice({
     updateProgress: (state: GlobalState, action: AUpdateProgress) => {
       const { achievements } = state;
       const { payload } = action;
-      for (const progressIndex of payload.achievments) {
+
+      for (let i = 0; i < payload.achievments.length; i++) {
+        const progressIndex = payload.achievments[i];
         const achievementData = achievements.find(
           (a) => a.achievmentNumber === progressIndex
         );
@@ -105,14 +125,21 @@ export const global = createSlice({
         const achievement = project?.achievments.find(
           (a) => a.achievmentNumber === progressIndex
         );
-        console.log(achievement);
-        console.log(achievementData, "achievementData");
+
         console.log(payload, "payload");
         if (achievement && achievementData) {
-          const currentStatus =
-            payload.currentProgressNumber >= achievementData?.progressBarLength;
+          let currentStatus: boolean;
+          if (payload.currentProgressNumber.length && payload.completed) {
+            currentStatus = payload.completed[i];
+            achievement.progressNumber = payload.currentProgressNumber[i];
+          } else {
+            currentStatus =
+              payload.currentProgressNumber >=
+              achievementData?.progressBarLength;
 
-          achievement.progressNumber = payload.currentProgressNumber;
+            achievement.progressNumber = payload.currentProgressNumber;
+          }
+
           if (currentStatus !== achievement.completed) {
             state.justCompleted = [
               ...state.justCompleted,
@@ -133,10 +160,14 @@ export const global = createSlice({
     setModal: (state: GlobalState, action: AModal) => {
       state.modal = action.payload;
     },
+    setWallet: (state: GlobalState, action: ASetWallet) => {
+      state.wallet = action.payload;
+    },
   },
 });
 
 export const {
+  setProject,
   setAchievements,
   setTelegramUser,
   toggleInit,
@@ -144,4 +175,5 @@ export const {
   updateProgress,
   setJustCompleted,
   setModal,
+  setWallet,
 } = global.actions;

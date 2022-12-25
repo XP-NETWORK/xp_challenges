@@ -4,6 +4,8 @@ import {
     ExtensionProvider,
 } from "@elrondnetwork/erdjs";
 
+import {chainName} from '../mockData'
+
 declare global {
     interface Window { ethereum: any; }
 }
@@ -14,12 +16,14 @@ window.ethereum = window.ethereum || {};
 class Wallet {
 
 
-    async connectMetamask() {
+    async connectMetamask():Promise<{address:string; chain: string} | undefined> {
         if (!window.ethereum) {
             alert('You have to intall MetaMask browser extension')
             return
         }
-        await window.ethereum.request({
+
+
+         await window.ethereum.request({
             method: "wallet_requestPermissions",
             params: [
                 {
@@ -27,8 +31,14 @@ class Wallet {
                 },
             ],
         });
-        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-        return accounts[0]
+
+        const [currentChain, accounts] = await Promise.all([window.ethereum.request({ method: 'eth_chainId' }), window.ethereum.request({ method: 'eth_requestAccounts' })])
+      
+
+        return {
+            address: accounts[0],
+            chain: chainName.find(c => c.chainId === Number(currentChain))?.name || ''
+        }
 
     }
 
@@ -42,11 +52,10 @@ class Wallet {
             account: { address },
         } = instance;
 
-        /* if (account?.name === "CanceledError") {
-           throw new Error("CanceledError");
-         }*/
-
-        console.log(address);
+        return {
+            address,
+            chain: chainName.find(c => c.chainId === 2)?.name || ''
+        }
     }
 
 }

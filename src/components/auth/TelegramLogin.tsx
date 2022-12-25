@@ -13,6 +13,8 @@ import { withServices, ServiceContainer } from "hocs/withServices";
 
 import { useNavigate } from "react-router-dom";
 
+import UserWallet from "../auth/UserWallet";
+
 interface TelegramLoginProps {
   serviceContainer: ServiceContainer;
   vert?: boolean;
@@ -23,8 +25,9 @@ function TelegramLogin(props: TelegramLoginProps) {
     serviceContainer: { telegram: telegramService, api },
     vert = false,
   } = props;
-  const { telegramUser } = useSelector((state: ReduxState) => ({
+  const { telegramUser, userData } = useSelector((state: ReduxState) => ({
     telegramUser: state.global.telegramUser,
+    userData: state.global.userData,
   }));
   const [scriptLoaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -99,6 +102,11 @@ function TelegramLogin(props: TelegramLoginProps) {
         </>
       )}
       <UserAccount telegramUser={telegramUser} />
+      {userData?.wallets?.length ? (
+        <UserWallet wallets={userData.wallets} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

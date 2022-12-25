@@ -5,6 +5,19 @@ export enum CardType {
   Conjured = "Conjured",
 }
 
+export interface IPROJECT {
+  projectNumber: number;
+  name: string;
+  description: string;
+  collectionChain: string;
+  collectionAddress: string;
+  startDate: string;
+  endDate: string;
+  twitterPostId: string;
+  twitterPartnerId: string;
+  currentProject: boolean;
+}
+
 export interface IACHIEVMENT {
   achievmentNumber: number;
   name: AchivType;
@@ -64,7 +77,8 @@ export type SignupValidation = {
 export type AchievementsUpdateEvent = {
   projectNumber: number;
   achievments: number[];
-  currentProgressNumber: number;
+  currentProgressNumber: number & number[];
+  completed?: boolean[];
 };
 
 export type IModal = {

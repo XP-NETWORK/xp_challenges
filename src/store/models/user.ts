@@ -1,4 +1,3 @@
-
 import { TelegramUser, SignupState } from "store/types";
 
 export type IUserAchievments = {
@@ -6,6 +5,11 @@ export type IUserAchievments = {
   progressNumber: number;
   completed: boolean;
   rewardCollected: boolean;
+};
+
+export type IWallet = {
+  chain: string;
+  address: string;
 };
 
 export interface UserData {
@@ -20,10 +24,7 @@ export interface UserData {
   telrgramAuthDate?: string;
   telegramHash?: string;
   newsletter?: boolean;
-  wallets?: {
-    chain: string;
-    address: string;
-  }[];
+  wallets?: IWallet[];
   projectParticipations?: {
     projectNumber: number;
     achievments: IUserAchievments[];
@@ -34,10 +35,14 @@ class User {
   data: UserData;
 
   constructor(user: UserData) {
-    this.data = user
+    this.data = user;
   }
 
-  static getObject(telegramUser: TelegramUser, state: SignupState) {
+  static getObject(
+    telegramUser: TelegramUser,
+    state: SignupState,
+    wallet?: IWallet
+  ): UserData {
     return {
       telegramUsername: telegramUser.username,
       telegramFirstName: telegramUser.first_name,
@@ -48,10 +53,10 @@ class User {
       telegramPhotoUrl: telegramUser.photo_url,
       email: state.email,
       newsletter: state.newsletter,
-    }
+      ...(wallet ? { wallets: [wallet] } : {}),
+    };
   }
 }
 
-export default (user: UserData) =>
-  new User(user);
+export default (user: UserData) => new User(user);
 export { User };

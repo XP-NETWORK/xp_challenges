@@ -22,7 +22,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
       break;
     }
     case "WalletList": {
-      body = <WalletList />;
+      body = <WalletList close={() => dispatch(setModal(undefined))} />;
       break;
     }
 

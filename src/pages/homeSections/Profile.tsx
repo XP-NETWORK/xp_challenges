@@ -16,7 +16,7 @@ const Profile = ({ achievments, completedAmout, userData }: ProfileProps) => {
         <div className="achivementBar">
           <ProgressBar current={completedAmout} total={achievments.length} />
         </div>
-        <Achievements userAchievements={achievments} userData={userData}/>
+        <Achievements userAchievements={achievments} userData={userData} />
       </div>
     </main>
   );

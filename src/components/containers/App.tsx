@@ -8,6 +8,7 @@ import {
   setTelegramUser,
   toggleInit,
   setModal,
+  setProject,
 } from "store/reducer/global";
 
 export const AppContainer = (App: FC) =>
@@ -23,7 +24,8 @@ export const AppContainer = (App: FC) =>
       Promise.all([
         (async () => {
           const res = await api.getData();
-          dispatch(setAchievements({ achievements: res.data }));
+          dispatch(setAchievements({ achievements: res.achievements }));
+          dispatch(setProject({ project: res.project }));
         })(),
         (async () => {
           const telegramUser = telegram.getUser();

@@ -10,7 +10,14 @@ class Api {
   }
 
   async getData() {
-    return await axios.get(this.base + "/getAllAchievments");
+    const [achievements, project] =  await Promise.all([
+      (await axios.get(this.base + "/getAllAchievments")).data,
+      (await axios.get(this.base + "/getCurrentProject")).data,
+    ])
+    return {
+      achievements,
+      project
+    }
   }
 
   async getUser(name: string) {

@@ -7,7 +7,16 @@ import { Link } from "react-router-dom";
 
 import { SignUpProps } from "../components/containers/Signup";
 
-const Signup = ({ state, validation, signup, formHandler }: SignUpProps) => {
+import UserWallet from "components/auth/UserWallet";
+
+const Signup = ({
+  state,
+  validation,
+  signup,
+  formHandler,
+  connectHandler,
+  wallet,
+}: SignUpProps) => {
   const { email, newsletter, privatePolicy } = state;
 
   return (
@@ -77,7 +86,15 @@ const Signup = ({ state, validation, signup, formHandler }: SignUpProps) => {
               </div>
             </div>
 
-            <button className="accent">Connect Wallet</button>
+            <div className="walletContainer">
+              {wallet ? (
+                <UserWallet wallets={[wallet]} />
+              ) : (
+                <button className="accent" onClick={connectHandler}>
+                  Connect Wallet
+                </button>
+              )}
+            </div>
             <button className="secondary" onClick={signup}>
               Create Account
             </button>

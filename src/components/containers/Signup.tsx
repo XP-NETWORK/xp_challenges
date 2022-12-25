@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import { SignupState, SignupValidation, TelegramUser } from "../../store/types";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { ReduxState } from "../../store";
-import userFabric, {User} from "store/models/user";
+import userFabric, { IWallet, User } from "store/models/user";
 import { useNavigate } from "react-router";
 
 import { withServices, ServiceContainer } from "hocs/withServices";
+import { setModal } from "store/reducer/global";
 
 const initState: SignupState = {
   telegram: undefined,
@@ -42,6 +43,8 @@ export type SignUpProps = {
   state: SignupState;
   validation: SignupValidation;
   formHandler: (value: any, key: keyof SignupState) => void;
+  connectHandler: () => void;
+  wallet: IWallet | undefined;
 };
 
 type ContainerProps = {
@@ -53,9 +56,12 @@ function Container(SignUp: React.FC<SignUpProps>) {
     const {
       serviceContainer: { api },
     } = props;
-    const { telegramUser } = useSelector((state: ReduxState) => ({
+    const { telegramUser, wallet } = useSelector((state: ReduxState) => ({
       telegramUser: state.global.telegramUser,
+      wallet: state.global.wallet,
     }));
+
+    const dispatch = useDispatch();
 
     const [state, setState] = useState(initState);
     const [validation, setValidation] = useState(initValid);
@@ -79,7 +85,7 @@ function Container(SignUp: React.FC<SignUpProps>) {
         ) &&
         telegramUser
       ) {
-        const user = userFabric(User.getObject(telegramUser, state));
+        const user = userFabric(User.getObject(telegramUser, state, wallet));
         const result = await api.signup(user);
 
         if (result) {
@@ -141,10 +147,19 @@ function Container(SignUp: React.FC<SignUpProps>) {
     return (
       <SignUp
         telegramUser={telegramUser}
+        wallet={wallet}
         formHandler={formHandler}
         signup={createAccountHandler}
         state={state}
         validation={validation}
+        connectHandler={() =>
+          dispatch(
+            setModal({
+              type: "WalletList",
+              text: "Connect your Wallet",
+            })
+          )
+        }
       />
     );
   }
