@@ -243,3 +243,48 @@ input[type="checkbox"] {
 button.completed {
   color: var(--green);
 }
+
+.small-modal {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 60px;
+  z-index: 1000;
+  box-shadow: 0px 4px 20px var(--accent);
+  border-radius: 3px;
+  background: rgb(27, 27, 27);
+  width: 500px;
+}
+.modal-header {
+  position: relative;
+  text-align: center;
+}
+
+.small-modal > img {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.modal-body ul li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 7px 0;
+  padding: 6px;
+  background: rgb(53, 52, 52);
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+.modal-body ul li:hover {
+  background: var(--accent);
+}
+
+.modal-body ul li img {
+  width: 50px;
+  margin-right: 15px;
+}

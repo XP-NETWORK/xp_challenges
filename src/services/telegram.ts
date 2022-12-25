@@ -42,15 +42,17 @@ class TelegramService {
         const userData = JSON.parse(user);
         return this.verify(userData);
       } catch (e) {
+        console.log(e, "e");
         return undefined;
       }
     }
   }
 
   storeUser(user: TelegramUser) {
-    if (!localStorage.getItem(this.storageKey)) {
-      localStorage.setItem(this.storageKey, JSON.stringify(user));
+    if (localStorage.getItem(this.storageKey)) {
+      localStorage.removeItem(this.storageKey);
     }
+    localStorage.setItem(this.storageKey, JSON.stringify(user));
   }
 
   verify(user: TelegramUser) {

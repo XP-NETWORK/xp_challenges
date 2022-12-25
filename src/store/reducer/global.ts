@@ -4,6 +4,7 @@ import {
   IACHIEVMENT,
   TelegramUser,
   AchievementsUpdateEvent,
+  IModal,
 } from "store/types";
 
 import { UserData } from "store/models/user";
@@ -15,6 +16,7 @@ export type GlobalState = {
   init: boolean;
   currentProject: number;
   justCompleted: number[];
+  modal: IModal | undefined;
 };
 
 const mock = undefined && {
@@ -35,6 +37,7 @@ export const initialState: GlobalState = {
   init: false,
   currentProject: 1,
   justCompleted: [],
+  modal: undefined,
 };
 
 interface ALoadData extends Action {
@@ -65,6 +68,10 @@ interface AUpdateProgress extends Action {
 
 interface AJustCompleted extends Action {
   payload: number[];
+}
+
+interface AModal extends Action {
+  payload: IModal | undefined;
 }
 
 export const global = createSlice({
@@ -123,6 +130,9 @@ export const global = createSlice({
     toggleInit: (state: GlobalState, action: AToggleInit) => {
       state.init = action.payload;
     },
+    setModal: (state: GlobalState, action: AModal) => {
+      state.modal = action.payload;
+    },
   },
 });
 
@@ -133,4 +143,5 @@ export const {
   setUserData,
   updateProgress,
   setJustCompleted,
+  setModal,
 } = global.actions;

@@ -12,7 +12,7 @@ import { IUserAchievments, UserData } from "store/models/user";
 
 import { TwitterUser } from "services/twitter";
 
-//import userFabric from "store/models/user";
+import userFabric from "store/models/user";
 
 export type ProfileProps = {
   userData: UserData | undefined;
@@ -42,29 +42,34 @@ const Container = (Profile: FC<ProfileProps>) =>
     };
 
     useEffect(() => {
-      if (telegramUser && !userData) {
-        setLoading(true);
-        api.getUser(telegramUser?.username).then((res) => {
-          let userData = res?.data
-        
-            const twitterParam = new URLSearchParams(location.search.replace("?", "")).get("twitterCred");
-            if (twitterParam) {
-              const cred = JSON.parse(twitterParam).data as TwitterUser;
-              userData = {
-                ...userData,
-                twitterAcountId: cred.id,
-                twitterUserName: cred.username
-              }
-    
+      (async () => {
+        if (telegramUser && !userData) {
+          setLoading(true);
+          const user = await api.getUser(telegramUser?.username);
+          let userData = user?.data;
 
-             //api.updateUser(userFabric(user))
-            }
-          
+          const twitterParam = new URLSearchParams(
+            location.search.replace("?", "")
+          ).get("twitterCred");
 
-          dispatch(setUserData({userData}))
+          if (twitterParam) {
+            const cred = JSON.parse(twitterParam).data as TwitterUser;
+            userData = {
+              ...userData,
+              twitterAcountId: cred.id,
+              twitterUserName: cred.username,
+            };
+
+            const updated = await api.updateTwitterAccount(
+              userFabric(userData)
+            );
+            console.log(updated, "updated");
+          }
+
+          dispatch(setUserData({ userData }));
           setLoading(false);
-        });
-      }
+        }
+      })();
     }, [userData, telegramUser]);
 
     useEffect(() => {
@@ -72,10 +77,8 @@ const Container = (Profile: FC<ProfileProps>) =>
         socketWrapper.listen(telegramUser.username, eventHandler);
         return () => socketWrapper.mute(telegramUser.username, eventHandler);
       }
-
     }, [telegramUser]);
 
-  
     const achievments =
       userData?.projectParticipations?.find(
         (p) => p.projectNumber === currentProject
@@ -89,7 +92,11 @@ const Container = (Profile: FC<ProfileProps>) =>
     return loading ? (
       <div className="loader"></div>
     ) : (
-      <Profile userData={userData} achievments={achievments} completedAmout={completedAmout} />
+      <Profile
+        userData={userData}
+        achievments={achievments}
+        completedAmout={completedAmout}
+      />
     );
   });
 

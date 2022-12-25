@@ -43,9 +43,9 @@ class Api {
     }
   }
 
-  async updateUser(user: User) {
+  async updateTwitterAccount(user: User) {
     try {
-      return await axios.patch(this.base + "/updateUser", user.data);
+      return await axios.patch(this.base + `/addTwitterAccount?telegramUsername=${user.data.telegramUsername}&twitterUserName=${user.data.twitterUserName}&twitterAcountId=${user.data.twitterAcountId}`);
     } catch (e: any) {
       console.log(e, 'in updateUser');
     }
@@ -55,7 +55,7 @@ class Api {
     chain: string; address: string
   }) {
     try {
-      return await axios.patch(this.base + `/updateUser?user=${user.data.telegramUsername}&wallet=${wallet.address}&chain=${wallet.chain}`);
+      return await axios.patch(this.base + `/addWallet?telegramUsername=${user.data.telegramUsername}&address=${wallet.address}&chain=${wallet.chain}`);
     } catch (e) {
       console.log(e, 'in updateWallet')
     }

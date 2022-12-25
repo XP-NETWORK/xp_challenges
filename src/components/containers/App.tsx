@@ -7,6 +7,7 @@ import {
   setAchievements,
   setTelegramUser,
   toggleInit,
+  setModal,
 } from "store/reducer/global";
 
 export const AppContainer = (App: FC) =>
@@ -30,6 +31,14 @@ export const AppContainer = (App: FC) =>
           if (telegramUser) {
             const verified = await api.verifyTelegramData(telegramUser);
             verified && dispatch(setTelegramUser({ telegramUser }));
+          } else {
+            false &&
+              dispatch(
+                setModal({
+                  type: "TelegramAuth",
+                  text: "Your telegram session is expired, please login again",
+                })
+              );
           }
         })(),
       ])

@@ -16,7 +16,7 @@ import ImageLoader from "./services/imageLoader";
 import Api from "./services/api";
 import TelegramService from "./services/telegram";
 import socket from "services/socket";
-import wallet from 'services/wallet'
+import wallet from "services/wallet";
 
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
@@ -26,33 +26,33 @@ import "./assets/styles/main.css";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./assets/styles/media.css";
 
-
 export const config = {
-   _DEFAULT_TWITTER_LINK : 'https://twitter.com/xpnetwork_',
-   _DEFAULT_BRIDGE_LINK: 'https://bridge.xp.network',
-  _DEFAULT_TELEGRAM_LINL: '',
-  _TWITTER_AUTH: "http://localhost:3100/twitterLogin"
-}
+  _DEFAULT_TWITTER_LINK: "https://twitter.com/xpnetwork_",
+  _DEFAULT_BRIDGE_LINK: "https://bridge.xp.network",
+  _DEFAULT_TELEGRAM_LINK: "",
+  _TWITTER_AUTH: "http://localhost:3100/twitterLogin",
+};
 
 const App = () => {
   console.log(process.env.REACT_APP_TOKEN);
   const [serviceContainer, setContainer] = useState<ServiceContainer>({
     api: Api("https://xp-challenges.herokuapp.com"), //api("http://localhost:3011"), //api("https://dfiance-api.herokuapp.com"),
     imageLoader: ImageLoader(),
-    telegram: TelegramService("XpChallengeAuth12Bot"),// must /setdomain to bot
+    telegram: TelegramService("XpChallengeAuth12Bot"), // must /setdomain to bot
     socketWrapper: socket("wss://xp-challenges.herokuapp.com"),
-    wallet: wallet()
+    wallet: wallet(),
   });
 
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     serviceContainer && setLoaded(true);
-   false && window.addEventListener("keydown", (e) => {
-      if (e.key === "o") {
-        serviceContainer.wallet.connectMaiarExtension()
-      }
-    })
+    false &&
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "o") {
+          serviceContainer.wallet.connectMaiarExtension();
+        }
+      });
   }, [serviceContainer]);
 
   const router = AppContainer(Router);

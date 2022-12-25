@@ -34,7 +34,7 @@ function TelegramLogin(props: TelegramLoginProps) {
 
   useEffect(() => {
     window.__GLOBAL_VAR__ = window.__GLOBAL_VAR__ || {};
-    window.__GLOBAL_VAR__.onTelegramAuth = function (
+    window.__GLOBAL_VAR__.onTelegramAuth = function(
       telegramUser: TelegramUser
     ) {
       api.verifyTelegramData(telegramUser).then(async (res) => {

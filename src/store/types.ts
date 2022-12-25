@@ -11,7 +11,7 @@ export interface IACHIEVMENT {
   description: string;
   progressBarLength: number;
   rewardAmount: number;
-  link?: string
+  link?: string;
 }
 
 export enum AchivType {
@@ -65,4 +65,9 @@ export type AchievementsUpdateEvent = {
   projectNumber: number;
   achievments: number[];
   currentProgressNumber: number;
+};
+
+export type IModal = {
+  type: "Error" | "WalletList" | "TwitterAuth" | "TelegramAuth";
+  text?: string;
 };

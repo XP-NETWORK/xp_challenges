@@ -4,23 +4,24 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { ReduxState } from "store";
 
-
 import frame from "../../../assets/img/icons/achivFrame.svg";
-
-
 
 import ProgressBar from "components/elements/ProgressBar";
 
 import { setJustCompleted } from "../../../store/reducer/global";
 
-
 import plus from "../../../assets/img/icons/+.svg";
 
-import {AchievementsProps, achievementsBtns, achievementsHandlers, achievementsPics, actionTypesImages, actionTypesImagesType} from './consts'
+import {
+  AchievementsProps,
+  achievementsBtns,
+  achievementsHandlers,
+  achievementsPics,
+  actionTypesImages,
+  actionTypesImagesType,
+} from "./consts";
 
 function Achievements({ userAchievements, userData }: AchievementsProps) {
-
-
   const { achievements, justCompleted } = useSelector((state: ReduxState) => ({
     achievements: state.global.achievements,
     userData: state.global.userData,
@@ -48,12 +49,14 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
         <div className="row">
           {achievements.map(
             (
-              { achievmentNumber, description, name, progressBarLength ,link },
+              { achievmentNumber, description, name, progressBarLength, link },
               index
             ) => {
               const userProgress = userAchievements?.find(
                 (a) => a.achievmentNumber === achievmentNumber
               );
+
+              const completed = justCompleted.includes(index);
 
               return (
                 <div
@@ -62,9 +65,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                 >
                   <div className="achivCard flexCol">
                     <div
-                      className={`successOverlay ${
-                        justCompleted.includes(index) ? "active" : ""
-                      }`}
+                      className={`successOverlay ${completed ? "active" : ""}`}
                     >
                       <span>Completed</span>
                     </div>
@@ -121,20 +122,26 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                     />
 
                     <p>{description}</p>
-                    <button
-                      onClick={
-                        userProgress?.completed
-                          ? () => false
-                          : achievementsHandlers[name](userData, link)
-                      }
-                      className={`secondary ${
-                        userProgress?.completed ? "completed" : ""
-                      }`}
-                    >
-                      {userProgress?.completed
-                        ? "COMPLETED 🎉"
-                        : achievementsBtns[name]}
-                    </button>
+                    {!completed && (
+                      <button
+                        onClick={
+                          userProgress?.completed
+                            ? () => false
+                            : achievementsHandlers[name](
+                                userData,
+                                link,
+                                dispatch
+                              )
+                        }
+                        className={`secondary ${
+                          userProgress?.completed ? "completed" : ""
+                        }`}
+                      >
+                        {userProgress?.completed
+                          ? "COMPLETED 🎉"
+                          : achievementsBtns[name]}
+                      </button>
+                    )}
                   </div>
                 </div>
               );
