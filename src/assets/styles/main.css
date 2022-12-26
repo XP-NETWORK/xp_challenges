@@ -753,7 +753,7 @@ button.justCompleted {
 
 .leaderBoard {
   position: relative;
-  z-index: 999;
+  z-index: 2;
   padding-top: 200px;
   width: 684px;
   text-align: center;

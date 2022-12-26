@@ -48,7 +48,7 @@ const Header = () => {
         <div className="menu flexRow">
           <TelegramLogin />
           <BurgerBtn menuOpen={menuOpen} menuHandler={menuHandler} />
-          {menuOpen && <Menu />}
+          {menuOpen && <Menu close={menuHandler} />}
         </div>
       </div>
     </header>

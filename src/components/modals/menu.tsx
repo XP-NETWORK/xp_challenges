@@ -10,7 +10,7 @@ import { ReactComponent as FAQ } from "../../assets/img/icons/message-question.s
 
 import MoldalFooter from "pages/common/modalFooter";
 
-const Menu = () => {
+const Menu = ({ close }: { close: any }) => {
   return (
     <div className="menuModal customModal">
       <div className="container ">
@@ -26,7 +26,7 @@ const Menu = () => {
                         HOME
                       </li>
                     </Link>
-                    <Link to="/">
+                    <Link to="/leaderboard" onClick={() => close()}>
                       <li>
                         <Leader className="menuItemIcon" />
                         LEADERBOARD
