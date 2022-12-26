@@ -67,7 +67,6 @@ function Container(SignUp: React.FC<SignUpProps>) {
     const [validation, setValidation] = useState(initValid);
 
     const navigate = useNavigate();
-    console.log(navigate, "navigate");
 
     //handlers
     const formHandler = (value: any, key: keyof SignupState) =>
@@ -89,7 +88,6 @@ function Container(SignUp: React.FC<SignUpProps>) {
         const result = await api.signup(user);
 
         if (result) {
-          console.log(result);
           navigate("/");
         }
       }

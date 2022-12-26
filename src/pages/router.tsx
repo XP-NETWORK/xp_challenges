@@ -9,6 +9,7 @@ import SignupContainer from "components/containers/Signup";
 
 import Welcome from "./homeSections/Welcome";
 import Profile from "./homeSections/Profile";
+import LeaderBoard from "./homeSections/LeaderBoard";
 import Modal from "components/modals";
 
 import { ReactComponent as LeftFrame } from "../assets/img/leftFrame.svg";
@@ -45,6 +46,16 @@ export const Router: FC = () => {
             </HomePage>
           }
         />
+        {
+          <Route
+            path="/leaderboard"
+            element={
+              <HomePage init={init}>
+                <LeaderBoard />
+              </HomePage>
+            }
+          />
+        }
         <Route path="/signup" element={<SignUp />} />
       </Routes>
 

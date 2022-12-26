@@ -18,6 +18,12 @@ export interface IPROJECT {
   currentProject: boolean;
 }
 
+export interface ILeader {
+  user: string;
+  comp: number;
+  avatar: string;
+}
+
 export interface IACHIEVMENT {
   achievmentNumber: number;
   name: AchivType;

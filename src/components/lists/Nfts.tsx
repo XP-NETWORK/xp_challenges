@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
-/* eslint-disable no-constant-condition */
+/* eslint-disable no-constant-condition   */
+/* eslint-disable @typescript-eslint/ban-ts-comment   */
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import AliceCarousel from "react-alice-carousel";
 
 import { throttle } from "../../utils";
@@ -10,7 +11,10 @@ import pic from "../../assets/img/Rectangle 20.png";
 
 import back from "../../assets/img/icons/btnForward.svg";
 import forward from "../../assets/img/icons/btnBack.svg";
-import glimer from "../../assets/img/icons/btnGlimer.svg";
+
+function importAll(r: any) {
+  return r.keys().map(r);
+}
 
 function move(index: number) {
   setTimeout(() => {
@@ -51,41 +55,10 @@ function move(index: number) {
 
 const NFTList = () => {
   const [central, setCentral] = useState(0);
-  console.log(central);
+  const [pics, setPics] = useState<string[]>([]);
   const carousel = useRef<AliceCarousel | null>(null);
 
-  const mock = [
-    {
-      src: pic,
-    },
-    {
-      src: pic,
-    },
-    {
-      src: pic,
-    },
-    {
-      src: pic,
-    },
-    {
-      src: pic,
-    },
-    {
-      src: pic,
-    },
-    {
-      src: pic,
-    },
-    {
-      src: pic,
-    },
-    {
-      src: pic,
-    },
-    {
-      src: pic,
-    },
-  ];
+  const mock = pics.map((pic) => ({ src: pic }));
 
   const nfts = mock.map((item, idx) => (
     <div className="nftWrapper">
@@ -95,6 +68,15 @@ const NFTList = () => {
       />
     </div>
   ));
+
+  useEffect(() => {
+    //@ts-ignore
+    const images = importAll(
+      //@ts-ignore
+      require.context("../../assets/img/nfts", false, /\.(png|jpe?g|svg)$/)
+    );
+    setPics(images);
+  }, []);
 
   return (
     <div className="nftList">

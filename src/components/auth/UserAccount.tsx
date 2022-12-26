@@ -7,7 +7,11 @@ const UserAccount = ({ telegramUser }: { telegramUser?: TelegramUser }) => {
       {telegramUser && (
         <div className="userAccount-tgWrapper flexRow">
           <span>@{telegramUser.username}</span>
-          <img src={telegramUser.photo_url} alt="tgAvatar" />
+          {telegramUser.photo_url ? (
+            <img src={telegramUser.photo_url} alt="tgAvatar" />
+          ) : (
+            <div className="avatarPlaceholder"></div>
+          )}
         </div>
       )}
     </div>

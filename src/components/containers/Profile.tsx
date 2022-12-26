@@ -14,6 +14,8 @@ import { TwitterUser } from "services/twitter";
 
 import userFabric from "store/models/user";
 
+import { useNavigate } from "react-router";
+
 export type ProfileProps = {
   userData: UserData | undefined;
   achievments: IUserAchievments[];
@@ -36,6 +38,8 @@ const Container = (Profile: FC<ProfileProps>) =>
     );
     const [loading, setLoading] = useState(false);
 
+    const navigate = useNavigate();
+
     const eventHandler = (data: AchievementsUpdateEvent) => {
       console.log(data, "socketData");
       dispatch(updateProgress(data));
@@ -48,9 +52,9 @@ const Container = (Profile: FC<ProfileProps>) =>
           const user = await api.getUser(telegramUser?.username);
           let userData = user?.data;
 
-          const twitterParam = new URLSearchParams(
-            location.search.replace("?", "")
-          ).get("twitterCred");
+          const params = new URLSearchParams(location.search.replace("?", ""));
+
+          const twitterParam = params.get("twitterCred");
 
           if (twitterParam) {
             const cred = JSON.parse(twitterParam).data as TwitterUser;
@@ -60,14 +64,12 @@ const Container = (Profile: FC<ProfileProps>) =>
               twitterUserName: cred.username,
             };
 
-            const updated = await api.updateTwitterAccount(
-              userFabric(userData)
-            );
-            console.log(updated, "updated");
+            await api.updateTwitterAccount(userFabric(userData));
           }
 
           dispatch(setUserData({ userData }));
           setLoading(false);
+          navigate("/");
         }
       })();
     }, [userData, telegramUser]);

@@ -48,14 +48,29 @@ export const achievementsBtns = {
 };
 
 export const achievementsHandlers = {
-  [AchivType.Telegram]: () => () => false,
+  [AchivType.Telegram]: (
+    _: UserData | undefined,
+    link = config._DEFAULT_TELEGRAM_LINK
+  ) => () => window.open(link),
   [AchivType.Twitter]: (
     userData: UserData | undefined,
-    link = config._DEFAULT_TWITTER_LINK
+    link = config._DEFAULT_TWITTER_LINK,
+    dispatch: Dispatch<AnyAction>
   ) => () => {
-    return !userData?.twitterUserName
+    if (!userData?.twitterUserName) {
+      dispatch(
+        setModal({
+          type: "TwitterAuth",
+          text: "In order to do Twitter achievments you have to authenticate",
+        })
+      );
+      return;
+    }
+    return window.open(link);
+
+    /*return !userData?.twitterUserName
       ? window.open(config._TWITTER_AUTH, "_self")
-      : window.open(link);
+      : window.open(link);*/
   },
   [AchivType.Bridge]: (
     userData: UserData | undefined,
@@ -67,7 +82,7 @@ export const achievementsHandlers = {
         setModal({
           type: "WalletList",
           text:
-            "You have not connected any wallets yet. To do Bridge achievements you have to add at least one",
+            "In order to do Bridge achievments you have to connect at least one wallet",
         })
       );
       return;

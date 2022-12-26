@@ -7,11 +7,7 @@ import { ReactComponent as Telegram } from "../../assets/img/icons/tg.svg";
 import TelegramLogin from "../../components/auth/TelegramLogin";
 
 import Menu from "../../components/modals/menu";
-
-type HeaderPros = {
-  timeLeft?: string;
-};
-const period = ["days", "hours", "minutes"];
+import ProjectTimer from "../../components/elements/ProjectTimer";
 
 const BurgerBtn = ({
   menuOpen,
@@ -29,8 +25,7 @@ const BurgerBtn = ({
 };
 
 //withTimer
-const Header = ({ timeLeft = "30:360:21600" }: HeaderPros) => {
-  const time = timeLeft.split(":");
+const Header = () => {
   const [menuOpen, toggleMenu] = useState(false);
 
   const menuHandler = () => {
@@ -49,20 +44,7 @@ const Header = ({ timeLeft = "30:360:21600" }: HeaderPros) => {
           <Twitter />
           <Telegram />
         </nav>
-        <div className="clock">
-          <div className="flexRow">
-            {time.map((amount, index) => (
-              <>
-                <div className="segment">
-                  <strong>{amount}</strong>
-
-                  <span>{period[index]}</span>
-                </div>
-                {index < time.length - 1 && <span>:</span>}
-              </>
-            ))}
-          </div>
-        </div>
+        <ProjectTimer />
         <div className="menu flexRow">
           <TelegramLogin />
           <BurgerBtn menuOpen={menuOpen} menuHandler={menuHandler} />

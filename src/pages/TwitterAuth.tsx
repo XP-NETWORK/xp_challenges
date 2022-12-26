@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 
 //import axios from "axios";
-import { withServices, ServiceContainer } from "hocs/withServices";
+import { withServices } from "hocs/withServices";
 
-const TwitterAuth = withServices(({ sc }: { sc: ServiceContainer }) => {
-  console.log(sc);
-
+const TwitterAuth = withServices(() => {
   useEffect(() => {
     (async () => {
       /*const instance = axios.create({
@@ -15,8 +13,7 @@ const TwitterAuth = withServices(({ sc }: { sc: ServiceContainer }) => {
       const verifier = params.get("oauth_verifier");
      /* const credentials = await instance.get(
         `/twitterCallback?oauth_verifier=${verifier}`
-      );
-      console.log(credentials, "creds");*/
+      );*/
     })();
   }, []);
 

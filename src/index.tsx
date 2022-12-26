@@ -28,13 +28,12 @@ import "./assets/styles/media.css";
 
 export const config = {
   _DEFAULT_TWITTER_LINK: "https://twitter.com/xpnetwork_",
-  _DEFAULT_BRIDGE_LINK: "https://bridge.xp.network",
-  _DEFAULT_TELEGRAM_LINK: "",
-  _TWITTER_AUTH: "http://localhost:3100/twitterLogin",
+  _DEFAULT_BRIDGE_LINK: "https://bridge.xp.network?xpchallenge=true",
+  _DEFAULT_TELEGRAM_LINK: "https://t.me/asdasdvacs",
+  _TWITTER_AUTH: "https://support-bot-xp.herokuapp.com/twitterLogin",
 };
 
 const App = () => {
-  console.log(process.env.REACT_APP_TOKEN);
   const [serviceContainer, setContainer] = useState<ServiceContainer>({
     api: Api("https://xp-challenges.herokuapp.com"), //api("http://localhost:3011"), //api("https://dfiance-api.herokuapp.com"),
     imageLoader: ImageLoader(),

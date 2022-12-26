@@ -19,7 +19,7 @@
   background: rgba(var(--mainBg), 0.8);
   height: 100vh;
   background-size: cover;
-  z-index: 1;
+  z-index: -1;
 }
 
 .glowEffect {
@@ -85,14 +85,18 @@ header button {
 .clock {
   position: relative;
   right: 50px;
+  width: 300px;
 }
 
 .clock .segment {
   position: relative;
+  display: inline-block;
+  width: 50px;
+  text-align: center;
 }
 
 .clock .flexRow > span {
-  margin: 0 15px;
+  margin: 0;
   transform: translateY(-20%);
 }
 
@@ -106,12 +110,21 @@ header button {
 }
 .clock .segment span {
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: 0;
   text-transform: uppercase;
   letter-spacing: 0.17em;
-  transform: translate(-0, 150%);
+  transform: translate(-45%, 150%);
   opacity: 0.6;
+}
+
+.nftWrapper {
+  display: flex;
+}
+
+.nftWrapper .nft {
+  margin: 0 auto 0 10%;
+  width: 250px;
 }
 
 .homePage main {
@@ -296,7 +309,8 @@ img.frame {
   height: 56px;
 }
 
-.userAccount-tgWrapper img {
+.userAccount-tgWrapper img,
+.userAccount-tgWrapper .avatarPlaceholder {
   margin: 0 15px;
 }
 
@@ -499,7 +513,8 @@ body.showModal header .menu {
   flex-direction: column-reverse;
 }
 
-.signUpContainer.vertical .userAccount-tgWrapper.flexRow img {
+.signUpContainer.vertical .userAccount-tgWrapper.flexRow img,
+.signUpContainer.vertical .userAccount-tgWrapper .avatarPlaceholder {
   width: 98px;
   height: 98px;
   margin-bottom: 20px;
@@ -577,7 +592,9 @@ body.showModal header .menu {
   border-radius: 80px;
   background-color: var(--bar);
 }
-.achivCard .barWrap {
+
+.achivCard .barWrap,
+.leaderBoard-progress .barWrap {
   padding: 0px;
   background: transparent;
 }
@@ -587,6 +604,10 @@ body.showModal header .menu {
   width: 80%;
   padding: 6px;
   background-color: #201f1f;
+}
+
+.leaderBoard-progress .bar {
+  padding: 0;
 }
 
 .progressBar .rate {
@@ -604,7 +625,8 @@ body.showModal header .menu {
   height: 20px;
 }
 
-.achivCard .inner {
+.achivCard .inner,
+.leaderBoard-progress .inner {
   height: 6px;
 }
 
@@ -712,8 +734,78 @@ header .userWalletWrapper,
 
 .userWallet-dropdown {
   display: none;
+  position: absolute;
+  left: 0;
+  transform: translateY(10%);
+  width: 100%;
+
+  background-color: rgb(24, 23, 23);
+  border-radius: 5px;
 }
 
-.showDD:hover .userWallet-dropdown {
+.showDD .userWallet-dropdown {
   display: block;
+}
+
+button.justCompleted {
+  display: none;
+}
+
+.leaderBoard {
+  position: relative;
+  z-index: 999;
+  padding-top: 200px;
+  width: 684px;
+  text-align: center;
+  min-height: 60vh;
+  margin: auto;
+  font-family: kanit;
+}
+
+.leaderBoard h2 {
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+
+.leaderBoard > p {
+  font-size: 20px;
+  color: var(--dimText);
+  margin-bottom: 20px;
+}
+
+.avatarPlaceholder,
+.leaderBoard-user > img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: url(../img/icons/Profile_avatar_placeholder_large.png) no-repeat;
+  background-size: cover;
+}
+
+.leaderBoard-user > img {
+  background: none;
+}
+
+.leaderBoard-pannel {
+  margin-top: 100px;
+}
+
+.leaderBoard-pannel ul li {
+  margin: 20px 0;
+}
+
+.leaderBoard-user span {
+  margin-left: 20px;
+}
+
+.userWallet-dropdown {
+  padding: 10px;
+  text-align: center;
+}
+
+.userWallet-dropdown button {
+  margin: auto;
+  height: 30px;
+  padding: 5px;
+  width: 100%;
 }

@@ -12,6 +12,8 @@ import { setModal } from "store/reducer/global";
 
 import WalletList from "components/lists/wallet";
 
+import { config } from "../../index";
+
 const Modal = ({ modal }: { modal: IModal }) => {
   let body: JSX.Element = <div></div>;
   const dispatch = useDispatch();
@@ -23,6 +25,25 @@ const Modal = ({ modal }: { modal: IModal }) => {
     }
     case "WalletList": {
       body = <WalletList close={() => dispatch(setModal(undefined))} />;
+      break;
+    }
+
+    case "TwitterAuth": {
+      body = (
+        <>
+          <span>
+            You will be redirected to Twitter auth page and back on successful
+            log in
+          </span>
+
+          <button
+            className="fa fa-twitter"
+            onClick={() => window.open(config._TWITTER_AUTH, "_self")}
+          >
+            Log In
+          </button>
+        </>
+      );
       break;
     }
 

@@ -6,6 +6,7 @@ import {
   AchievementsUpdateEvent,
   IModal,
   IPROJECT,
+  ILeader,
 } from "store/types";
 
 import { UserData, IWallet } from "store/models/user";
@@ -20,6 +21,7 @@ export type GlobalState = {
   modal: IModal | undefined;
   project: IPROJECT | undefined;
   wallet: IWallet | undefined;
+  leaders: ILeader[] | undefined;
 };
 
 const mock = undefined && {
@@ -43,6 +45,7 @@ export const initialState: GlobalState = {
   justCompleted: [],
   modal: undefined,
   wallet: undefined,
+  leaders: undefined,
 };
 
 interface ALoadData extends Action {
@@ -87,6 +90,10 @@ interface AModal extends Action {
 
 interface ASetWallet extends Action {
   payload: IWallet | undefined;
+}
+
+interface ASetLeaders extends Action {
+  payload: ILeader[] | undefined;
 }
 
 export const global = createSlice({
@@ -163,6 +170,9 @@ export const global = createSlice({
     setWallet: (state: GlobalState, action: ASetWallet) => {
       state.wallet = action.payload;
     },
+    setLeaders: (state: GlobalState, action: ASetLeaders) => {
+      state.leaders = action.payload;
+    },
   },
 });
 
@@ -175,5 +185,6 @@ export const {
   updateProgress,
   setJustCompleted,
   setModal,
+  setLeaders,
   setWallet,
 } = global.actions;

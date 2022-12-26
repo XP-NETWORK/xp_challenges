@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import Blockies from "react-blockies";
 
 import { truncate } from "../../utils";
+
+import { useDispatch } from "react-redux";
+import { setModal } from "store/reducer/global";
 
 const UserWallet = ({
   wallets,
@@ -10,11 +13,26 @@ const UserWallet = ({
   wallets: { chain: string; address: string }[];
 }) => {
   const address = truncate(wallets?.at(0)?.address, 13) || "";
-  console.log("ds");
-  const showDropDown = wallets.length > 1;
+  const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+
+  const handler = useCallback(() => {
+    setShow(false);
+  }, []);
+
+  useEffect(() => {
+    document.body.addEventListener("click", handler);
+    return () => document.body.removeEventListener("click", handler);
+  }, []);
 
   return (
-    <div className={`userWalletWrapper ${showDropDown ? "showDD" : ""}`}>
+    <div
+      className={`userWalletWrapper ${show ? "showDD" : ""}`}
+      onClick={(e) => {
+        setShow(true);
+        e.stopPropagation();
+      }}
+    >
       <div className="userWallet flexRow">
         <span>{address}</span>
         <Blockies
@@ -48,6 +66,19 @@ const UserWallet = ({
             );
           })}
         </ul>
+        <button
+          className="accent"
+          onClick={() => {
+            dispatch(
+              setModal({
+                type: "WalletList",
+                text: "Connect a wallet to complete achievments",
+              })
+            );
+          }}
+        >
+          Add wallet
+        </button>
       </div>
     </div>
   );

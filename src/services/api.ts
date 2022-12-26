@@ -1,5 +1,5 @@
 import axios from "axios";
-import { TelegramUser } from "store/types";
+import { ILeader, TelegramUser } from "store/types";
 import { User } from "../store/models/user";
 
 class Api {
@@ -65,6 +65,15 @@ class Api {
       return await axios.patch(this.base + `/addWallet?telegramUsername=${user.data.telegramUsername}&address=${wallet.address}&chain=${wallet.chain}`);
     } catch (e) {
       console.log(e, 'in updateWallet')
+    }
+  }
+
+  async getBoard() {
+    try {
+      return await (await axios.get(this.base + `/getLeaderboard?projectNumber=1`)).data  as ILeader[]  
+    } catch (e) {
+        console.log(e,' in getBoard');
+        return undefined
     }
   }
 }
