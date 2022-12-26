@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import { Routes, Route } from "react-router";
 
 import { useLocation } from "react-router";
@@ -10,6 +10,7 @@ import SignupContainer from "components/containers/Signup";
 import Welcome from "./homeSections/Welcome";
 import Profile from "./homeSections/Profile";
 import LeaderBoard from "./homeSections/LeaderBoard";
+import Collection from "./homeSections/Collection";
 import Modal from "components/modals";
 
 import { ReactComponent as LeftFrame } from "../assets/img/leftFrame.svg";
@@ -27,13 +28,15 @@ export const Router: FC = () => {
     noscrollPages.find((p) => location.pathname.includes(p))
   );
 
-  const SignUp = SignupContainer(Signup);
+
 
   const { telegramUser, init, modal } = useSelector((state: ReduxState) => ({
     telegramUser: state.global.telegramUser,
     init: state.global.init,
     modal: state.global.modal,
   }));
+
+  const MemoedSignUp = useMemo(() => SignupContainer(Signup), [] )
 
   return (
     <div className={`app ${noscroll ? "noscroll" : ""}`}>
@@ -46,7 +49,7 @@ export const Router: FC = () => {
             </HomePage>
           }
         />
-        {
+        
           <Route
             path="/leaderboard"
             element={
@@ -55,11 +58,20 @@ export const Router: FC = () => {
               </HomePage>
             }
           />
-        }
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
 
+<Route
+            path="/collection"
+            element={
+              <HomePage init={init}>
+              <Collection/>
+              </HomePage>
+            }
+          />
+        
+        <Route path="/signup" element={<MemoedSignUp />} />
+      </Routes>
       {modal && <Modal modal={modal} />}
+
       <div className="glowEffect ghostBg"></div>
       <LeftFrame className="frame left" />
       <RightFrame className="frame right" />

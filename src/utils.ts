@@ -44,7 +44,7 @@ export const throttle = (func: any, timeout: number) => {
   };
 };
 
-export const truncate = function(
+export const truncate = function (
   fullStr: string | undefined,
   strLen: number,
   separator?: string
@@ -65,3 +65,8 @@ export const truncate = function(
     fullStr.substr(fullStr.length - backChars)
   );
 };
+
+
+export function importAll(r: any) {
+  return r.keys().map(r);
+}

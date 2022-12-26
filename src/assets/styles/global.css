@@ -41,6 +41,10 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  line-height: 40px;
+}
+
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */

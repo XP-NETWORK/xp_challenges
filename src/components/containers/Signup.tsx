@@ -64,6 +64,7 @@ function Container(SignUp: React.FC<SignUpProps>) {
     const dispatch = useDispatch();
 
     const [state, setState] = useState(initState);
+    console.log(state,'state');
     const [validation, setValidation] = useState(initValid);
 
     const navigate = useNavigate();

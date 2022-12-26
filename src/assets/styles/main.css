@@ -767,7 +767,7 @@ button.justCompleted {
   margin-bottom: 20px;
 }
 
-.leaderBoard > p {
+.leaderBoard > p, .collection p  {
   font-size: 20px;
   color: var(--dimText);
   margin-bottom: 20px;
@@ -808,4 +808,41 @@ button.justCompleted {
   height: 30px;
   padding: 5px;
   width: 100%;
+}
+
+.collection img {
+  width: 240px;
+}
+
+.collection .picWrapper {
+  padding: 24px 24px;
+  background: #161718;
+border: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+.collection h2 {
+  font-size: 44px;
+  font-family: kanit;
+  padding-top: 100px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.collection p {
+  text-align: center;
+}
+
+.collection button {
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.collection .picWrapper span {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.collection .collection-item {
+  margin-bottom: 24px;
 }

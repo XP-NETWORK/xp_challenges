@@ -68,9 +68,10 @@ const Container = (Profile: FC<ProfileProps>) =>
           }
 
           dispatch(setUserData({ userData }));
-          setLoading(false);
-          navigate("/");
+        
         }
+        setLoading(false);
+        navigate("/");
       })();
     }, [userData, telegramUser]);
 

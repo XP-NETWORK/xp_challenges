@@ -15,17 +15,118 @@
     width: 180px;
   }
 }
+/*start here
+decor composition lines
+glowing effect fix
+frame top 500px
 
+
+*/
 @media only screen and (max-width: 1420px) {
+  .frame.top {
+    width: 500px;
+    transform: translateX(-55%);
+    top: 5px;
+  }
+
+  .progressLine {
+    width: 50px;
+  }
+
+  .introTimeline-item img {
+    width: 80px;
+  }
+
+  .progressLine {
+    margin: 0 20px;
+  }
+
+  .introTimeline.flexRow {
+    justify-content: space-evenly;
+  }
+
+  .glowEffect.ghostBg::after {
+    background: url(../img/glowEffect.png) no-repeat;
+    background-size: contain;
+    background-position: top;
+  }
 }
 
 @media only screen and (max-width: 1215px) {
+  header .userAccount {
+    display: none;
+}
+
+header .userWalletWrapper, .signupPage-container .userWalletWrapper {
+  position: relative;
+  top:unset;
+  right: unset;
+  transform: unset;
+  margin-top: 10px;
+}
+header nav.headerNav {
+  display: none;
+}
+
+.clock {
+  right: 0;
+  margin: 0 auto;
+}
+
+
 }
 
 @media only screen and (max-width: 1115px) {
+
+  
+  .menuModal .banner {
+    background-size: 70% 70%;
+    
+  }
+
+ 
+  .frame.left {
+    left: 1%;
+  }
+
+  .frame.right {
+    right: 1%;
+  }
+
+ 
+
+  header .menu.flexRow {
+    flex-direction: column;
+    flex-flow: column-reverse;
+    align-items: flex-end;
+  }
+
+ 
+
+  header > .flexRow {
+    align-items: flex-start;
+  }
+
+  header img.logo {
+    top: 18%;
+    left: 2%;
+  }
+
+  header button {
+    margin-right: 0;
+    margin-top: 10px;
+}
 }
 
 @media only screen and (max-width: 1024px) {
+
+  .menuModal .banner .bridgeBanner-text {
+    width: 50%;
+  }
+
+  .progressLine {
+    margin: 0 0px;
+  }
 }
 
 @media only screen and (min-width: 800px) {

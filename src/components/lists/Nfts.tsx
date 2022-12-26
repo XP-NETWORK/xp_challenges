@@ -6,15 +6,12 @@
 import { useState, useRef, useEffect } from "react";
 import AliceCarousel from "react-alice-carousel";
 
-import { throttle } from "../../utils";
-import pic from "../../assets/img/Rectangle 20.png";
+import { throttle, importAll } from "../../utils";
 
 import back from "../../assets/img/icons/btnForward.svg";
 import forward from "../../assets/img/icons/btnBack.svg";
 
-function importAll(r: any) {
-  return r.keys().map(r);
-}
+
 
 function move(index: number) {
   setTimeout(() => {
