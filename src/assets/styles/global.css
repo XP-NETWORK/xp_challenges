@@ -117,6 +117,20 @@ a.button.accent:hover {
   background: var(--hoveredA);
 }
 
+.createAccountButton {
+  margin-top: 38px;
+}
+
+.termsCheckBox {
+  text-decoration: underline !important;
+  color: #fff;
+}
+
+.termsCheckBox:hover {
+  color: #fff;
+  text-decoration: none !important;
+}
+
 button.secondary,
 a.button.secondary {
   background-color: var(--secondary);
@@ -220,19 +234,17 @@ input[type="checkbox"] {
 }
 
 .checkBoxWrapper.checked::before {
-  content: "";
+  content: url("../../assets/svgs/singup/vCheckbox.svg");;
   z-index: 4;
   position: absolute;
   width: 65%;
   height: 65%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-48%, -48%);
-  background: var(--accent);
-  border: 1px solid var(--accent);
   cursor: pointer;
 }
 
+.lastCheckBox {
+  margin-bottom: 38px;
+}
 .withError {
   position: relative;
 }

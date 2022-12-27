@@ -7,15 +7,15 @@ import { Link } from "react-router-dom";
 
 import { SignUpProps } from "../components/containers/Signup";
 
-import UserWallet from "components/auth/UserWallet";
+// import UserWallet from "components/auth/UserWallet";
 
 const Signup = ({
   state,
   validation,
   signup,
   formHandler,
-  connectHandler,
-  wallet,
+  // connectHandler,
+  // wallet,
 }: SignUpProps) => {
   const { email, newsletter, privatePolicy } = state;
 
@@ -70,7 +70,7 @@ const Signup = ({
             >
               <div className="flexRow">
                 <div
-                  className={`checkBoxWrapper ${
+                  className={`checkBoxWrapper  ${
                     privatePolicy ? "checked" : ""
                   }`}
                   onClick={() => formHandler(!privatePolicy, "privatePolicy")}
@@ -78,14 +78,14 @@ const Signup = ({
                   <input type="checkbox" />
                 </div>
                 <label htmlFor="">
-                  I agree to the Terms fo Use and Privacy Policy
+                  I agree to the <a href="#" className="termsCheckBox">Terms fo Use</a> and <a className="termsCheckBox" href="#">Privacy Policy</a>
                 </label>
               </div>
               <div className="errorMessage">
                 {validation.privatePolicy.text}
               </div>
             </div>
-
+{/*
             <div className="walletContainer">
               {wallet ? (
                 <UserWallet wallets={[wallet]} />
@@ -94,8 +94,8 @@ const Signup = ({
                   Connect Wallet
                 </button>
               )}
-            </div>
-            <button className="secondary" onClick={signup}>
+            </div> */}
+            <button className="secondary createAccountButton" onClick={signup}>
               Create Account
             </button>
             <Link to="/">
