@@ -32,15 +32,18 @@ function move(index: number) {
       switch (true) {
         case globalIndex < center: {
           element.style.transform = `perspective(1200px) rotateY(50deg) scale(${diff})`;
+
           element.style.opacity = diffOp.toString();
           break;
         }
         case globalIndex === center:
           element.style.transform = "perspective(1200px) rotateY(0)";
+
           element.style.opacity = "1";
           break;
         default: {
           element.style.transform = `perspective(1200px) rotateY(-50deg) scale(${diff})`;
+
           element.style.opacity = diffOp.toString();
         }
       }

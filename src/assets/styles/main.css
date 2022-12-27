@@ -34,7 +34,8 @@
 .glowEffect.ghostBg::after {
   background: url(../img/glowEffect.png) no-repeat;
   background-size: contain;
-  background-position: right;
+  background-position: top;
+
   z-index: 2;
 }
 
@@ -56,11 +57,33 @@
 .frame.top {
   left: 50%;
   transform: translateX(-50%);
+  width: 500px;
 }
 
 header.header {
   position: relative;
   z-index: 22;
+}
+
+.headerContainer {
+  position: relative;
+}
+
+.headerNav,
+.clock,
+.menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.headerNav {
+  left: 5%;
+}
+
+.menu {
+  right: 0;
+  left: unset;
 }
 
 header img.logo {
@@ -70,7 +93,7 @@ header img.logo {
 }
 
 header {
-  padding: 20px 5% 20px 14%;
+  padding: 20px 5% 20px 5%;
 }
 
 header nav svg {
@@ -84,7 +107,7 @@ header button {
 
 .clock {
   position: relative;
-  right: 50px;
+  margin: 0 auto;
   width: 300px;
 }
 

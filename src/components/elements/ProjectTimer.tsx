@@ -17,7 +17,7 @@ const Timer = () => {
   const time = tick.split(":");
 
   const size = useWindowSize();
-  const ismobile = Number(size?.width) <= 500;
+  const ismobile = Number(size?.width) <= 548;
 
   useEffect(() => {
     let int: any;

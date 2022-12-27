@@ -39,7 +39,7 @@ const Header = () => {
     <header className="header" id="header">
       <img src={logo} alt="logo" className="logo" />
 
-      <div className="flexRow">
+      <div className="headerContainer">
         <nav className="headerNav">
           <Twitter />
           <Telegram />

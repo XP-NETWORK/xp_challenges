@@ -14,6 +14,11 @@
   .progressLine {
     width: 180px;
   }
+  .glowEffect.ghostBg::after {
+    background: url(../img/glowEffect.png) no-repeat;
+    background-size: contain;
+    background-position: top;
+  }
 }
 /*start here
 decor composition lines
@@ -23,12 +28,6 @@ frame top 500px
 
 */
 @media only screen and (max-width: 1420px) {
-  .frame.top {
-    width: 500px;
-    transform: translateX(-55%);
-    top: 5px;
-  }
-
   .progressLine {
     width: 50px;
   }
@@ -43,12 +42,6 @@ frame top 500px
 
   .introTimeline.flexRow {
     justify-content: space-evenly;
-  }
-
-  .glowEffect.ghostBg::after {
-    background: url(../img/glowEffect.png) no-repeat;
-    background-size: contain;
-    background-position: top;
   }
 }
 
@@ -123,6 +116,9 @@ frame top 500px
 }
 
 @media only screen and (max-width: 800px) {
+  .nftWrapper .nft {
+    margin: 0 auto 0 auto;
+  }
   img.nft {
     width: 200px;
   }
@@ -144,12 +140,12 @@ frame top 500px
     display: none;
   }
 
-  .showModal .signUpContainer {
+  .profile .signUpContainer {
     display: flex;
   }
 
-  .frame.top {
-    width: 80%;
+  .showModal .signUpContainer {
+    display: flex;
   }
 
   .clock {
@@ -160,20 +156,21 @@ frame top 500px
     width: 160px;
   }
 
-  header {
-    padding: 20px 4% 20px 21%;
-  }
-
   .clock {
     width: 200px;
   }
 
   .clock .segment span {
     font-size: 14px;
+    transform: translate(-45%, 110%);
   }
 
   .clock .flexRow .segment.last {
     display: none;
+  }
+
+  .introTimeline-item span {
+    font-size: 20px;
   }
 }
 @media only screen and (max-width: 548px) {
@@ -189,11 +186,6 @@ frame top 500px
     width: 40px;
   }
 
-  .frame.top {
-    top: -15px;
-    width: 70%;
-  }
-
   .burgerBtn {
     width: 36px;
     height: 36px;
@@ -201,10 +193,6 @@ frame top 500px
 
   .nftWrapper .nft {
     width: 140px;
-  }
-
-  header {
-    padding: 20px 4% 20px 11%;
   }
 }
 
