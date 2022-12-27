@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ILeader, TelegramUser } from "store/types";
 import { User } from "../store/models/user";
+import { axiosInstance } from "./axios";
 
 class Api {
   base = "";
@@ -11,8 +12,8 @@ class Api {
 
   async getData() {
     const [achievements, project] =  await Promise.all([
-      (await axios.get(this.base + "/getAllAchievments")).data,
-      (await axios.get(this.base + "/getCurrentProject")).data,
+      (await axiosInstance(this.base).get( "/getAllAchievments")).data,
+      (await axiosInstance(this.base).get("/getCurrentProject")).data,
     ])
     return {
       achievements,
@@ -22,8 +23,7 @@ class Api {
 
   async getUser(name: string) {
     try {
-      return await axios.get(
-        this.base +
+      return await axiosInstance(this.base).get(
         `/getByTelegramUsername?telegramUsername=${encodeURIComponent(name)}`
       );
     } catch (e) {
@@ -34,7 +34,7 @@ class Api {
 
   async verifyTelegramData(data: TelegramUser) {
     try {
-      return await axios.post(this.base + "/verifyTelegramAccount", data);
+      return await axiosInstance(this.base).post("/verifyTelegramAccount", data);
     } catch (e) {
       console.log(e, "in verifyTelegramData");
       return undefined;
@@ -43,7 +43,7 @@ class Api {
 
   async signup(user: User) {
     try {
-      return await axios.post(this.base + "/addUser", user.data);
+      return await axiosInstance(this.base).post("/addUser", user.data);
     } catch (e) {
       console.log(e, "e in user");
       return undefined;
@@ -52,7 +52,7 @@ class Api {
 
   async updateTwitterAccount(user: User) {
     try {
-      return await axios.patch(this.base + `/addTwitterAccount?telegramUsername=${user.data.telegramUsername}&twitterUserName=${user.data.twitterUserName}&twitterAcountId=${user.data.twitterAcountId}`);
+      return await axiosInstance(this.base).patch(`/addTwitterAccount?telegramUsername=${user.data.telegramUsername}&twitterUserName=${user.data.twitterUserName}&twitterAcountId=${user.data.twitterAcountId}`);
     } catch (e: any) {
       console.log(e, 'in updateUser');
     }
@@ -70,7 +70,7 @@ class Api {
 
   async getBoard() {
     try {
-      return await (await axios.get(this.base + `/getLeaderboard?projectNumber=1`)).data  as ILeader[]  
+      return await (await axios.get(this.base + `/getLeaderboard?projectNumber=1`)).data  as ILeader[]
     } catch (e) {
         console.log(e,' in getBoard');
         return undefined

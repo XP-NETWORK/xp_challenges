@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 
 import { useWindowSize } from "../../hooks/useSize";
 
@@ -15,7 +15,7 @@ function waitForElm(element: HTMLDivElement): Promise<HTMLDivElement> {
   });
 }
 
-const ProgressBar = ({ current, total }: ProgressBarProps) => {
+export const ProgressBar: FC<ProgressBarProps> = ({ current, total }) => {
   const [innerBarWidth, setWidth] = useState(0);
 
   const size = useWindowSize();
