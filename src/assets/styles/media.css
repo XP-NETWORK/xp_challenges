@@ -55,36 +55,31 @@ frame top 500px
 @media only screen and (max-width: 1215px) {
   header .userAccount {
     display: none;
-}
+  }
 
-header .userWalletWrapper, .signupPage-container .userWalletWrapper {
-  position: relative;
-  top:unset;
-  right: unset;
-  transform: unset;
-  margin-top: 10px;
-}
-header nav.headerNav {
-  display: none;
-}
+  header .userWalletWrapper,
+  .signupPage-container .userWalletWrapper {
+    position: relative;
+    top: unset;
+    right: unset;
+    transform: unset;
+    margin-top: 10px;
+  }
+  header nav.headerNav {
+    display: none;
+  }
 
-.clock {
-  right: 0;
-  margin: 0 auto;
-}
-
-
+  .clock {
+    right: 0;
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (max-width: 1115px) {
-
-  
   .menuModal .banner {
     background-size: 70% 70%;
-    
   }
 
- 
   .frame.left {
     left: 1%;
   }
@@ -93,15 +88,11 @@ header nav.headerNav {
     right: 1%;
   }
 
- 
-
   header .menu.flexRow {
     flex-direction: column;
     flex-flow: column-reverse;
     align-items: flex-end;
   }
-
- 
 
   header > .flexRow {
     align-items: flex-start;
@@ -115,11 +106,10 @@ header nav.headerNav {
   header button {
     margin-right: 0;
     margin-top: 10px;
-}
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-
   .menuModal .banner .bridgeBanner-text {
     width: 50%;
   }
@@ -136,10 +126,85 @@ header nav.headerNav {
   img.nft {
     width: 200px;
   }
+
+  .introTimeline-item img {
+    width: 120px;
+  }
+
+  .introTimeline-item span {
+    margin: 10px 0;
+  }
+
+  .frame.left,
+  .frame.right {
+    display: none;
+  }
+
+  .signUpContainer {
+    display: none;
+  }
+
+  .showModal .signUpContainer {
+    display: flex;
+  }
+
+  .frame.top {
+    width: 80%;
+  }
+
+  .clock {
+    width: 250px;
+  }
+
+  .nftWrapper .nft {
+    width: 160px;
+  }
+
+  header {
+    padding: 20px 4% 20px 21%;
+  }
+
+  .clock {
+    width: 200px;
+  }
+
+  .clock .segment span {
+    font-size: 14px;
+  }
+
+  .clock .flexRow .segment.last {
+    display: none;
+  }
 }
 @media only screen and (max-width: 548px) {
   img.nft {
     width: 120px;
+  }
+
+  .introComposition h1 {
+    font-size: 34px;
+    line-height: 35px;
+  }
+  header img.logo {
+    width: 40px;
+  }
+
+  .frame.top {
+    top: -15px;
+    width: 70%;
+  }
+
+  .burgerBtn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nftWrapper .nft {
+    width: 140px;
+  }
+
+  header {
+    padding: 20px 4% 20px 11%;
   }
 }
 

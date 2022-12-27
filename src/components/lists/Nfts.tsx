@@ -11,12 +11,10 @@ import { throttle, importAll } from "../../utils";
 import back from "../../assets/img/icons/btnForward.svg";
 import forward from "../../assets/img/icons/btnBack.svg";
 
-
-
 function move(index: number) {
   setTimeout(() => {
     const elemetnsOnScreen = document.querySelectorAll(
-      ".alice-carousel__wrapper .alice-carousel__stage-item.__active"
+      ".nftList .alice-carousel__wrapper .alice-carousel__stage-item.__active"
     );
     console.log(elemetnsOnScreen.length);
     const offset = Math.floor(elemetnsOnScreen.length / 2);

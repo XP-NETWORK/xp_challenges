@@ -20,7 +20,7 @@ const Menu = ({ close }: { close: any }) => {
               <div className="row">
                 <div className="col-6">
                   <ul className="links first">
-                    <Link to="/">
+                    <Link to="/" onClick={() => close()}>
                       <li>
                         <Home className="menuItemIcon" />
                         HOME
@@ -32,7 +32,7 @@ const Menu = ({ close }: { close: any }) => {
                         LEADERBOARD
                       </li>
                     </Link>
-                    <Link to="/">
+                    <Link to="/collection" onClick={() => close()}>
                       <li>
                         <Collection className="menuItemIcon" />
                         COLLECTION
@@ -42,20 +42,20 @@ const Menu = ({ close }: { close: any }) => {
                 </div>
                 <div className="col-6">
                   <ul className="links">
-                    <Link to="/">
+                    <Link to="#">
                       <li>
                         {" "}
                         <History className="menuItemIcon" />
                         HISTORY
                       </li>
                     </Link>
-                    <Link to="/">
+                    <Link to="#">
                       <li>
                         <Upcoming className="menuItemIcon" />
                         UPCOMING
                       </li>
                     </Link>
-                    <Link to="/">
+                    <Link to="#">
                       <li>
                         <FAQ className="menuItemIcon" />
                         FAQ

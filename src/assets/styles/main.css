@@ -767,7 +767,8 @@ button.justCompleted {
   margin-bottom: 20px;
 }
 
-.leaderBoard > p, .collection p  {
+.leaderBoard > p,
+.collection p {
   font-size: 20px;
   color: var(--dimText);
   margin-bottom: 20px;
@@ -817,8 +818,7 @@ button.justCompleted {
 .collection .picWrapper {
   padding: 24px 24px;
   background: #161718;
-border: 1px solid rgba(255, 255, 255, 0.08);
-
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .collection h2 {
@@ -845,4 +845,30 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 
 .collection .collection-item {
   margin-bottom: 24px;
+}
+
+.alice-carousel__dots-item {
+  width: 63.33px !important;
+  height: 2px !important;
+  background: linear-gradient(
+    89.98deg,
+    #c71a33 -126.97%,
+    rgba(208, 118, 132, 0.49632) -49.2%,
+    rgba(218, 210, 211, 0) 214.91%
+  );
+  border-radius: 40px;
+  border-radius: 40px;
+}
+
+.alice-carousel__dots-item.__active {
+  background: linear-gradient(
+    90.14deg,
+    #f71d3d 49.88%,
+    rgba(218, 210, 211, 0) 129.95%
+  );
+  border-radius: 40px;
+}
+
+.alice-carousel__dots {
+  margin-top: 0px !important;
 }

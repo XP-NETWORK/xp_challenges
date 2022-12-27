@@ -8,11 +8,16 @@ import moment from "moment";
 
 const period = ["days", "hours", "min", "sec"];
 
+import { useWindowSize } from "hooks/useSize";
+
 const Timer = () => {
   const project = useSelector((state: ReduxState) => state.global.project);
   const [tick, setTick] = useState("");
   // const timeLeft = "30:360:21600";
   const time = tick.split(":");
+
+  const size = useWindowSize();
+  const ismobile = Number(size?.width) <= 500;
 
   useEffect(() => {
     let int: any;
@@ -53,12 +58,14 @@ const Timer = () => {
       <div className="flexRow">
         {time.map((amount, index) => (
           <>
-            <div className="segment">
+            <div
+              className={`segment ${index === time.length - 1 ? "last" : ""}`}
+            >
               <strong>{amount}</strong>
 
               <span>{period[index]}</span>
             </div>
-            {index < time.length - 1 && <span>:</span>}
+            {index < time.length - (ismobile ? 2 : 1) && <span>:</span>}
           </>
         ))}
       </div>
