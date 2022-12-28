@@ -61,7 +61,7 @@ export const achievementsHandlers = {
       dispatch(
         setModal({
           type: "TwitterAuth",
-          text: "In order to do Twitter achievments you have to authenticate",
+          text: "login Twitter",
         })
       );
       return;

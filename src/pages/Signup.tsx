@@ -27,9 +27,9 @@ SignUpProps) => {
       setModal({
         type: "confirmReg",
         email: email,
-        telegramAccount: "alex",
+        telegramAccount: state.telegram?.username,
         text: "Confirm your information",
-        confirmButton: signup
+        confirmButton: signup,
       })
     );
   };
@@ -40,7 +40,7 @@ SignUpProps) => {
           <div className="accountWrapper">
             <h2>Sign up</h2>
 
-            <TelegramLogin vert={true} />
+            {state?.telegram && <TelegramLogin vert={true} />}
           </div>
           <div className="signupPage-form">
             <div

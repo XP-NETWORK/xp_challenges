@@ -28,7 +28,7 @@ class Achievment {
     getImageSet() {
         const setKey =  Object.keys(actionTypesImages).find((key) =>
                                 this.data.description.includes(key)) || "Invite";
-                              
+
        return actionTypesImages[setKey as keyof actionTypesImagesType];
     }
 
@@ -58,16 +58,20 @@ class Achievment {
             }
 
             case AchivType.Twitter: {
-                url = 'https://twitter.com/';
-           
-                if (/follow/i.test(this.data.description)) {
-                    url += (/xp\.network/i.test(this.data.description)) ? `xpnetwork_`: `intent/user?user_id=${this.project?.twitterPartnerId}`
-                   
-                } else {
-                    url += `anyuser/status/${this.project?.twitterPostId}`
-                }   
+                url = '';
 
-                break;
+                console.log(this.data.description);
+
+                switch(this.data.description){
+                    case "Follow XP.NETWORK twitter acount":
+                      return  url = "https://xp-challenges.herokuapp.com/followXp";
+                      case "Follow Drifter twitter acount":
+                        return url = "https://xp-challenges.herokuapp.com/followPartner";
+                    case "Retweet the latest post form Project page":
+                        return url = "https://xp-challenges.herokuapp.com/retweetPost";
+                    default:
+                        return url = ""
+                }
             }
 
             case AchivType.Bridge: {

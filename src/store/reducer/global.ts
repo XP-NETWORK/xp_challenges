@@ -24,7 +24,7 @@ export type GlobalState = {
   leaders: ILeader[] | undefined;
 };
 
-const mock = true && {
+const mock = undefined && {
   id: BigInt(1062713330),
   first_name: "Alex",
   last_name: "Teisheira",

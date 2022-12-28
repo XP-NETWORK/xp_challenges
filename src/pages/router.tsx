@@ -28,15 +28,13 @@ export const Router: FC = () => {
     noscrollPages.find((p) => location.pathname.includes(p))
   );
 
-
-
   const { telegramUser, init, modal } = useSelector((state: ReduxState) => ({
     telegramUser: state.global.telegramUser,
     init: state.global.init,
     modal: state.global.modal,
   }));
 
-  const MemoedSignUp = useMemo(() => SignupContainer(Signup), [] )
+  const MemoedSignUp = useMemo(() => SignupContainer(Signup), ["signup"]);
 
   return (
     <div className={`app ${noscroll ? "noscroll" : ""}`}>
@@ -49,25 +47,25 @@ export const Router: FC = () => {
             </HomePage>
           }
         />
-        
-          <Route
-            path="/leaderboard"
-            element={
-              <HomePage init={init}>
-                <LeaderBoard />
-              </HomePage>
-            }
-          />
 
-<Route
-            path="/collection"
-            element={
-              <HomePage init={init}>
-              <Collection/>
-              </HomePage>
-            }
-          />
-        
+        <Route
+          path="/leaderboard"
+          element={
+            <HomePage init={init}>
+              <LeaderBoard />
+            </HomePage>
+          }
+        />
+
+        <Route
+          path="/collection"
+          element={
+            <HomePage init={init}>
+              <Collection />
+            </HomePage>
+          }
+        />
+
         <Route path="/signup" element={<MemoedSignUp />} />
       </Routes>
       {modal && <Modal modal={modal} />}
