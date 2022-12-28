@@ -11,6 +11,8 @@ import { ReduxState } from "../../store/index";
 
 import ProgressBar from "../../components/elements/ProgressBar";
 
+import searchSVG from "../../assets/svgs/Leaderboard/searchLeaderboard.svg"
+
 type Props = {
   serviceContainer: ServiceContainer;
 };
@@ -35,7 +37,9 @@ const Board = ({ serviceContainer }: Props) => {
   }, []);
 
   let search = leaders
-    ? leaders?.filter((n) => n.user.toLowerCase().includes(`${searchUser?.toLowerCase()}`))
+    ? leaders?.filter((n) =>
+        n.user.toLowerCase().includes(`${searchUser?.toLowerCase()}`)
+      )
     : [];
 
   const onChangeSearch = (e: any) => {
@@ -49,11 +53,22 @@ const Board = ({ serviceContainer }: Props) => {
         Lorem Ipsum is simply dummy text of the printing and <br />
         typesetting industry.
       </p>
-      <input type="search" onChange={onChangeSearch} />
+      <div className="searchContainer">
+        <img src={searchSVG} alt="searchSVG"/>
+        <input
+          type="search"
+          placeholder="Search user"
+          className="inputSearchStyle"
+          onChange={onChangeSearch}
+        />
+      </div>
+
       <div className="leaderBoard-pannel">
         {false && <input type="text" />}
         <ul>
-          {search?.map((leader, index) => (
+          {search?.sort((a: any,b:any) => {
+            return b?.comp - a?.comp
+          })?.map((leader, index) => (
             <li key={index + leader.user} className="flexRow">
               <div className="leaderBoard-user flexRow">
                 {leader.avatar ? (
