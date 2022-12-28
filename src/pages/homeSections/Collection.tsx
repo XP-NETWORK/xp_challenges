@@ -16,8 +16,12 @@ import { ReduxState } from "../../store/index";
 
 import {importAll} from '../../utils'
 
+import { useNavigate } from 'react-router-dom';
+
 const Collection = () => {
     const [pics, setPics] = useState<string[]>([]);
+
+    const navigate = useNavigate()
 
     useEffect(() => {
 //@ts-ignore
@@ -41,7 +45,7 @@ const images:string[] = importAll(
                 <div className="col-12">
                         <h2>COLLECTION</h2>
                         <p>Try to complete all the tastks</p>
-                        <button className="accent">Enroll now</button>
+                        <button className="accent"  onClick={() => navigate('/signup')}>Sign Up</button>
                         <div className="row">
                             {
                                 pics.map((pic, index) => <div key={`collection-${index}`} className="collection-item col-12 col-md-6 col-lg-4 col-xl-3">

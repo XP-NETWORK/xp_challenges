@@ -36,7 +36,7 @@ export const ProgressBar: FC<ProgressBarProps> = ({ current, total }) => {
       <div className="barWrap flexRow">
         <div className="bar">
           <div
-            className={`inner flexRow ${current===0? 'empty': ''}`}
+            className={`inner flexRow ${current === 0? 'empty': ''}`}
             ref={(node) => {
               if (node) {
                 bar = node;

@@ -1,3 +1,6 @@
+
+
+/* eslint-disable @typescript-eslint/ban-ts-comment   */
 import React, { useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -7,7 +10,7 @@ import { ReduxState } from "store";
 import {ReactComponent as Frame} from "../../../assets/img/icons/card-frame.svg";
 import ProgressBar from "components/elements/ProgressBar";
 import { setJustCompleted } from "../../../store/reducer/global";
-//import plus from "../../../assets/img/icons/+.svg";
+
 import fabric from "../../../store/models/achievment";
 import { ReactComponent as TelegramWhite } from "../../../assets/img/icons/tgWhite.svg";
 import {
@@ -60,14 +63,19 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
             } = achievment;
             const userProgress = achievment.getUserProgress(userAchievements);
             const completed = justCompleted.includes(index);
+           
+            let AchievementIcon = achievementsPics[name]
+           //ugly harcode for 1 achievment
+            if (Array.isArray(AchievementIcon) ) {
+              AchievementIcon = description.includes('Connect wallet')? AchievementIcon[1]: AchievementIcon[0]
+            } 
 
-            const AchievementIcon = achievementsPics[name]
             return (
               <div
                 className="col-12 col-md-6 col-lg-4"
                 key={`achivCard-${achievmentNumber}`}
               >
-                <div className="achivCard flexCol">
+                <div className={`achivCard flexCol  ${userProgress?.completed ? "completedAchievment" : ""}`}>
                   <div
                     className={`successOverlay ${completed ? "active" : ""}`}
                   >

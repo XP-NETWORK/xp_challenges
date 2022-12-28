@@ -7,6 +7,7 @@
   --bar: #1e1c1c;
   --mainBg: 14, 14, 17;
   --green: #12d460;
+  --progressBarFill: rgb(94, 91, 91);
 }
 
 .noselect {
@@ -299,7 +300,10 @@ input[type="checkbox"] {
 
 button.completed {
   color: var(--green);
+  background: rgba(18, 242, 108, 0.02);
 }
+
+
 
 .small-modal {
   position: fixed;

@@ -8,6 +8,9 @@ import { ReactComponent as twitAchiv } from "../../../assets/img/icons/newTwitte
 
 import { ReactComponent as bridgeAchiv } from "../../../assets/img/icons/newBridgeIcon.svg";
 
+import { ReactComponent as walletIcon } from "../../../assets/img/icons/newWalletIcon.svg";
+
+
 import { IUserAchievments, UserData } from "store/models/user";
 
 import person from "../../../assets/img/icons/AchivPerson.svg";
@@ -30,7 +33,7 @@ export type AchievementsProps = {
 export const achievementsPics = {
   [AchivType.Telegram]: TelegramAchiv,
   [AchivType.Twitter]: twitAchiv,
-  [AchivType.Bridge]: bridgeAchiv,
+  [AchivType.Bridge]: [bridgeAchiv, walletIcon],
 };
 
 export type actionTypesImagesType = {

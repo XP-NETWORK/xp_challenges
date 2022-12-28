@@ -33,7 +33,7 @@
 
 .glowEffect.ghostBg::after {
   background: url(../img/glowEffect.png) no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: top;
 
   z-index: 2;
@@ -329,7 +329,11 @@ header button {
   transition: all .3s ease;
 }
 
-.achivCard:hover button {
+.completedAchievment p {
+  opacity: .5;
+}
+
+.achivCard:hover button:not(.completed) {
   background: white;
   color: black;
 }
@@ -658,6 +662,8 @@ body.showModal header .menu {
   padding-top: 100px;
 }
 
+
+
 .achivementBar {
   margin: 20px 0;
   text-align: center;
@@ -750,8 +756,10 @@ body.showModal header .menu {
 }
 
 .progressBar .inner-segment.last.completed::after {
-  background-color: var(--progressBarFill);
+  background-color: white
 }
+
+
 
 .achivCard .inner,
 .leaderBoard-progress .inner {
@@ -952,6 +960,10 @@ button.justCompleted {
   position: relative;
 }
 
+.completedAchievment {
+  
+}
+
 .topLeaders::after {
   content: url("../svgs/Leaderboard/topCrown.svg");
   position: absolute;
@@ -977,6 +989,9 @@ button.justCompleted {
 
 .collection img {
   width: 240px;
+}
+.collection button.accent {
+  z-index: 20;
 }
 
 .collection .picWrapper {
