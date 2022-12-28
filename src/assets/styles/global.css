@@ -207,6 +207,7 @@ ul.links a {
   padding-top: 124px;
   animation: fadein 0.2s ease;
   user-select: none;
+  z-index: 9999;
 }
 
 body.showModal {

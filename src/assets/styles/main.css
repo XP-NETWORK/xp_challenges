@@ -486,7 +486,7 @@ footer .media .bot {
 }
 
 .burgerBtn.close {
-  background: url(../img/icons/close.svg) no-repeat;
+  background: url(../svgs/menu/redClose.svg) no-repeat;
   background-size: cover;
 }
 
