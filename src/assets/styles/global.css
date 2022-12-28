@@ -119,6 +119,23 @@ a.button.accent:hover {
 
 .createAccountButton {
   margin-top: 38px;
+  background-color: #1e1e1f;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "chakra-petch";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+}
+.createAccountButtonEnable {
+  background: #c71a33;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+}
+
+.createAccountButtonEnable:hover {
+  filter: brightness(0.95);
 }
 
 .termsCheckBox {
@@ -220,6 +237,10 @@ input[type="checkbox"] {
   height: 26px;
 }
 
+.textForCheckbox {
+  opacity: 0.8;
+}
+
 .checkBoxWrapper::after {
   content: "";
   z-index: 3;
@@ -234,12 +255,18 @@ input[type="checkbox"] {
 }
 
 .checkBoxWrapper.checked::before {
-  content: url("../../assets/svgs/singup/vCheckbox.svg");;
+  content: url("../../assets/svgs/singup/vCheckbox.svg");
   z-index: 4;
   position: absolute;
   width: 65%;
   height: 65%;
   cursor: pointer;
+}
+.disableEmailButton {
+  pointer-events: none;
+}
+
+.enableEmailButton {
 }
 
 .lastCheckBox {
@@ -274,20 +301,23 @@ button.completed {
 
 .small-modal {
   position: fixed;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px 60px;
-  z-index: 1000;
-  box-shadow: 0px 4px 20px var(--accent);
-  border-radius: 3px;
-  background: rgb(27, 27, 27);
-  width: 500px;
+  width: 335px;
+  height: 357px;
+  background: #18181a;
+  border: 1px solid #282829;
+  z-index: 99999;
 }
+
 .modal-header {
+  display: flex;
   position: relative;
   text-align: center;
   margin-bottom: 12px;
+  margin-left: auto;
+  margin-right: -30px;
 }
 
 .small-modal > img {
@@ -299,14 +329,23 @@ button.completed {
 }
 
 .modal-body ul li {
-  cursor: pointer;
+  padding-left: 26px;
+  padding-right: 26px;
+  text-align: center;
   display: flex;
   align-items: center;
-  margin: 7px 0;
-  padding: 6px;
-  background: rgb(53, 52, 52);
-  border-radius: 7px;
-  transition: all 0.3s ease;
+  flex-direction: column;
+  justify-content: center;
+  height: 120px;
+  background: #18181a;
+  border: 1px solid #2e2e2f;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.modal-body ul li span {
+  margin: 0 auto;
+  margin-top: 12px;
 }
 
 .modal-body > span {
@@ -316,12 +355,12 @@ button.completed {
 }
 
 .modal-body ul li:hover {
-  background: var(--accent);
+  background: #1f1f20;
 }
 
 .modal-body ul li img {
-  width: 50px;
-  margin-right: 15px;
+  width: 43.13px;
+  height: 40.04px;
 }
 
 .fa-twitter {
@@ -335,4 +374,25 @@ button.completed {
 .modal-body {
   display: flex;
   flex-direction: column;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.popupHeader {
+  font-size: 18px;
+  text-align: center;
+  font-family: "chakra-petch";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #343436;
+}
+
+.popupHeader img {
+  margin-left: auto;
+  margin-right: 21px;
+  margin-bottom: 5px;
+  cursor: pointer;
 }

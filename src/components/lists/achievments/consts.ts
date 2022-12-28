@@ -82,7 +82,7 @@ export const achievementsHandlers = {
         setModal({
           type: "WalletList",
           text:
-            "In order to do Bridge achievments you have to connect at least one wallet",
+            "Connect Wallet",
         })
       );
       return;

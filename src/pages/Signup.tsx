@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import TelegramLogin from "components/auth/TelegramLogin";
 import MoldalFooter from "./common/modalFooter";
@@ -8,17 +9,30 @@ import { Link } from "react-router-dom";
 import { SignUpProps } from "../components/containers/Signup";
 
 // import UserWallet from "components/auth/UserWallet";
+import { setModal } from "../store/reducer/global";
 
 const Signup = ({
   state,
   validation,
   signup,
   formHandler,
-  // connectHandler,
-  // wallet,
-}: SignUpProps) => {
+}: // connectHandler,
+// wallet,
+SignUpProps) => {
   const { email, newsletter, privatePolicy } = state;
+  const dispatch = useDispatch();
 
+  const confirmButton = () => {
+    dispatch(
+      setModal({
+        type: "confirmReg",
+        email: email,
+        telegramAccount: "alex",
+        text: "Confirm your information",
+        confirmButton: signup
+      })
+    );
+  };
   return (
     <div className="signupPage">
       <div className="container">
@@ -61,7 +75,9 @@ const Signup = ({
               >
                 <input type="checkbox" />
               </div>
-              <label htmlFor="">I want to receive newslatters</label>
+              <label htmlFor="" className="textForCheckbox">
+                I want to receive newslatters
+              </label>
             </div>
             <div
               className={`withError ${
@@ -77,15 +93,22 @@ const Signup = ({
                 >
                   <input type="checkbox" />
                 </div>
-                <label htmlFor="">
-                  I agree to the <a href="#" className="termsCheckBox">Terms fo Use</a> and <a className="termsCheckBox" href="#">Privacy Policy</a>
+                <label htmlFor="" className="textForCheckbox">
+                  I agree to the{" "}
+                  <a href="#" className="termsCheckBox">
+                    Terms fo Use
+                  </a>{" "}
+                  and{" "}
+                  <a className="termsCheckBox" href="#">
+                    Privacy Policy
+                  </a>
                 </label>
               </div>
               <div className="errorMessage">
                 {validation.privatePolicy.text}
               </div>
             </div>
-{/*
+            {/*
             <div className="walletContainer">
               {wallet ? (
                 <UserWallet wallets={[wallet]} />
@@ -95,7 +118,14 @@ const Signup = ({
                 </button>
               )}
             </div> */}
-            <button className="secondary createAccountButton" onClick={signup}>
+            <button
+              className={`createAccountButton ${
+                privatePolicy && email && validation?.telegram
+                  ? "createAccountButtonEnable"
+                  : ""
+              }`}
+              onClick={confirmButton}
+            >
               Create Account
             </button>
             <Link to="/">

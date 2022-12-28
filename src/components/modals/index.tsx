@@ -13,6 +13,7 @@ import { setModal } from "store/reducer/global";
 import WalletList from "components/lists/wallet";
 
 import { config } from "../../index";
+import { ConfirmRegistrationModal } from "./confirmRegistration";
 
 const Modal = ({ modal }: { modal: IModal }) => {
   let body: JSX.Element = <div></div>;
@@ -25,6 +26,17 @@ const Modal = ({ modal }: { modal: IModal }) => {
     }
     case "WalletList": {
       body = <WalletList close={() => dispatch(setModal(undefined))} />;
+      break;
+    }
+    case "confirmReg": {
+      body = (
+        <ConfirmRegistrationModal
+          close={() => dispatch(setModal(undefined))}
+          telegramAccount={modal?.telegramAccount}
+          email={modal.email}
+          confirmButton={modal.confirmButton}
+        />
+      );
       break;
     }
 
@@ -54,12 +66,14 @@ const Modal = ({ modal }: { modal: IModal }) => {
   return (
     <>
       <div className="small-modal">
-        <img
-          src={close}
-          alt="close"
-          onClick={() => dispatch(setModal(undefined))}
-        />
-        <div className="modal-header">{modal.text}</div>
+        <div className="popupHeader">
+          <div className="modal-header">{modal.text}</div>
+          <img
+            src={close}
+            alt="close"
+            onClick={() => dispatch(setModal(undefined))}
+          />
+        </div>
         <div className="modal-body">{body}</div>
       </div>
     </>

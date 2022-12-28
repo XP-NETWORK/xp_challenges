@@ -1,0 +1,49 @@
+.popupBody {
+  padding: 26px 32px;
+  border-bottom: 1px solid #343436;
+}
+
+.popupInnerHeaders {
+  font-family: "chakra-petch";
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.8;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 14px;
+}
+
+.popupButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+.firstInnerHeader {
+  margin-bottom: 30px;
+}
+
+.popupButtonsSection {
+  width: 131.5px;
+  height: 55px;
+  cursor: pointer;
+}
+
+.innerClosePopup {
+  background: rgba(255, 255, 255, 0.07);
+  margin-right: 24px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.innerClosePopup:hover {
+  filter: brightness(0.5);
+}
+
+.innerConfirmPopup {
+  background: #c71a33;
+}
+
+.innerConfirmPopup:hover {
+  filter:brightness(0.85);
+}

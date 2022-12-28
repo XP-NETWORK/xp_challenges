@@ -24,7 +24,7 @@ export type GlobalState = {
   leaders: ILeader[] | undefined;
 };
 
-const mock = true && {
+const mock = undefined && {
   id: BigInt(1062713330),
   first_name: "Alex",
   last_name: "Teisheira",
@@ -166,6 +166,7 @@ export const global = createSlice({
     },
     setModal: (state: GlobalState, action: AModal) => {
       state.modal = action.payload;
+
     },
     setWallet: (state: GlobalState, action: ASetWallet) => {
       state.wallet = action.payload;

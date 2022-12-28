@@ -88,6 +88,9 @@ export type AchievementsUpdateEvent = {
 };
 
 export type IModal = {
-  type: "Error" | "WalletList" | "TwitterAuth" | "TelegramAuth";
+  type: "Error" | "WalletList" | "TwitterAuth" | "TelegramAuth" | "confirmReg";
   text?: string;
+  telegramAccount?: string;
+  email?: string;
+  confirmButton?: any
 };

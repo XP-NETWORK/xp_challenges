@@ -328,8 +328,8 @@ img.frame {
 
 .userAccount img {
   border-radius: 50%;
-  width: 56px;
-  height: 56px;
+  width: 52px !important;
+  height: 52px !important;
 }
 
 .userAccount-tgWrapper img,
@@ -337,9 +337,30 @@ img.frame {
   margin: 0 15px;
 }
 
-.userAccount-tgWrapper span {
+/* .userAccount-tgWrapper span {
   font-family: kanit;
   font-size: 18px;
+  opacity: 0.9;
+  letter-spacing: 0.09em;
+  font-size: 24px;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+} */
+
+.userAccountRegText,.userAccountBold {
+  font-family: 'chakra-petch';
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+  opacity: 0.9;
+  line-height: 31px;
+  letter-spacing: 0.09em;
+  width: 500px;
+}
+.userAccountBold{
+  font-family: "chakra-petch-semibold";
+  font-size: 24px !important;
 }
 
 footer {
