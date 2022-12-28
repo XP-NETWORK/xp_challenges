@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useEffect, useState } from "react";
 import { withServices, ServiceContainer } from "hocs/withServices";
 
 import { setLeaders } from "store/reducer/global";
@@ -15,6 +17,7 @@ type Props = {
 
 const Board = ({ serviceContainer }: Props) => {
   const Dispatch = useDispatch();
+  const [searchUser, setSearchUser] = useState<string>();
   const { leaders, achievements } = useSelector((state: ReduxState) => ({
     leaders: state.global.leaders,
     achievements: state.global.achievements,
@@ -31,15 +34,27 @@ const Board = ({ serviceContainer }: Props) => {
     })();
   }, []);
 
+  let search = leaders
+    ? leaders?.filter((n) => n.user.toLowerCase().includes(`${searchUser?.toLowerCase()}`))
+    : [];
+
+  const onChangeSearch = (e: any) => {
+    const { value } = e.target;
+
+    setSearchUser(value);
+  };
   return (
     <div className="leaderBoard">
       <h2>LEADERBOARD</h2>
-      <p>Try to complete all the tastks</p>
-
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and <br />
+        typesetting industry.
+      </p>
+      <input type="search" onChange={onChangeSearch} />
       <div className="leaderBoard-pannel">
         {false && <input type="text" />}
         <ul>
-          {leaders?.map((leader, index) => (
+          {search?.map((leader, index) => (
             <li key={index + leader.user} className="flexRow">
               <div className="leaderBoard-user flexRow">
                 {leader.avatar ? (

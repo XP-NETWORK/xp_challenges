@@ -49,7 +49,7 @@ const images:string[] = importAll(
                                      <img src={pic} alt={`collection-${index}`} />
                                      <span>@tyshh</span>
                                    </div>
-                                </div>) 
+                                </div>)
                             }
                         </div>
                 </div>

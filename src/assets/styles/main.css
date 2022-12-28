@@ -622,7 +622,7 @@ body.showModal header .menu {
 }
 
 .progressBar {
-  width: 370px;
+  width: auto;
   display: inline-block;
 }
 
@@ -645,7 +645,7 @@ body.showModal header .menu {
 
 .progressBar .bar {
   border-radius: 40px;
-  width: 80%;
+  width: 130px;
   padding: 6px;
   background-color: #201f1f;
 }
@@ -657,6 +657,7 @@ body.showModal header .menu {
 .progressBar .rate {
   flex: 1;
   text-align: right;
+  margin-left: 15px;
 }
 
 .progressBar .inner {
@@ -820,8 +821,8 @@ button.justCompleted {
 
 .avatarPlaceholder,
 .leaderBoard-user > img {
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: url(../img/icons/Profile_avatar_placeholder_large.png) no-repeat;
   background-size: cover;
@@ -833,10 +834,16 @@ button.justCompleted {
 
 .leaderBoard-pannel {
   margin-top: 100px;
+  height: 750px;
+
 }
 
 .leaderBoard-pannel ul li {
   margin: 20px 0;
+  background: linear-gradient(270.75deg, #161718 72.36%, #413F30 109.75%);
+  height: 78px;
+  padding-left: 22px;
+  padding-right: 22px;
 }
 
 .leaderBoard-user span {
