@@ -28,7 +28,7 @@ import "./assets/styles/media.css";
 
 export const config = {
   _DEFAULT_TWITTER_LINK: "https://twitter.com/xpnetwork_",
-  _DEFAULT_BRIDGE_LINK: "https://bridge.xp.network?xpchallenge=true",
+  _DEFAULT_BRIDGE_LINK: "https://staging-bridge.xp.network?xpchallenge=true",
   _DEFAULT_TELEGRAM_LINK: "https://t.me/asdasdvacs",
   _TWITTER_AUTH: "https://support-bot-xp.herokuapp.com/twitterLogin",
 };

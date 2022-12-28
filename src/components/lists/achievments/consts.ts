@@ -77,12 +77,15 @@ export const achievementsHandlers = {
     link = config._DEFAULT_BRIDGE_LINK,
     dispatch: Dispatch<AnyAction>
   ) => () => {
+    if (!userData?.telegramUsername) {
+      return window.open("/signup", "_self");
+    }
+
     if (!userData?.wallets?.length) {
       dispatch(
         setModal({
           type: "WalletList",
-          text:
-            "Connect Wallet",
+          text: "Connect Wallet",
         })
       );
       return;

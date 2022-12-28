@@ -5,13 +5,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { ReduxState } from "store";
 
 import frame from "../../../assets/img/icons/achivFrame.svg";
-
 import ProgressBar from "components/elements/ProgressBar";
-
 import { setJustCompleted } from "../../../store/reducer/global";
-
 import plus from "../../../assets/img/icons/+.svg";
-
 import fabric from "../../../store/models/achievment";
 
 import {
@@ -30,6 +26,8 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
       project: state.global.project,
     })
   );
+
+  console.log(userData?.wallets?.length);
 
   const dispatch = useDispatch();
 
