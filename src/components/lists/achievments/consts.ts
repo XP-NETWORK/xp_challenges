@@ -1,8 +1,12 @@
+
+
 import { AchivType } from "store/types";
 
-import tgAchiv from "../../../assets/img/icons/tgAchiv.svg";
-import twitAchiv from "../../../assets/img/icons/twiter_mockup copy 1 (1).png";
-import bridgeAchiv from "../../../assets/img/icons/xpicon.svg";
+import { ReactComponent as TelegramAchiv } from "../../../assets/img/icons/newTelegramIcon.svg";
+
+import { ReactComponent as twitAchiv } from "../../../assets/img/icons/newTwitterIcon.svg";
+
+import { ReactComponent as bridgeAchiv } from "../../../assets/img/icons/newBridgeIcon.svg";
 
 import { IUserAchievments, UserData } from "store/models/user";
 
@@ -24,7 +28,7 @@ export type AchievementsProps = {
 };
 
 export const achievementsPics = {
-  [AchivType.Telegram]: tgAchiv,
+  [AchivType.Telegram]: TelegramAchiv,
   [AchivType.Twitter]: twitAchiv,
   [AchivType.Bridge]: bridgeAchiv,
 };
@@ -57,6 +61,8 @@ export const achievementsHandlers = {
     link = config._DEFAULT_TWITTER_LINK,
     dispatch: Dispatch<AnyAction>
   ) => () => {
+
+
     if (!userData?.twitterUserName) {
       dispatch(
         setModal({

@@ -17,6 +17,7 @@ function waitForElm(element: HTMLDivElement): Promise<HTMLDivElement> {
 
 export const ProgressBar: FC<ProgressBarProps> = ({ current, total }) => {
   const [innerBarWidth, setWidth] = useState(0);
+  console.log(innerBarWidth);
 
   const size = useWindowSize();
 
@@ -35,17 +36,14 @@ export const ProgressBar: FC<ProgressBarProps> = ({ current, total }) => {
       <div className="barWrap flexRow">
         <div className="bar">
           <div
-            className="inner"
+            className={`inner flexRow ${current===0? 'empty': ''}`}
             ref={(node) => {
               if (node) {
                 bar = node;
               }
             }}
-          >
-            <div
-              className="progress"
-              style={{ width: `${innerBarWidth}px` }}
-            ></div>
+          >     
+            {Array(total).fill(true).map((_, idx) => <div key={`innerSegment-${idx}-${Math.random()}`} className={`inner-segment ${idx === current - 1? 'last': ''} ${idx < current? 'completed': ''}`}></div>)}
           </div>
         </div>
         <div className="rate">

@@ -275,10 +275,14 @@ header button {
 
 .achivCard {
   position: relative;
-  margin: 20px auto;
+  margin: 40px auto;
   width: 343px;
   height: 345px;
-  padding: 36px 60px 23px 60px;
+  padding: 36px 30px 23px 30px;
+}
+
+.achivCard .progressBar {
+  margin-bottom: 20px;
 }
 
 .achivCard .proggress {
@@ -286,16 +290,27 @@ header button {
 }
 
 .achivCard p {
-  padding-top: 34px;
+  font-size: 20px;
+  line-height: 30px;
   text-align: center;
-  border-top: 1px solid grey;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .achivCard button {
   width: 100%;
 }
 
-img.frame {
+.achivCard-content {
+  position: relative;
+  z-index: 72;
+  height: 200px;
+  width: 100%;
+}
+
+.cardFrame{
   display: block;
   position: absolute;
   left: 0;
@@ -304,6 +319,32 @@ img.frame {
   width: 100%;
   height: 100%;
 }
+
+.achivCard .cardFrame > g path {
+  transition: all .3s ease;
+
+}
+
+.achivCard button {
+  transition: all .3s ease;
+}
+
+.achivCard:hover button {
+  background: white;
+  color: black;
+}
+
+.achivCard:hover .cardFrame > g path, .achivCard:hover .achivCard-pic:not(.frameTwitter)  path.frame {
+  fill: white;
+}
+
+
+
+.achivCard:hover .cardFrame > path:not(.inner),.achivCard:hover svg.achivCard-pic > path.dsa.frameTwitter {
+  stroke: white !important;
+}
+
+
 
 .signUpContainer {
   display: flex;
@@ -622,6 +663,10 @@ body.showModal header .menu {
   text-align: center;
 }
 
+.achivementBar .progressBar .bar   {
+  width: 500px;
+}
+
 .progressBar {
   width: auto;
   display: inline-block;
@@ -646,7 +691,7 @@ body.showModal header .menu {
 
 .progressBar .bar {
   border-radius: 40px;
-  width: 130px;
+  width: 90px;
   padding: 6px;
   background-color: #201f1f;
 }
@@ -659,21 +704,62 @@ body.showModal header .menu {
   flex: 1;
   text-align: right;
   margin-left: 15px;
+  color: var(--dimText);
+}
+
+.progressBar .rate span {
+  color: white;
 }
 
 .progressBar .inner {
   border-radius: 33px;
-  background-color: rgb(94, 91, 91);
+  background-color: var(--progressBarFill);
   width: 100%;
   position: relative;
   z-index: 2;
   overflow: hidden;
-  height: 20px;
+  height: 10px;
+  
+}
+
+.progressBar .inner-segment {
+ flex: 1;
+ height: 100%;
+
+}
+
+.progressBar .inner-segment.empty {
+  height: 0;
+}
+
+.progressBar .inner-segment.completed {
+  position: relative;
+  background: white;
+
+}
+
+.progressBar .inner-segment.completed::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color:  rgb(61, 61, 61);
+  z-index: 72;
+}
+
+.progressBar .inner-segment.last.completed::after {
+  background-color: var(--progressBarFill);
 }
 
 .achivCard .inner,
 .leaderBoard-progress .inner {
   height: 6px;
+} 
+
+.achivCard .inner.empty {
+  height: 0;
 }
 
 .progressBar .inner .progress {
@@ -729,7 +815,13 @@ body.showModal header .menu {
 }
 
 .achivCard-pic {
-  width: 52px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-52%, -45%);
+  width: 82px;
+
+  z-index: 71;
 }
 
 .identicon {

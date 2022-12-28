@@ -40,7 +40,7 @@ SignUpProps) => {
           <div className="accountWrapper">
             <h2>Sign up</h2>
 
-            {state?.telegram && <TelegramLogin vert={true} />}
+            { <TelegramLogin vert={true} />}
           </div>
           <div className="signupPage-form">
             <div
