@@ -39,7 +39,7 @@ const images:string[] = importAll(
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                        <h2 className='collectionHeader'>COLLECTION</h2>
+                        <h2 className='collectionHeader'>Collection</h2>
                         <p>Try to complete all the tastks</p>
                         <button className="accent">Enroll now</button>
                         <div className="row">

@@ -77,8 +77,11 @@ header.header {
   top: 0;
 }
 
-.collectionHeader{
+.collectionHeader {
   font-family: "chakra-petch" !important;
+  font-size: 62px !important;
+  margin-top: 60px !important;
+  margin-bottom: 46px !important;
 }
 
 .headerNav {
@@ -314,7 +317,7 @@ header button {
   width: 100%;
 }
 
-.cardFrame{
+.cardFrame {
   display: block;
   position: absolute;
   left: 0;
@@ -325,12 +328,11 @@ header button {
 }
 
 .achivCard .cardFrame > g path {
-  transition: all .3s ease;
-
+  transition: all 0.3s ease;
 }
 
 .achivCard button {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .achivCard:hover button {
@@ -338,17 +340,15 @@ header button {
   color: black;
 }
 
-.achivCard:hover .cardFrame > g path, .achivCard:hover .achivCard-pic:not(.frameTwitter)  path.frame {
+.achivCard:hover .cardFrame > g path,
+.achivCard:hover .achivCard-pic:not(.frameTwitter) path.frame {
   fill: white;
 }
 
-
-
-.achivCard:hover .cardFrame > path:not(.inner),.achivCard:hover svg.achivCard-pic > path.dsa.frameTwitter {
+.achivCard:hover .cardFrame > path:not(.inner),
+.achivCard:hover svg.achivCard-pic > path.dsa.frameTwitter {
   stroke: white !important;
 }
-
-
 
 .signUpContainer {
   display: flex;
@@ -667,7 +667,7 @@ body.showModal header .menu {
   text-align: center;
 }
 
-.achivementBar .progressBar .bar   {
+.achivementBar .progressBar .bar {
   width: 500px;
 }
 
@@ -723,13 +723,11 @@ body.showModal header .menu {
   z-index: 2;
   overflow: hidden;
   height: 10px;
-
 }
 
 .progressBar .inner-segment {
- flex: 1;
- height: 100%;
-
+  flex: 1;
+  height: 100%;
 }
 
 .progressBar .inner-segment.empty {
@@ -739,17 +737,16 @@ body.showModal header .menu {
 .progressBar .inner-segment.completed {
   position: relative;
   background: white;
-
 }
 
 .progressBar .inner-segment.completed::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
   width: 2px;
   height: 100%;
-  background-color:  rgb(61, 61, 61);
+  background-color: rgb(61, 61, 61);
   z-index: 72;
 }
 
@@ -1091,9 +1088,8 @@ button.justCompleted {
   footer .bridgeBanner {
     text-align: center;
     height: 767px;
-    background-position:unset;
-    background-size:contain;
-
+    background-position: unset;
+    background-size: contain;
   }
   .bridgeBanner-text {
     margin-left: 0 !important;
@@ -1102,16 +1098,16 @@ button.justCompleted {
     padding-right: 23px;
   }
 
-  .bridgeBanner-text a{
+  .bridgeBanner-text a {
     margin: 0 auto !important;
   }
 
-   .picWrapper{
+  .picWrapper {
     display: flex !important;
     flex-direction: column !important;
     text-align: center;
   }
-  .picWrapper img{
+  .picWrapper img {
     width: 100%;
   }
 }
