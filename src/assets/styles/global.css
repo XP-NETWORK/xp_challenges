@@ -110,6 +110,7 @@ button.transparent {
 
 button.accent,
 a.button.accent {
+  /* background: var(--accent); */
   background: var(--accent);
 }
 
@@ -134,7 +135,7 @@ a.button.accent:hover {
   background: #c71a33;
   color: #ffffff;
   letter-spacing: 0.06em;
-  pointer-events:visible;
+  pointer-events: visible;
 }
 
 .createAccountButtonEnable:hover {
@@ -156,6 +157,8 @@ a.button.secondary {
   background-color: var(--secondary);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+
 
 button.secondary:hover,
 a.button.secondary:hover {
@@ -193,6 +196,10 @@ ul.links a {
   text-decoration: none;
   color: var(--dimText);
   font-size: 13px;
+}
+
+.controls.flexRow {
+  cursor: pointer;
 }
 
 .customModal {
@@ -304,8 +311,6 @@ button.completed {
   background: rgba(18, 242, 108, 0.02);
 }
 
-
-
 .small-modal {
   position: fixed;
   top: 50%;
@@ -402,4 +407,8 @@ button.completed {
   margin-right: 21px;
   margin-bottom: 5px;
   cursor: pointer;
+}
+
+.newBackground{
+  background-color: #151518 !important;
 }

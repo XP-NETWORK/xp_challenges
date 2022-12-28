@@ -65,13 +65,13 @@ const Welcome = () => {
             <div className="introTimeline-item flexCol">
               <img src={challangeTm2} alt="introTimeline-item-2" />
               <span>Do the achievements</span>
-              <button className="secondary">Go to achievements</button>
+              <button className="secondary newBackground" >Go to achievements</button>
             </div>
             <div className="progressLine"></div>
             <div className="introTimeline-item flexCol">
               <img src={challangeTm3} alt="introTimeline-item-2" />
               <span>Win the NFT</span>
-              <button className="secondary">VIEW THE COLLECTION</button>
+              <button className="secondary newBackground">VIEW THE COLLECTION</button>
             </div>
           </div>
         )}
