@@ -72,7 +72,7 @@ const UserWallet = ({
             dispatch(
               setModal({
                 type: "WalletList",
-                text: "Connect a wallet to complete achievments",
+                text: "Connect new Wallet",
               })
             );
           }}
