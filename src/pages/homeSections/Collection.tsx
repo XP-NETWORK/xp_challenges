@@ -43,7 +43,7 @@ const images:string[] = importAll(
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                        <h2>COLLECTION</h2>
+                        <h2 className='collectionHeader'>Collection</h2>
                         <p>Try to complete all the tastks</p>
                         <button className="accent"  onClick={() => navigate('/signup')}>Sign Up</button>
                         <div className="row">
