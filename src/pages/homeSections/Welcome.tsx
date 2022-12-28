@@ -10,9 +10,12 @@ import AliceCarousel from "react-alice-carousel";
 
 import { useWindowSize } from "hooks/useSize";
 
+import { useNavigate } from "react-router-dom";
+
 const Welcome = () => {
   const size = useWindowSize();
   const ismobile = Number(size?.width) <= 800;
+  const navigate = useNavigate()
   return (
     <main>
       <div className="introComposition flexCol">
@@ -25,7 +28,7 @@ const Welcome = () => {
               <div className="introTimeline-item flexCol">
                 <img src={challangeTm1} alt="introTimeline-item-1" />
                 <span>Join Drifters Challenge</span>
-                <button className="accent">
+                <button className="accent" onClick={() => navigate('/signup')}>
                   Join with Telegram
                   <TelegramWhite />
                 </button>
@@ -33,12 +36,12 @@ const Welcome = () => {
               <div className="introTimeline-item flexCol">
                 <img src={challangeTm2} alt="introTimeline-item-2" />
                 <span>Do the achievements</span>
-                <button className="secondary">Go to achievements</button>
+                <a className="button secondary" href="#achivs">Go to achievements</a>
               </div>,
               <div className="introTimeline-item flexCol">
                 <img src={challangeTm3} alt="introTimeline-item-2" />
                 <span>Win the NFT</span>
-                <button className="secondary">VIEW THE COLLECTION</button>
+                <button className="secondary"  onClick={() => navigate('/collection')}>VIEW THE COLLECTION</button>
               </div>,
             ]}
             mouseTracking={true}
@@ -54,7 +57,7 @@ const Welcome = () => {
             <div className="introTimeline-item flexCol">
               <img src={challangeTm1} alt="introTimeline-item-1" />
               <span>Join Drifters Challenge</span>
-              <button className="accent">
+              <button className="accent" onClick={() => navigate('/signup')}>
                 Join with Telegram
                 <TelegramWhite />
               </button>
@@ -65,13 +68,13 @@ const Welcome = () => {
             <div className="introTimeline-item flexCol">
               <img src={challangeTm2} alt="introTimeline-item-2" />
               <span>Do the achievements</span>
-              <button className="secondary">Go to achievements</button>
+              <a className="button secondary" href="#achivs">Go to achievements</a>
             </div>
             <div className="progressLine"></div>
             <div className="introTimeline-item flexCol">
               <img src={challangeTm3} alt="introTimeline-item-2" />
               <span>Win the NFT</span>
-              <button className="secondary">VIEW THE COLLECTION</button>
+              <button className="secondary" onClick={() => navigate('/collection')}>VIEW THE COLLECTION</button>
             </div>
           </div>
         )}

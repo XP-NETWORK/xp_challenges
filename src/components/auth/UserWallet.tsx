@@ -66,7 +66,7 @@ const UserWallet = ({
             );
           })}
         </ul>
-        <button
+       {false && <button
           className="accent"
           onClick={() => {
             dispatch(
@@ -78,7 +78,7 @@ const UserWallet = ({
           }}
         >
           Add wallet
-        </button>
+        </button>}
       </div>
     </div>
   );
