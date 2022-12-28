@@ -17,7 +17,7 @@ type Props = {
 
 const Board = ({ serviceContainer }: Props) => {
   const Dispatch = useDispatch();
-  const [searchUser, setSearchUser] = useState<string>();
+  const [searchUser, setSearchUser] = useState<string>("");
   const { leaders, achievements } = useSelector((state: ReduxState) => ({
     leaders: state.global.leaders,
     achievements: state.global.achievements,
@@ -40,7 +40,6 @@ const Board = ({ serviceContainer }: Props) => {
 
   const onChangeSearch = (e: any) => {
     const { value } = e.target;
-
     setSearchUser(value);
   };
   return (
