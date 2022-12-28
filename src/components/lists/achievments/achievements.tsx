@@ -47,7 +47,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
       }, 3000);
     }
   }, [justCompleted]);
-
+//https://t.me/i/userpic/320/NhgyFmJtk4F8zLFdeT4lrgEfSIyY9SS9UOMMiu88ud4.jpg
   return (
     <div className="achievements">
       <h2>Achievements</h2>

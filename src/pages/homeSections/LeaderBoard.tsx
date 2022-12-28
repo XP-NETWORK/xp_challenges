@@ -14,6 +14,8 @@ import ProgressBar from "../../components/elements/ProgressBar";
 import searchSVG from "../../assets/svgs/Leaderboard/searchLeaderboard.svg";
 import { ILeader } from "store/types";
 
+import {AvaratPlaceHolder} from '../../components/elements/avatarPlaceHolder'
+
 type Props = {
   serviceContainer: ServiceContainer;
 };
@@ -98,7 +100,7 @@ const Board = ({ serviceContainer }: Props) => {
                   {leader.avatar ? (
                     <img src={leader.avatar} alt={"avatar" + index} />
                   ) : (
-                    <div className="avatarPlaceholder"></div>
+                    <AvaratPlaceHolder username={ leader.user}/>
                   )}
                   <span>@{leader.user}</span>
                 </div>

@@ -2,6 +2,8 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { TelegramUser } from "store/types";
 
+import { AvaratPlaceHolder } from "components/elements/avatarPlaceHolder";
+
 const UserAccount = ({ telegramUser }: { telegramUser?: TelegramUser }) => {
   const location = useLocation();
   return (
@@ -21,7 +23,7 @@ const UserAccount = ({ telegramUser }: { telegramUser?: TelegramUser }) => {
           {telegramUser.photo_url ? (
             <img src={telegramUser.photo_url} alt="tgAvatar" />
           ) : (
-            <div className="avatarPlaceholder"></div>
+            <AvaratPlaceHolder username={telegramUser.first_name || telegramUser.last_name}/>
           )}
         </div>
       )}

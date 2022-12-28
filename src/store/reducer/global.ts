@@ -30,7 +30,7 @@ const mock = undefined && {
   last_name: "Teisheira",
   username: "darylMussasi",
   photo_url:
-    "https://t.me/i/userpic/320/NhgyFmJtk4F8zLFdeT4lrgEfSIyY9SS9UOMMiu88ud4.jpg",
+    "",//"https://t.me/i/userpic/320/NhgyFmJtk4F8zLFdeT4lrgEfSIyY9SS9UOMMiu88ud4.jpg",
   auth_date: BigInt(1062713330),
   hash: "876b55925d0281e291dae5f00a0e073915577c1edd4b4886e1101000322b546a",
 };
