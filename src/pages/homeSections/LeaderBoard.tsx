@@ -11,7 +11,8 @@ import { ReduxState } from "../../store/index";
 
 import ProgressBar from "../../components/elements/ProgressBar";
 
-import searchSVG from "../../assets/svgs/Leaderboard/searchLeaderboard.svg"
+import searchSVG from "../../assets/svgs/Leaderboard/searchLeaderboard.svg";
+import { ILeader } from "store/types";
 
 type Props = {
   serviceContainer: ServiceContainer;
@@ -20,6 +21,7 @@ type Props = {
 const Board = ({ serviceContainer }: Props) => {
   const Dispatch = useDispatch();
   const [searchUser, setSearchUser] = useState<string>("");
+  const [topUser, setTopUser] = useState<ILeader[]>();
   const { leaders, achievements } = useSelector((state: ReduxState) => ({
     leaders: state.global.leaders,
     achievements: state.global.achievements,
@@ -33,11 +35,27 @@ const Board = ({ serviceContainer }: Props) => {
       if (leaders) {
         Dispatch(setLeaders(leaders));
       }
+      let getTopTwo = leaders
+        ? leaders
+            .map((n) => n)
+            ?.sort((a: ILeader, b: ILeader) => {
+              return b.comp - a.comp;
+            })
+            ?.map((n: any, i: any) => {
+              if (i === 0 || i === 1) {
+                return Object.assign({}, n, { top: true });
+              } else {
+                return n;
+              }
+            })
+        : [];
+
+      setTopUser(getTopTwo);
     })();
   }, []);
 
-  let search = leaders
-    ? leaders?.filter((n) =>
+  let search = topUser
+    ? topUser?.filter((n) =>
         n.user.toLowerCase().includes(`${searchUser?.toLowerCase()}`)
       )
     : [];
@@ -46,6 +64,7 @@ const Board = ({ serviceContainer }: Props) => {
     const { value } = e.target;
     setSearchUser(value);
   };
+
   return (
     <div className="leaderBoard">
       <h2>LEADERBOARD</h2>
@@ -54,7 +73,7 @@ const Board = ({ serviceContainer }: Props) => {
         typesetting industry.
       </p>
       <div className="searchContainer">
-        <img src={searchSVG} alt="searchSVG"/>
+        <img src={searchSVG} alt="searchSVG" />
         <input
           type="search"
           placeholder="Search user"
@@ -66,26 +85,31 @@ const Board = ({ serviceContainer }: Props) => {
       <div className="leaderBoard-pannel">
         {false && <input type="text" />}
         <ul>
-          {search?.sort((a: any,b:any) => {
-            return b?.comp - a?.comp
-          })?.map((leader, index) => (
-            <li key={index + leader.user} className="flexRow">
-              <div className="leaderBoard-user flexRow">
-                {leader.avatar ? (
-                  <img src={leader.avatar} alt={"avatar" + index} />
-                ) : (
-                  <div className="avatarPlaceholder"></div>
-                )}
-                <span>@{leader.user}</span>
-              </div>
-              <div className="leaderBoard-progress">
-                <ProgressBar
-                  current={leader.comp}
-                  total={achievements.length}
-                />
-              </div>
-            </li>
-          ))}
+          {search
+            ?.sort((a: any, b: any) => {
+              return b?.comp - a?.comp;
+            })
+            ?.map((leader: any, index) => (
+              <li
+                key={index + leader.user}
+                className={`flexRow  ${leader?.top ? "topLeaders" : ""}`}
+              >
+                <div className={`leaderBoard-user flexRow`}>
+                  {leader.avatar ? (
+                    <img src={leader.avatar} alt={"avatar" + index} />
+                  ) : (
+                    <div className="avatarPlaceholder"></div>
+                  )}
+                  <span>@{leader.user}</span>
+                </div>
+                <div className="leaderBoard-progress">
+                  <ProgressBar
+                    current={leader.comp}
+                    total={achievements.length}
+                  />
+                </div>
+              </li>
+            ))}
         </ul>
       </div>
     </div>
