@@ -133,7 +133,6 @@ export const global = createSlice({
           (a) => a.achievmentNumber === progressIndex
         );
 
-        console.log(payload, "payload");
         if (achievement && achievementData) {
           let currentStatus: boolean;
           if (payload.currentProgressNumber.length && payload.completed) {
