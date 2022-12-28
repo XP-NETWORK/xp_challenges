@@ -68,13 +68,13 @@ const Welcome = () => {
             <div className="introTimeline-item flexCol">
               <img src={challangeTm2} alt="introTimeline-item-2" />
               <span>Do the achievements</span>
-              <a className="button secondary" href="#achivs">Go to achievements</a>
+              <a className="button secondary newBackground" href="#achivs">Go to achievements</a>
             </div>
             <div className="progressLine"></div>
             <div className="introTimeline-item flexCol">
               <img src={challangeTm3} alt="introTimeline-item-2" />
               <span>Win the NFT</span>
-              <button className="secondary" onClick={() => navigate('/collection')}>VIEW THE COLLECTION</button>
+              <button className="secondary newBackground" onClick={() => navigate('/collection')}>VIEW THE COLLECTION</button>
             </div>
           </div>
         )}

@@ -176,7 +176,7 @@ header button {
   margin-bottom: 100px;
 }
 
-.introComposition .introTimeline button {
+.introComposition .introTimeline button, .introComposition .introTimeline a.button {
   padding: 10px 14px;
   height: unset;
   margin-top: 14px;
@@ -336,7 +336,7 @@ header button {
 }
 
 .completedAchievment p {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .achivCard:hover button:not(.completed) {
@@ -674,8 +674,6 @@ body.showModal header .menu {
   padding-top: 100px;
 }
 
-
-
 .achivementBar {
   margin: 20px 0;
   text-align: center;
@@ -765,10 +763,8 @@ body.showModal header .menu {
 }
 
 .progressBar .inner-segment.last.completed::after {
-  background-color: var(--progressBarFill);
+  background-color: white;
 }
-
-
 
 .achivCard .inner,
 .leaderBoard-progress .inner {
@@ -977,7 +973,6 @@ button.justCompleted {
 }
 
 .completedAchievment {
-  
 }
 
 .topLeaders::after {
@@ -1105,7 +1100,7 @@ button.justCompleted {
 
   .avatarPlaceholder {
     margin-right: 10px;
-  
+
   }
 
   .leaderBoard-user {
@@ -1140,5 +1135,25 @@ button.justCompleted {
   }
   .picWrapper img {
     width: 100%;
+  }
+  .mobileMenu {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .menuModal .banner {
+    display: none;
+  }
+
+  .row.mobileMenu .col-6 {
+    width: 100%;
+  }
+  .links.first a li,
+  .col-6 .links a li {
+    border-bottom: 1px solid #c71a33 !important;
+  }
+
+  .footer.flexRow{
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
 }

@@ -17,8 +17,8 @@ const Menu = ({ close }: { close: any }) => {
         <div className="row">
           <div className="col-12">
             <nav>
-              <div className="row">
-                <div className="col-6">
+              <div className="row mobileMenu">
+                <div className="col-6 ">
                   <ul className="links first">
                     <Link to="/" onClick={() => close()}>
                       <li>
