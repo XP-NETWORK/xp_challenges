@@ -902,6 +902,7 @@ button.justCompleted {
 
 .leaderBoard p {
   margin-top: 16px;
+  line-height: 160%;
 }
 
 .leaderBoard h2 {
@@ -930,16 +931,32 @@ button.justCompleted {
 }
 
 .leaderBoard-pannel {
-  margin-top: 100px;
+  margin-top: 50px;
   height: 750px;
 }
 
 .leaderBoard-pannel ul li {
   margin: 20px 0;
-  background: linear-gradient(270.75deg, #161718 72.36%, #413f30 109.75%);
+  background: #161718;
   height: 78px;
   padding-left: 22px;
   padding-right: 22px;
+}
+
+.topLeaders {
+  background: linear-gradient(
+    270.75deg,
+    #161718 72.36%,
+    #413f30 109.75%
+  ) !important;
+  position: relative;
+}
+
+.topLeaders::after {
+  content: url("../svgs/Leaderboard/topCrown.svg");
+  position: absolute;
+  left: 50px;
+  top: 15px;
 }
 
 .leaderBoard-user span {
@@ -1020,16 +1037,15 @@ button.justCompleted {
   margin-top: 0px !important;
 }
 
-.searchContainer{
+.searchContainer {
   position: relative;
   margin-top: 43px;
 }
 
-.searchContainer img{
+.searchContainer img {
   position: absolute;
   top: 10px;
   left: 30px;
-
 }
 
 .inputSearchStyle {
@@ -1037,3 +1053,52 @@ button.justCompleted {
   padding-left: 77px;
 }
 
+@media (max-width: 600px) {
+  .leaderBoard {
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .leaderBoard-pannel ul li {
+    display: flex;
+    flex-direction: column;
+    height: 114px;
+    padding-bottom: 15px;
+    padding-top: 20px;
+  }
+  .leaderBoard-progress,
+  .progressBar,
+  .bar {
+    width: 100% !important;
+  }
+
+  .avatarPlaceholder {
+    margin-right: 10px;
+  }
+
+  .leaderBoard-user {
+    margin-right: auto;
+  }
+
+  footer .container {
+    height: 767px;
+  }
+
+  footer .bridgeBanner {
+    text-align: center;
+    height: 767px;
+    background-position:unset;
+    background-size:contain;
+
+  }
+  .bridgeBanner-text {
+    margin-left: 0 !important;
+    margin-top: 100% !important;
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+
+  .bridgeBanner-text a{
+    margin: 0 auto !important;
+  }
+}
