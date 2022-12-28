@@ -77,6 +77,10 @@ header.header {
   top: 0;
 }
 
+.collectionHeader{
+  font-family: "chakra-petch" !important;
+}
+
 .headerNav {
   left: 5%;
 }
@@ -719,7 +723,7 @@ body.showModal header .menu {
   z-index: 2;
   overflow: hidden;
   height: 10px;
-  
+
 }
 
 .progressBar .inner-segment {
@@ -756,7 +760,7 @@ body.showModal header .menu {
 .achivCard .inner,
 .leaderBoard-progress .inner {
   height: 6px;
-} 
+}
 
 .achivCard .inner.empty {
   height: 0;
@@ -1100,5 +1104,14 @@ button.justCompleted {
 
   .bridgeBanner-text a{
     margin: 0 auto !important;
+  }
+
+   .picWrapper{
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .picWrapper img{
+    width: 100%;
   }
 }
