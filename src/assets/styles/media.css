@@ -231,6 +231,22 @@ frame top 500px
     color: #fff;
     font-size: 13px;
   }
+  .signUpContainer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 90%;
+    width: 80%;
+    left: 10%;
+  }
+  .signUpContainer .accent {
+    width: 100%;
+    justify-content: center !important;
+  }
+
+  .signUpContainer .accent svg{
+    margin-right: 16px;
+  }
 }
 
 @media only screen and (max-width: 548px) {

@@ -351,8 +351,8 @@ header button {
   color: black;
 }
 
-
-.achivCard:hover button.secondary.newBackground, .collection button.secondary.newBackground:hover {
+.achivCard:hover button.secondary.newBackground,
+.collection button.secondary.newBackground:hover {
   background: white !important;
   color: black;
 }
@@ -370,7 +370,7 @@ header button {
 .signUpContainer {
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: fixed;
 }
 
 .signupPage .signUpContainer button {
@@ -378,7 +378,7 @@ header button {
 }
 
 .authWrapper {
-  position: absolute;
+  position: sticky;
   width: 100%;
   height: 100%;
   z-index: 156;
