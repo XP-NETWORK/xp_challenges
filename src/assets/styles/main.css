@@ -484,7 +484,7 @@ footer .bridgeBanner a.button {
 
 footer .media {
   margin-top: 40px;
-  border-top: 1px solid var(--secondary);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: 20px;
 }
 
@@ -495,7 +495,7 @@ footer .media ul li:not(:last-child) {
 footer .media .bot {
   text-align: right;
   font-family: inter;
-  color: var(--secondary);
+  color: var(--dimText);
   font-size: 13px;
 }
 
@@ -576,7 +576,7 @@ body.showModal header .menu {
 .app.noscroll .footer,
 .customModal .footer {
   margin-top: 20px;
-  border-top: 1px solid var(--secondary);
+  border-top: 1px solid var(--greyText);
   padding-top: 35px;
 }
 

@@ -29,8 +29,7 @@ const mock = undefined && {
   first_name: "Alex",
   last_name: "Teisheira",
   username: "darylMussasi",
-  photo_url:
-    "",//"https://t.me/i/userpic/320/NhgyFmJtk4F8zLFdeT4lrgEfSIyY9SS9UOMMiu88ud4.jpg",
+  photo_url: "", //"https://t.me/i/userpic/320/NhgyFmJtk4F8zLFdeT4lrgEfSIyY9SS9UOMMiu88ud4.jpg",
   auth_date: BigInt(1062713330),
   hash: "876b55925d0281e291dae5f00a0e073915577c1edd4b4886e1101000322b546a",
 };
@@ -165,7 +164,6 @@ export const global = createSlice({
     },
     setModal: (state: GlobalState, action: AModal) => {
       state.modal = action.payload;
-
     },
     setWallet: (state: GlobalState, action: ASetWallet) => {
       state.wallet = action.payload;

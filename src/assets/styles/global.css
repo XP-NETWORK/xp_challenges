@@ -1,7 +1,7 @@
 :root {
   --accent: #c71a33;
   --hoveredA: #b61d34;
-  --secondary: rgb(56, 56, 56);
+  --secondary: #151518;
   --greyText: rgba(255, 255, 255, 0.8);
   --dimText: rgba(255, 255, 255, 0.5);
   --bar: #1e1c1c;
@@ -158,8 +158,6 @@ a.button.secondary {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-
 button.secondary:hover,
 a.button.secondary:hover {
   background-color: #353232;
@@ -194,7 +192,7 @@ ul.links li a,
 ul.links li,
 ul.links a {
   text-decoration: none;
-  color: var(--dimText);
+  color: var(--greyText);
   font-size: 13px;
 }
 
@@ -409,6 +407,6 @@ button.completed {
   cursor: pointer;
 }
 
-.newBackground{
+.newBackground {
   background-color: #151518 !important;
 }
