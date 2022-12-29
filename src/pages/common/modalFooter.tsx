@@ -8,7 +8,7 @@ const MoldalFooter = () => {
   return (
     <div className="footer flexRow">
       <div className="links">
-        <Twitter />
+      <Twitter onClick={() => window.open('https://twitter.com/xpnetwork_')}/>
         <Telegram />
       </div>
       <div className="logo">

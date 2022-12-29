@@ -25,17 +25,18 @@
 .glowEffect {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100vh;
   z-index: -1;
 }
 
 .glowEffect.ghostBg::after {
+
   background: url(../img/glowEffect.png) no-repeat;
-  background-size: cover;
-  background-position: top;
-  opacity: .4;
+  background-size: contain;
+  background-position: right;
+  opacity: .8;
   z-index: 2;
 }
 
