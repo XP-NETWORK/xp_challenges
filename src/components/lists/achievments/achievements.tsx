@@ -1,5 +1,3 @@
-
-
 /* eslint-disable @typescript-eslint/ban-ts-comment   */
 import React, { useEffect } from "react";
 
@@ -7,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { ReduxState } from "store";
 
-import {ReactComponent as Frame} from "../../../assets/img/icons/card-frame.svg";
+import { ReactComponent as Frame } from "../../../assets/img/icons/card-frame.svg";
 import ProgressBar from "components/elements/ProgressBar";
 import { setJustCompleted } from "../../../store/reducer/global";
 
@@ -20,8 +18,6 @@ import {
   achievementsPics,
 } from "./consts";
 import { useNavigate } from "react-router-dom";
-
-
 
 function Achievements({ userAchievements, userData }: AchievementsProps) {
   const { achievements, justCompleted, project } = useSelector(
@@ -36,7 +32,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
   console.log(userData?.wallets?.length);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (justCompleted.length) {
@@ -47,13 +43,13 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
       }, 3000);
     }
   }, [justCompleted]);
-//https://t.me/i/userpic/320/NhgyFmJtk4F8zLFdeT4lrgEfSIyY9SS9UOMMiu88ud4.jpg
+  //https://t.me/i/userpic/320/NhgyFmJtk4F8zLFdeT4lrgEfSIyY9SS9UOMMiu88ud4.jpg
   return (
     <div className="achievements" id="achivs">
       <h2>Achievements</h2>
       <p>Try to complete all the tasks</p>
 
-      <div className="container" style={{marginTop: '200px'}}>
+      <div className="container" style={{ marginTop: "100px" }}>
         <div className="row">
           {achievements.map((item, index) => {
             //const { achievmentNumber, description, name, progressBarLength, link } = achievment
@@ -63,56 +59,70 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
             } = achievment;
             const userProgress = achievment.getUserProgress(userAchievements);
             const completed = justCompleted.includes(index);
-           
-            let AchievementIcon = achievementsPics[name]
-           //ugly harcode for 1 achievment
-            if (Array.isArray(AchievementIcon) ) {
-              AchievementIcon = description.includes('Connect wallet')? AchievementIcon[1]: AchievementIcon[0]
-            } 
+
+            let AchievementIcon = achievementsPics[name];
+            //ugly harcode for 1 achievment
+            if (Array.isArray(AchievementIcon)) {
+              AchievementIcon = description.includes("Connect wallet")
+                ? AchievementIcon[1]
+                : AchievementIcon[0];
+            }
 
             return (
               <div
                 className="col-12 col-md-6 col-lg-4"
                 key={`achivCard-${achievmentNumber}`}
               >
-                <div className={`achivCard flexCol  ${userProgress?.completed ? "completedAchievment" : ""}`}>
+                <div
+                  className={`achivCard flexCol  ${
+                    userProgress?.completed ? "completedAchievment" : ""
+                  }`}
+                >
                   <div
                     className={`successOverlay ${completed ? "active" : ""}`}
                   >
                     <span>Completed</span>
                   </div>
-                  <Frame  className="cardFrame"/> 
-                  <AchievementIcon  className="achivCard-pic"/>
-                  <div className="achivCard-content flexCol" >
-                  <ProgressBar
-                    current={ achievment.getCurrentProgress(userProgress)}
-                    total={progressBarLength}
-                  />
-                  <p>{description}</p>
+                  <Frame className="cardFrame" />
+                  <AchievementIcon className="achivCard-pic" />
+                  <div className="achivCard-content flexCol">
+                    <ProgressBar
+                      current={achievment.getCurrentProgress(userProgress)}
+                      total={progressBarLength}
+                    />
+                    <p>{description}</p>
                   </div>
-               
 
-
-                  {userData? <button
-                    onClick={
-                      userProgress?.completed
-                        ? () => false
-                        : achievementsHandlers[name](
-                            userData,
-                            achievment.getLink(),
-                            dispatch
-                          )
-                    }
-                    className={`secondary ${completed ? "justCompleted" : ""} ${
-                      userProgress?.completed ? "completed" : ""
-                    }`}
-                  >
-                    {userProgress?.completed
-                      ? "COMPLETED 🎉"
-                      : achievementsBtns[name]}
-                  </button>: <button className="accent" onClick={() => {
-                      navigate('/signup')
-                  }}><TelegramWhite/>Sign Up</button>}
+                  {userData ? (
+                    <button
+                      onClick={
+                        userProgress?.completed
+                          ? () => false
+                          : achievementsHandlers[name](
+                              userData,
+                              achievment.getLink(),
+                              dispatch
+                            )
+                      }
+                      className={`secondary ${
+                        completed ? "justCompleted" : ""
+                      } ${userProgress?.completed ? "completed" : ""}`}
+                    >
+                      {userProgress?.completed
+                        ? "COMPLETED 🎉"
+                        : achievementsBtns[name]}
+                    </button>
+                  ) : (
+                    <button
+                      className="accent"
+                      onClick={() => {
+                        navigate("/signup");
+                      }}
+                    >
+                      <TelegramWhite />
+                      Sign Up
+                    </button>
+                  )}
                 </div>
               </div>
             );
@@ -125,12 +135,11 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
 
 export default Achievements;
 
-
 /**
- * 
+ *
  * <div className="proggress">
-                    
-                  
+
+
                     <img src={plus} alt="plus" className="plusPic" />
                     <ul>
                       {Array(progressBarLength)

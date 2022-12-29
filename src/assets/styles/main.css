@@ -176,7 +176,8 @@ header button {
   margin-bottom: 100px;
 }
 
-.introComposition .introTimeline button, .introComposition .introTimeline a.button {
+.introComposition .introTimeline button,
+.introComposition .introTimeline a.button {
   padding: 10px 14px;
   height: unset;
   margin-top: 14px;
@@ -238,6 +239,10 @@ header button {
   background-size: cover;
 }
 
+.achievements {
+  margin-top: 150px;
+}
+
 .achievements h2,
 .achievements > p {
   text-align: center;
@@ -246,6 +251,7 @@ header button {
 .achievements h2 {
   font-size: 44px;
   line-height: 67px;
+  margin-bottom: 20px;
 }
 
 .achievements > p {
@@ -348,9 +354,6 @@ header button {
   background: rgb(214, 24, 71) !important;
   color: white !important;
 }
-
-
-
 
 .achivCard:hover .cardFrame > g path,
 .achivCard:hover .achivCard-pic:not(.frameTwitter) path.frame {
@@ -1111,7 +1114,6 @@ button.justCompleted {
 
   .avatarPlaceholder {
     margin-right: 10px;
-
   }
 
   .leaderBoard-user {
@@ -1163,7 +1165,7 @@ button.justCompleted {
     border-bottom: 1px solid #c71a33 !important;
   }
 
-  .footer.flexRow{
+  .footer.flexRow {
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
