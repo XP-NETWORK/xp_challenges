@@ -32,11 +32,11 @@
 }
 
 .glowEffect.ghostBg::after {
-
+  display: none;
   background: url(../img/glowEffect.png) no-repeat;
   background-size: cover;
   background-position: right;
-  opacity: .8;
+  opacity: 0.8;
   z-index: 2;
 }
 
@@ -1168,7 +1168,7 @@ button.justCompleted {
     border-bottom: 1px solid #c71a33 !important;
   }
 
-  .footer.flexRow{
+  .footer.flexRow {
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
