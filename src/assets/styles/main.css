@@ -350,9 +350,10 @@ header button {
   color: black;
 }
 
-.achivCard:hover button.accent {
-  background: rgb(214, 24, 71) !important;
-  color: white !important;
+
+.achivCard:hover button.secondary.newBackground, .collection button.secondary.newBackground:hover {
+  background: white !important;
+  color: black;
 }
 
 .achivCard:hover .cardFrame > g path,

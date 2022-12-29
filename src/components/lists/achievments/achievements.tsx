@@ -10,7 +10,7 @@ import ProgressBar from "components/elements/ProgressBar";
 import { setJustCompleted } from "../../../store/reducer/global";
 
 import fabric from "../../../store/models/achievment";
-import { ReactComponent as TelegramWhite } from "../../../assets/img/icons/tgWhite.svg";
+
 import {
   AchievementsProps,
   achievementsBtns,
@@ -114,13 +114,14 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                     </button>
                   ) : (
                     <button
-                      className="accent"
+                      className="secondary newBackground"
+          
                       onClick={() => {
                         navigate("/signup");
                       }}
                     >
-                      <TelegramWhite />
-                      Sign Up
+                      
+                      Get started
                     </button>
                   )}
                 </div>
