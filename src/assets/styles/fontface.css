@@ -23,6 +23,11 @@
   src: url(../fonts/Kanit-Regular.ttf);
 }
 
+@font-face {
+  font-family: "digital";
+  src: url(../fonts/digital-7.ttf);
+}
+
 /*
 @font-face {
   font-family: "albertus-nova";
