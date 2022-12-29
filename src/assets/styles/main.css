@@ -34,7 +34,7 @@
 .glowEffect.ghostBg::after {
 
   background: url(../img/glowEffect.png) no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: right;
   opacity: .8;
   z-index: 2;
