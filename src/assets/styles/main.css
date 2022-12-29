@@ -370,7 +370,7 @@ header button {
 .signUpContainer {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: relative;
 }
 
 .signupPage .signUpContainer button {
@@ -378,7 +378,7 @@ header button {
 }
 
 .authWrapper {
-  position: sticky;
+  position: absolute;
   width: 100%;
   height: 100%;
   z-index: 156;
