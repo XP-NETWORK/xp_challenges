@@ -65,6 +65,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
 
   return (
     <>
+    <div className="blurOver"></div>
       <div className="small-modal">
         <div className="popupHeader">
           <div className="modal-header">{modal.text}</div>

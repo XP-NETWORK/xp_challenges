@@ -41,7 +41,7 @@ const Header = () => {
 
       <div className="headerContainer">
         <nav className="headerNav">
-          <Twitter />
+          <Twitter onClick={() => window.open('https://twitter.com/xpnetwork_')}/>
           <Telegram />
         </nav>
         <ProjectTimer />
