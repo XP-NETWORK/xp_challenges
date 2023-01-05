@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 import logo from "../../assets/img/icons/logo.png";
-import { ReactComponent as Twitter } from "../../assets/img/icons/twit.svg";
-import { ReactComponent as Telegram } from "../../assets/img/icons/tg.svg";
 
 import TelegramLogin from "../../components/auth/TelegramLogin";
 
@@ -40,10 +38,6 @@ const Header = () => {
       <img src={logo} alt="logo" className="logo" />
 
       <div className="headerContainer">
-        <nav className="headerNav">
-          <Twitter onClick={() => window.open('https://twitter.com/xpnetwork_')}/>
-          <Telegram />
-        </nav>
         <ProjectTimer />
         <div className="menu flexRow">
           <TelegramLogin />

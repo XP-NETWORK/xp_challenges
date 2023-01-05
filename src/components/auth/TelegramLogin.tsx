@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import { ReactComponent as TelegramWhite } from "../../assets/img/icons/tgWhite.svg";
 
 import { useDispatch, useSelector } from "react-redux";
 import { ReduxState } from "store";
@@ -92,15 +91,7 @@ function TelegramLogin(props: TelegramLoginProps) {
 
   return (
     <div className={`signUpContainer ${vert ? "vertical" : ""}`}>
-      {!telegramUser && (
-        <>
-          <button className="accent" ref={button}>
-            <TelegramWhite />
-            Sign Up
-          </button>
-          <div className="authWrapper" ref={container}></div>
-        </>
-      )}
+
       <UserAccount telegramUser={telegramUser} />
       {userData?.wallets?.length ? (
         <UserWallet wallets={userData.wallets} />
