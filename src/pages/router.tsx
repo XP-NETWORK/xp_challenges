@@ -13,8 +13,6 @@ import LeaderBoard from "./homeSections/LeaderBoard";
 import Collection from "./homeSections/Collection";
 import Modal from "components/modals";
 
-import { ReactComponent as LeftFrame } from "../assets/img/leftFrame.svg";
-import { ReactComponent as RightFrame } from "../assets/img/rightFrame.svg";
 import { ReactComponent as TopFrame } from "../assets/img/topFrame.svg";
 
 import { useSelector } from "react-redux";
@@ -70,9 +68,7 @@ export const Router: FC = () => {
       </Routes>
       {modal && <Modal modal={modal} />}
 
-      <div className="glowEffect ghostBg"></div>
-      <LeftFrame className="frame left" />
-      <RightFrame className="frame right" />
+
       {!noscroll && <TopFrame className="frame top" />}
     </div>
   );
