@@ -10,6 +10,8 @@ import { ReactComponent as bridgeAchiv } from "../../../assets/img/icons/newBrid
 
 import { ReactComponent as walletIcon } from "../../../assets/img/icons/newWalletIcon.svg";
 
+import { ReactComponent as subscribe } from "../../../assets/img/icons/newWalletIcon.svg";
+
 
 import { IUserAchievments, UserData } from "store/models/user";
 
@@ -34,6 +36,7 @@ export const achievementsPics = {
   [AchivType.Telegram]: TelegramAchiv,
   [AchivType.Twitter]: twitAchiv,
   [AchivType.Bridge]: [bridgeAchiv, walletIcon],
+  [AchivType.Subscribe]: [subscribe],
 };
 
 export type actionTypesImagesType = {
@@ -52,6 +55,7 @@ export const achievementsBtns = {
   [AchivType.Telegram]: "go to telegram",
   [AchivType.Twitter]: "go to twitter",
   [AchivType.Bridge]: "go to bridge",
+  [AchivType.Subscribe]: "go to Subscribe",
 };
 
 export const achievementsHandlers = {
@@ -101,4 +105,6 @@ export const achievementsHandlers = {
     }
     return window.open(link);
   },
+  [AchivType.Subscribe]: (
+  ) => () => {return ""},
 };

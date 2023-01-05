@@ -29,13 +29,15 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
     })
   );
 
-  console.log(userData?.wallets?.length);
+  console.log(userData);
+
+
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (justCompleted.length) {
+    if (justCompleted?.length) {
       setTimeout(() => {
         const completed = [...justCompleted];
         completed.pop();
@@ -61,6 +63,8 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
             const completed = justCompleted.includes(index);
 
             let AchievementIcon = achievementsPics[name];
+            console.log(name);
+
             //ugly harcode for 1 achievment
             if (Array.isArray(AchievementIcon)) {
               AchievementIcon = description.includes("Connect wallet")
@@ -115,12 +119,12 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                   ) : (
                     <button
                       className="secondary newBackground"
-          
+
                       onClick={() => {
                         navigate("/signup");
                       }}
                     >
-                      
+
                       Get started
                     </button>
                   )}

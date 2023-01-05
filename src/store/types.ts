@@ -37,12 +37,14 @@ export enum AchivType {
   Telegram = "Telegram Community",
   Twitter = "Twitter Community",
   Bridge = "Bridge Interaction",
+  Subscribe = "Subscribe",
 }
 
 export enum ActionType {
   Telegram = "Telegram Community",
   Twitter = "Twitter Community",
   Bridge = "Bridge Interaction",
+  Subscribe = "Subscribe",
 }
 
 export type TelegramUser = {
