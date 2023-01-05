@@ -13,7 +13,7 @@ import LeaderBoard from "./homeSections/LeaderBoard";
 import Collection from "./homeSections/Collection";
 import Modal from "components/modals";
 
-import { ReactComponent as TopFrame } from "../assets/img/topFrame.svg";
+// import { ReactComponent as TopFrame } from "../assets/img/topFrame.svg";
 
 import { useSelector } from "react-redux";
 import { ReduxState } from "store";
@@ -69,7 +69,6 @@ export const Router: FC = () => {
       {modal && <Modal modal={modal} />}
 
 
-      {!noscroll && <TopFrame className="frame top" />}
     </div>
   );
 };

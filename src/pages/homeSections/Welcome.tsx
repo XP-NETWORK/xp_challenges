@@ -19,9 +19,6 @@ const Welcome = () => {
   return (
     <main>
       <div className="introComposition flexCol">
-        <h1>
-          It's time for a fair<br></br> game
-        </h1>
         {ismobile ? (
           <AliceCarousel
             items={[
