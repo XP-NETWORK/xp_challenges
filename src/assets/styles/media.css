@@ -62,10 +62,6 @@ frame top 500px
     display: none;
   }
 
-  .clock {
-    right: 0;
-    margin: 0 auto;
-  }
 }
 
 @media only screen and (max-width: 1115px) {

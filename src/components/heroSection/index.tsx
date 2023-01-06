@@ -1,3 +1,4 @@
+import { ProjectTimer } from "components/elements/ProjectTimer";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -29,12 +30,10 @@ export const HeroSection: FC = () => {
             Connect with Telegram
             <TelegramWhite />
           </button>
-          <button className="howWorkButtonStyle">
-            HOW IT WORKS
-          </button>
+          <button className="howWorkButtonStyle">HOW IT WORKS</button>
         </div>
         <div className="heroTimeContainer">
-
+          <ProjectTimer />
         </div>
       </section>
     </>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 
 import { useSelector } from "react-redux";
 
@@ -6,11 +6,11 @@ import { ReduxState } from "store";
 
 import moment from "moment";
 
-const period = ["days", "hours", "min", "sec"];
+const period = ["days", "hours", "MINUTES", "sec"];
 
 import { useWindowSize } from "hooks/useSize";
 
-const Timer = () => {
+export const ProjectTimer: FC = () => {
   const project = useSelector((state: ReduxState) => state.global.project);
   const [tick, setTick] = useState("");
   // const timeLeft = "30:360:21600";
@@ -45,9 +45,9 @@ const Timer = () => {
         const m = String(
           Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))
         );
-        const s = String(Math.floor((timeDiff % (1000 * 60)) / 1000));
+        // const s = String(Math.floor((timeDiff % (1000 * 60)) / 1000));
 
-        setTick(`${d}:${h}:${m}:${s}`);
+        setTick(`${d}:${h}:${m}`);
       }, 1000);
     }
     return () => clearInterval(int);
@@ -56,12 +56,12 @@ const Timer = () => {
   return (
     <div className="clock">
       <div className="flexRow">
-        {time.map((amount, index) => (
+        {time && time.map((amount, index) => (
           <>
             <div
               className={`segment ${index === time.length - 1 ? "last" : ""}`}
             >
-              <strong>{amount}</strong>
+              <strong>{Number(amount) > 10 ? amount : 0 + amount}</strong>
 
               <span>{period[index]}</span>
             </div>
@@ -72,5 +72,3 @@ const Timer = () => {
     </div>
   );
 };
-
-export default Timer;

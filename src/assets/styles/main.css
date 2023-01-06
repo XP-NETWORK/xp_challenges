@@ -71,7 +71,6 @@ header.header {
 }
 
 .headerNav,
-.clock,
 .menu {
   position: absolute;
   left: 0;
@@ -94,11 +93,9 @@ header.header {
   left: unset;
 }
 
-
-.headerWrapper{
+.headerWrapper {
   margin: 0 auto;
   max-width: 1650px; /* 2 */
-
 }
 
 header img.logo {
@@ -142,21 +139,21 @@ header button {
 
 .clock {
   position: relative;
-  margin: 0 auto;
   width: 300px;
-  transform: translateY(20px);
+  margin-bottom: 170px;
 }
 
 .clock .segment {
   position: relative;
   display: inline-block;
   width: 50px;
-  text-align: center;
 }
 
 .clock .flexRow > span {
   margin: 0;
-  transform: translateY(-20%);
+  transform: translateY(-25%);
+  font-family: "chakra-petch";
+  font-size: 50px;
 }
 
 .clock .segment:last-child {
@@ -164,8 +161,8 @@ header button {
 }
 
 .clock .segment strong {
-  font-family: digital, sans-serif;
-  font-size: 56px;
+  font-family: "chakra-petch";
+  font-size: 50px;
 }
 .clock .segment span {
   position: absolute;
@@ -175,6 +172,7 @@ header button {
   letter-spacing: 0.17em;
   transform: translate(-45%, 150%);
   opacity: 0.6;
+  color: #FF405C;
 }
 
 .nftWrapper {
