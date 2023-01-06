@@ -167,6 +167,18 @@ button.accent > svg {
   margin-right: 14px;
 }
 
+.iconBackground {
+  position: absolute;
+  left: 3%;
+  top: 0%;
+  background-color: #18191ded;
+  width: 89px;
+  height: 127px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .progressLine {
   width: 229px;
   height: 2px;

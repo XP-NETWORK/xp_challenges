@@ -5,7 +5,6 @@ import logo from "../../assets/img/icons/logo.png";
 import TelegramLogin from "../../components/auth/TelegramLogin";
 
 import Menu from "../../components/modals/menu";
-import ProjectTimer from "../../components/elements/ProjectTimer";
 
 const BurgerBtn = ({
   menuOpen,
@@ -35,10 +34,11 @@ const Header = () => {
 
   return (
     <header className="header" id="header">
-      <img src={logo} alt="logo" className="logo" />
+      <div className="iconBackground">
+        <img src={logo} alt="logo" className="logo" />
+      </div>
 
       <div className="headerContainer">
-        <ProjectTimer />
         <div className="menu flexRow">
           <TelegramLogin />
           <BurgerBtn menuOpen={menuOpen} menuHandler={menuHandler} />
