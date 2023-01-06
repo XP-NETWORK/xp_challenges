@@ -1,34 +1,13 @@
-import { useRef, useEffect } from "react";
+import { useRef, FC } from "react";
 
-import { withServices, ServiceContainer } from "../../hocs/withServices";
+import { withServices } from "../../hocs/withServices";
 
 import frames from "../../assets/img/icons/bannerFrame.svg";
-
 import logo from "../../assets/img/icons/xplogoText.svg";
 
-//import { useWindowSize } from "../../hooks/useSize";
 
-const Footer = (props: any) => {
-  const { serviceContainer }: { serviceContainer: ServiceContainer } = props;
-
-  //const { width } = useWindowSize();
-
-  useEffect(() => {
-    /*serviceContainer.imageLoader.addRef(background, (load) => {
-      if (load) {
-        return {
-          id: "footer",
-          urls: {
-            desk: require("../../assets/img/home/footerGhostBg.png").default,
-            mob: [require("../../assets/img/home/mob/footerBgMob.png").default],
-          },
-        };
-      }
-    });*/
-  }, [serviceContainer.imageLoader]);
-
+const Footer: FC = () => {
   const background = useRef(null);
-
   return (
     <footer className="footer" ref={background} id="footer">
       <div className="container">

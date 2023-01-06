@@ -63,9 +63,6 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
             const completed = justCompleted.includes(index);
 
             let AchievementIcon = achievementsPics[name];
-            console.log(name);
-
-            //ugly harcode for 1 achievment
             if (Array.isArray(AchievementIcon)) {
               AchievementIcon = description.includes("Connect wallet")
                 ? AchievementIcon[1]

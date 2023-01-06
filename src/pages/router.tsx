@@ -7,7 +7,7 @@ import HomePage from "./Home";
 import Signup from "./Signup";
 import SignupContainer from "components/containers/Signup";
 
-import Welcome from "./homeSections/Welcome";
+import { Welcome } from "./homeSections/Welcome";
 import Profile from "./homeSections/Profile";
 import LeaderBoard from "./homeSections/LeaderBoard";
 import Collection from "./homeSections/Collection";
@@ -67,8 +67,6 @@ export const Router: FC = () => {
         <Route path="/signup" element={<MemoedSignUp />} />
       </Routes>
       {modal && <Modal modal={modal} />}
-
-
     </div>
   );
 };

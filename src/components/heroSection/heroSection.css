@@ -1,0 +1,44 @@
+.heroContainer {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1250px;
+  width: 100%;
+}
+
+.heroNFTname {
+  color: #fff;
+  font-family: "chakra-petch";
+  font-weight: 600;
+  font-size: 82px;
+  line-height: 75px;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.heroCollectionStyle {
+  position: absolute;
+  left: 45%;
+  right: auto;
+  top: -100%;
+}
+
+.heroButtonsSection,
+.heroTimeContainer {
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.howWorkButtonStyle {
+  width: 151px;
+  height: 57px;
+  background: rgba(32, 35, 41);
+  margin-left: 21px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.heroTimeContainer {
+  margin-top: 76px;
+}

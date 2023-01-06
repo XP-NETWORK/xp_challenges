@@ -1,25 +1,27 @@
-import React from "react";
-import challangeTm1 from "../../assets/img/challangeTm1.png";
-import challangeTm2 from "../../assets/img/challangeTm2.png";
-import challangeTm3 from "../../assets/img/challangeTm3.png";
-import { ReactComponent as TelegramWhite } from "../../assets/img/icons/tgWhite.svg";
+import {FC} from "react";
+// import challangeTm1 from "../../assets/img/challangeTm1.png";
+// import challangeTm2 from "../../assets/img/challangeTm2.png";
+// import challangeTm3 from "../../assets/img/challangeTm3.png";
+// import { ReactComponent as TelegramWhite } from "../../assets/img/icons/tgWhite.svg";
 
 import NFTList from "../../components/lists/Nfts";
 import Achievements from "../../components/lists/achievments/achievements";
-import AliceCarousel from "react-alice-carousel";
+// import AliceCarousel from "react-alice-carousel";
 
-import { useWindowSize } from "hooks/useSize";
+// import { useWindowSize } from "hooks/useSize";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { HeroSection } from "components/heroSection";
 
-const Welcome = () => {
-  const size = useWindowSize();
-  const ismobile = Number(size?.width) <= 800;
-  const navigate = useNavigate()
+export const Welcome:FC = () => {
+  // const size = useWindowSize();
+  // const ismobile = Number(size?.width) <= 800;
+  // const navigate = useNavigate()
   return (
     <main>
       <div className="introComposition flexCol">
-        {ismobile ? (
+        <HeroSection/>
+        {/* {ismobile ? (
           <AliceCarousel
             items={[
               <div className="introTimeline-item flexCol">
@@ -74,7 +76,7 @@ const Welcome = () => {
               <button className="secondary newBackground" onClick={() => navigate('/collection')}>VIEW THE COLLECTION</button>
             </div>
           </div>
-        )}
+        )} */}
       </div>
 
       <NFTList />
@@ -83,4 +85,3 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
