@@ -8,7 +8,7 @@ import moment from "moment";
 
 const period = ["days", "hours", "MINUTES", "sec"];
 
-import { useWindowSize } from "hooks/useSize";
+// import { useWindowSize } from "hooks/useSize";
 
 export const ProjectTimer: FC = () => {
   const project = useSelector((state: ReduxState) => state.global.project);
@@ -16,8 +16,8 @@ export const ProjectTimer: FC = () => {
   // const timeLeft = "30:360:21600";
   const time = tick.split(":");
 
-  const size = useWindowSize();
-  const ismobile = Number(size?.width) <= 548;
+  // const size = useWindowSize();
+  // const ismobile = Number(size?.width) <= 548;
 
   useEffect(() => {
     let int: any;
@@ -56,18 +56,21 @@ export const ProjectTimer: FC = () => {
   return (
     <div className="clock">
       <div className="flexRow">
-        {time && time.map((amount, index) => (
-          <>
-            <div
-              className={`segment ${index === time.length - 1 ? "last" : ""}`}
-            >
-              <strong>{Number(amount) > 10 ? amount : 0 + amount}</strong>
+        {time &&
+          time.map((amount, index) => (
+            <>
+              <div
+                className={`segment ${index === time.length - 1 ? "last" : ""}`}
+              >
+                <strong>{Number(amount) > 10 ? amount : 0 + amount}</strong>
 
-              <span>{period[index]}</span>
-            </div>
-            {index < time.length - (ismobile ? 2 : 1) && <span>:</span>}
-          </>
-        ))}
+                <span>{period[index]}</span>
+              </div>
+
+              {index !== 2 && <span>:</span> // need to fix that
+              }
+            </>
+          ))}
       </div>
     </div>
   );

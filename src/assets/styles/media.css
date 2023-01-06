@@ -61,7 +61,6 @@ frame top 500px
   header nav.headerNav {
     display: none;
   }
-
 }
 
 @media only screen and (max-width: 1115px) {
@@ -87,11 +86,6 @@ frame top 500px
     align-items: flex-start;
   }
 
-  header img.logo {
-    top: 18%;
-    left: 2%;
-  }
-
   header button {
     margin-right: 0;
     margin-top: 10px;
@@ -108,10 +102,7 @@ frame top 500px
   }
 }
 
-@media only screen and (min-width: 800px) {
-}
-
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
   .nftWrapper .nft {
     margin: 0 auto 0 auto;
   }
@@ -142,14 +133,11 @@ frame top 500px
 
   .clock {
     width: 250px;
+    margin-bottom: 23px;
   }
 
   .nftWrapper .nft {
     width: 160px;
-  }
-
-  .clock {
-    width: 200px;
   }
 
   .clock .segment span {
@@ -157,12 +145,43 @@ frame top 500px
     transform: translate(-45%, 110%);
   }
 
-  .clock .flexRow .segment.last {
-    display: none;
-  }
-
   .introTimeline-item span {
     font-size: 20px;
+  }
+
+  .heroContainer {
+    position: unset;
+    display: flex;
+    flex-direction: column;
+  }
+  .heroButtonsSection {
+    flex-direction: column;
+  }
+  .heroNFTname {
+    font-size: 36px;
+    line-height: 39px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  .howWorkButtonStyle {
+    margin-top: 16px;
+    margin-bottom: 28px;
+  }
+  .heroTimeContainer {
+    justify-content: center;
+    height: auto;
+    margin-top: 28px;
+  }
+  .heroCollectionStyle {
+    position: static;
+    order: 5;
+    width: auto;
+    height: auto;
+  }
+  .heroCollectionStyle img {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -175,6 +194,24 @@ frame top 500px
     z-index: 0;
   }
 
+  .iconBackground {
+    height: 67px;
+    width: 46px;
+    padding-left: 5px;
+  }
+  header img.logo {
+    width: 35px;
+    height: 36px;
+  }
+
+  .introComposition {
+    margin-top: 50px;
+  }
+
+  .XPTitleStyle {
+    font-size: 15px;
+    margin-top: 10px;
+  }
   .accountWrapper {
     top: 40px !important;
     white-space: nowrap;
@@ -240,7 +277,7 @@ frame top 500px
     justify-content: center !important;
   }
 
-  .signUpContainer .accent svg{
+  .signUpContainer .accent svg {
     margin-right: 16px;
   }
 }
@@ -253,9 +290,6 @@ frame top 500px
   .introComposition h1 {
     font-size: 34px;
     line-height: 35px;
-  }
-  header img.logo {
-    width: 40px;
   }
 
   .burgerBtn {

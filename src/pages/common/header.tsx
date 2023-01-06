@@ -5,7 +5,6 @@ import logo from "../../assets/img/icons/logo.png";
 
 import Menu from "../../components/modals/menu";
 
-import XPTitle from "../../assets/svgs/header/XP.CHALLENGE.svg";
 
 const BurgerBtn = ({
   menuOpen,
@@ -38,7 +37,7 @@ export const Header: FC = () => {
       <header className="header" id="header">
         <div className="iconBackground">
           <img src={logo} alt="logo" className="logo" />
-          <img src={XPTitle} alt="XPTitle" className="XPTitleStyle" />
+          <div className="XPTitleStyle">XP.CHALLENGE</div>
         </div>
         <BurgerBtn menuOpen={menuOpen} menuHandler={menuHandler} />
             {menuOpen && <Menu close={menuHandler} />}

@@ -95,7 +95,9 @@ header.header {
 
 .headerWrapper {
   margin: 0 auto;
-  max-width: 1650px; /* 2 */
+  max-width: 1620px; /* 2 */
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 header img.logo {
@@ -107,6 +109,11 @@ header img.logo {
 .XPTitleStyle {
   margin-top: 30px;
   margin-left: 28px;
+  letter-spacing: 0.28em;
+  font-size: 15px;
+  font-family: "chakra-petch";
+  color: #fe2b4a;
+  font-size: 32px;
 }
 
 .iconBackground {
@@ -172,7 +179,7 @@ header button {
   letter-spacing: 0.17em;
   transform: translate(-45%, 150%);
   opacity: 0.6;
-  color: #FF405C;
+  color: #ff405c;
 }
 
 .nftWrapper {
