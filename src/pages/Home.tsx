@@ -2,7 +2,7 @@ import React, { ReactChild } from "react";
 
 //import { useWindowSize } from "../hooks/useSize";
 
-import Header from "./common/header";
+import {Header} from "./common/header";
 import Footer from "./common/footer";
 
 const Home = ({ init, children }: { init: boolean; children: ReactChild }) => {

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState, FC } from "react";
 
 import logo from "../../assets/img/icons/logo.png";
 
-import TelegramLogin from "../../components/auth/TelegramLogin";
 
 import Menu from "../../components/modals/menu";
+
+import XPTitle from "../../assets/svgs/header/XP.CHALLENGE.svg";
 
 const BurgerBtn = ({
   menuOpen,
@@ -22,7 +23,7 @@ const BurgerBtn = ({
 };
 
 //withTimer
-const Header = () => {
+export const Header: FC = () => {
   const [menuOpen, toggleMenu] = useState(false);
 
   const menuHandler = () => {
@@ -33,20 +34,15 @@ const Header = () => {
   };
 
   return (
-    <header className="header" id="header">
-      <div className="iconBackground">
-        <img src={logo} alt="logo" className="logo" />
-      </div>
-
-      <div className="headerContainer">
-        <div className="menu flexRow">
-          <TelegramLogin />
-          <BurgerBtn menuOpen={menuOpen} menuHandler={menuHandler} />
-          {menuOpen && <Menu close={menuHandler} />}
+    <div className="headerWrapper">
+      <header className="header" id="header">
+        <div className="iconBackground">
+          <img src={logo} alt="logo" className="logo" />
+          <img src={XPTitle} alt="XPTitle" className="XPTitleStyle" />
         </div>
-      </div>
-    </header>
+        <BurgerBtn menuOpen={menuOpen} menuHandler={menuHandler} />
+            {menuOpen && <Menu close={menuHandler} />}
+      </header>
+    </div>
   );
 };
-
-export default Header;

@@ -94,16 +94,41 @@ header.header {
   left: unset;
 }
 
-header img.logo {
 
+.headerWrapper{
+  margin: 0 auto;
+  max-width: 1650px; /* 2 */
+
+}
+
+header img.logo {
   margin-top: auto;
-  margin-bottom: 12px
-  ;width: 68px;
+  margin-bottom: 12px;
+  width: 68px;
   height: 69px;
+}
+.XPTitleStyle {
+  margin-top: 30px;
+  margin-left: 28px;
+}
+
+.iconBackground {
+  background-color: #18191ded;
+  width: 89px;
+  height: 127px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  border-bottom: 1px solid rgba(48, 49, 51, 1);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: 0px;
 }
 
 header {
-  padding: 20px 5% 20px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header nav svg {
