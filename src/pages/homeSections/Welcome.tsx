@@ -1,46 +1,71 @@
-import {FC} from "react";
-// import challangeTm1 from "../../assets/img/challangeTm1.png";
-// import challangeTm2 from "../../assets/img/challangeTm2.png";
-// import challangeTm3 from "../../assets/img/challangeTm3.png";
-// import { ReactComponent as TelegramWhite } from "../../assets/img/icons/tgWhite.svg";
+import { FC } from "react";
+import Step1 from "../../assets/svgs/howItWorkSection/step1.svg";
+import Step2 from "../../assets/svgs/howItWorkSection/step2.svg";
+import Step3 from "../../assets/svgs/howItWorkSection/step3.svg";
 
 import NFTList from "../../components/lists/Nfts";
 import Achievements from "../../components/lists/achievments/achievements";
-// import AliceCarousel from "react-alice-carousel";
+import AliceCarousel from "react-alice-carousel";
 
-// import { useWindowSize } from "hooks/useSize";
+import { useWindowSize } from "hooks/useSize";
 
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { HeroSection } from "components/heroSection";
 
-export const Welcome:FC = () => {
-  // const size = useWindowSize();
-  // const ismobile = Number(size?.width) <= 800;
-  // const navigate = useNavigate()
+export const Welcome: FC = () => {
+  const size = useWindowSize();
+  const ismobile = Number(size?.width) <= 800;
+  const navigate = useNavigate();
   return (
     <main>
       <div className="introComposition flexCol">
-        <HeroSection/>
-        {/* {ismobile ? (
+        <HeroSection />
+      </div>
+
+      <NFTList />
+
+      <section className="howItWorkSection">
+        <div className="howItWorkSectionTitle">How it works</div>
+        <div className="howItWorkSectionSubTitle">
+          Winning a valuable NFT has never been so easy
+        </div>
+        {ismobile ? (
           <AliceCarousel
             items={[
               <div className="introTimeline-item flexCol">
-                <img src={challangeTm1} alt="introTimeline-item-1" />
-                <span>Join Drifters Challenge</span>
-                <button className="accent" onClick={() => navigate('/signup')}>
-                  Join with Telegram
-                  <TelegramWhite />
+                <div className="imageAssetNumber">1</div>
+                <img src={Step1} alt="introTimeline-item-1" />
+                <span>Join XP Challenge</span>
+                <button
+                  className="button secondary howItWorkButtonStyle"
+                  onClick={() => navigate("/signup")}
+                >
+                  Connect with telegram
                 </button>
               </div>,
               <div className="introTimeline-item flexCol">
-                <img src={challangeTm2} alt="introTimeline-item-2" />
-                <span>Do the achievements</span>
-                <a className="button secondary" href="#achivs">Go to achievements</a>
+                <div className="imageAssetNumber">2</div>
+
+                <img src={Step2} alt="introTimeline-item-2" />
+                <span>Collect achievements</span>
+                <a
+                  className="button secondary howItWorkButtonStyle"
+                  href="#achivs"
+                >
+                  Go to achievements
+                </a>
               </div>,
               <div className="introTimeline-item flexCol">
-                <img src={challangeTm3} alt="introTimeline-item-2" />
-                <span>Win the NFT</span>
-                <button className="secondary"  onClick={() => navigate('/collection')}>VIEW THE COLLECTION</button>
+                <div className="imageAssetNumber">3</div>
+
+                <img src={Step3} alt="introTimeline-item-2" />
+                <span>Win an NFT</span>
+                <button
+                  className="secondary howItWorkButtonStyle"
+                  onClick={() => navigate("/collection")}
+                >
+                  VIEW THE COLLECTION
+                </button>
               </div>,
             ]}
             mouseTracking={true}
@@ -54,34 +79,50 @@ export const Welcome:FC = () => {
         ) : (
           <div className="introTimeline flexRow">
             <div className="introTimeline-item flexCol">
-              <img src={challangeTm1} alt="introTimeline-item-1" />
-              <span>Join Drifters Challenge</span>
-              <button className="accent" onClick={() => navigate('/signup')}>
-                Join with Telegram
-                <TelegramWhite />
+              <div className="imageAssetNumber">1</div>
+
+              <img src={Step1} alt="introTimeline-item-1" />
+              <span>Join XP Challenge</span>
+              <button
+                className="button secondary newBackground howItWorkButtonStyle"
+                onClick={() => navigate("/signup")}
+              >
+                Connect with telegram
               </button>
             </div>
 
             <div className="progressLine bright"></div>
 
             <div className="introTimeline-item flexCol">
-              <img src={challangeTm2} alt="introTimeline-item-2" />
-              <span>Do the achievements</span>
-              <a className="button secondary newBackground" href="#achivs">Go to achievements</a>
+              <div className="imageAssetNumber">2</div>
+
+              <img src={Step2} alt="introTimeline-item-2" />
+              <span>Collect achievements</span>
+              <a
+                className="button secondary newBackground howItWorkButtonStyle"
+                href="#achivs"
+              >
+                Go to achievements
+              </a>
             </div>
             <div className="progressLine"></div>
             <div className="introTimeline-item flexCol">
-              <img src={challangeTm3} alt="introTimeline-item-2" />
-              <span>Win the NFT</span>
-              <button className="secondary newBackground" onClick={() => navigate('/collection')}>VIEW THE COLLECTION</button>
+              <div className="imageAssetNumber">3</div>
+
+              <img src={Step3} alt="introTimeline-item-2" />
+              <span>Win an NFT</span>
+              <button
+                className="secondary newBackground howItWorkButtonStyle"
+                onClick={() => navigate("/collection")}
+              >
+                VIEW THE COLLECTION
+              </button>
             </div>
           </div>
-        )} */}
-      </div>
+        )}
+      </section>
 
-      <NFTList />
       <Achievements />
     </main>
   );
 };
-

@@ -47,6 +47,15 @@
   transition: all 0.3s ease;
 }
 
+.howItWorkButtonStyle {
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-top: 26px;
+}
+
 .frame.left {
   left: 3%;
 }
@@ -182,8 +191,7 @@ header button {
   color: #ff405c;
 }
 
-
-.nftWrapper{
+.nftWrapper {
   width: 120px;
 }
 .nftWrapper .nft {
@@ -191,6 +199,28 @@ header button {
   height: 120px;
 }
 
+.howItWorkSection {
+  background: #141417;
+  display: flex;
+  flex-direction: column;
+  padding-top: 114px;
+  justify-content: center;
+  align-items: center;
+}
+
+.howItWorkSectionTitle,
+.howItWorkSectionSubTitle {
+  font-size: 44px;
+  line-height: 57px;
+  font-family: "chakra-petch";
+}
+.howItWorkSectionSubTitle {
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.09em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 66px;
+}
 .homePage main {
   position: relative;
   z-index: 20;
@@ -250,8 +280,6 @@ header button {
   width: 400px;
 }
 
-
-
 .nftList .controls img {
   position: relative;
 }
@@ -295,8 +323,26 @@ header button {
   width: 100%;
 }
 
+.introTimeline-item {
+  position: relative;
+}
+
+.imageAssetNumber {
+  position: absolute;
+  font-size: 166px;
+  color: rgba(255, 255, 255, 0.06);
+  font-family: 'Nimbus Sans D OT';
+  top: 130px;
+  left: 5px;
+}
+
 .introTimeline-item img {
-  width: 110px;
+  width: 185px;
+  height: 175px;
+}
+
+.introTimeline-item span {
+  margin-top: 26px;
 }
 
 .proggress ul {
