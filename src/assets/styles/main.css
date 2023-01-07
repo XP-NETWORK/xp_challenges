@@ -54,6 +54,7 @@
   text-transform: uppercase;
   color: #ffffff;
   margin-top: 26px;
+  white-space: nowrap;
 }
 
 .frame.left {
@@ -252,6 +253,13 @@ header button {
 
 .introComposition .introTimeline .progressLine {
   margin-top: -50px;
+}
+
+.progressLine{
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 
 .introComposition button.accent > svg {

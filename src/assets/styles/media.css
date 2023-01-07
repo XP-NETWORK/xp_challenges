@@ -11,9 +11,6 @@
 }
 
 @media only screen and (max-width: 1540px) {
-  .progressLine {
-    width: 180px;
-  }
   .glowEffect.ghostBg::after {
     background: url(../img/glowEffect.png) no-repeat;
     background-size: contain;
@@ -28,18 +25,6 @@ frame top 500px
 
 */
 @media only screen and (max-width: 1420px) {
-  .progressLine {
-    width: 50px;
-  }
-
-  .introTimeline-item img {
-    width: 80px;
-  }
-
-  .progressLine {
-    margin: 0 20px;
-  }
-
   .introTimeline.flexRow {
     justify-content: space-evenly;
   }
@@ -68,6 +53,9 @@ frame top 500px
     background-size: 70% 70%;
   }
 
+  .progressLine {
+    width: 150px;
+  }
   .frame.left {
     left: 1%;
   }
@@ -96,20 +84,14 @@ frame top 500px
   .menuModal .banner .bridgeBanner-text {
     width: 50%;
   }
-
   .progressLine {
-    margin: 0 0px;
+    width: auto;
   }
 }
 
 @media only screen and (max-width: 850px) {
-
   img.nft {
     width: 200px;
-  }
-
-  .introTimeline-item img {
-    width: 120px;
   }
 
   .introTimeline-item span {
@@ -133,7 +115,6 @@ frame top 500px
     width: 250px;
     margin-bottom: 23px;
   }
-
 
   .clock .segment span {
     font-size: 14px;
@@ -291,8 +272,6 @@ frame top 500px
     width: 36px;
     height: 36px;
   }
-
-
 }
 
 @media only screen and (max-width: 480px) {

@@ -168,26 +168,6 @@ button.accent > svg {
 }
 
 
-.progressLine {
-  width: 229px;
-  height: 2px;
-  background: linear-gradient(
-    89.98deg,
-    #c71a33 -126.97%,
-    rgba(208, 118, 132, 0.49632) -49.2%,
-    rgba(218, 210, 211, 0) 214.91%
-  );
-  border-radius: 40px;
-  margin: 0 50px;
-}
-
-.progressLine.bright {
-  background: linear-gradient(
-    90.14deg,
-    #f71d3d 49.88%,
-    rgba(218, 210, 211, 0) 129.95%
-  );
-}
 
 ul.links li a,
 ul.links li,

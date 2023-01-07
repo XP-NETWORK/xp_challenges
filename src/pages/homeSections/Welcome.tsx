@@ -2,6 +2,7 @@ import { FC } from "react";
 import Step1 from "../../assets/svgs/howItWorkSection/step1.svg";
 import Step2 from "../../assets/svgs/howItWorkSection/step2.svg";
 import Step3 from "../../assets/svgs/howItWorkSection/step3.svg";
+import ArrowLeft from "../../assets/svgs/howItWorkSection/arrowLeft.svg";
 
 import NFTList from "../../components/lists/Nfts";
 import Achievements from "../../components/lists/achievments/achievements";
@@ -91,12 +92,13 @@ export const Welcome: FC = () => {
               </button>
             </div>
 
-            <div className="progressLine bright"></div>
-
+            <div className="progressLine bright">
+              <img src={ArrowLeft} />
+            </div>
             <div className="introTimeline-item flexCol">
               <div className="imageAssetNumber">2</div>
-
               <img src={Step2} alt="introTimeline-item-2" />
+
               <span>Collect achievements</span>
               <a
                 className="button secondary newBackground howItWorkButtonStyle"
@@ -105,10 +107,11 @@ export const Welcome: FC = () => {
                 Go to achievements
               </a>
             </div>
-            <div className="progressLine"></div>
+            <div className="progressLine bright">
+              <img src={ArrowLeft} />
+            </div>
             <div className="introTimeline-item flexCol">
               <div className="imageAssetNumber">3</div>
-
               <img src={Step3} alt="introTimeline-item-2" />
               <span>Win an NFT</span>
               <button
