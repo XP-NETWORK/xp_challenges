@@ -103,9 +103,7 @@ frame top 500px
 }
 
 @media only screen and (max-width: 850px) {
-  .nftWrapper .nft {
-    margin: 0 auto 0 auto;
-  }
+
   img.nft {
     width: 200px;
   }
@@ -136,9 +134,6 @@ frame top 500px
     margin-bottom: 23px;
   }
 
-  .nftWrapper .nft {
-    width: 160px;
-  }
 
   .clock .segment span {
     font-size: 14px;
@@ -297,9 +292,7 @@ frame top 500px
     height: 36px;
   }
 
-  .nftWrapper .nft {
-    width: 140px;
-  }
+
 }
 
 @media only screen and (max-width: 480px) {

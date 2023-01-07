@@ -15,12 +15,9 @@ const NFTList = () => {
 
   const mock = pics.map((pic) => ({ src: pic }));
 
-  const nfts = mock.map((item, idx) => (
+  const nfts = mock.map((item) => (
     <div className="nftWrapper">
-      <img
-        src={item.src}
-        className={`nft ${idx === central ? "central" : ""}`}
-      />
+      <img src={item.src} className={`nft`} />
     </div>
   ));
 
@@ -36,7 +33,6 @@ const NFTList = () => {
   return (
     <div className="nftList">
       <AliceCarousel
-
         infinite={true}
         ref={(node) => {
           if (node) {
@@ -48,19 +44,10 @@ const NFTList = () => {
         disableButtonsControls={true}
         autoPlay={true}
         items={nfts}
-        responsive={{
-          0: {
-            items: 3,
-          },
-
-          1400: {
-            items: 5,
-          },
-
-          2000: {
-            items: 7,
-          },
-        }}
+        animationDuration={10 * 1000}
+        autoPlayInterval={1}
+        autoWidth={true}
+        autoPlayStrategy="none"
       />
     </div>
   );
