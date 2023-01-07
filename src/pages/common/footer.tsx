@@ -2,7 +2,6 @@ import { useRef, FC } from "react";
 
 import { withServices } from "../../hocs/withServices";
 
-import frames from "../../assets/img/icons/bannerFrame.svg";
 import logo from "../../assets/img/icons/xplogoText.svg";
 
 
@@ -13,25 +12,6 @@ const Footer: FC = () => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div className="bridgeBanner">
-              <img src={frames} alt="banner-frame" className="frame" />
-              <div className="bridgeBanner-text">
-                <h3>Multichain NFT bridge</h3>
-                <p>
-                  XP.NETWORK enables multichain support out of the box for any
-                  minted NFT, dApp or use case, allowing NFTs and funds to flow
-                  freely between networks and wallets.
-                </p>
-                <a
-                  href="https://bridge.xp.network/"
-                  className="button accent"
-                  rel="norefferer"
-                  target="_blank"
-                >
-                  DISCOVER BRIDGE
-                </a>
-              </div>
-            </div>
 
             <div className="media">
               <div className="top flexRow">

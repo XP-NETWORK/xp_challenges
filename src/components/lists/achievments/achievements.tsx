@@ -31,8 +31,6 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
 
   console.log(userData);
 
-
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -49,7 +47,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
   return (
     <div className="achievements" id="achivs">
       <h2>Achievements</h2>
-      <p>Try to complete all the tasks</p>
+      <p>More completed tasks = better chances to win</p>
 
       <div className="container" style={{ marginTop: "100px" }}>
         <div className="row">
@@ -116,12 +114,10 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                   ) : (
                     <button
                       className="secondary newBackground"
-
                       onClick={() => {
                         navigate("/signup");
                       }}
                     >
-
                       Get started
                     </button>
                   )}

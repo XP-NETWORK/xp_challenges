@@ -308,22 +308,23 @@ header button {
   margin-top: 150px;
 }
 
-.achievements h2,
-.achievements > p {
-  text-align: center;
-}
-
 .achievements h2 {
+  font-family: "chakra-petch";
   font-size: 44px;
-  line-height: 67px;
-  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 57px;
+
+}
+.achievements p {
+  text-align: center;
+  font-family: "chakra-petch";
+  font-size: 18px;
+  letter-spacing: 0.09em;
+  line-height: 27px;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.achievements > p {
-  font-size: 30px;
-  color: var(--greyText);
-  margin-bottom: 20px;
-}
 
 .proggress ul,
 .proggress {
@@ -1134,7 +1135,6 @@ button.justCompleted {
 .collection .collection-item {
   margin-bottom: 24px;
 }
-
 
 .alice-carousel__dots-item {
   width: 63.33px !important;
