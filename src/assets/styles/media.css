@@ -97,6 +97,12 @@ frame top 500px
     margin-top: 78px;
   }
 
+  .achievements p {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 16px;
+  }
+
   .howItWorkSection:before {
     position: absolute;
     content: "";
