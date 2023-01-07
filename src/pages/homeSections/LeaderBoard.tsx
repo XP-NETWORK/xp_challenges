@@ -14,12 +14,34 @@ import ProgressBar from "../../components/elements/ProgressBar";
 import searchSVG from "../../assets/svgs/Leaderboard/searchLeaderboard.svg";
 import { ILeader } from "store/types";
 
-import {AvaratPlaceHolder} from '../../components/elements/avatarPlaceHolder'
+import { AvaratPlaceHolder } from "../../components/elements/avatarPlaceHolder";
 
 type Props = {
   serviceContainer: ServiceContainer;
 };
 
+let test: ILeader[] = [
+  {
+    user: "alex1",
+    comp: 14,
+    avatar: "",
+  },
+  {
+    user: "alex2",
+    comp: 1,
+    avatar: "",
+  },
+  {
+    user: "alex3",
+    comp: 4,
+    avatar: "",
+  },
+  {
+    user: "alex4",
+    comp: 6,
+    avatar: "",
+  },
+];
 const Board = ({ serviceContainer }: Props) => {
   const Dispatch = useDispatch();
   const [searchUser, setSearchUser] = useState<string>("");
@@ -56,8 +78,8 @@ const Board = ({ serviceContainer }: Props) => {
     })();
   }, []);
 
-  let search = topUser
-    ? topUser?.filter((n) =>
+  let search = test
+    ? test?.filter((n) =>
         n.user.toLowerCase().includes(`${searchUser?.toLowerCase()}`)
       )
     : [];
@@ -85,34 +107,34 @@ const Board = ({ serviceContainer }: Props) => {
       </div>
 
       <div className="leaderBoard-pannel">
-        {false && <input type="text" />}
-        <ul>
+        <div className="wrapperLeaderBoard">
           {search
             ?.sort((a: any, b: any) => {
               return b?.comp - a?.comp;
             })
             ?.map((leader: any, index) => (
-              <li
+              <div
                 key={index + leader.user}
-                className={`flexRow  ${leader?.top ? "topLeaders" : ""}`}
+                className={`${leader?.top ? "topLeaders" : ""} participant`}
               >
-                <div className={`leaderBoard-user flexRow`}>
+                <div className="participantFlex">
                   {leader.avatar ? (
                     <img src={leader.avatar} alt={"avatar" + index} />
                   ) : (
-                    <AvaratPlaceHolder username={ leader.user}/>
+                    <AvaratPlaceHolder username={leader.user} />
                   )}
-                  <span>@{leader.user}</span>
+                  <div>@{leader.user}</div>
                 </div>
+
                 <div className="leaderBoard-progress">
                   <ProgressBar
                     current={leader.comp}
                     total={achievements.length}
                   />
                 </div>
-              </li>
+              </div>
             ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

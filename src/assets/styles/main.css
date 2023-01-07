@@ -211,6 +211,13 @@ header button {
   margin-top: 25px;
 }
 
+.wrapperLeaderBoard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1171px;
+  margin: 0 auto;
+}
+
 .howItWorkSectionTitle,
 .howItWorkSectionSubTitle {
   font-size: 44px;
@@ -314,7 +321,6 @@ header button {
   color: #fff;
   text-align: center;
   line-height: 57px;
-
 }
 .achievements p {
   text-align: center;
@@ -324,7 +330,6 @@ header button {
   line-height: 27px;
   color: rgba(255, 255, 255, 0.8);
 }
-
 
 .proggress ul,
 .proggress {
@@ -1012,7 +1017,6 @@ button.justCompleted {
   position: relative;
   z-index: 2;
   padding-top: 200px;
-  width: 684px;
   text-align: center;
   min-height: 60vh;
   margin: auto;
@@ -1052,16 +1056,27 @@ button.justCompleted {
 .leaderBoard-pannel {
   margin-top: 50px;
   height: 750px;
+  margin: 0 auto;
 }
 
-.leaderBoard-pannel ul li {
-  margin: 20px 0;
+.participant {
   background: #161718;
-  height: 78px;
-  padding-left: 22px;
-  padding-right: 22px;
+  width: 379.67px;
+  height: 154px;
+  padding: 27px 22px;
+  display: flex;
+  flex-direction: column;
 }
 
+.participantFlex {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.leaderBoard-progress {
+  margin-top: auto;
+  margin-right: auto;
+}
 .topLeaders {
   background: linear-gradient(
     270.75deg,
@@ -1160,6 +1175,8 @@ button.justCompleted {
 .searchContainer {
   position: relative;
   margin-top: 43px;
+  max-width: 687px;
+  margin: 0 auto;
 }
 
 .searchContainer img {
