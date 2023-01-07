@@ -24,7 +24,7 @@ body {
   width: 100%;
   position: relative;
   z-index: 0;
-  background: rgb(var(--mainBg));
+  background: #09070A;
 }
 #root {
   height: 100%;

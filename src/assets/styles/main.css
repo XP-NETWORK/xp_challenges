@@ -201,12 +201,14 @@ header button {
 }
 
 .howItWorkSection {
+  position: relative;
   background: #141417;
   display: flex;
   flex-direction: column;
   padding-top: 114px;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
 }
 
 .howItWorkSectionTitle,
@@ -255,7 +257,7 @@ header button {
   margin-top: -50px;
 }
 
-.progressLine{
+.progressLine {
   width: 200px;
   display: flex;
   justify-content: center;
@@ -339,7 +341,7 @@ header button {
   position: absolute;
   font-size: 166px;
   color: rgba(255, 255, 255, 0.06);
-  font-family: 'Nimbus Sans D OT';
+  font-family: "Nimbus Sans D OT";
   top: 130px;
   left: 5px;
 }
@@ -1133,26 +1135,22 @@ button.justCompleted {
   margin-bottom: 24px;
 }
 
+
 .alice-carousel__dots-item {
   width: 63.33px !important;
   height: 2px !important;
-  background: linear-gradient(
-    89.98deg,
-    #c71a33 -126.97%,
-    rgba(208, 118, 132, 0.49632) -49.2%,
-    rgba(218, 210, 211, 0) 214.91%
-  );
-  border-radius: 40px;
-  border-radius: 40px;
+
+  background: #ffffff !important;
+  opacity: 0.15 !important;
+  border-radius: 40px !important;
 }
 
 .alice-carousel__dots-item.__active {
-  background: linear-gradient(
-    90.14deg,
-    #f71d3d 49.88%,
-    rgba(218, 210, 211, 0) 129.95%
-  );
-  border-radius: 40px;
+  width: 63.33px !important;
+  height: 2px !important;
+  background: #f71d3d !important;
+  border-radius: 40px !important;
+  opacity: 1 !important;
 }
 
 .alice-carousel__dots {

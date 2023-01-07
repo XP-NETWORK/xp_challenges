@@ -93,9 +93,41 @@ frame top 500px
   img.nft {
     width: 200px;
   }
+  .howItWorkSection {
+    margin-top: 78px;
+  }
+
+  .howItWorkSection:before {
+    position: absolute;
+    content: "";
+    border-top: 30px solid #09070a;
+    border-right: 30px solid transparent;
+    top: -1px;
+    left: -1px;
+  }
+  .howItWorkSection:after {
+    position: absolute;
+    content: "";
+    border-bottom: 30px solid #09070a;
+    border-left: 30px solid transparent;
+    bottom: -1px;
+    right: -1px;
+  }
 
   .introTimeline-item span {
     margin: 10px 0;
+  }
+
+  .imageAssetNumber {
+    top: 70px;
+    left: 50px;
+  }
+
+  .howItWorkSectionSubTitle {
+    font-size: 18px;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .frame.left,
