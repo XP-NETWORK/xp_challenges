@@ -42,7 +42,7 @@ export const ProgressBar: FC<ProgressBarProps> = ({ current, total }) => {
                 bar = node;
               }
             }}
-          >     
+          >
             {Array(total).fill(true).map((_, idx) => <div key={`innerSegment-${idx}-${Math.random()}`} className={`inner-segment ${idx === current - 1? 'last': ''} ${idx < current? 'completed': ''}`}></div>)}
           </div>
         </div>

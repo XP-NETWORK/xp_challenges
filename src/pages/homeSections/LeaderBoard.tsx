@@ -56,11 +56,11 @@ const Board = ({ serviceContainer }: Props) => {
   useEffect(() => {
     (async () => {
       const leaders = await api.getBoard();
-      if (leaders) {
-        Dispatch(setLeaders(leaders));
+      if (test) {
+        Dispatch(setLeaders(test));
       }
-      let getTopTwo = leaders
-        ? leaders
+      let getTopTwo = test
+        ? test
             .map((n) => n)
             ?.sort((a: ILeader, b: ILeader) => {
               return b.comp - a.comp;
@@ -89,6 +89,7 @@ const Board = ({ serviceContainer }: Props) => {
     setSearchUser(value);
   };
 
+
   return (
     <div className="leaderBoard">
       <h2>LEADERBOARD</h2>
@@ -108,7 +109,7 @@ const Board = ({ serviceContainer }: Props) => {
 
       <div className="leaderBoard-pannel">
         <div className="wrapperLeaderBoard">
-          {search
+          {topUser
             ?.sort((a: any, b: any) => {
               return b?.comp - a?.comp;
             })

@@ -796,6 +796,10 @@ body.showModal header .menu {
   width: 100%;
 }
 
+.avatarPlaceholder {
+  margin-right: 10px;
+}
+
 .barWrap {
   padding: 18px;
   width: 100%;
@@ -811,13 +815,12 @@ body.showModal header .menu {
 
 .progressBar .bar {
   border-radius: 40px;
-  width: 90px;
+  width: 286px;
   padding: 6px;
   background-color: #201f1f;
-}
-
-.leaderBoard-progress .bar {
-  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .progressBar .rate {
@@ -1016,7 +1019,7 @@ button.justCompleted {
 .leaderBoard {
   position: relative;
   z-index: 2;
-  padding-top: 200px;
+  padding-top: 50px;
   text-align: center;
   min-height: 60vh;
   margin: auto;
@@ -1061,11 +1064,13 @@ button.justCompleted {
 
 .participant {
   background: #161718;
-  width: 379.67px;
+  width: 379px;
   height: 154px;
   padding: 27px 22px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 16px;
+  margin-left: 16px;
 }
 
 .participantFlex {
@@ -1177,6 +1182,7 @@ button.justCompleted {
   margin-top: 43px;
   max-width: 687px;
   margin: 0 auto;
+  margin-bottom: 42px;
 }
 
 .searchContainer img {
