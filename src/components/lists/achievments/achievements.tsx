@@ -31,8 +31,6 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
     })
   );
 
-  console.log("alex ", userData);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
