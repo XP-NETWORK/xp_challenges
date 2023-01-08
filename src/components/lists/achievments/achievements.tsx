@@ -29,8 +29,6 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
     })
   );
 
-  console.log(userData);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -43,7 +41,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
       }, 3000);
     }
   }, [justCompleted]);
-  //https://t.me/i/userpic/320/NhgyFmJtk4F8zLFdeT4lrgEfSIyY9SS9UOMMiu88ud4.jpg
+
   return (
     <div className="achievements" id="achivs">
       <h2>Achievements</h2>
@@ -61,6 +59,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
             const completed = justCompleted.includes(index);
 
             let AchievementIcon = achievementsPics[name];
+
             if (Array.isArray(AchievementIcon)) {
               AchievementIcon = description.includes("Connect wallet")
                 ? AchievementIcon[1]

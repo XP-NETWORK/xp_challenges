@@ -15,7 +15,15 @@ import WalletList from "components/lists/wallet";
 import { config } from "../../index";
 import { ConfirmRegistrationModal } from "./confirmRegistration";
 
-const Modal = ({ modal }: { modal: IModal }) => {
+import { withServices, ServiceContainer } from "hocs/withServices";
+
+const Modal = ({
+  modal,
+  serviceContainer,
+}: {
+  modal: IModal;
+  serviceContainer: ServiceContainer;
+}) => {
   let body: JSX.Element = <div></div>;
   const dispatch = useDispatch();
 
@@ -59,13 +67,34 @@ const Modal = ({ modal }: { modal: IModal }) => {
       break;
     }
 
+    case "EmailSubscribe": {
+      body = (
+        <>
+          <h3>Stay up to date</h3>
+          <p>{modal.text}</p>
+          <div className="inputWrapper">
+            <input type="email" />
+            <button
+              onClick={() => {
+                console.log(serviceContainer);
+              }}
+            >
+              Subscribe
+            </button>
+          </div>
+        </>
+      );
+
+      break;
+    }
+
     default:
       break;
   }
 
   return (
     <>
-    <div className="blurOver"></div>
+      <div className="blurOver"></div>
       <div className="small-modal">
         <div className="popupHeader">
           <div className="modal-header">{modal.text}</div>
@@ -81,4 +110,4 @@ const Modal = ({ modal }: { modal: IModal }) => {
   );
 };
 
-export default Modal;
+export default withServices(Modal);

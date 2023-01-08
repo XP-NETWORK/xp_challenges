@@ -1,4 +1,4 @@
-
+import React from "react";
 
 import { AchivType } from "store/types";
 
@@ -10,8 +10,7 @@ import { ReactComponent as bridgeAchiv } from "../../../assets/img/icons/newBrid
 
 import { ReactComponent as walletIcon } from "../../../assets/img/icons/newWalletIcon.svg";
 
-import { ReactComponent as subscribe } from "../../../assets/img/icons/newWalletIcon.svg";
-
+import mailIcon from "../../../assets/img/icons/maild.png";
 
 import { IUserAchievments, UserData } from "store/models/user";
 
@@ -36,7 +35,12 @@ export const achievementsPics = {
   [AchivType.Telegram]: TelegramAchiv,
   [AchivType.Twitter]: twitAchiv,
   [AchivType.Bridge]: [bridgeAchiv, walletIcon],
-  [AchivType.Subscribe]: [subscribe],
+  [AchivType.Subscribe]: () => {
+    return React.createElement("img", {
+      src: mailIcon,
+      className: "achivCard-pic",
+    });
+  },
 };
 
 export type actionTypesImagesType = {
@@ -68,8 +72,6 @@ export const achievementsHandlers = {
     link = config._DEFAULT_TWITTER_LINK,
     dispatch: Dispatch<AnyAction>
   ) => () => {
-
-
     if (!userData?.twitterUserName) {
       dispatch(
         setModal({
@@ -106,5 +108,18 @@ export const achievementsHandlers = {
     return window.open(link);
   },
   [AchivType.Subscribe]: (
-  ) => () => {return ""},
+    userData: UserData | undefined,
+    link = config._DEFAULT_BRIDGE_LINK,
+    dispatch: Dispatch<AnyAction>
+  ) => () => {
+    if (!userData?.email && link) {
+      dispatch(
+        setModal({
+          type: "EmailSubscribe",
+          text: "Subscribe to XP.NETWORK news to complete the achievement",
+        })
+      );
+      return;
+    }
+  },
 };

@@ -90,9 +90,15 @@ export type AchievementsUpdateEvent = {
 };
 
 export type IModal = {
-  type: "Error" | "WalletList" | "TwitterAuth" | "TelegramAuth" | "confirmReg";
+  type:
+    | "Error"
+    | "WalletList"
+    | "TwitterAuth"
+    | "TelegramAuth"
+    | "confirmReg"
+    | "EmailSubscribe";
   text?: string;
   telegramAccount?: string;
   email?: string;
-  confirmButton?: any
+  confirmButton?: any;
 };
