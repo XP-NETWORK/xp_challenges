@@ -15,17 +15,11 @@ import WalletList from "components/lists/wallet";
 import { config } from "../../index";
 import { ConfirmRegistrationModal } from "./confirmRegistration";
 
-import { withServices, ServiceContainer } from "hocs/withServices";
-
 import { ReactComponent as Frame } from "../../assets/img/icons/card-frameSimple.svg";
 
-const Modal = ({
-  modal,
-  serviceContainer,
-}: {
-  modal: IModal;
-  serviceContainer: ServiceContainer;
-}) => {
+import { Subscribe } from "../auth/Subscribe";
+
+const Modal = ({ modal }: { modal: IModal }) => {
   let body: JSX.Element = <div></div>;
   const dispatch = useDispatch();
 
@@ -70,22 +64,7 @@ const Modal = ({
     }
 
     case "EmailSubscribe": {
-      body = (
-        <>
-          <h3>Stay up to date</h3>
-          <p>{modal.text}</p>
-          <div className="inputWrapper">
-            <input type="email" />
-            <button
-              onClick={() => {
-                console.log(serviceContainer);
-              }}
-            >
-              Subscribe
-            </button>
-          </div>
-        </>
-      );
+      body = <Subscribe />;
 
       break;
     }
@@ -98,8 +77,8 @@ const Modal = ({
     <>
       <div className="blurOver"></div>
       <div className="small-modal">
-        <Frame className="cardFrame" />
-        <div className="popupHeader">
+        <Frame className="cardFrame modalFrame" />
+        <div className={`popupHeader ${!modal.text ? "empty-header" : ""}`}>
           <div className="modal-header">{modal.text}</div>
           <img
             src={close}
@@ -113,4 +92,4 @@ const Modal = ({
   );
 };
 
-export default withServices(Modal);
+export default Modal;

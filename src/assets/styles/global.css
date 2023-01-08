@@ -377,6 +377,8 @@ button.completed {
   padding-top: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #343436;
+  position: relative;
+  z-index: 80;
 }
 
 .popupHeader img {

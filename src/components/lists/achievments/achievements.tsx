@@ -31,7 +31,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
     })
   );
 
-  console.log("alex ",userData);
+  console.log("alex ", userData);
 
   const dispatch = useDispatch();
 
@@ -94,7 +94,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                     <p>{description}</p>
                   </div>
 
-                  {true ? (
+                  {userData ? (
                     <button
                       onClick={
                         userProgress?.completed

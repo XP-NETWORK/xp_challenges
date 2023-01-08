@@ -1207,6 +1207,85 @@ button.justCompleted {
   margin-top: 150px;
 }
 
+.small-modal .subscribe > img {
+  width: 104px;
+}
+
+.small-modal .subscribe h2 {
+  font-size: 52px;
+  padding: 26px 0;
+  line-height: 65px;
+}
+
+.empty-header {
+  border-bottom: none;
+}
+
+.small-modal .subscribe {
+  position: relative;
+  z-index: 82;
+  width: 364px;
+  text-align: center;
+  margin: auto;
+}
+
+.modal-body,
+.popupHeader {
+  position: relative;
+  z-index: 82;
+}
+
+.small-modal .subscribe p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.small-modal .subscribe .inputWrapper {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: 61px;
+  padding: 0 10px;
+  position: relative;
+}
+
+.modalFrame {
+  left: -2%;
+
+  top: -2%;
+  width: 104%;
+  height: 104%;
+}
+
+.inputWrapper input {
+  background: transparent;
+  border: none;
+}
+
+.inputWrapper span {
+  display: none;
+}
+
+.failed.inputWrapper {
+  border: 1px solid red !important;
+}
+
+.failed.inputWrapper span {
+  display: inline;
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  color: red;
+  font-size: 14px;
+}
+
+.inputWrapper button {
+  padding: 10px 12px;
+  background: #ffffff;
+  color: #282829;
+  font-size: 16px;
+  height: 41px;
+}
+
 @media (max-width: 600px) {
   .leaderBoard {
     width: 100%;

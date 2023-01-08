@@ -115,8 +115,7 @@ export const achievementsHandlers = {
     if (!userData?.email && link) {
       dispatch(
         setModal({
-          type: "EmailSubscribe",
-          text: "Subscribe to XP.NETWORK news to complete the achievement",
+          type: "EmailSubscribe"
         })
       );
       return;

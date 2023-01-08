@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ILeader, TelegramUser } from "store/types";
-import { User } from "../store/models/user";
+import { User, UserData } from "../store/models/user";
 import { axiosInstance } from "./axios";
 
 class Api {
@@ -11,8 +11,8 @@ class Api {
   }
 
   async getData() {
-    const [achievements, project] =  await Promise.all([
-      (await axiosInstance(this.base).get( "/getAllAchievments")).data,
+    const [achievements, project] = await Promise.all([
+      (await axiosInstance(this.base).get("/getAllAchievments")).data,
       (await axiosInstance(this.base).get("/getCurrentProject")).data,
     ])
     return {
@@ -70,18 +70,31 @@ class Api {
 
   async getBoard() {
     try {
-      return await (await axios.get(this.base + `/getLeaderboard?projectNumber=1`)).data  as ILeader[]
+      return await (await axios.get(this.base + `/getLeaderboard?projectNumber=1`)).data as ILeader[]
     } catch (e) {
-        console.log(e,' in getBoard');
-        return undefined
+      console.log(e, ' in getBoard');
+      return undefined
     }
   }
 
-  async getUsersDeregisteredId(uniqueId: string){
-    try{
-      return await (await axios.get(this.base + `/getUsersByregisteredId?registeredId=${uniqueId}`)).data  as ILeader[]
-    }catch(e){
+  async getUsersDeregisteredId(uniqueId: string) {
+    try {
+      return await (await axios.get(this.base + `/getUsersByregisteredId?registeredId=${uniqueId}`)).data as ILeader[]
+    } catch (e) {
       console.error(e)
+    }
+  }
+
+  async sendEmail(email: string, userData: UserData, projectNumber: number) {
+    try {
+      return await (await axios.post(this.base + `/sendEmail`, {
+        emailAddress: email,
+        telegramUsername: userData.telegramUsername,
+        projectNumber
+      })).data
+    } catch (e) {
+      console.log(e, ' in getBoard');
+      return undefined
     }
   }
 }
