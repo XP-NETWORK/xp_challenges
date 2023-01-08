@@ -99,6 +99,7 @@ frame top 500px
 
   .participant {
     max-width: 335px;
+    margin-left: 0px;
   }
 
   .achievements p {
