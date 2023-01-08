@@ -57,8 +57,8 @@ const Board = ({ serviceContainer }: Props) => {
     })();
   }, []);
 
-  let search = leaders
-    ? leaders?.filter((n) =>
+  let search = topUser
+    ? topUser?.filter((n) =>
         n.user.toLowerCase().includes(`${searchUser?.toLowerCase()}`)
       )
     : [];
@@ -99,11 +99,11 @@ const Board = ({ serviceContainer }: Props) => {
               >
                 <div className="participantFlex">
                   {leader.avatar ? (
-                    <img src={leader.avatar} alt={"avatar" + index} />
+                    <img src={leader.avatar} alt={"avatar" + index} className="avatarBox"/>
                   ) : (
                     <AvaratPlaceHolder username={leader.user} />
                   )}
-                  <div>@{leader.user}</div>
+                  <div className="userNameText">@{leader.user}</div>
                 </div>
 
                 <div className="leaderBoard-progress">
