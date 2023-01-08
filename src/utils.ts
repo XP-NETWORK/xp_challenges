@@ -70,10 +70,10 @@ export function importAll(r: any) {
   return r.keys().map(r);
 }
 
-export const saveTelegramUniqueId = (unique: string, telegramId: string) => {
+export const saveTelegramUniqueId = (unique: string) => {
   localStorage.setItem(
     "telegramUnique",
-    JSON.stringify({ unique, telegramId })
+    unique
   );
 };
 

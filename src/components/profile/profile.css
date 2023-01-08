@@ -86,9 +86,48 @@
 }
 .profileTopFlex .clock .segment span {
   font-size: 12px;
-  bottom: 10px
+  bottom: 10px;
 }
 
 .profileTopFlex .flexRow {
   width: 264px;
+}
+
+.userFrame {
+  position: absolute;
+  width: 163px;
+  height: 142px;
+  clip-path: polygon(
+    51% 0,
+    51% 0,
+    100% 21%,
+    100% 80%,
+    50% 100%,
+    50% 100%,
+    0 80%,
+    0 21%
+  );
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -100px;
+  left: 300px;
+}
+
+.innerUserFrame {
+  width: 159px;
+  height: 138px;
+  clip-path: polygon(
+    51% 0,
+    51% 0,
+    100% 21%,
+    100% 80%,
+    50% 100%,
+    50% 100%,
+    0 80%,
+    0 21%
+  );
+  background: black;
+  padding: 10px !important;
 }

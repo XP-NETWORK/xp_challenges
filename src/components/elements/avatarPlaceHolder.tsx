@@ -18,18 +18,18 @@ function getAvatarColor(letter:string) {
         color = "#B381B3";
         break;
     }
-  
+
     return color;
   }
 
 export const AvaratPlaceHolder = ({username}: {username:string}) => {
 
-    const l = username.at(0)?.toUpperCase() || 'A'
+    const l = username?.at(0)?.toUpperCase() || 'A'
 
     const color = getAvatarColor(l);
 //const randomElement = array[Math.floor(Math.random() * array.length)];
 
 return <div className="avatarPlaceholder" style={{background: color}}>
-    {username.at(0)?.toUpperCase()}
+    {username?.at(0)?.toUpperCase()}
 </div>
 }

@@ -1,4 +1,4 @@
-import { FC, useMemo } from "react";
+import { FC, useMemo, useEffect } from "react";
 import { Routes, Route } from "react-router";
 
 import { useLocation } from "react-router";
@@ -15,8 +15,10 @@ import Modal from "components/modals";
 
 // import { ReactComponent as TopFrame } from "../assets/img/topFrame.svg";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { ReduxState } from "store";
+import { getUserByUniqueId } from "store/reducer/global";
+import { loadTelegramUniqueId } from "utils";
 
 const noscrollPages = ["signup"];
 
@@ -26,11 +28,37 @@ export const Router: FC = () => {
     noscrollPages.find((p) => location.pathname.includes(p))
   );
 
+  const dispatch = useDispatch();
   const { telegramUser, init, modal } = useSelector((state: ReduxState) => ({
     telegramUser: state.global.telegramUser,
     init: state.global.init,
     modal: state.global.modal,
   }));
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  useEffect(() => {
+    let interval: any;
+    if (!telegramUser) {
+      interval = setInterval(() => {
+        loadData();
+      }, 5000);
+    } else {
+      if (telegramUser) {
+        clearInterval(interval);
+      }
+    }
+
+    return () => clearInterval(interval);
+  }, [telegramUser]);
+
+  const loadData = async () => {
+    await dispatch(getUserByUniqueId(loadTelegramUniqueId() as any) as any);
+  };
+
+  console.log(telegramUser);
 
   const MemoedSignUp = useMemo(() => SignupContainer(Signup), ["signup"]);
 
@@ -41,7 +69,7 @@ export const Router: FC = () => {
           path="/"
           element={
             <HomePage init={init}>
-              {!telegramUser ? <Profile /> : <Welcome />}
+              {telegramUser ? <Profile /> : <Welcome />}
             </HomePage>
           }
         />

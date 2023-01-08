@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { Action } from "..";
 import {
   IACHIEVMENT,
@@ -10,6 +10,23 @@ import {
 } from "store/types";
 
 import { UserData, IWallet } from "store/models/user";
+import { axiosInstance } from "services/axios";
+
+export const getUserByUniqueId = createAsyncThunk(
+  "getUsersByregisteredId?registeredId",
+  async (uniqueId: string, thunkAPI) => {
+    try {
+      const response = await axiosInstance(
+        "https://xp-challenges.herokuapp.com/"
+      ).get(`getUsersByregisteredId?registeredId=${uniqueId}`);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(
+        "An error occured ! => " + (error as { message: string }).message
+      );
+    }
+  }
+);
 
 export type GlobalState = {
   achievements: IACHIEVMENT[];
@@ -24,20 +41,10 @@ export type GlobalState = {
   leaders: ILeader[] | undefined;
 };
 
-const mock = undefined && {
-  id: BigInt(1062713330),
-  first_name: "Alex",
-  last_name: "Teisheira",
-  username: "darylMussasi",
-  photo_url: "", //"https://t.me/i/userpic/320/NhgyFmJtk4F8zLFdeT4lrgEfSIyY9SS9UOMMiu88ud4.jpg",
-  auth_date: BigInt(1062713330),
-  hash: "876b55925d0281e291dae5f00a0e073915577c1edd4b4886e1101000322b546a",
-};
-
 export const initialState: GlobalState = {
   project: undefined,
   achievements: [],
-  telegramUser: mock,
+  telegramUser: undefined,
   userData: undefined,
   init: false,
   currentProject: 1,
@@ -171,6 +178,17 @@ export const global = createSlice({
     setLeaders: (state: GlobalState, action: ASetLeaders) => {
       state.leaders = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getUserByUniqueId.pending, (state: any, action: any) => {
+      console.log(action.payload);
+    });
+    builder.addCase(getUserByUniqueId.fulfilled, (state: any, action: any) => {
+      state.telegramUser = action.payload;
+    });
+    builder.addCase(getUserByUniqueId.rejected, (state, action) => {
+      console.log(action.payload);
+    });
   },
 });
 

@@ -46,6 +46,11 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
       <div className="profileContainer">
         <Frame className="cardFrameProfile" />
         <div className="flexColumnProfile">
+        <div className="userFrame">
+          <div className="innerUserFrame">
+            </div>
+        </div>
+
           <div className="profileTopFlex">
             <ProjectTimer />
             <button className="viewLeaderBoardButton">VIEW LEADERBOARD</button>
@@ -85,6 +90,7 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
           </div>
         </div>
       </div>
+
     </>
   );
 };

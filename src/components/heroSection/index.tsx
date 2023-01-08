@@ -1,9 +1,9 @@
 import { ProjectTimer } from "components/elements/ProjectTimer";
 import { FC } from "react";
-import { useNavigate } from "react-router-dom";
+import { saveTelegramUniqueId } from "utils";
+import { v4 as uuidv4 } from "uuid";
 
 import ExampleImage from "../../assets/img/heroSection/drifters.png";
-import { ReactComponent as TelegramWhite } from "../../assets/img/icons/tgWhite.svg";
 
 import "./heroSection.css";
 
@@ -14,8 +14,15 @@ import "./heroSection.css";
 // }
 
 export const HeroSection: FC = () => {
-  const navigate = useNavigate();
-
+  const unique = uuidv4()
+  const openInNewTab = () => {
+    window.open(
+      `https://t.me/challengeRegestrationBot/?start=${unique}`,
+      "_blank",
+      "noreferrer"
+    );
+    saveTelegramUniqueId(unique)
+  };
   return (
     <>
       <section className="heroContainer">
@@ -26,9 +33,8 @@ export const HeroSection: FC = () => {
           <img src={ExampleImage} alt="nftCollectionName" />
         </div>
         <div className="heroButtonsSection">
-          <button className="accent" onClick={() => navigate("/signup")}>
+          <button className="accent" onClick={openInNewTab}>
             Connect with Telegram
-            <TelegramWhite />
           </button>
           <button className="howWorkButtonStyle">HOW IT WORKS</button>
         </div>

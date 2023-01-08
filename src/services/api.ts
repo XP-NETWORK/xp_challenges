@@ -76,6 +76,14 @@ class Api {
         return undefined
     }
   }
+
+  async getUsersDeregisteredId(uniqueId: string){
+    try{
+      return await (await axios.get(this.base + `/getUsersByregisteredId?registeredId=${uniqueId}`)).data  as ILeader[]
+    }catch(e){
+      console.error(e)
+    }
+  }
 }
 
 export default (base: string) => new Api(base);
