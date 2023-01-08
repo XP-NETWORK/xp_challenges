@@ -1085,6 +1085,12 @@ button.justCompleted {
   align-items: center;
   flex-direction: row;
 }
+
+.avatarBox {
+  border-radius: 28px;
+  width: 44px;
+  height: 44px;
+}
 .leaderBoard-progress {
   margin-top: auto;
   margin-right: auto;
@@ -1097,15 +1103,16 @@ button.justCompleted {
   ) !important;
   position: relative;
 }
-
-.completedAchievment {
+.userNameText{
+  margin-left: 10px;
 }
+
 
 .topLeaders::after {
   content: url("../svgs/Leaderboard/topCrown.svg");
   position: absolute;
   left: 50px;
-  top: 15px;
+  top: 20px;
 }
 
 .leaderBoard-user span {

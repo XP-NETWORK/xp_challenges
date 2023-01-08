@@ -20,28 +20,7 @@ type Props = {
   serviceContainer: ServiceContainer;
 };
 
-let test: ILeader[] = [
-  {
-    user: "alex1",
-    comp: 14,
-    avatar: "",
-  },
-  {
-    user: "alex2",
-    comp: 1,
-    avatar: "",
-  },
-  {
-    user: "alex3",
-    comp: 4,
-    avatar: "",
-  },
-  {
-    user: "alex4",
-    comp: 6,
-    avatar: "",
-  },
-];
+
 const Board = ({ serviceContainer }: Props) => {
   const Dispatch = useDispatch();
   const [searchUser, setSearchUser] = useState<string>("");
@@ -56,11 +35,11 @@ const Board = ({ serviceContainer }: Props) => {
   useEffect(() => {
     (async () => {
       const leaders = await api.getBoard();
-      if (test) {
-        Dispatch(setLeaders(test));
+      if (leaders) {
+        Dispatch(setLeaders(leaders));
       }
-      let getTopTwo = test
-        ? test
+      let getTopTwo = leaders
+        ? leaders
             .map((n) => n)
             ?.sort((a: ILeader, b: ILeader) => {
               return b.comp - a.comp;
@@ -78,8 +57,8 @@ const Board = ({ serviceContainer }: Props) => {
     })();
   }, []);
 
-  let search = test
-    ? test?.filter((n) =>
+  let search = topUser
+    ? topUser?.filter((n) =>
         n.user.toLowerCase().includes(`${searchUser?.toLowerCase()}`)
       )
     : [];
@@ -109,7 +88,7 @@ const Board = ({ serviceContainer }: Props) => {
 
       <div className="leaderBoard-pannel">
         <div className="wrapperLeaderBoard">
-          {topUser
+          {search
             ?.sort((a: any, b: any) => {
               return b?.comp - a?.comp;
             })
@@ -120,11 +99,11 @@ const Board = ({ serviceContainer }: Props) => {
               >
                 <div className="participantFlex">
                   {leader.avatar ? (
-                    <img src={leader.avatar} alt={"avatar" + index} />
+                    <img src={leader.avatar} alt={"avatar" + index} className="avatarBox"/>
                   ) : (
                     <AvaratPlaceHolder username={leader.user} />
                   )}
-                  <div>@{leader.user}</div>
+                  <div className="userNameText">@{leader.user}</div>
                 </div>
 
                 <div className="leaderBoard-progress">
