@@ -222,6 +222,7 @@ header button {
   margin: 0 auto;
   grid-template-columns: repeat(auto-fill, 379px);
   grid-column-gap: 1rem;
+  justify-content: center;
 }
 
 .howItWorkSectionTitle,
@@ -353,7 +354,7 @@ header button {
   position: absolute;
   font-size: 166px;
   color: rgba(255, 255, 255, 0.06);
-  font-family: "Nimbus Sans D OT";
+  font-family: "chakra-petch";
   top: 130px;
   left: 5px;
 }
