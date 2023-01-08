@@ -45,7 +45,7 @@ const images:string[] = importAll(
                 <div className="col-12">
                         <h2 className='collectionHeader'>Collection</h2>
                         <p>Try to complete all the tastks</p>
-                        <button className="secondary newBackground"  onClick={() => navigate('/signup')}>Get started</button>
+                        <button className="secondary newBackground">Get started</button>
                         <div className="row">
                             {
                                 pics.map((pic, index) => <div key={`collection-${index}`} className="collection-item col-12 col-md-6 col-lg-4 col-xl-3">

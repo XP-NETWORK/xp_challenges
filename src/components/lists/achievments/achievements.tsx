@@ -17,7 +17,6 @@ import {
   achievementsHandlers,
   achievementsPics,
 } from "./consts";
-import { useNavigate } from "react-router-dom";
 
 function Achievements({ userAchievements, userData }: AchievementsProps) {
   const { achievements, justCompleted, project } = useSelector(
@@ -30,7 +29,6 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
   );
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (justCompleted?.length) {
@@ -111,12 +109,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                         : achievementsBtns[name]}
                     </button>
                   ) : (
-                    <button
-                      className="secondary newBackground"
-                      onClick={() => {
-                        navigate("/signup");
-                      }}
-                    >
+                    <button className="secondary newBackground">
                       Get started
                     </button>
                   )}

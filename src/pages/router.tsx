@@ -1,11 +1,9 @@
-import { FC, useMemo, useEffect } from "react";
+import { FC, useEffect } from "react";
 import { Routes, Route } from "react-router";
 
 import { useLocation } from "react-router";
 
 import HomePage from "./Home";
-import Signup from "./Signup";
-import SignupContainer from "components/containers/Signup";
 
 import { Welcome } from "./homeSections/Welcome";
 import Profile from "./homeSections/Profile";
@@ -58,9 +56,7 @@ export const Router: FC = () => {
     await dispatch(getUserByUniqueId(loadTelegramUniqueId() as any) as any);
   };
 
-  console.log(telegramUser);
 
-  const MemoedSignUp = useMemo(() => SignupContainer(Signup), ["signup"]);
 
   return (
     <div className={`app ${noscroll ? "noscroll" : ""}`}>
@@ -92,7 +88,6 @@ export const Router: FC = () => {
           }
         />
 
-        <Route path="/signup" element={<MemoedSignUp />} />
       </Routes>
       {modal && <Modal modal={modal} />}
     </div>

@@ -87,7 +87,6 @@ export const Welcome: FC = () => {
               <span>Join XP Challenge</span>
               <button
                 className="button secondary newBackground howItWorkButtonStyle"
-                onClick={() => navigate("/signup")}
               >
                 Connect with telegram
               </button>
