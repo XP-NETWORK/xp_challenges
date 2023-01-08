@@ -93,41 +93,17 @@
   width: 264px;
 }
 
-.userFrame {
-  position: absolute;
-  width: 163px;
+.userFrameCi {
+  border-radius: 50%;
+  border: 3px solid #fff;
+  width: 142px;
   height: 142px;
-  clip-path: polygon(
-    51% 0,
-    51% 0,
-    100% 21%,
-    100% 80%,
-    50% 100%,
-    50% 100%,
-    0 80%,
-    0 21%
-  );
-  background: #fff;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: -100px;
-  left: 300px;
-}
-
-.innerUserFrame {
-  width: 159px;
-  height: 138px;
-  clip-path: polygon(
-    51% 0,
-    51% 0,
-    100% 21%,
-    100% 80%,
-    50% 100%,
-    50% 100%,
-    0 80%,
-    0 21%
-  );
-  background: black;
-  padding: 10px !important;
+  z-index: 9;
+  position: absolute;
+  top: -120px;
+  left: 310px;
 }

@@ -6,8 +6,6 @@ import { ReduxState } from "store";
 import { setTelegramUser, setUserData } from "store/reducer/global";
 import { TelegramUser } from "store/types";
 
-import UserAccount from "./UserAccount";
-
 import { withServices, ServiceContainer } from "hocs/withServices";
 
 import { useNavigate } from "react-router-dom";
@@ -24,7 +22,7 @@ function TelegramLogin(props: TelegramLoginProps) {
     serviceContainer: { telegram: telegramService, api },
     vert = false,
   } = props;
-  const { telegramUser, userData } = useSelector((state: ReduxState) => ({
+  const { userData } = useSelector((state: ReduxState) => ({
     telegramUser: state.global.telegramUser,
     userData: state.global.userData,
   }));
@@ -91,8 +89,6 @@ function TelegramLogin(props: TelegramLoginProps) {
 
   return (
     <div className={`signUpContainer ${vert ? "vertical" : ""}`}>
-
-      <UserAccount telegramUser={telegramUser} />
       {userData?.wallets?.length ? (
         <UserWallet wallets={userData.wallets} />
       ) : (
