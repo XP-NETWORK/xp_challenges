@@ -17,6 +17,8 @@ import { ConfirmRegistrationModal } from "./confirmRegistration";
 
 import { withServices, ServiceContainer } from "hocs/withServices";
 
+import { ReactComponent as Frame } from "../../assets/img/icons/card-frameSimple.svg";
+
 const Modal = ({
   modal,
   serviceContainer,
@@ -96,6 +98,7 @@ const Modal = ({
     <>
       <div className="blurOver"></div>
       <div className="small-modal">
+        <Frame className="cardFrame" />
         <div className="popupHeader">
           <div className="modal-header">{modal.text}</div>
           <img

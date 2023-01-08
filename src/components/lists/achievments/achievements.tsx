@@ -1,4 +1,7 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment   */
+/* eslint-disable @typescript-eslint/ban-ts-comment  */
+
+/* eslint-disable no-constant-condition  */
+
 import React, { useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -91,7 +94,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                     <p>{description}</p>
                   </div>
 
-                  {userData ? (
+                  {true ? (
                     <button
                       onClick={
                         userProgress?.completed
@@ -126,41 +129,3 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
 }
 
 export default Achievements;
-
-/**
- *
- * <div className="proggress">
-
-
-                    <img src={plus} alt="plus" className="plusPic" />
-                    <ul>
-                      {Array(progressBarLength)
-                        .fill(true)
-                        .map((_, idx) => {
-                          const imageSet = achievment.getImageSet();
-                          return (
-                            <li
-                              className="flexRow"
-                              key={`achivCard-${achievmentNumber}-${idx}`}
-                            >
-                              <img
-                                src={
-                                  userProgress
-                                    ? idx < userProgress.progressNumber
-                                      ? imageSet[1]
-                                      : imageSet[0]
-                                    : imageSet[1]
-                                }
-                                alt={`manSilute-${achievmentNumber}-${idx}`}
-                              />
-                            </li>
-                          );
-                        })}
-                    </ul>
-                  </div>
-                  <ProgressBar
-                    current={achievment.getCurrentProgress(userProgress)}
-                    total={progressBarLength}
-                  />
-
- */
