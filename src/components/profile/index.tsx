@@ -79,7 +79,7 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
                         key={`innerSegment-${idx}-${Math.random()}`}
                         className={`inner-segment ${
                           idx === current - 1 ? "last" : ""
-                        } ${idx < 8 ? "completed" : " completed notCompleted"}`}
+                        } ${idx < current ? "completed" : " completed notCompleted"}`}
                       ></div>
                     ))}
                 </div>
