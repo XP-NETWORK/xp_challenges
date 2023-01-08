@@ -12,6 +12,7 @@ import { useWindowSize } from "hooks/useSize";
 
 import { useNavigate } from "react-router-dom";
 import { HeroSection } from "components/heroSection";
+import LeaderBoard from "./LeaderBoard";
 
 export const Welcome: FC = () => {
   const size = useWindowSize();
@@ -126,6 +127,9 @@ export const Welcome: FC = () => {
       </section>
 
       <Achievements />
+      <div className="leaderBoardHomePage">
+        <LeaderBoard />
+      </div>
     </main>
   );
 };

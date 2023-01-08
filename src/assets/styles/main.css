@@ -1198,11 +1198,19 @@ button.justCompleted {
   padding-left: 77px;
 }
 
+.leaderBoardHomePage {
+  margin-top: 150px;
+}
+
 @media (max-width: 600px) {
   .leaderBoard {
     width: 100%;
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  .leaderBoardHomePage {
+    margin-top: 50px;
   }
   .leaderBoard-pannel ul li {
     display: flex;
@@ -1226,7 +1234,7 @@ button.justCompleted {
   }
 
   footer .container {
-    height: 767px;
+    height: auto;
   }
 
   footer .bridgeBanner {
