@@ -185,6 +185,7 @@ export const global = createSlice({
     });
     builder.addCase(getUserByUniqueId.fulfilled, (state: any, action: any) => {
       state.telegramUser = action.payload;
+      state.userData = action.payload;
     });
     builder.addCase(getUserByUniqueId.rejected, (state, action) => {
       console.log(action.payload);
