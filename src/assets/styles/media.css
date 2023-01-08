@@ -97,6 +97,46 @@ frame top 500px
     margin-top: 78px;
   }
 
+  .desktopOnly {
+    display: none;
+  }
+  .mobileOnly {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .footerTelegram {
+    margin-right: 10px;
+  }
+  footer .media {
+    border-top: none;
+  }
+
+  .footerFlex,
+  .mobileContainerFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobileContainerFlex {
+    justify-content: space-between;
+  }
+
+  .yearFooterMobileText {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .mobileXpLogo {
+    width: 130px;
+    height: 40px;
+  }
+
+  .mobileWarper {
+    margin: 0 auto;
+    max-width: 342px;
+  }
   .participant {
     max-width: 335px;
     margin-left: 0px;

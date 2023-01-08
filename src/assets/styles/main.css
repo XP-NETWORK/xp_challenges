@@ -211,6 +211,10 @@ header button {
   margin-top: 25px;
 }
 
+.mobileOnly {
+  display: none;
+}
+
 .wrapperLeaderBoard {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
