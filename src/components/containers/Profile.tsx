@@ -20,6 +20,7 @@ export type ProfileProps = {
   userData: UserData | undefined;
   achievments: IUserAchievments[];
   completedAmout: number;
+  telegramUserData?: any;
 };
 
 const Container = (Profile: FC<ProfileProps>) =>
@@ -68,7 +69,6 @@ const Container = (Profile: FC<ProfileProps>) =>
           }
 
           dispatch(setUserData({ userData }));
-        
         }
         setLoading(false);
         navigate("/");
@@ -96,9 +96,10 @@ const Container = (Profile: FC<ProfileProps>) =>
       <div className="loader"></div>
     ) : (
       <Profile
-        userData={userData}
+        telegramUserData={telegramUser}
         achievments={achievments}
         completedAmout={completedAmout}
+        userData={userData}
       />
     );
   });

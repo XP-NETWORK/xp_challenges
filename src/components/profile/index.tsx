@@ -5,7 +5,6 @@ import { ProgressBarProps } from "components/elements/ProgressBar";
 import { useWindowSize } from "../../hooks/useSize";
 
 import "./profile.css";
-import { UserData } from "store/models/user";
 import { ProjectTimer } from "components/elements/ProjectTimer";
 
 function waitForElm(element: HTMLDivElement): Promise<HTMLDivElement> {
@@ -17,26 +16,25 @@ function waitForElm(element: HTMLDivElement): Promise<HTMLDivElement> {
 }
 
 interface IProfileData {
-  userData: UserData | undefined;
+  telegramData: any
 }
 
 export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
   current,
   total,
-  userData,
+  telegramData,
 }) => {
   const [innerBarWidth, setWidth] = useState(0);
   console.log(innerBarWidth);
-  console.log(userData);
 
   const size = useWindowSize();
 
   let bar: HTMLDivElement | undefined = undefined;
 
   useEffect(() => {
-    if (bar && current && 15) {
+    if (bar && current && total) {
       waitForElm(bar).then((elm) => {
-        setWidth((current * elm?.offsetWidth) / 15);
+        setWidth((current * elm?.offsetWidth) / total);
       });
     }
   }, [current, total, bar, size.width]);
@@ -55,13 +53,13 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
             <ProjectTimer />
             <button className="viewLeaderBoardButton">VIEW LEADERBOARD</button>
           </div>
-          <div className="profileNameStyle">@alex</div>
+          <div className="profileNameStyle">@{telegramData?.telegramUsername}</div>
           <div className="progressBar profileProgressBar">
             <div className="rate rateFlexContainer">
               <div className="rateText">YOUR SCORE</div>
               <div className="rateText">
-                <span>{8}</span>
-                <span className="rateTextOp">/{15}</span>
+                <span>{current}</span>
+                <span className="rateTextOp">/{total}</span>
               </div>
             </div>
             <div className="barWrap flexRow profileWarpBar">
@@ -74,7 +72,7 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
                     }
                   }}
                 >
-                  {Array(15)
+                  {Array(total)
                     .fill(true)
                     .map((_, idx) => (
                       <div

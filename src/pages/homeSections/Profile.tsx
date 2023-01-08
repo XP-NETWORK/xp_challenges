@@ -9,13 +9,22 @@ import { ProfileProps } from "components/containers/Profile";
 import LeaderBoard from "./LeaderBoard";
 import { ProfileDetails } from "components/profile";
 
-const Profile = ({ achievments, completedAmout, userData }: ProfileProps) => {
+const Profile = ({
+  achievments,
+  completedAmout,
+  userData,
+  telegramUserData,
+}: ProfileProps) => {
   return (
     <main className="profile">
       <div className="container">
         <TelegramLogin vert={true} />
         <div className="achivementBar">
-          <ProfileDetails current={completedAmout} total={achievments.length} userData={userData}/>
+          <ProfileDetails
+            current={completedAmout}
+            total={achievments.length}
+            telegramData={telegramUserData}
+          />
         </div>
         <Achievements userAchievements={achievments} userData={userData} />
         <div className="leaderBoardHomePage">
