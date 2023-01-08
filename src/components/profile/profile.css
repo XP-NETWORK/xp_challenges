@@ -1,0 +1,28 @@
+.profileWarpBar {
+  padding: 2px !important;
+}
+
+.rateFlexContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "kanit";
+}
+.rateText {
+  color: #fff;
+}
+
+.profileContainer {
+  position: relative;
+  margin-top: 100px
+}
+
+.cardFrameProfile {
+  position: absolute;
+  left: 19%;
+  bottom: -20px;
+}
+
+.profileProgressBar{
+  width: 100% !important;
+}

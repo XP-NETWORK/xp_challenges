@@ -2,7 +2,7 @@ import { useEffect, useState, FC } from "react";
 
 import { useWindowSize } from "../../hooks/useSize";
 
-type ProgressBarProps = {
+export type ProgressBarProps = {
   current: number;
   total: number;
 };

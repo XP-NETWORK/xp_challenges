@@ -90,6 +90,12 @@ frame top 500px
 }
 
 @media only screen and (max-width: 850px) {
+
+
+  .wrapperLeaderBoard {
+    justify-content: unset;
+  }
+
   img.nft {
     width: 200px;
   }

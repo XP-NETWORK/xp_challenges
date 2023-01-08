@@ -44,7 +44,7 @@ export const throttle = (func: any, timeout: number) => {
   };
 };
 
-export const truncate = function (
+export const truncate = function(
   fullStr: string | undefined,
   strLen: number,
   separator?: string
@@ -66,7 +66,16 @@ export const truncate = function (
   );
 };
 
-
 export function importAll(r: any) {
   return r.keys().map(r);
 }
+
+export const saveTelegramUniqueId = (unique: string, telegramId: string) => {
+  localStorage.setItem(
+    "telegramUnique",
+    JSON.stringify({ unique, telegramId })
+  );
+};
+
+export const loadTelegramUniqueId = () =>
+  localStorage.getItem("telegramUnique");
