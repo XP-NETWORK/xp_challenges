@@ -8,21 +8,87 @@
   justify-content: space-between;
   font-family: "kanit";
 }
+
 .rateText {
-  color: #fff;
+  color: #fff !important;
+  z-index: 999;
 }
 
 .profileContainer {
   position: relative;
-  margin-top: 100px
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 768px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cardFrameProfile {
   position: absolute;
-  left: 19%;
-  bottom: -20px;
+  bottom: -10px;
 }
 
-.profileProgressBar{
+.profileProgressBar {
   width: 100% !important;
+}
+
+.notCompleted {
+  background: #f6f6f6;
+  opacity: 0.14;
+}
+
+.rateTextOp {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.flexColumnProfile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profileNameStyle {
+  font-family: "Kanit";
+  font-size: 34px;
+  color: #fff !important;
+  letter-spacing: 0.09em;
+  z-index: 999;
+  margin-bottom: 50px;
+}
+
+.profileTopFlex {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.viewLeaderBoardButton {
+  width: 188px;
+  height: 39px;
+  background: #16181c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.profileTopFlex .clock {
+  margin-bottom: 0px;
+}
+
+.profileTopFlex .clock .flexRow > span {
+  font-size: 24px;
+}
+
+.profileTopFlex .clock .segment strong {
+  font-size: 24px;
+}
+.profileTopFlex .clock .segment span {
+  font-size: 12px;
+  bottom: 10px
+}
+
+.profileTopFlex .flexRow {
+  width: 264px;
 }

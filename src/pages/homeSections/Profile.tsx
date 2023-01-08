@@ -15,7 +15,7 @@ const Profile = ({ achievments, completedAmout, userData }: ProfileProps) => {
       <div className="container">
         <TelegramLogin vert={true} />
         <div className="achivementBar">
-          <ProfileDetails current={completedAmout} total={achievments.length} />
+          <ProfileDetails current={completedAmout} total={achievments.length} userData={userData}/>
         </div>
         <Achievements userAchievements={achievments} userData={userData} />
         <div className="leaderBoardHomePage">

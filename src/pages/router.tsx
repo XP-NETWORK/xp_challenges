@@ -41,7 +41,7 @@ export const Router: FC = () => {
           path="/"
           element={
             <HomePage init={init}>
-              {telegramUser ? <Profile /> : <Welcome />}
+              {!telegramUser ? <Profile /> : <Welcome />}
             </HomePage>
           }
         />
