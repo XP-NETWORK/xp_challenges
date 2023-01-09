@@ -101,8 +101,9 @@ frame top 500px
     margin: 0 auto;
     margin-bottom: 17px;
   }
-
-
+  .profileTopFlex .clock .segment span{
+    bottom: 0px;
+  }
 
   .viewLeaderBoardButton {
     display: none;
@@ -121,7 +122,6 @@ frame top 500px
   .wrapperLeaderBoard {
     justify-content: unset;
   }
-
 
   img.nft {
     width: 200px;
