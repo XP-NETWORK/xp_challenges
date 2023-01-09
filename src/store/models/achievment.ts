@@ -58,20 +58,16 @@ class Achievment {
             }
 
             case AchivType.Twitter: {
-                url = '';
+                url = 'https://twitter.com/';
 
-                console.log(this.data.description);
+                if (/follow/i.test(this.data.description)) {
+                    url += (/xp\.network/i.test(this.data.description)) ? `xpnetwork_`: `intent/user?user_id=${this.project?.twitterPartnerId}`
 
-                switch(this.data.description){
-                    case "Follow XP.NETWORK twitter acount":
-                      return  url = "https://xp-challenges.herokuapp.com/followXp";
-                      case "Follow Drifter twitter acount":
-                        return url = "https://xp-challenges.herokuapp.com/followPartner";
-                    case "Retweet the latest post form Project page":
-                        return url = "https://xp-challenges.herokuapp.com/retweetPost";
-                    default:
-                        return url = ""
+                } else {
+                    url += `anyuser/status/${this.project?.twitterPostId}`
                 }
+
+                break;
             }
 
             case AchivType.Bridge: {
