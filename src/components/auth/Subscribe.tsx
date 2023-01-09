@@ -4,7 +4,7 @@
 
 /* eslint-disable @typescript-eslint/no-unused-vars  */
 
-import React from "react";
+import React, { useEffect } from "react";
 
 import subscribeIcon from "../../assets/img/subscribeIcon.png";
 
@@ -28,11 +28,21 @@ export const Subscribe = withServices(
     const [notanemail, setFail] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
 
-    const { user, project } = useSelector((state: ReduxState) => ({
-      user: state.global.userData,
-      project: state.global.project,
-      justCompleted: state.global.justCompleted,
-    }));
+    const { user, project, justCompleted } = useSelector(
+      (state: ReduxState) => ({
+        user: state.global.userData,
+        project: state.global.project,
+        justCompleted: state.global.justCompleted,
+      })
+    );
+
+    console.log(justCompleted);
+
+    useEffect(() => {
+      if (justCompleted.includes(17)) {
+        dispatch(setModal(undefined));
+      }
+    }, [justCompleted]);
 
     const subscribeHandler = async () => {
       if (!validateEmail(email)) {
@@ -47,7 +57,7 @@ export const Subscribe = withServices(
           user,
           project.projectNumber
         ));
-      console.log(res, "res");
+
       if (res) {
         setSuccess(true);
         //dispatch(setModal(undefined));

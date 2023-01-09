@@ -398,6 +398,10 @@ header button {
   padding-bottom: 0px;
 }
 
+.achivCard .progressBar .bar {
+  width: 100px;
+}
+
 .achivCard p {
   font-size: 20px;
   line-height: 30px;
@@ -455,6 +459,13 @@ header button {
 .achivCard:hover .cardFrame > g path,
 .achivCard:hover .achivCard-pic:not(.frameTwitter) path.frame {
   fill: white;
+}
+
+.walletIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(150%, -200%);
 }
 
 .achivCard:hover .cardFrame > path:not(.inner),
@@ -874,6 +885,10 @@ body.showModal header .menu {
   height: 100%;
   background-color: rgb(61, 61, 61);
   z-index: 72;
+}
+
+.successModal .walletAddress {
+  font-size: 34px;
 }
 
 .progressBar .inner-segment.last.completed::after {
@@ -1303,6 +1318,7 @@ button.justCompleted {
   position: static;
   width: 100px;
   height: 100px;
+  margin-bottom: 0;
 }
 
 .successModal button {

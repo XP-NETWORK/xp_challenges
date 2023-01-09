@@ -9,7 +9,6 @@ import AliceCarousel from "react-alice-carousel";
 import { importAll } from "../../utils";
 
 const NFTList = () => {
-  const [central, setCentral] = useState(0);
   const [pics, setPics] = useState<string[]>([]);
   const carousel = useRef<AliceCarousel | null>(null);
 

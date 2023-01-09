@@ -21,6 +21,8 @@ import { ReactComponent as Frame } from "../../assets/img/icons/card-frameSimple
 
 import { Subscribe } from "../auth/Subscribe";
 
+import { truncate } from "utils";
+
 const Modal = ({ modal }: { modal: IModal }) => {
   let body: JSX.Element = <div></div>;
   const dispatch = useDispatch();
@@ -84,7 +86,16 @@ const Modal = ({ modal }: { modal: IModal }) => {
                 <img src={modal.telegramPic} alt="telegramPic" />
               </div>
             )}
-            {modal.telegramAccount || modal.wallet}
+            {modal.telegramAccount ? (
+              <span>@{modal.telegramAccount}</span>
+            ) : modal.wallet ? (
+              <span className="walletAddress">
+                {" "}
+                {truncate(modal.wallet, 10)}
+              </span>
+            ) : (
+              ""
+            )}
           </div>
           <button
             className="accent"

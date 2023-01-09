@@ -12,6 +12,8 @@ import fabric from "../../store/models/user";
 
 import { setModal, setUserData, setWallet } from "../../store/reducer/global";
 
+import { ReactComponent as WalletIcon } from "../../assets/img/icons/teenyicons_wallet-alt-outline.svg";
+
 type WalletListProps = {
   serviceContainer: ServiceContainer;
   close: () => void;
@@ -25,7 +27,7 @@ const WalletList = ({ serviceContainer, close }: WalletListProps) => {
     userData: state.global.userData,
   }));
 
-  const preserve = (account: any) => {
+  const preserve = async (account: any) => {
     if (account && account.chain) {
       const wallet = {
         chain: account.chain,
@@ -39,7 +41,7 @@ const WalletList = ({ serviceContainer, close }: WalletListProps) => {
         };
 
         const user = fabric(updated);
-        api.updateWallet(user, account);
+        await api.updateWallet(user, account);
         dispatch(setUserData({ userData: updated }));
       } else {
         dispatch(setWallet(wallet));
@@ -54,6 +56,12 @@ const WalletList = ({ serviceContainer, close }: WalletListProps) => {
     }
 
     close();
+    dispatch(
+      setModal({
+        type: "Success",
+        wallet: account.address,
+      })
+    );
   };
 
   const metaMaskHandler = async () => {
@@ -67,16 +75,19 @@ const WalletList = ({ serviceContainer, close }: WalletListProps) => {
   };
 
   return (
-    <ul>
-      <li onClick={metaMaskHandler}>
-        <img src={metamask} alt="metamask" />
-        <span>MetaMask</span>
-      </li>
-      <li onClick={maiarHandler}>
-        <img src={maiar} alt="maiar" />
-        <span>Maiar</span>
-      </li>
-    </ul>
+    <>
+      <WalletIcon className="walletIcon" />
+      <ul>
+        <li onClick={metaMaskHandler}>
+          <img src={metamask} alt="metamask" />
+          <span>MetaMask</span>
+        </li>
+        <li onClick={maiarHandler}>
+          <img src={maiar} alt="maiar" />
+          <span>Maiar</span>
+        </li>
+      </ul>
+    </>
   );
 };
 
