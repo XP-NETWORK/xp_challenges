@@ -101,7 +101,7 @@ frame top 500px
     margin: 0 auto;
     margin-bottom: 17px;
   }
-  .profileTopFlex .clock .segment span{
+  .profileTopFlex .clock .segment span {
     bottom: 0px;
   }
 
@@ -270,10 +270,14 @@ frame top 500px
     order: 5;
     width: auto;
     height: auto;
+    margin: 0 auto;
+    margin-top: 25px;
+
   }
   .heroCollectionStyle img {
     display: block;
-    width: 100%;
+    width: 358.66px;
+    height: auto;
   }
 }
 
