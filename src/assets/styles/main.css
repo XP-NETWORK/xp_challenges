@@ -698,6 +698,11 @@ body.showModal header .menu {
   margin-left: 20px;
 }
 
+.big-modal {
+  width: 1171px;
+  height: auto;
+}
+
 .signupPage {
   height: 100vh;
   position: relative;

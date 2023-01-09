@@ -81,6 +81,20 @@ frame top 500px
 }
 
 @media only screen and (max-width: 1024px) {
+  .big-modal {
+    width: 100% !important;
+    height: 80%;
+  }
+
+  .bridgePopUp {
+    height: 550px;
+    overflow-y: auto;
+  }
+
+  .bridgeTitle {
+    padding-top: 30px;
+  }
+
   .menuModal .banner .bridgeBanner-text {
     width: 50%;
   }
@@ -90,6 +104,10 @@ frame top 500px
 }
 
 @media only screen and (max-width: 850px) {
+  .bridgeTitle {
+    font-size: 20px;
+  }
+
   .cardFrameProfile {
     top: 35px;
   }

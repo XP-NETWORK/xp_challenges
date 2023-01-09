@@ -83,6 +83,7 @@ const Container = (Profile: FC<ProfileProps>) =>
     useEffect(() => {
       if (userData?.telegramUsername) {
         socketWrapper.listen(userData.telegramUsername, eventHandler);
+
         return () =>
           socketWrapper.mute(userData.telegramUsername, eventHandler);
       }

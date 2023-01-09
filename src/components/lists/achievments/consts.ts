@@ -93,7 +93,7 @@ export const achievementsHandlers = {
     dispatch: Dispatch<AnyAction>
   ) => () => {
     if (!userData?.telegramUsername) {
-      return window.open("/signup", "_self");
+      return;
     }
 
     if (!userData?.wallets?.length) {
@@ -105,7 +105,12 @@ export const achievementsHandlers = {
       );
       return;
     }
-    return window.open(link);
+    link &&
+      dispatch(
+        setModal({
+          type: "Bridge",
+        })
+      );
   },
   [AchivType.Subscribe]: (
     userData: UserData | undefined,
@@ -115,7 +120,7 @@ export const achievementsHandlers = {
     if (!userData?.email && link) {
       dispatch(
         setModal({
-          type: "EmailSubscribe"
+          type: "EmailSubscribe",
         })
       );
       return;

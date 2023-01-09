@@ -18,7 +18,7 @@ import { config } from "../../index";
 import { ConfirmRegistrationModal } from "./confirmRegistration";
 
 import { ReactComponent as Frame } from "../../assets/img/icons/card-frameSimple.svg";
-import CloseBridgePopupIcon from "../../assets/svgs/bridgePopup/closeBridge.svg";
+
 import { Subscribe } from "../auth/Subscribe";
 
 import { truncate } from "utils";
@@ -113,11 +113,11 @@ const Modal = ({ modal }: { modal: IModal }) => {
         <div className="bridgePopUp">
           <div className="bridgePopupHeaderContainer">
             <div className="bridgeTitle">Multi-chain NFT bridge</div>
-            <button className="closeBridgeButton">
+            {/* <button className="closeBridgeButton">
               <img src={CloseBridgePopupIcon} alt="closeBridgeIcon" />
-            </button>
+      </button>*/}
           </div>
-          <BridgeWidget />;
+          <BridgeWidget />
         </div>
       );
       break;
@@ -129,7 +129,9 @@ const Modal = ({ modal }: { modal: IModal }) => {
   return (
     <>
       <div className="blurOver"></div>
-      <div className="small-modal">
+      <div
+        className={`small-modal ${modal.type === "Bridge" ? "big-modal" : ""}`}
+      >
         <Frame className="cardFrame modalFrame" />
         <div className={`popupHeader ${!modal.text ? "empty-header" : ""}`}>
           <div className="modal-header">{modal.text}</div>
