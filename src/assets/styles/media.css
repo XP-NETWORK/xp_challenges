@@ -90,11 +90,38 @@ frame top 500px
 }
 
 @media only screen and (max-width: 850px) {
+  .cardFrameProfile {
+    display: none;
+  }
 
+  .userFrameCi {
+    position: unset;
+    width: 91px;
+    height: 91px;
+    margin: 0 auto;
+    margin-bottom: 17px;
+  }
+
+
+
+  .viewLeaderBoardButton {
+    display: none;
+  }
+
+  .profileTopFlex {
+    order: -1;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  .profileContainer {
+    width: 100%;
+  }
 
   .wrapperLeaderBoard {
     justify-content: unset;
   }
+
 
   img.nft {
     width: 200px;
