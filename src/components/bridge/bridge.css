@@ -1,0 +1,27 @@
+.bridgeContainer {
+  width: 1171px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.bridgePopUp {
+}
+
+.bridgeTitle {
+  font-family: "chakra-petch";
+  font-size: 44px;
+  text-align: center;
+}
+
+.bridgePopupHeaderContainer{
+    display: flex;
+    align-items: center;
+}
+
+.closeBridgeButton{
+    width: 58px;
+    height: 58px;
+    opacity: 0.2;
+    border: 1px solid #FFFFFF;
+
+}

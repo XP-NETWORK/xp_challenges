@@ -18,10 +18,11 @@ import { config } from "../../index";
 import { ConfirmRegistrationModal } from "./confirmRegistration";
 
 import { ReactComponent as Frame } from "../../assets/img/icons/card-frameSimple.svg";
-
+import CloseBridgePopupIcon from "../../assets/svgs/bridgePopup/closeBridge.svg";
 import { Subscribe } from "../auth/Subscribe";
 
 import { truncate } from "utils";
+import { BridgeWidget } from "components/bridge";
 
 const Modal = ({ modal }: { modal: IModal }) => {
   let body: JSX.Element = <div></div>;
@@ -107,7 +108,20 @@ const Modal = ({ modal }: { modal: IModal }) => {
       );
       break;
     }
-
+    case "Bridge": {
+      body = (
+        <div className="bridgePopUp">
+          <div className="bridgePopupHeaderContainer">
+            <div className="bridgeTitle">Multi-chain NFT bridge</div>
+            <button className="closeBridgeButton">
+              <img src={CloseBridgePopupIcon} alt="closeBridgeIcon" />
+            </button>
+          </div>
+          <BridgeWidget />;
+        </div>
+      );
+      break;
+    }
     default:
       break;
   }

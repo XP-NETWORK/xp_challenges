@@ -97,7 +97,8 @@ export type IModal = {
   | "TelegramAuth"
   | "confirmReg"
   | "EmailSubscribe"
-  | "Success";
+  | "Success"
+  | "Bridge";
   text?: string;
   wallet?: string;
   telegramAccount?: string;
