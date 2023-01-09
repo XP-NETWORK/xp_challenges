@@ -1,4 +1,5 @@
 import { useEffect, useState, FC } from "react";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as Frame } from "../../assets/svgs/profile/profileFrame.svg";
 
 import { ProgressBarProps } from "components/elements/ProgressBar";
@@ -16,7 +17,7 @@ function waitForElm(element: HTMLDivElement): Promise<HTMLDivElement> {
 }
 
 interface IProfileData {
-  telegramData: any
+  telegramData: any;
 }
 
 export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
@@ -26,6 +27,7 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
 }) => {
   const [innerBarWidth, setWidth] = useState(0);
   console.log(innerBarWidth);
+  const navigate = useNavigate();
 
   const size = useWindowSize();
 
@@ -38,20 +40,26 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
       });
     }
   }, [current, total, bar, size.width]);
-
+  const goToLeaderboard = () => {
+    navigate("/leaderboard");
+  };
   return (
     <>
       <div className="profileContainer">
         <Frame className="cardFrameProfile" />
         <div className="flexColumnProfile">
           <div className="userFrameCi">
-            <img src={telegramData?.telegramPhotoUrl}/>
+            <img src={telegramData?.telegramPhotoUrl} />
           </div>
           <div className="profileTopFlex">
             <ProjectTimer />
-            <button className="viewLeaderBoardButton">VIEW LEADERBOARD</button>
+            <button className="viewLeaderBoardButton" onClick={goToLeaderboard}>
+              VIEW LEADERBOARD
+            </button>
           </div>
-          <div className="profileNameStyle">@{telegramData?.telegramUsername}</div>
+          <div className="profileNameStyle">
+            @{telegramData?.telegramUsername}
+          </div>
           <div className="progressBar profileProgressBar">
             <div className="rate rateFlexContainer">
               <div className="rateText">YOUR SCORE</div>
@@ -77,7 +85,11 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
                         key={`innerSegment-${idx}-${Math.random()}`}
                         className={`inner-segment ${
                           idx === current - 1 ? "last" : ""
-                        } ${idx < current ? "completed" : " completed notCompleted"}`}
+                        } ${
+                          idx < current
+                            ? "completed"
+                            : " completed notCompleted"
+                        }`}
                       ></div>
                     ))}
                 </div>
@@ -86,7 +98,6 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
           </div>
         </div>
       </div>
-
     </>
   );
 };
