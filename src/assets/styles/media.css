@@ -112,6 +112,15 @@ frame top 500px
     top: 35px;
   }
 
+  .nftList {
+    margin-top: 28px;
+  }
+  .customModal {
+    padding-top: 30px !important;
+    height: 100%;
+  }
+
+
   .userFrameCi {
     position: unset;
     width: 91px;
