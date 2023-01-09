@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { Action } from "..";
 import {
   IACHIEVMENT,
-  TelegramUser,
+
   AchievementsUpdateEvent,
   IModal,
   IPROJECT,
@@ -30,7 +30,7 @@ export const getUserByUniqueId = createAsyncThunk(
 
 export type GlobalState = {
   achievements: IACHIEVMENT[];
-  telegramUser: TelegramUser | undefined;
+  telegramUser: UserData | undefined;
   userData: UserData | undefined;
   init: boolean;
   currentProject: number;
@@ -66,11 +66,11 @@ interface ALoadProject extends Action {
   };
 }
 
-interface ALoadTelegramUser extends Action {
+/*interface ALoadTelegramUser extends Action {
   payload: {
     telegramUser: TelegramUser;
   };
-}
+}*/
 
 interface ALoadUserData extends Action {
   payload: {
@@ -112,7 +112,7 @@ export const global = createSlice({
     setAchievements: (state: GlobalState, action: ALoadData) => {
       state.achievements = action.payload.achievements;
     },
-    setTelegramUser: (state: GlobalState, action: ALoadTelegramUser) => {
+    setTelegramUser: (state: GlobalState, action: any) => {
       state.telegramUser = action.payload.telegramUser;
     },
     setUserData: (state: GlobalState, action: ALoadUserData) => {
@@ -131,6 +131,8 @@ export const global = createSlice({
           (a) => a.achievmentNumber === progressIndex
         );
 
+        console.log(achievementData);
+
         const project = state.userData?.projectParticipations?.find(
           (p) => p.projectNumber === payload.projectNumber
         );
@@ -138,6 +140,8 @@ export const global = createSlice({
         const achievement = project?.achievments.find(
           (a) => a.achievmentNumber === progressIndex
         );
+
+        console.log(achievement);
 
         if (achievement && achievementData) {
           let currentStatus: boolean;
@@ -152,6 +156,7 @@ export const global = createSlice({
             achievement.progressNumber = payload.currentProgressNumber;
           }
 
+          console.log(currentStatus);
           if (currentStatus !== achievement.completed) {
             state.justCompleted = [
               ...state.justCompleted,

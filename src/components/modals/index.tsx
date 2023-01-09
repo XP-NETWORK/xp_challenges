@@ -5,6 +5,8 @@ import { IModal } from "store/types";
 import TelegramLogin from "components/auth/TelegramLogin";
 
 import close from "../../assets/img/icons/close.svg";
+import { ReactComponent as GreenCheck } from "../../assets/img/icons/ci_check-bold.svg";
+import walletConnected from "../../assets/img/icons/walletConnected.png";
 
 import { useDispatch } from "react-redux";
 
@@ -66,6 +68,32 @@ const Modal = ({ modal }: { modal: IModal }) => {
     case "EmailSubscribe": {
       body = <Subscribe />;
 
+      break;
+    }
+
+    case "Success": {
+      body = (
+        <div className="successModal subscribe">
+          <h2>Sign up success!</h2>
+          <div className="emblem flexRow">
+            <GreenCheck />
+            {modal.wallet ? (
+              <img src={walletConnected} alt="walletConnected" />
+            ) : (
+              <div className="userFrameCi">
+                <img src={modal.telegramPic} alt="telegramPic" />
+              </div>
+            )}
+            {modal.telegramAccount || modal.wallet}
+          </div>
+          <button
+            className="accent"
+            onClick={() => dispatch(setModal(undefined))}
+          >
+            Go to achievements
+          </button>
+        </div>
+      );
       break;
     }
 

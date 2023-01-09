@@ -1103,10 +1103,9 @@ button.justCompleted {
   ) !important;
   position: relative;
 }
-.userNameText{
+.userNameText {
   margin-left: 10px;
 }
-
 
 .topLeaders::after {
   content: url("../svgs/Leaderboard/topCrown.svg");
@@ -1291,6 +1290,27 @@ button.justCompleted {
   color: #282829;
   font-size: 16px;
   height: 41px;
+}
+
+.successModal .emblem {
+  background: linear-gradient(264.68deg, #1b1b1c 63.66%, #056b2e 222.5%);
+  border: 0.695691px solid #303234;
+  border-radius: 16.4351px;
+  padding: 20px 30px;
+}
+
+.emblem .userFrameCi {
+  position: static;
+  width: 100px;
+  height: 100px;
+}
+
+.successModal button {
+  margin: 20px auto 0;
+}
+
+.successModal.subscribe h2 {
+  font-size: 34px;
 }
 
 @media (max-width: 600px) {

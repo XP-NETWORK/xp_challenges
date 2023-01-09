@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ReduxState } from "store";
 
-import { setTelegramUser, setUserData } from "store/reducer/global";
+import { setUserData } from "store/reducer/global";
 import { TelegramUser } from "store/types";
 
 import { withServices, ServiceContainer } from "hocs/withServices";
@@ -23,7 +23,6 @@ function TelegramLogin(props: TelegramLoginProps) {
     vert = false,
   } = props;
   const { userData } = useSelector((state: ReduxState) => ({
-    telegramUser: state.global.telegramUser,
     userData: state.global.userData,
   }));
   const [scriptLoaded, setLoaded] = useState(false);
@@ -50,11 +49,11 @@ function TelegramLogin(props: TelegramLoginProps) {
             navigate("/signup");
           }
 
-          dispatch(
+          /*dispatch(
             setTelegramUser({
-              telegramUser,
+              telegramUser.t,
             })
-          );
+          );*/
         }
       });
     };

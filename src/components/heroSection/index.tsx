@@ -14,14 +14,15 @@ import "./heroSection.css";
 // }
 
 export const HeroSection: FC = () => {
-  const unique = uuidv4()
+  const unique = uuidv4();
   const openInNewTab = () => {
     window.open(
       `https://t.me/challengeRegestrationBot/?start=${unique}`,
       "_blank",
       "noreferrer"
     );
-    saveTelegramUniqueId(unique)
+    saveTelegramUniqueId(unique);
+    localStorage.removeItem("CHALLENGE_EXIST");
   };
   return (
     <>

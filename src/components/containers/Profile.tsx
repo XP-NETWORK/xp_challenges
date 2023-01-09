@@ -43,14 +43,20 @@ const Container = (Profile: FC<ProfileProps>) =>
 
     const eventHandler = (data: AchievementsUpdateEvent) => {
       console.log(data, "socketData");
-      dispatch(updateProgress(data));
+
+      dispatch(
+        updateProgress({
+          ...data,
+          projectNumber: Number(data.projectNumber),
+        })
+      );
     };
 
     useEffect(() => {
       (async () => {
         if (telegramUser && !userData) {
           setLoading(true);
-          const user = await api.getUser(telegramUser?.username);
+          const user = await api.getUser(telegramUser?.telegramUsername);
           let userData = user?.data;
 
           const params = new URLSearchParams(location.search.replace("?", ""));
@@ -67,7 +73,6 @@ const Container = (Profile: FC<ProfileProps>) =>
 
             await api.updateTwitterAccount(userFabric(userData));
           }
-
           dispatch(setUserData({ userData }));
         }
         setLoading(false);
@@ -76,11 +81,12 @@ const Container = (Profile: FC<ProfileProps>) =>
     }, [userData, telegramUser]);
 
     useEffect(() => {
-      if (telegramUser) {
-        socketWrapper.listen(telegramUser.username, eventHandler);
-        return () => socketWrapper.mute(telegramUser.username, eventHandler);
+      if (userData?.telegramUsername) {
+        socketWrapper.listen(userData.telegramUsername, eventHandler);
+        return () =>
+          socketWrapper.mute(userData.telegramUsername, eventHandler);
       }
-    }, [telegramUser]);
+    }, [userData]);
 
     const achievments =
       userData?.projectParticipations?.find(

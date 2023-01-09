@@ -91,14 +91,17 @@ export type AchievementsUpdateEvent = {
 
 export type IModal = {
   type:
-    | "Error"
-    | "WalletList"
-    | "TwitterAuth"
-    | "TelegramAuth"
-    | "confirmReg"
-    | "EmailSubscribe";
+  | "Error"
+  | "WalletList"
+  | "TwitterAuth"
+  | "TelegramAuth"
+  | "confirmReg"
+  | "EmailSubscribe"
+  | "Success";
   text?: string;
+  wallet?: string;
   telegramAccount?: string;
+  telegramPic?: string;
   email?: string;
   confirmButton?: any;
 };

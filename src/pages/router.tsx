@@ -18,6 +18,8 @@ import { ReduxState } from "store";
 import { getUserByUniqueId } from "store/reducer/global";
 import { loadTelegramUniqueId } from "utils";
 
+import { setModal } from "store/reducer/global";
+
 const noscrollPages = ["signup"];
 
 export const Router: FC = () => {
@@ -44,7 +46,16 @@ export const Router: FC = () => {
         loadData();
       }, 5000);
     } else {
-      if (telegramUser) {
+      if (telegramUser && !localStorage.getItem("CHALLENGE_EXIST")) {
+        localStorage.setItem("CHALLENGE_EXIST", "true");
+
+        dispatch(
+          setModal({
+            type: "Success",
+            telegramAccount: telegramUser.telegramUsername,
+            telegramPic: telegramUser.telegramPhotoUrl,
+          })
+        );
         clearInterval(interval);
       }
     }
@@ -55,8 +66,6 @@ export const Router: FC = () => {
   const loadData = async () => {
     await dispatch(getUserByUniqueId(loadTelegramUniqueId() as any) as any);
   };
-
-
 
   return (
     <div className={`app ${noscroll ? "noscroll" : ""}`}>
@@ -87,7 +96,6 @@ export const Router: FC = () => {
             </HomePage>
           }
         />
-
       </Routes>
       {modal && <Modal modal={modal} />}
     </div>

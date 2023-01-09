@@ -5,7 +5,6 @@ import { withServices, ServiceContainer } from "../../hocs/withServices";
 import { useDispatch } from "react-redux";
 import {
   setAchievements,
-  setTelegramUser,
   toggleInit,
   setModal,
   setProject,
@@ -31,8 +30,8 @@ export const AppContainer = (App: FC) =>
           const telegramUser = telegram.getUser();
 
           if (telegramUser) {
-            const verified = await api.verifyTelegramData(telegramUser);
-            verified && dispatch(setTelegramUser({ telegramUser }));
+            //const verified = await api.verifyTelegramData(telegramUser);
+            //verified && dispatch(setTelegramUser({ telegramUser }));
           } else {
             false &&
               dispatch(
@@ -51,9 +50,6 @@ export const AppContainer = (App: FC) =>
           console.log(e, "in AppContainer");
           dispatch(toggleInit(false));
         });
-
-      //const params = new URLSearchParams(location.search.replace("?", ""));
-      //const verifier = params.get("oauth_verifier");
     }, []);
 
     return <App />;
