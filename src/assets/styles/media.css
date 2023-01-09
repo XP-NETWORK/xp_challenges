@@ -281,7 +281,7 @@ frame top 500px
   .app {
     height: 100%;
     background: url(../img/mainBgMobile.png) no-repeat !important;
-    background-size: auto 100vh !important;
+    background-size: auto auto !important;
     position: relative;
     z-index: 0;
   }
