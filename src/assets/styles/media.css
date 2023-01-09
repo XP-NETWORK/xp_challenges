@@ -91,7 +91,7 @@ frame top 500px
 
 @media only screen and (max-width: 850px) {
   .cardFrameProfile {
-    display: none;
+    top: 35px;
   }
 
   .userFrameCi {
