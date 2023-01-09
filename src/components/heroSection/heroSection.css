@@ -24,6 +24,11 @@
   height: 879px;
 }
 
+.heroCollectionStyle img{
+  width: 879px;
+  height: 879px;
+}
+
 .heroButtonsSection,
 .heroTimeContainer {
   margin-top: 45px;
