@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { ReduxState } from "store";
 
 import moment from "moment";
+import { TimeLoader } from "components/timeLoader";
 
 const period = ["days", "hours", "MINUTES", "sec"];
 
@@ -53,10 +54,11 @@ export const ProjectTimer: FC = () => {
     return () => clearInterval(int);
   }, [project]);
 
+
   return (
     <div className="clock">
       <div className="flexRow">
-        {time &&
+        {time.length > 1 ?
           time.map((amount, index) => (
             <>
               <div
@@ -70,7 +72,7 @@ export const ProjectTimer: FC = () => {
               {index !== 2 && <span>:</span> // need to fix that
               }
             </>
-          ))}
+          )) : <TimeLoader/>}
       </div>
     </div>
   );
