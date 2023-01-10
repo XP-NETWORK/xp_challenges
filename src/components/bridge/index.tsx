@@ -24,13 +24,14 @@ export const BridgeWidget: FC = () => {
       });
     }
   }, [iframe]);
-
+  //192.168.1.36
+  //https://widget-staging.xp.network
   const small = window.innerWidth <= 1600;
   return (
     <>
       <div className="bridgeContainer">
         <iframe
-          src={`https://widget-staging.xp.network?wid=63bc17c8a65fd4aaf0312526&xpchallenge=true&projectNumber=${project?.projectNumber}`}
+          src={`https://192.168.1.36:3001?wid=63bc17c8a65fd4aaf0312526&xpchallenge=true&projectNumber=${project?.projectNumber}`}
           ref={iframe}
           width="100%"
           style={{ display: project && loaded ? "initial" : "none" }}

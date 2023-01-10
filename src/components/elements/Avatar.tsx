@@ -15,7 +15,7 @@ export const Avatar = () => {
   return (
     <>
       {!error ? (
-        <div className="userFrameCi">
+        <div className={"userFrameCi"}>
           <img
             src={userData?.telegramPhotoUrl}
             onError={() => setError(true)}

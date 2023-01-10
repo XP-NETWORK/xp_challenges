@@ -110,3 +110,15 @@
   top: -107px;
   left: 311px;
 }
+
+.participant .avatarPlaceholder {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border-radius: 50%;
+
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
