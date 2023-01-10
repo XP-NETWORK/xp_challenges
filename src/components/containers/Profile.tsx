@@ -54,10 +54,10 @@ const Container = (Profile: FC<ProfileProps>) =>
 
     useEffect(() => {
       (async () => {
-        if (telegramUser && !userData) {
+        if (telegramUser) {
           setLoading(true);
-          const user = await api.getUser(telegramUser?.telegramUsername);
-          let userData = user?.data;
+          const user = await api.getUser(telegramUser.telegramUsername);
+          let ud = user?.data;
 
           const params = new URLSearchParams(location.search.replace("?", ""));
 
@@ -65,20 +65,20 @@ const Container = (Profile: FC<ProfileProps>) =>
 
           if (twitterParam) {
             const cred = JSON.parse(twitterParam).data as TwitterUser;
-            userData = {
+            ud = {
               ...userData,
               twitterAcountId: cred.id,
               twitterUserName: cred.username,
             };
 
-            await api.updateTwitterAccount(userFabric(userData));
+            await api.updateTwitterAccount(userFabric(ud));
           }
-          dispatch(setUserData({ userData }));
+          dispatch(setUserData({ userData: ud }));
         }
         setLoading(false);
         navigate("/");
       })();
-    }, [userData, telegramUser]);
+    }, [telegramUser]);
 
     useEffect(() => {
       if (userData?.telegramUsername) {
