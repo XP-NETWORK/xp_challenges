@@ -82,13 +82,13 @@ frame top 500px
 
 @media only screen and (max-width: 1024px) {
   .big-modal {
-    width: 100% !important;
+    width: 95% !important;
     height: 80%;
   }
 
-  .bridgePopUp {
-    height: 550px;
+  .bridgeContainer {
     overflow-y: auto;
+    height: 500px;
   }
 
   .bridgeTitle {
@@ -100,6 +100,16 @@ frame top 500px
   }
   .progressLine {
     width: auto;
+  }
+
+  .modal-body {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .big-modal .popupHeader > img {
+    right: 20px;
+    transform: translateY(80%);
   }
 }
 
@@ -119,7 +129,6 @@ frame top 500px
     padding-top: 30px !important;
     height: 100%;
   }
-
 
   .userFrameCi {
     position: unset;

@@ -10,7 +10,7 @@ import { ReduxState } from "store";
 
 import { ReactComponent as Frame } from "../../../assets/img/icons/card-frame.svg";
 import ProgressBar from "components/elements/ProgressBar";
-import { setJustCompleted } from "../../../store/reducer/global";
+import { setJustCompleted, setModal } from "../../../store/reducer/global";
 
 import fabric from "../../../store/models/achievment";
 
@@ -112,7 +112,12 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                         : achievementsBtns[name]}
                     </button>
                   ) : (
-                    <button className="secondary newBackground">
+                    <button
+                      className="secondary newBackground"
+                      onClick={() =>
+                        dispatch(setModal({ type: "TelegramAuth" }))
+                      }
+                    >
                       Get started
                     </button>
                   )}

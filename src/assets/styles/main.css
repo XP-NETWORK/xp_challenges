@@ -1268,6 +1268,15 @@ button.justCompleted {
   margin: 0;
 }
 
+.TelegramButtonWrapper {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.TelegramButtonWrapper button {
+  margin: auto;
+}
+
 .big-modal .popupHeader > img {
   right: 50px;
   border: 1px solid rgb(82, 80, 80);

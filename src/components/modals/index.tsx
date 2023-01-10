@@ -2,8 +2,6 @@ import React from "react";
 
 import { IModal } from "store/types";
 
-import TelegramLogin from "components/auth/TelegramLogin";
-
 import close from "../../assets/img/icons/close.svg";
 import { ReactComponent as GreenCheck } from "../../assets/img/icons/ci_check-bold.svg";
 import walletConnected from "../../assets/img/icons/walletConnected.png";
@@ -24,13 +22,19 @@ import { Subscribe } from "../auth/Subscribe";
 import { truncate } from "utils";
 import { BridgeWidget } from "components/bridge";
 
+import { TelegramButton } from "components/auth/TelegramButton";
+
 const Modal = ({ modal }: { modal: IModal }) => {
   let body: JSX.Element = <div></div>;
   const dispatch = useDispatch();
 
   switch (modal.type) {
     case "TelegramAuth": {
-      body = <TelegramLogin />;
+      body = (
+        <div className="TelegramButtonWrapper">
+          <TelegramButton />
+        </div>
+      );
       break;
     }
     case "WalletList": {
