@@ -19,12 +19,12 @@
   position: absolute;
   left: 45%;
   right: auto;
-  top: -50%;
   width: 879px;
-  height: 879px;
+  height: auto;
+  bottom: 0;
 }
 
-.heroCollectionStyle img{
+.heroCollectionStyle img {
   width: 879px;
   height: 879px;
 }
