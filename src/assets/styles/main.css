@@ -171,7 +171,7 @@ header button {
   transform: translateY(-25%);
   font-family: "chakra-petch";
   font-size: 50px;
-  transform: translate(50%, -50%);
+  transform: translate(50%, -10%);
 }
 
 .clock .segment:last-child {
@@ -822,14 +822,15 @@ body.showModal header .menu {
 .progressBar {
   width: auto;
   display: inline-block;
+  padding: 0 14px;
+}
+
+.achivCard .progressBar {
+  padding: 0;
 }
 
 .achivCard .progressBar {
   width: 100%;
-}
-
-.avatarPlaceholder {
-  margin-right: 10px;
 }
 
 .barWrap {
@@ -858,7 +859,7 @@ body.showModal header .menu {
 .progressBar .rate {
   flex: 1;
   text-align: right;
-  margin-left: 15px;
+  padding: 0 5px;
   color: var(--dimText);
   font-size: 24px;
 }
@@ -963,6 +964,8 @@ body.showModal header .menu {
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .successOverlay::after {
@@ -1021,7 +1024,7 @@ header .userWalletWrapper,
   background: #121213;
   backdrop-filter: blur(4px);
   border: none;
-  cursor: pointer;
+
   border-radius: 90px;
   margin-left: 10px;
 }
@@ -1079,7 +1082,6 @@ button.justCompleted {
   margin-bottom: 20px;
 }
 
-.avatarPlaceholder,
 .leaderBoard-user > img {
   width: 44px;
   height: 44px;
@@ -1459,7 +1461,10 @@ button.justCompleted {
   }
 
   .avatarPlaceholder {
-    margin-right: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 19;
   }
 
   .leaderBoard-user {

@@ -27,13 +27,7 @@ const UserWallet = () => {
   }, []);
 
   return (
-    <div
-      className={`userWalletWrapper ${show ? "showDD" : ""}`}
-      onClick={(e) => {
-        setShow(true);
-        e.stopPropagation();
-      }}
-    >
+    <div className={`userWalletWrapper ${show ? "showDD" : ""}`}>
       <div className="userWallet flexRow">
         <span>{address.toLocaleLowerCase()}</span>
         {fullAddress && (

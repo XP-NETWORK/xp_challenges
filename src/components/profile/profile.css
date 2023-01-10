@@ -12,6 +12,9 @@
 .rateText {
   color: #fff !important;
   z-index: 999;
+  font-size: 16px;
+  font-family: kanit;
+  letter-spacing: 0.06em;
 }
 
 .profileContainer {

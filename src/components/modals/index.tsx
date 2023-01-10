@@ -24,6 +24,8 @@ import { BridgeWidget } from "components/bridge";
 
 import { TelegramButton } from "components/auth/TelegramButton";
 
+import { Avatar } from "components/elements/Avatar";
+
 const Modal = ({ modal }: { modal: IModal }) => {
   let body: JSX.Element = <div></div>;
   const dispatch = useDispatch();
@@ -87,9 +89,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
             {modal.wallet ? (
               <img src={walletConnected} alt="walletConnected" />
             ) : (
-              <div className="userFrameCi">
-                <img src={modal.telegramPic} alt="telegramPic" />
-              </div>
+              <Avatar />
             )}
             {modal.telegramAccount ? (
               <span>@{modal.telegramAccount}</span>

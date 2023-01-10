@@ -9,6 +9,8 @@ import { useWindowSize } from "../../hooks/useSize";
 import "./profile.css";
 import { ProjectTimer } from "components/elements/ProjectTimer";
 
+import { Avatar } from "components/elements/Avatar";
+
 function waitForElm(element: HTMLDivElement): Promise<HTMLDivElement> {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -47,12 +49,10 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
   return (
     <>
       <div className="profileContainer">
-        <Rifled className="cardFrameProfile" />
+        <Rifled className="cardFrameProfile rove" />
         <Frame className="cardFrameProfile" />
         <div className="flexColumnProfile">
-          <div className="userFrameCi">
-            <img src={telegramData?.telegramPhotoUrl} />
-          </div>
+          <Avatar />
           <div className="profileTopFlex">
             <ProjectTimer />
             <button className="viewLeaderBoardButton" onClick={goToLeaderboard}>

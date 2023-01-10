@@ -328,6 +328,10 @@ frame top 500px
     margin-right: 0;
     margin: 0 auto;
   }
+
+  .rove {
+    top: 118px;
+  }
 }
 
 @media (max-width: 600px) {
