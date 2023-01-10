@@ -117,7 +117,9 @@ frame top 500px
   .bridgeTitle {
     font-size: 20px;
   }
-
+  .timeLoaderContainer {
+    margin: 0 auto;
+  }
   .cardFrameProfile {
     top: 35px;
   }
