@@ -20,13 +20,11 @@ type Props = {
   serviceContainer: ServiceContainer;
 };
 
-
 const Board = ({ serviceContainer }: Props) => {
   const Dispatch = useDispatch();
   const [searchUser, setSearchUser] = useState<string>("");
   const [topUser, setTopUser] = useState<ILeader[]>();
-  const { leaders, achievements } = useSelector((state: ReduxState) => ({
-    leaders: state.global.leaders,
+  const { achievements } = useSelector((state: ReduxState) => ({
     achievements: state.global.achievements,
   }));
 
@@ -68,14 +66,10 @@ const Board = ({ serviceContainer }: Props) => {
     setSearchUser(value);
   };
 
-
   return (
     <div className="leaderBoard">
       <h2>LEADERBOARD</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and <br />
-        typesetting industry.
-      </p>
+      <p>Compete with our top performers</p>
       <div className="searchContainer">
         <img src={searchSVG} alt="searchSVG" />
         <input
@@ -99,7 +93,11 @@ const Board = ({ serviceContainer }: Props) => {
               >
                 <div className="participantFlex">
                   {leader.avatar ? (
-                    <img src={leader.avatar} alt={"avatar" + index} className="avatarBox"/>
+                    <img
+                      src={leader.avatar}
+                      alt={"avatar" + index}
+                      className="avatarBox"
+                    />
                   ) : (
                     <AvaratPlaceHolder username={leader.user} />
                   )}

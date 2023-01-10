@@ -171,6 +171,7 @@ header button {
   transform: translateY(-25%);
   font-family: "chakra-petch";
   font-size: 50px;
+  transform: translate(50%, -50%);
 }
 
 .clock .segment:last-child {
@@ -319,7 +320,7 @@ header button {
 }
 
 .achievements {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .achievements h2 {
@@ -859,6 +860,7 @@ body.showModal header .menu {
   text-align: right;
   margin-left: 15px;
   color: var(--dimText);
+  font-size: 24px;
 }
 
 .progressBar .rate span {
@@ -1161,8 +1163,9 @@ button.justCompleted {
 .collection img {
   width: 240px;
 }
-.collection button.accent {
-  z-index: 20;
+.collection button.accent,
+.collection button.secondary {
+  z-index: 16;
 }
 
 .collection .picWrapper {
@@ -1315,7 +1318,7 @@ button.justCompleted {
 
 .small-modal .subscribe h2 {
   font-size: 52px;
-  padding: 26px 0;
+  padding: 0 0 26px 0;
   line-height: 65px;
 }
 
@@ -1335,6 +1338,10 @@ button.justCompleted {
 .popupHeader {
   position: relative;
   z-index: 82;
+}
+
+.modal-body {
+  flex: 1;
 }
 
 .small-modal .subscribe p {
@@ -1393,6 +1400,7 @@ button.justCompleted {
   border: 0.695691px solid #303234;
   border-radius: 16.4351px;
   padding: 20px 30px;
+  margin: 10px 0;
 }
 
 .emblem .userFrameCi {
@@ -1403,7 +1411,7 @@ button.justCompleted {
 }
 
 .successModal button {
-  margin: 20px auto 0;
+  margin: 50px auto 0;
 }
 
 .successModal.subscribe h2 {

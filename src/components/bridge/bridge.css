@@ -17,3 +17,15 @@
   opacity: 0.2;
   border: 1px solid #ffffff;
 }
+
+.bridgeContainer {
+  min-height: 500px;
+  position: relative;
+}
+
+.lds-ellipsis {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-70%, -50%);
+}

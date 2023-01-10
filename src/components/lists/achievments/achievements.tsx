@@ -48,7 +48,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
       <h2>Achievements</h2>
       <p>More completed tasks = better chances to win</p>
 
-      <div className="container" style={{ marginTop: "100px" }}>
+      <div className="container" style={{ marginTop: "60px" }}>
         <div className="row">
           {achievements.map((item, index) => {
             //const { achievmentNumber, description, name, progressBarLength, link } = achievment

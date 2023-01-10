@@ -1,6 +1,7 @@
 import { useEffect, useState, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as Frame } from "../../assets/svgs/profile/profileFrame.svg";
+import { ReactComponent as Rifled } from "../../assets/img/rifled.svg";
 
 import { ProgressBarProps } from "components/elements/ProgressBar";
 import { useWindowSize } from "../../hooks/useSize";
@@ -46,6 +47,7 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
   return (
     <>
       <div className="profileContainer">
+        <Rifled className="cardFrameProfile" />
         <Frame className="cardFrameProfile" />
         <div className="flexColumnProfile">
           <div className="userFrameCi">

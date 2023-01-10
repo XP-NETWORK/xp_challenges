@@ -19,7 +19,14 @@ export const HeroSection: FC = () => {
         </div>
         <div className="heroButtonsSection">
           <TelegramButton />
-          <button className="howWorkButtonStyle">HOW IT WORKS</button>
+          <button
+            onClick={() => {
+              location.hash = "#howItWorkSectionTitle";
+            }}
+            className="howWorkButtonStyle"
+          >
+            HOW IT WORKS
+          </button>
         </div>
         <div className="heroTimeContainer">
           <ProjectTimer />

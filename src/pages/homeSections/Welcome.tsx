@@ -27,7 +27,9 @@ export const Welcome: FC = () => {
       <NFTList />
 
       <section className="howItWorkSection">
-        <div className="howItWorkSectionTitle">How it works</div>
+        <div className="howItWorkSectionTitle" id="howItWorkSectionTitle">
+          How it works
+        </div>
         <div className="howItWorkSectionSubTitle">
           Winning a valuable NFT has never been so easy
         </div>
@@ -38,9 +40,7 @@ export const Welcome: FC = () => {
                 <div className="imageAssetNumber">1</div>
                 <img src={Step1} alt="introTimeline-item-1" />
                 <span>Join XP Challenge</span>
-                <button
-                  className="button secondary howItWorkButtonStyle"
-                >
+                <button className="button secondary howItWorkButtonStyle">
                   Connect with telegram
                 </button>
               </div>,
@@ -84,9 +84,7 @@ export const Welcome: FC = () => {
 
               <img src={Step1} alt="introTimeline-item-1" />
               <span>Join XP Challenge</span>
-              <button
-                className="button secondary newBackground howItWorkButtonStyle"
-              >
+              <button className="button secondary newBackground howItWorkButtonStyle">
                 Connect with telegram
               </button>
             </div>

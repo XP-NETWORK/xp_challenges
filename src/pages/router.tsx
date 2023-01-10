@@ -26,6 +26,7 @@ const noscrollPages = ["signup"];
 
 const PageNotFound = () => {
   const nav = useNavigate();
+
   const [tick, setTick] = useState(5);
 
   useEffect(() => {
@@ -48,6 +49,8 @@ const PageNotFound = () => {
 
 export const Router: FC = () => {
   const location = useLocation();
+
+  const nav = useNavigate();
   const noscroll = Boolean(
     noscrollPages.find((p) => location.pathname.includes(p))
   );
@@ -72,7 +75,7 @@ export const Router: FC = () => {
     } else {
       if (telegramUser && !localStorage.getItem("CHALLENGE_EXIST")) {
         localStorage.setItem("CHALLENGE_EXIST", "true");
-
+        location.pathname !== "/" && nav("/");
         dispatch(
           setModal({
             type: "Success",
