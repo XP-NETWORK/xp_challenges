@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { Routes, Route } from "react-router";
 
 import { useLocation } from "react-router";
@@ -20,7 +20,31 @@ import { loadTelegramUniqueId } from "utils";
 
 import { setModal } from "store/reducer/global";
 
+import { useNavigate } from "react-router";
+
 const noscrollPages = ["signup"];
+
+const PageNotFound = () => {
+  const nav = useNavigate();
+  const [tick, setTick] = useState(5);
+
+  useEffect(() => {
+    const timer = setInterval(() => setTick((state) => state - 1), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (tick === 0) {
+      nav("/");
+    }
+  }, [tick]);
+
+  return (
+    <div>
+      404. Page not found. You will be redirected to main page in {tick}..
+    </div>
+  );
+};
 
 export const Router: FC = () => {
   const location = useLocation();
@@ -96,6 +120,8 @@ export const Router: FC = () => {
             </HomePage>
           }
         />
+
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       {modal && <Modal modal={modal} />}
     </div>

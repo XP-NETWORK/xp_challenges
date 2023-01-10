@@ -18,6 +18,8 @@ import TelegramService from "./services/telegram";
 import socket from "services/socket";
 import wallet from "services/wallet";
 
+import ErrorBoundary from "components/containers/ErrorBoundry";
+
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
 import "./assets/styles/fontface.css";
@@ -64,8 +66,10 @@ const App = () => {
 };
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <ErrorBoundary>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ErrorBoundary>,
   document.getElementById("root")
 );

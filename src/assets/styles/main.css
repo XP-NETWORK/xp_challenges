@@ -703,6 +703,14 @@ body.showModal header .menu {
   height: auto;
 }
 
+.big-modal > svg {
+  display: none;
+}
+
+.big-modal iframe {
+  border-top: 1px solid rgba(217, 217, 217, 0.1);
+}
+
 .signupPage {
   height: 100vh;
   position: relative;
@@ -1233,6 +1241,65 @@ button.justCompleted {
   margin-top: 150px;
 }
 
+.small-modal {
+  user-select: none;
+}
+
+.small-modal.confirmed {
+  height: 114px;
+
+  border: 0.8523px solid #303234;
+  border-radius: 20.1349px;
+  font-size: 34px;
+  text-align: center;
+  background: url(../img/icons/ci_check-bold.svg) no-repeat,
+    linear-gradient(264.68deg, #1b1b1c 63.66%, #056b2e 222.5%);
+  background-position: 7% 50%;
+  padding-right: 30px;
+}
+
+.small-modal.confirmed .popupHeader > img,
+.big-modal .popupHeader > img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(75%);
+  right: 0;
+  width: 25px;
+  margin: 0;
+}
+
+.big-modal .popupHeader > img {
+  right: 50px;
+  border: 1px solid rgb(82, 80, 80);
+  padding: 12px;
+  width: 45px;
+  transform: translateY(20%);
+}
+
+.big-modal .popupHeader > img:hover {
+  filter: brightness(110%);
+}
+
+.small-modal.confirmed .modal-body,
+.big-modal .modal-body {
+  position: static;
+}
+.subscribeConfirm::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 50px;
+  background: #d9d9d9;
+  opacity: 0.3;
+  right: 90px;
+  top: 0;
+  transform: translateY(60%);
+}
+
+.small-modal.confirmed > svg {
+  display: none;
+}
+
 .small-modal .subscribe > img {
   width: 104px;
 }
@@ -1332,6 +1399,24 @@ button.justCompleted {
 
 .successModal.subscribe h2 {
   font-size: 34px;
+}
+
+.errorBlock {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  border: 1px var(--accent) solid;
+  word-wrap: break-word;
+  overflow-y: auto;
+  padding: 7px;
+}
+
+.errorBlock h1 {
+  color: red;
+  margin-bottom: 15px;
 }
 
 @media (max-width: 600px) {

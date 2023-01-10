@@ -9,9 +9,8 @@ import React, { useEffect } from "react";
 import subscribeIcon from "../../assets/img/subscribeIcon.png";
 
 import { ReduxState } from "../../store";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { withServices, ServiceContainer } from "hocs/withServices";
-import { setModal } from "store/reducer/global";
 
 const validateEmail = (email: string) => {
   return String(email)
@@ -23,10 +22,10 @@ const validateEmail = (email: string) => {
 
 export const Subscribe = withServices(
   ({ serviceContainer }: { serviceContainer: ServiceContainer }) => {
-    const dispatch = useDispatch();
     const [email, setEmail] = React.useState("");
     const [notanemail, setFail] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
+    const [confirmed, setConfirm] = React.useState(false);
 
     const { user, project, justCompleted } = useSelector(
       (state: ReduxState) => ({
@@ -36,13 +35,22 @@ export const Subscribe = withServices(
       })
     );
 
-    console.log(justCompleted);
+    useEffect(() => {
+      return () =>
+        document.querySelector(".small-modal")?.classList.remove("confirmed");
+    }, []);
 
     useEffect(() => {
       if (justCompleted.includes(17)) {
-        dispatch(setModal(undefined));
+        setConfirm(true);
       }
     }, [justCompleted]);
+
+    useEffect(() => {
+      if (confirmed) {
+        document.querySelector(".small-modal")?.classList.add("confirmed");
+      }
+    }, [confirmed]);
 
     const subscribeHandler = async () => {
       if (!validateEmail(email)) {
@@ -64,7 +72,7 @@ export const Subscribe = withServices(
       }
     };
 
-    return (
+    const content = !confirmed ? (
       <div className="subscribe">
         <img src={subscribeIcon} alt="subscribeIcon" />
         {success ? <h2>Thank you!</h2> : <h2>Stay up to date</h2>}
@@ -89,6 +97,10 @@ export const Subscribe = withServices(
           </div>
         )}
       </div>
+    ) : (
+      <div className="subscribeConfirm">Email confirmed</div>
     );
+
+    return content;
   }
 );
