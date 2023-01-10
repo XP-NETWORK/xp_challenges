@@ -2,9 +2,9 @@ import { useState, FC } from "react";
 
 import logo from "../../assets/img/icons/logo.png";
 
-
 import Menu from "../../components/modals/menu";
 
+import UserWallet from "components/auth/UserWallet";
 
 const BurgerBtn = ({
   menuOpen,
@@ -39,8 +39,11 @@ export const Header: FC = () => {
           <img src={logo} alt="logo" className="logo" />
           <div className="XPTitleStyle">XP.CHALLENGE</div>
         </div>
-        <BurgerBtn menuOpen={menuOpen} menuHandler={menuHandler} />
-            {menuOpen && <Menu close={menuHandler} />}
+        <div className="headerWrapper-right flexRow">
+          <UserWallet />
+          <BurgerBtn menuOpen={menuOpen} menuHandler={menuHandler} />
+        </div>
+        {menuOpen && <Menu close={menuHandler} />}
       </header>
     </div>
   );

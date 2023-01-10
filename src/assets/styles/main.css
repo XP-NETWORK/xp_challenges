@@ -1001,6 +1001,8 @@ body.showModal header .menu {
 
 .userWalletWrapper span {
   color: #4affc9;
+  font-size: 18px;
+  margin-right: 13px;
 }
 
 .walletContainer {
@@ -1014,17 +1016,14 @@ body.showModal header .menu {
 
 header .userWalletWrapper,
 .signupPage-container .userWalletWrapper {
-  position: absolute;
-  right: 220px;
-  top: 50%;
-  transform: translate(0, -45%);
   display: block;
   padding: 10px 20px;
-  background: rgba(22, 23, 24, 0.29);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #121213;
+  backdrop-filter: blur(4px);
+  border: none;
   cursor: pointer;
   border-radius: 90px;
-  width: 100%;
+  margin-left: 10px;
 }
 
 .signupPage-container .userWalletWrapper {

@@ -316,9 +316,24 @@ frame top 500px
     width: 358.66px;
     height: auto;
   }
+
+  .headerWrapper-right.flexRow .userWalletWrapper {
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 160%);
+    width: 200px;
+  }
+
+  .headerWrapper-right.flexRow .userWalletWrapper span {
+    margin-right: 0;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 600px) {
+  .profileContainer {
+    margin-top: 100px;
+  }
   .achivCard .progressBar .bar {
     width: 100px !important;
   }

@@ -88,11 +88,7 @@ function TelegramLogin(props: TelegramLoginProps) {
 
   return (
     <div className={`signUpContainer ${vert ? "vertical" : ""}`}>
-      {userData?.wallets?.length ? (
-        <UserWallet wallets={userData.wallets} />
-      ) : (
-        ""
-      )}
+      {userData?.wallets?.length ? <UserWallet /> : ""}
     </div>
   );
 }

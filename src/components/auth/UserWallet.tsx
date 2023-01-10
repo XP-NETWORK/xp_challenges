@@ -1,20 +1,21 @@
 import React, { useState, useEffect, useCallback } from "react";
-
-import Blockies from "react-blockies";
+import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 
 import { truncate } from "../../utils";
 
-import { useDispatch } from "react-redux";
-import { setModal } from "store/reducer/global";
+import { /*useDispatch,*/ useSelector } from "react-redux";
+//import { setModal } from "store/reducer/global";
+import { ReduxState } from "store";
 
-const UserWallet = ({
-  wallets,
-}: {
-  wallets: { chain: string; address: string }[];
-}) => {
-  const address = truncate(wallets?.at(0)?.address, 13) || "";
+const UserWallet = () => {
+  const userData = useSelector((state: ReduxState) => state.global.userData);
+
+  const wallets = userData?.wallets;
+
+  const fullAddress = wallets?.at(0)?.address;
+  const address = truncate(fullAddress, 14) || "";
   const [show, setShow] = useState(false);
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 
   const handler = useCallback(() => {
     setShow(false);
@@ -34,8 +35,11 @@ const UserWallet = ({
       }}
     >
       <div className="userWallet flexRow">
-        <span>{address}</span>
-        <Blockies
+        <span>{address.toLocaleLowerCase()}</span>
+        {fullAddress && (
+          <Jazzicon diameter={22} seed={jsNumberForAddress(fullAddress)} />
+        )}
+        {/*<Blockies
           seed={address}
           size={10}
           scale={3}
@@ -43,9 +47,9 @@ const UserWallet = ({
           bgColor="#1d0e0e"
           spotColor="#47fb00"
           className="identicon"
-        />
+    />*/}
       </div>
-
+      {/*
       <div className="userWallet-dropdown">
         <ul>
           {wallets.slice(1).map((wallet, index) => {
@@ -79,7 +83,7 @@ const UserWallet = ({
         >
           Add wallet
         </button>}
-      </div>
+        </div>*/}
     </div>
   );
 };
