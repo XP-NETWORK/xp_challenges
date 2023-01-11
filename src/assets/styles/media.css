@@ -322,6 +322,7 @@ frame top 500px
     right: 50%;
     transform: translate(50%, 160%);
     width: 200px;
+    margin-right: 0;
   }
 
   .headerWrapper-right.flexRow .userWalletWrapper span {

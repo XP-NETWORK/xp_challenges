@@ -54,17 +54,23 @@ export const ProjectTimer: FC = () => {
     return () => clearInterval(int);
   }, [project]);
 
-
+  console.log(time);
   return (
     <div className="clock">
       <div className="flexRow">
-        {time.length > 1 ?
+        {time.length > 1 ? (
           time.map((amount, index) => (
             <>
               <div
                 className={`segment ${index === time.length - 1 ? "last" : ""}`}
               >
-                <strong>{Number(amount) > 10 ? amount : 0 + amount}</strong>
+                <strong>
+                  {Number(amount) > 10
+                    ? Number(amount) > 0
+                      ? amount
+                      : "0"
+                    : 0 + amount}
+                </strong>
 
                 <span>{period[index]}</span>
               </div>
@@ -72,7 +78,10 @@ export const ProjectTimer: FC = () => {
               {index !== 2 && <span>:</span> // need to fix that
               }
             </>
-          )) : <TimeLoader/>}
+          ))
+        ) : (
+          <TimeLoader />
+        )}
       </div>
     </div>
   );
