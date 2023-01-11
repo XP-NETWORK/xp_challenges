@@ -137,6 +137,8 @@ header img.logo {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin-top: 0px;
+  cursor: default;
+  user-select: none;
 }
 
 header {
@@ -580,6 +582,10 @@ footer .bridgeBanner p,
 
 footer .bridgeBanner a.button {
   width: 197px;
+}
+
+.heroTimeContainer .clock .flexRow > span {
+  transform: translate(50%, -45%);
 }
 
 .blurOver {
@@ -1233,6 +1239,7 @@ button.justCompleted {
   max-width: 687px;
   margin: 0 auto;
   margin-bottom: 42px;
+  margin-top: 50px;
 }
 
 .searchContainer img {

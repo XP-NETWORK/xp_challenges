@@ -54,7 +54,6 @@ export const ProjectTimer: FC = () => {
     return () => clearInterval(int);
   }, [project]);
 
-  console.log(time);
   return (
     <div className="clock">
       <div className="flexRow">

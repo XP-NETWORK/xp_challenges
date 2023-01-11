@@ -6,6 +6,8 @@ import Menu from "../../components/modals/menu";
 
 import UserWallet from "components/auth/UserWallet";
 
+import { useNavigate } from "react-router";
+
 const BurgerBtn = ({
   menuOpen,
   menuHandler,
@@ -24,6 +26,7 @@ const BurgerBtn = ({
 //withTimer
 export const Header: FC = () => {
   const [menuOpen, toggleMenu] = useState(false);
+  const nav = useNavigate();
 
   const menuHandler = () => {
     document.body.classList.contains("showModal")
@@ -35,7 +38,7 @@ export const Header: FC = () => {
   return (
     <div className="headerWrapper">
       <header className="header" id="header">
-        <div className="iconBackground">
+        <div className="iconBackground" onClick={() => nav("/")}>
           <img src={logo} alt="logo" className="logo" />
           <div className="XPTitleStyle">XP.CHALLENGE</div>
         </div>

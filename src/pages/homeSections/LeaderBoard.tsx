@@ -68,7 +68,7 @@ const Board = ({ serviceContainer }: Props) => {
 
   return (
     <div className="leaderBoard">
-      <h2>LEADERBOARD</h2>
+      <h2>Leaderboard</h2>
       <p>Compete with our top performers</p>
       <div className="searchContainer">
         <img src={searchSVG} alt="searchSVG" />

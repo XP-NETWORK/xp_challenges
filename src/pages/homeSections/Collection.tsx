@@ -42,7 +42,7 @@ const Collection = () => {
         <div className="row">
           <div className="col-12">
             <h2 className="collectionHeader">Collection</h2>
-            <p>Try to complete all the tastks</p>
+            <p>Try to complete all the tasks</p>
             {!telegramUser?.telegramUsername && (
               <button
                 className="secondary newBackground"
