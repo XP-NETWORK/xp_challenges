@@ -24,6 +24,7 @@ const Board = ({ serviceContainer }: Props) => {
   const Dispatch = useDispatch();
   const [searchUser, setSearchUser] = useState<string>("");
   const [topUser, setTopUser] = useState<ILeader[]>();
+  const [badAvatars, setBad] = useState<number[]>([]);
   const { achievements } = useSelector((state: ReduxState) => ({
     achievements: state.global.achievements,
   }));
@@ -66,6 +67,8 @@ const Board = ({ serviceContainer }: Props) => {
     setSearchUser(value);
   };
 
+  console.log(badAvatars);
+
   return (
     <div className="leaderBoard">
       <h2>Leaderboard</h2>
@@ -92,11 +95,15 @@ const Board = ({ serviceContainer }: Props) => {
                 className={`${leader?.top ? "topLeaders" : ""} participant`}
               >
                 <div className="participantFlex">
-                  {leader.avatar ? (
+                  {leader.avatar && !badAvatars.includes(index) ? (
                     <img
                       src={leader.avatar}
                       alt={"avatar" + index}
                       className="avatarBox"
+                      onError={() => {
+                        console.log(index);
+                        setBad([...badAvatars, index]);
+                      }}
                     />
                   ) : (
                     <AvaratPlaceHolder username={leader.user} />

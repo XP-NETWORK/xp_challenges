@@ -14,6 +14,8 @@ import { useNavigate } from "react-router-dom";
 import { HeroSection } from "components/heroSection";
 import LeaderBoard from "./LeaderBoard";
 
+import { TelegramButton } from "components/auth/TelegramButton";
+
 export const Welcome: FC = () => {
   const size = useWindowSize();
   const ismobile = Number(size?.width) <= 800;
@@ -40,9 +42,9 @@ export const Welcome: FC = () => {
                 <div className="imageAssetNumber">1</div>
                 <img src={Step1} alt="introTimeline-item-1" />
                 <span>Join XP Challenge</span>
-                <button className="button secondary howItWorkButtonStyle">
-                  Connect with telegram
-                </button>
+                <TelegramButton
+                  classes={"button secondary howItWorkButtonStyle"}
+                />
               </div>,
               <div className="introTimeline-item flexCol">
                 <div className="imageAssetNumber">2</div>
@@ -84,9 +86,9 @@ export const Welcome: FC = () => {
 
               <img src={Step1} alt="introTimeline-item-1" />
               <span>Join XP Challenge</span>
-              <button className="button secondary newBackground howItWorkButtonStyle">
-                Connect with telegram
-              </button>
+              <TelegramButton
+                classes={"button secondary howItWorkButtonStyle"}
+              />
             </div>
 
             <div className="progressLine bright">

@@ -4,7 +4,7 @@
 
 /* eslint-disable @typescript-eslint/no-unused-vars  */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 
 import subscribeIcon from "../../assets/img/subscribeIcon.png";
 
@@ -26,6 +26,8 @@ export const Subscribe = withServices(
     const [notanemail, setFail] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
     const [confirmed, setConfirm] = React.useState(false);
+    console.log(email, "email");
+    const input = React.useRef<HTMLInputElement>(null);
 
     const { user, project, justCompleted } = useSelector(
       (state: ReduxState) => ({
@@ -34,23 +36,6 @@ export const Subscribe = withServices(
         justCompleted: state.global.justCompleted,
       })
     );
-
-    useEffect(() => {
-      return () =>
-        document.querySelector(".small-modal")?.classList.remove("confirmed");
-    }, []);
-
-    useEffect(() => {
-      if (justCompleted.includes(17)) {
-        setConfirm(true);
-      }
-    }, [justCompleted]);
-
-    useEffect(() => {
-      if (confirmed) {
-        document.querySelector(".small-modal")?.classList.add("confirmed");
-      }
-    }, [confirmed]);
 
     const subscribeHandler = async () => {
       if (!validateEmail(email)) {
@@ -68,9 +53,37 @@ export const Subscribe = withServices(
 
       if (res) {
         setSuccess(true);
-        //dispatch(setModal(undefined));
       }
     };
+
+    const pushEnter = (e: KeyboardEvent) => {
+      if (input.current === document.activeElement && e.key === "Enter") {
+        document.getElementById("emailSend")?.click();
+      }
+    };
+
+    useEffect(() => {
+      if (input) {
+        document.addEventListener("keypress", pushEnter);
+      }
+
+      return () => {
+        document.querySelector(".small-modal")?.classList.remove("confirmed");
+        document.removeEventListener("keydown", pushEnter);
+      };
+    }, [input]);
+
+    useEffect(() => {
+      if (justCompleted.includes(17)) {
+        setConfirm(true);
+      }
+    }, [justCompleted]);
+
+    useEffect(() => {
+      if (confirmed) {
+        document.querySelector(".small-modal")?.classList.add("confirmed");
+      }
+    }, [confirmed]);
 
     const content = !confirmed ? (
       <div className="subscribe">
@@ -88,11 +101,14 @@ export const Subscribe = withServices(
           <div className={`inputWrapper flexRow ${notanemail ? "failed" : ""}`}>
             <input
               type="email"
+              ref={input}
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <button onClick={subscribeHandler}>Subscribe</button>
+            <button id="emailSend" onClick={subscribeHandler}>
+              Subscribe
+            </button>
             <span>Not an email</span>
           </div>
         )}

@@ -159,7 +159,8 @@ header button {
 .clock {
   position: relative;
   width: 300px;
-  margin-bottom: 170px;
+  height: 100px;
+  margin-bottom: 70px;
 }
 
 .clock .segment {

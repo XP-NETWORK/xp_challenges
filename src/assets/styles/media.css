@@ -267,7 +267,8 @@ frame top 500px
 
   .clock {
     width: 250px;
-    margin-bottom: 23px;
+    height: 80px;
+    margin-bottom: 0;
   }
 
   .clock .segment span {

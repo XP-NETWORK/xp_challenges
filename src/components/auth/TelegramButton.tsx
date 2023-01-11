@@ -3,7 +3,7 @@ import React from "react";
 import { saveTelegramUniqueId } from "utils";
 import { v4 as uuidv4 } from "uuid";
 
-export const TelegramButton = () => {
+export const TelegramButton = ({ classes }: { classes?: string }) => {
   const unique = uuidv4();
   const openInNewTab = () => {
     window.open(
@@ -16,7 +16,7 @@ export const TelegramButton = () => {
   };
 
   return (
-    <button className="accent" onClick={openInNewTab}>
+    <button className={classes ? classes : "accent"} onClick={openInNewTab}>
       Connect with Telegram
     </button>
   );
