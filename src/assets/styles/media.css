@@ -114,6 +114,9 @@ frame top 500px
 }
 
 @media only screen and (max-width: 850px) {
+  .leaderBoard-pannel {
+    height: auto;
+  }
   .bridgeTitle {
     font-size: 20px;
   }

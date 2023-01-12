@@ -36,13 +36,12 @@ export const BridgeWidget: FC = () => {
     }
   }, [iframe]);
   //192.168.1.36
-  //https://widget-staging.xp.network
   const small = window.innerWidth <= 1600;
   return (
     <>
       <div className="bridgeContainer" ref={container}>
         <iframe
-          src={`${config._WIDGET}?wid=63bc17c8a65fd4aaf0312526&xpchallenge=true&projectNumber=${project?.projectNumber}`}
+          src={`${config._WIDGET}?wid=${config._WIDGET_ID}&xpchallenge=true&projectNumber=${project?.projectNumber}`}
           ref={iframe}
           width="100%"
           style={{ display: project && loaded ? "initial" : "none" }}
