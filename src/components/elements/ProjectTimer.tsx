@@ -64,7 +64,7 @@ export const ProjectTimer: FC = () => {
                 className={`segment ${index === time.length - 1 ? "last" : ""}`}
               >
                 <strong>
-                  {Number(amount) > 10
+                  {Number(amount) >= 10
                     ? Number(amount) > 0
                       ? amount
                       : "0"
