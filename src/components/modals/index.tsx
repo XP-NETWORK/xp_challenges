@@ -26,6 +26,8 @@ import { TelegramButton } from "components/auth/TelegramButton";
 
 import { Avatar } from "components/elements/Avatar";
 
+import telegramIcon from "../../assets/img/icons/connectWithTg.png";
+
 const Modal = ({ modal }: { modal: IModal }) => {
   let body: JSX.Element = <div></div>;
   const dispatch = useDispatch();
@@ -34,6 +36,9 @@ const Modal = ({ modal }: { modal: IModal }) => {
     case "TelegramAuth": {
       body = (
         <div className="TelegramButtonWrapper">
+          <img src={telegramIcon} alt="telegramIcon" />
+          <h2>Sign up</h2>
+          <p>To continue please register with your telegram accont</p>
           <TelegramButton />
         </div>
       );
@@ -75,7 +80,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
     }
 
     case "EmailSubscribe": {
-      body = <Subscribe />;
+      body = <Subscribe params={modal.params} />;
 
       break;
     }

@@ -21,12 +21,22 @@ const validateEmail = (email: string) => {
 };
 
 export const Subscribe = withServices(
-  ({ serviceContainer }: { serviceContainer: ServiceContainer }) => {
+  ({
+    serviceContainer,
+    params,
+  }: {
+    serviceContainer: ServiceContainer;
+    params?: {
+      [x: string]: boolean;
+    };
+  }) => {
     const [email, setEmail] = React.useState("");
     const [notanemail, setFail] = React.useState(false);
     const [success, setSuccess] = React.useState(false);
-    const [confirmed, setConfirm] = React.useState(false);
-    console.log(email, "email");
+    const [confirmed, setConfirm] = React.useState(
+      params?.emailConfirmed || false
+    );
+    console.log(confirmed, "confirmed");
     const input = React.useRef<HTMLInputElement>(null);
 
     const { user, project, justCompleted } = useSelector(

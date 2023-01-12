@@ -91,18 +91,21 @@ export type AchievementsUpdateEvent = {
 
 export type IModal = {
   type:
-  | "Error"
-  | "WalletList"
-  | "TwitterAuth"
-  | "TelegramAuth"
-  | "confirmReg"
-  | "EmailSubscribe"
-  | "Success"
-  | "Bridge";
+    | "Error"
+    | "WalletList"
+    | "TwitterAuth"
+    | "TelegramAuth"
+    | "confirmReg"
+    | "EmailSubscribe"
+    | "Success"
+    | "Bridge";
   text?: string;
   wallet?: string;
   telegramAccount?: string;
   telegramPic?: string;
   email?: string;
+  params?: {
+    [x: string]: boolean;
+  };
   confirmButton?: any;
 };

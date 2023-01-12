@@ -4,7 +4,7 @@ import { withServices, ServiceContainer } from "../../hocs/withServices";
 
 import { useDispatch, useSelector } from "react-redux";
 import { ReduxState } from "store";
-import { setUserData, updateProgress } from "store/reducer/global";
+import { setModal, setUserData, updateProgress } from "store/reducer/global";
 
 import { AchievementsUpdateEvent } from "store/types";
 
@@ -63,6 +63,8 @@ const Container = (Profile: FC<ProfileProps>) =>
 
           const twitterParam = params.get("twitterCred");
 
+          const confirmedEmail = params.get("emailConfirmed");
+
           if (twitterParam) {
             const cred = JSON.parse(twitterParam).data as TwitterUser;
             ud = {
@@ -73,6 +75,18 @@ const Container = (Profile: FC<ProfileProps>) =>
 
             await api.updateTwitterAccount(userFabric(ud));
           }
+
+          if (confirmedEmail) {
+            dispatch(
+              setModal({
+                type: "EmailSubscribe",
+                params: {
+                  emailConfirmed: Boolean(confirmedEmail),
+                },
+              })
+            );
+          }
+
           dispatch(setUserData({ userData: ud }));
         }
         setLoading(false);

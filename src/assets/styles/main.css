@@ -159,8 +159,13 @@ header button {
 .clock {
   position: relative;
   width: 300px;
+
   height: 100px;
   margin-bottom: 70px;
+}
+
+.profile .clock {
+  height: auto;
 }
 
 .clock .segment {
@@ -1286,8 +1291,24 @@ button.justCompleted {
 }
 
 .TelegramButtonWrapper {
-  margin-top: 150px;
+  margin: 0;
   text-align: center;
+  padding: 0 50px;
+}
+
+.TelegramButtonWrapper > img {
+  width: 85px;
+}
+
+.TelegramButtonWrapper h2 {
+  font-size: 52px;
+  line-height: 68px;
+}
+
+.TelegramButtonWrapper p {
+  font-size: 18px;
+  line-height: 160%;
+  padding: 30px 0;
 }
 
 .TelegramButtonWrapper button {
