@@ -4,7 +4,7 @@ import { ReduxState } from "store";
 import moment from "moment";
 import { TimeLoader } from "components/timeLoader";
 
-const period = ["days", "hours", "MINUTES", "sec"];
+const period = ["days", "hours", "MIN", "sec"];
 
 // import { useWindowSize } from "hooks/useSize";
 
@@ -37,15 +37,11 @@ export const ProjectTimer: FC = () => {
         }
 
         const d = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        const h = Math.floor(
-          (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const m = String(
-          Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))
-        );
-        // const s = String(Math.floor((timeDiff % (1000 * 60)) / 1000));
+        const h = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = String(Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60)));
+        const s = String(Math.floor((timeDiff % (1000 * 60)) / 1000));
 
-        setTick(`${d}:${h}:${m}`);
+        setTick(`${d}:${h}:${m}:${s}`);
       }, 1000);
     }
     return () => clearInterval(int);
@@ -55,26 +51,22 @@ export const ProjectTimer: FC = () => {
     <div className="clock">
       <div className="flexRow">
         {time.length > 1 ? (
-          time.map((amount, index) => (
-            <>
-              <div
-                className={`segment ${index === time.length - 1 ? "last" : ""}`}
-              >
-                <strong>
-                  {Number(amount) >= 10
-                    ? Number(amount) > 0
-                      ? amount
-                      : "0"
-                    : 0 + amount}
-                </strong>
+          time.map((amount, index) => {
+            return (
+              <>
+                <div className={`segment ${index === time.length - 1 ? "last" : ""}`}>
+                  <strong>
+                    {Number(amount) >= 10 ? (Number(amount) > 0 ? amount : "0") : 0 + amount}
+                  </strong>
 
-                <span>{period[index]}</span>
-              </div>
+                  <span>{period[index]}</span>
+                </div>
 
-              {index !== 2 && <span>:</span> // need to fix that
-              }
-            </>
-          ))
+                {index !== 3 && <span>:</span> // need to fix that
+                }
+              </>
+            );
+          })
         ) : (
           <TimeLoader />
         )}
