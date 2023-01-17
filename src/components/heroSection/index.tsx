@@ -1,10 +1,7 @@
 import { ProjectTimer } from "components/elements/ProjectTimer";
 import { FC } from "react";
-
 import ExampleImage from "../../assets/img/heroSection/drifters.png";
-
 import { TelegramButton } from "components/auth/TelegramButton";
-
 import "./heroSection.css";
 
 export const HeroSection: FC = () => {

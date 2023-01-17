@@ -1,9 +1,6 @@
 import { useEffect, useState, FC } from "react";
-
 import { useSelector } from "react-redux";
-
 import { ReduxState } from "store";
-
 import moment from "moment";
 import { TimeLoader } from "components/timeLoader";
 

@@ -1,7 +1,5 @@
 import { FC } from "react";
-
 import { ServiceConsumer } from "./ServcieProvder";
-
 import { ImageLoader } from "../services/imageLoader";
 import { Api } from "../services/api";
 import { TelegramService } from "../services/telegram";

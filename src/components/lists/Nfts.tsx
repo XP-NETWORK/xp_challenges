@@ -2,10 +2,8 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-constant-condition   */
 /* eslint-disable @typescript-eslint/ban-ts-comment   */
-
 import { useState, useRef, useEffect } from "react";
 import AliceCarousel from "react-alice-carousel";
-
 import { importAll } from "../../utils";
 
 const NFTList = () => {

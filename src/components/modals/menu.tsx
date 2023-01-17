@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { ReactComponent as Home } from "../../assets/img/icons/HOME.svg";
 import { ReactComponent as Leader } from "../../assets/img/icons/trophy-star.svg";
 import { ReactComponent as Collection } from "../../assets/img/icons/.svg";

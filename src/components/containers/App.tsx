@@ -1,7 +1,5 @@
 import React, { FC, useEffect } from "react";
-
 import { withServices, ServiceContainer } from "../../hocs/withServices";
-
 import { useDispatch } from "react-redux";
 import { setAchievements, toggleInit, setProject } from "store/reducer/global";
 

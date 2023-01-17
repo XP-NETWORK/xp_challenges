@@ -1,5 +1,4 @@
 import { useEffect, FC } from "react";
-
 import { useWindowSize } from "../../hooks/useSize";
 
 export type ProgressBarProps = {
