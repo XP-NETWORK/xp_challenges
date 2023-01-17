@@ -3,13 +3,19 @@ import { FC } from "react";
 import ExampleImage from "../../assets/img/heroSection/drifters.png";
 import { TelegramButton } from "components/auth/TelegramButton";
 import "./heroSection.css";
+import { useSelector } from "react-redux";
+import { ReduxState } from "store";
 
 export const HeroSection: FC = () => {
+  const { project } = useSelector((state: ReduxState) => ({
+    project: state.global.project,
+  }));
+
   return (
     <>
       <section className="heroContainer">
         <div className="heroNFTname">
-          Drifters <br /> NFT collection <br /> giveaway
+          {project ? project.name : ""} <br /> NFT collection <br /> giveaway
         </div>
         <div className="heroCollectionStyle">
           <img src={ExampleImage} alt="nftCollectionName" />
