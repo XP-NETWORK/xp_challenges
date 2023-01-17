@@ -15,7 +15,9 @@ export interface IPROJECT {
   endDate: string;
   twitterPostId: string;
   twitterPartnerId: string;
+  coverImage: string;
   currentProject: boolean;
+  projectImages:string[]
 }
 
 export interface ILeader {
@@ -91,14 +93,14 @@ export type AchievementsUpdateEvent = {
 
 export type IModal = {
   type:
-    | "Error"
-    | "WalletList"
-    | "TwitterAuth"
-    | "TelegramAuth"
-    | "confirmReg"
-    | "EmailSubscribe"
-    | "Success"
-    | "Bridge";
+  | "Error"
+  | "WalletList"
+  | "TwitterAuth"
+  | "TelegramAuth"
+  | "confirmReg"
+  | "EmailSubscribe"
+  | "Success"
+  | "Bridge";
   text?: string;
   wallet?: string;
   telegramAccount?: string;

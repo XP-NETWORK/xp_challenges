@@ -18,7 +18,7 @@ export const HeroSection: FC = () => {
           {project ? project.name : ""} <br /> NFT collection <br /> giveaway
         </div>
         <div className="heroCollectionStyle">
-          <img src={ExampleImage} alt="nftCollectionName" />
+          <img src={project ? project?.coverImage : ExampleImage} alt="nftCollectionName" />
         </div>
         <div className="heroButtonsSection">
           <TelegramButton />

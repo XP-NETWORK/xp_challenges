@@ -4,9 +4,15 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment   */
 import { useState, useRef, useEffect } from "react";
 import AliceCarousel from "react-alice-carousel";
+import { useSelector } from "react-redux";
+import { ReduxState } from "store";
 import { importAll } from "../../utils";
 
 const NFTList = () => {
+  const { project } = useSelector((state: ReduxState) => ({
+    project: state.global.project,
+  }));
+
   const [pics, setPics] = useState<string[]>([]);
   const carousel = useRef<AliceCarousel | null>(null);
 
@@ -24,8 +30,8 @@ const NFTList = () => {
       //@ts-ignore
       require.context("../../assets/img/nfts", false, /\.(png|jpe?g|svg)$/)
     );
-    setPics(images);
-  }, []);
+    setPics(project ? project.projectImages : images);
+  }, [project]);
 
   return (
     <div className="nftList">
