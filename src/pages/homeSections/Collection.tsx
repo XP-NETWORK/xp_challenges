@@ -2,20 +2,18 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-constant-condition   */
 /* eslint-disable @typescript-eslint/ban-ts-comment   */
-
 import React, { useEffect, useState } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "store/reducer/global";
 import { importAll } from "../../utils";
-
 import { ReduxState } from "store";
 
 const Collection = () => {
   const [pics, setPics] = useState<string[]>([]);
 
-  const { telegramUser } = useSelector((state: ReduxState) => ({
+  const { telegramUser, project } = useSelector((state: ReduxState) => ({
     telegramUser: state.global.telegramUser,
+    project: state.global.project,
   }));
 
   useEffect(() => {
@@ -26,13 +24,19 @@ const Collection = () => {
     );
     const dublicate: string[] = [];
     setPics(
-      images.filter((img: string) => {
-        if (dublicate.includes(img)) return false;
-        dublicate.push(img);
-        return true;
-      })
+      project
+        ? project?.projectImages?.filter((img: string) => {
+            if (dublicate?.includes(img)) return false;
+            dublicate?.push(img);
+            return true;
+          })
+        : images.filter((img: string) => {
+            if (dublicate.includes(img)) return false;
+            dublicate.push(img);
+            return true;
+          })
     );
-  }, []);
+  }, [project]);
 
   const dispatch = useDispatch();
 
@@ -65,7 +69,7 @@ const Collection = () => {
                 >
                   <div className="picWrapper">
                     <img src={pic} alt={`collection-${index}`} />
-                    <span>@tyshh</span>
+                    <span>{project ? project.name : "@tyshh"}</span>
                   </div>
                 </div>
               ))}
