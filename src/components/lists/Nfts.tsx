@@ -30,7 +30,7 @@ const NFTList = () => {
       //@ts-ignore
       require.context("../../assets/img/nfts", false, /\.(png|jpe?g|svg)$/)
     );
-    setPics(project ? project.projectImages : images);
+    setPics(project ? project.nfts : images);
   }, [project]);
 
   return (

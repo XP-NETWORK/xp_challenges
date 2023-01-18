@@ -4,7 +4,10 @@ export enum CardType {
   Spell = "Spell",
   Conjured = "Conjured",
 }
-
+export interface NFT {
+  name: string
+  image: string
+}
 export interface IPROJECT {
   projectNumber: number;
   name: string;
@@ -17,7 +20,7 @@ export interface IPROJECT {
   twitterPartnerId: string;
   coverImage: string;
   currentProject: boolean;
-  projectImages:string[]
+  nfts: NFT[]
 }
 
 export interface ILeader {
