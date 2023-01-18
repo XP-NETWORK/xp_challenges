@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import AliceCarousel from "react-alice-carousel";
 import { useSelector } from "react-redux";
 import { ReduxState } from "store";
+import { NFT } from "store/types";
 import { importAll } from "../../utils";
 
 const NFTList = () => {
@@ -13,10 +14,10 @@ const NFTList = () => {
     project: state.global.project,
   }));
 
-  const [pics, setPics] = useState<string[]>([]);
+  const [pics, setPics] = useState<NFT[]>([]);
   const carousel = useRef<AliceCarousel | null>(null);
 
-  const mock = pics.map((pic) => ({ src: pic }));
+  const mock = pics.map((pic) => ({ src: pic.image }));
 
   const nfts = mock.map((item) => (
     <div className="nftWrapper">
