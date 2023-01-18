@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
-
 import { truncate } from "../../utils";
-
 import { /*useDispatch,*/ useSelector } from "react-redux";
 //import { setModal } from "store/reducer/global";
 import { ReduxState } from "store";

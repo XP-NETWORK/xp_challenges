@@ -1,5 +1,4 @@
 import React from "react";
-
 import { AvaratPlaceHolder } from "components/elements/avatarPlaceHolder";
 import { UserData } from "store/models/user";
 

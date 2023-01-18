@@ -1,19 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment  */
-
 /* eslint-disable no-constant-condition  */
-
 import React, { useEffect } from "react";
-
 import { useSelector, useDispatch } from "react-redux";
-
 import { ReduxState } from "store";
-
 import { ReactComponent as Frame } from "../../../assets/img/icons/card-frame.svg";
 import ProgressBar from "components/elements/ProgressBar";
 import { setJustCompleted, setModal } from "../../../store/reducer/global";
-
 import fabric from "../../../store/models/achievment";
-
 import {
   AchievementsProps,
   achievementsBtns,

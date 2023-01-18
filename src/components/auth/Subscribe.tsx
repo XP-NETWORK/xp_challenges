@@ -1,13 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment  */
-
 /* eslint-disable no-constant-condition  */
-
 /* eslint-disable @typescript-eslint/no-unused-vars  */
-
 import React, { useEffect, useCallback } from "react";
-
 import subscribeIcon from "../../assets/img/subscribeIcon.png";
-
 import { ReduxState } from "../../store";
 import { useSelector } from "react-redux";
 import { withServices, ServiceContainer } from "hocs/withServices";

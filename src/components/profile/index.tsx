@@ -2,13 +2,10 @@ import { useEffect, useState, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as Frame } from "../../assets/svgs/profile/profileFrame.svg";
 import { ReactComponent as Rifled } from "../../assets/img/rifled.svg";
-
 import { ProgressBarProps } from "components/elements/ProgressBar";
 import { useWindowSize } from "../../hooks/useSize";
-
 import "./profile.css";
 import { ProjectTimer } from "components/elements/ProjectTimer";
-
 import { Avatar } from "components/elements/Avatar";
 
 function waitForElm(element: HTMLDivElement): Promise<HTMLDivElement> {

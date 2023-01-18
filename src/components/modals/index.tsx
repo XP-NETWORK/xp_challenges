@@ -1,31 +1,19 @@
 import React from "react";
-
 import { IModal } from "store/types";
-
 import close from "../../assets/img/icons/close.svg";
 import { ReactComponent as GreenCheck } from "../../assets/img/icons/ci_check-bold.svg";
 import walletConnected from "../../assets/img/icons/walletConnected.png";
-
 import { useDispatch } from "react-redux";
-
 import { setModal } from "store/reducer/global";
-
 import WalletList from "components/lists/wallet";
-
 import { config } from "../../index";
 import { ConfirmRegistrationModal } from "./confirmRegistration";
-
 import { ReactComponent as Frame } from "../../assets/img/icons/card-frameSimple.svg";
-
 import { Subscribe } from "../auth/Subscribe";
-
 import { truncate } from "utils";
 import { BridgeWidget } from "components/bridge";
-
 import { TelegramButton } from "components/auth/TelegramButton";
-
 import { Avatar } from "components/elements/Avatar";
-
 import telegramIcon from "../../assets/img/icons/connectWithTg.png";
 
 const Modal = ({ modal }: { modal: IModal }) => {

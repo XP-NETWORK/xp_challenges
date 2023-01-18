@@ -1,9 +1,7 @@
 import { FC, useState, useRef, useEffect } from "react";
 import "./bridge.css";
 import { useSelector } from "react-redux";
-
 import { ReduxState } from "store";
-
 import { Loader } from "components/elements/loader";
 import { config } from "index";
 

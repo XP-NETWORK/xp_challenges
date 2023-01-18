@@ -1,27 +1,16 @@
 import React from "react";
-
 import { AchivType } from "store/types";
-
 import { ReactComponent as TelegramAchiv } from "../../../assets/img/icons/newTelegramIcon.svg";
-
 import { ReactComponent as twitAchiv } from "../../../assets/img/icons/newTwitterIcon.svg";
-
 import { ReactComponent as bridgeAchiv } from "../../../assets/img/icons/newBridgeIcon.svg";
-
 import { ReactComponent as walletIcon } from "../../../assets/img/icons/newWalletIcon.svg";
-
 import mailIcon from "../../../assets/img/icons/maild.png";
-
 import { IUserAchievments, UserData } from "store/models/user";
-
 import person from "../../../assets/img/icons/AchivPerson.svg";
 import personCompleted from "../../../assets/img/icons/Group 3324.svg";
-
 import nftIcon from "../../../assets/img/icons/nftIcon.svg";
 import nftIconCompleted from "../../../assets/img/icons/completedNftIcon.svg";
-
 import { config } from "../../../index";
-
 import { Dispatch } from "hoist-non-react-statics/node_modules/@types/react";
 import { setModal } from "store/reducer/global";
 import { AnyAction } from "redux";

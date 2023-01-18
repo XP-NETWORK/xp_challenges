@@ -1,8 +1,6 @@
 import * as React from "react";
 import { AvaratPlaceHolder } from "./avatarPlaceHolder";
-
 import { useSelector } from "react-redux";
-
 import { ReduxState } from "store";
 
 export const Avatar = () => {

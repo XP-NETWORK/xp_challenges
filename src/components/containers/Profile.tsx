@@ -1,19 +1,12 @@
 import React, { FC, useEffect, useState } from "react";
-
 import { withServices, ServiceContainer } from "../../hocs/withServices";
-
 import { useDispatch, useSelector } from "react-redux";
 import { ReduxState } from "store";
 import { setModal, setUserData, updateProgress } from "store/reducer/global";
-
 import { AchievementsUpdateEvent } from "store/types";
-
 import { IUserAchievments, UserData } from "store/models/user";
-
 import { TwitterUser } from "services/twitter";
-
 import userFabric from "store/models/user";
-
 import { useNavigate } from "react-router";
 
 export type ProfileProps = {

@@ -1,15 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { ReduxState } from "store";
-
 import { setUserData } from "store/reducer/global";
 import { TelegramUser } from "store/types";
-
 import { withServices, ServiceContainer } from "hocs/withServices";
-
 import { useNavigate } from "react-router-dom";
-
 import UserWallet from "../auth/UserWallet";
 
 interface TelegramLoginProps {

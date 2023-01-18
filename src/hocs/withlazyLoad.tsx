@@ -1,7 +1,5 @@
 import React, { useRef, useEffect } from "react";
-
 import { withServices, ServiceContainer } from "./withServices";
-
 import { ImageLoaderOptions, ImageLoader } from "../services/imageLoader";
 
 export interface ISection {

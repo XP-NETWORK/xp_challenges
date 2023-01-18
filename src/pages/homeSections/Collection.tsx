@@ -2,20 +2,19 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable no-constant-condition   */
 /* eslint-disable @typescript-eslint/ban-ts-comment   */
-
 import React, { useEffect, useState } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "store/reducer/global";
 import { importAll } from "../../utils";
-
 import { ReduxState } from "store";
+import { NFT } from "store/types";
 
 const Collection = () => {
-  const [pics, setPics] = useState<string[]>([]);
+  const [pics, setPics] = useState<NFT[]>([]);
 
-  const { telegramUser } = useSelector((state: ReduxState) => ({
+  const { telegramUser, project } = useSelector((state: ReduxState) => ({
     telegramUser: state.global.telegramUser,
+    project: state.global.project,
   }));
 
   useEffect(() => {
@@ -25,14 +24,22 @@ const Collection = () => {
       require.context("../../assets/img/nfts", false, /\.(png|jpe?g|svg)$/)
     );
     const dublicate: string[] = [];
+
     setPics(
-      images.filter((img: string) => {
-        if (dublicate.includes(img)) return false;
-        dublicate.push(img);
-        return true;
-      })
+      project
+        ? project?.nfts?.filter((item: NFT) => {
+            if (dublicate?.includes(item.name)) return false;
+            dublicate?.push(item.name);
+            return true;
+          })
+        : [
+            {
+              name: "sample",
+              image: "",
+            },
+          ]
     );
-  }, []);
+  }, [project]);
 
   const dispatch = useDispatch();
 
@@ -58,17 +65,20 @@ const Collection = () => {
               </button>
             )}
             <div className="row">
-              {pics.map((pic, index) => (
-                <div
-                  key={`collection-${index}`}
-                  className="collection-item col-12 col-md-6 col-lg-4 col-xl-3"
-                >
-                  <div className="picWrapper">
-                    <img src={pic} alt={`collection-${index}`} />
-                    <span>@tyshh</span>
+              {pics.map((pic, index) => {
+                console.log("pic", pic);
+                return (
+                  <div
+                    key={`collection-${index}`}
+                    className="collection-item col-12 col-md-6 col-lg-4 col-xl-3"
+                  >
+                    <div className="picWrapper">
+                      <img src={pic.image} alt={`collection-${index}`} />
+                      <span>{project ? pic.name : "@tyshh"}</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

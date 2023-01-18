@@ -1,25 +1,18 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-
 import { BrowserRouter } from "react-router-dom";
 import { ServiceProvider } from "./hocs/ServcieProvder";
-
 import { Provider } from "react-redux";
-
 import store from "./store";
-
 import { ServiceContainer } from "./hocs/withServices";
 import { AppContainer } from "./components/containers/App";
 import { Router } from "./pages/router";
-
 import ImageLoader from "./services/imageLoader";
 import Api from "./services/api";
 import TelegramService from "./services/telegram";
 import socket from "services/socket";
 import wallet from "services/wallet";
-
 import ErrorBoundary from "components/containers/ErrorBoundry";
-
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
 import "./assets/styles/fontface.css";

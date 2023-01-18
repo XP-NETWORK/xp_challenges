@@ -1,17 +1,11 @@
 import React from "react";
-
 import metamask from "../../assets/img/icons/MetaMask.svg";
 import maiar from "../../assets/img/icons/Maiar.svg";
-
 import { useSelector, useDispatch } from "react-redux";
 import { withServices, ServiceContainer } from "hocs/withServices";
-
 import { ReduxState } from "../../store/index";
-
 import fabric from "../../store/models/user";
-
 import { setModal, setUserData, setWallet } from "../../store/reducer/global";
-
 import { ReactComponent as WalletIcon } from "../../assets/img/icons/teenyicons_wallet-alt-outline.svg";
 
 type WalletListProps = {
