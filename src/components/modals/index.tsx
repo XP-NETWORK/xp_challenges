@@ -2,6 +2,7 @@ import React from "react";
 import { IModal } from "store/types";
 import close from "../../assets/img/icons/close.svg";
 import { ReactComponent as GreenCheck } from "../../assets/img/icons/ci_check-bold.svg";
+import twitter from "../../assets/svgs/twitter.svg";
 import walletConnected from "../../assets/img/icons/walletConnected.png";
 import { useDispatch } from "react-redux";
 import { setModal } from "store/reducer/global";
@@ -50,19 +51,18 @@ const Modal = ({ modal }: { modal: IModal }) => {
 
     case "TwitterAuth": {
       body = (
-        <>
-          <span>
-            You will be redirected to Twitter auth page and back on successful
-            log in
-          </span>
-
+        <div className="subscribe">
+          <img src={twitter} alt="subscribeIcon" />
+          <h2>Twitter</h2>
+          <p>To complete the achievment please login to your twitter account</p>
           <button
-            className="fa fa-twitter"
+            style={{ margin: "auto", marginTop: "2px" }}
+            className="accent"
             onClick={() => window.open(config._TWITTER_AUTH, "_self")}
           >
-            Log In
+            LOG IN TO TWITTER
           </button>
-        </>
+        </div>
       );
       break;
     }
@@ -79,26 +79,16 @@ const Modal = ({ modal }: { modal: IModal }) => {
           <h2>Sign up success!</h2>
           <div className="emblem flexRow">
             <GreenCheck />
-            {modal.wallet ? (
-              <img src={walletConnected} alt="walletConnected" />
-            ) : (
-              <Avatar />
-            )}
+            {modal.wallet ? <img src={walletConnected} alt="walletConnected" /> : <Avatar />}
             {modal.telegramAccount ? (
               <span>@{modal.telegramAccount}</span>
             ) : modal.wallet ? (
-              <span className="walletAddress">
-                {" "}
-                {truncate(modal.wallet, 10)}
-              </span>
+              <span className="walletAddress"> {truncate(modal.wallet, 10)}</span>
             ) : (
               ""
             )}
           </div>
-          <button
-            className="accent"
-            onClick={() => dispatch(setModal(undefined))}
-          >
+          <button className="accent" onClick={() => dispatch(setModal(undefined))}>
             Go to achievements
           </button>
         </div>
@@ -126,17 +116,11 @@ const Modal = ({ modal }: { modal: IModal }) => {
   return (
     <>
       <div className="blurOver"></div>
-      <div
-        className={`small-modal ${modal.type === "Bridge" ? "big-modal" : ""}`}
-      >
+      <div className={`small-modal ${modal.type === "Bridge" ? "big-modal" : ""}`}>
         <Frame className="cardFrame modalFrame" />
         <div className={`popupHeader ${!modal.text ? "empty-header" : ""}`}>
           <div className="modal-header">{modal.text}</div>
-          <img
-            src={close}
-            alt="close"
-            onClick={() => dispatch(setModal(undefined))}
-          />
+          <img src={close} alt="close" onClick={() => dispatch(setModal(undefined))} />
         </div>
         <div className="modal-body">{body}</div>
       </div>

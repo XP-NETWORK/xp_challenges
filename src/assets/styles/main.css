@@ -467,9 +467,7 @@ header button {
 }
 
 .achivCard:not(.completedAchievment):hover .cardFrame > g path,
-.achivCard:not(.completedAchievment):hover
-  .achivCard-pic:not(.frameTwitter)
-  path.frame {
+.achivCard:not(.completedAchievment):hover .achivCard-pic:not(.frameTwitter) path.frame {
   fill: white;
 }
 
@@ -481,9 +479,7 @@ header button {
 }
 
 .achivCard:not(.completedAchievment):hover .cardFrame > path:not(.inner),
-.achivCard:not(.completedAchievment):hover
-  svg.achivCard-pic
-  > path.dsa.frameTwitter {
+.achivCard:not(.completedAchievment):hover svg.achivCard-pic > path.dsa.frameTwitter {
   stroke: white !important;
 }
 
@@ -1144,11 +1140,7 @@ button.justCompleted {
   margin-right: auto;
 }
 .topLeaders {
-  background: linear-gradient(
-    270.75deg,
-    #161718 72.36%,
-    #413f30 109.75%
-  ) !important;
+  background: linear-gradient(270.75deg, #161718 72.36%, #413f30 109.75%) !important;
   position: relative;
 }
 .userNameText {
@@ -1553,5 +1545,9 @@ button.justCompleted {
   .footer.flexRow {
     padding-left: 24px !important;
     padding-right: 24px !important;
+  }
+
+  #twitterlogin {
+    margin: auto;
   }
 }
