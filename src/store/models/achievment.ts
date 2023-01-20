@@ -61,7 +61,7 @@ class Achievment {
                 url = 'https://twitter.com/';
 
                 if (/follow/i.test(this.data.description)) {
-                    url += (/xp\.network/i.test(this.data.description)) ? `xpnetwork_`: `intent/user?user_id=${this.project?.twitterPartnerId}`
+                    url += (/xp\.network/i.test(this.data.description)) ? `intent/user?user_id=1376812227316088832`: `intent/user?user_id=${this.project?.twitterPartnerId}`
 
                 } else {
                     url += `anyuser/status/${this.project?.twitterPostId}`
