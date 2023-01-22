@@ -113,4 +113,5 @@ export type IModal = {
     [x: string]: boolean;
   };
   confirmButton?: any;
+  achievmentNumber?:number
 };

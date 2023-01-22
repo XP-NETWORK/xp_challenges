@@ -19,7 +19,7 @@ import nftIcon from "../../../assets/img/icons/nftIcon.svg";
 import nftIconCompleted from "../../../assets/img/icons/completedNftIcon.svg";
 import { config } from "../../../index";
 import { Dispatch } from "hoist-non-react-statics/node_modules/@types/react";
-import { setModal } from "store/reducer/global";
+import { setModal, setClickedAchiev } from "store/reducer/global";
 import { AnyAction } from "redux";
 
 export type AchievementsProps = {
@@ -183,7 +183,8 @@ export const achievementsHandlers = {
   [AchivType.Twitter]: (
     userData: UserData | undefined,
     link = config._DEFAULT_TWITTER_LINK,
-    dispatch: Dispatch<AnyAction>
+    dispatch: Dispatch<AnyAction>,
+    achievmentNumber: number
   ) => () => {
     if (!userData?.twitterUserName) {
       dispatch(
@@ -194,6 +195,13 @@ export const achievementsHandlers = {
       );
       return;
     }
+    dispatch(
+      setClickedAchiev(
+        {
+          type: "TwitterAuth",
+          achievmentNumber:achievmentNumber,
+        })
+    );
     return window.open(link);
 
     /*return !userData?.twitterUserName

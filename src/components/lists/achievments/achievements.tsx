@@ -13,14 +13,16 @@ import {
   achievementsHandlers,
   achievementsPics,
 } from "./consts";
+import { AchievmentLoader } from "../../../components/achievmentLoader/index";
 
 function Achievements({ userAchievements, userData }: AchievementsProps) {
-  const { achievements, justCompleted, project } = useSelector(
+  const { achievements, justCompleted, project, clickedAchiev } = useSelector(
     (state: ReduxState) => ({
       achievements: state.global.achievements,
       userData: state.global.userData,
       justCompleted: state.global.justCompleted,
       project: state.global.project,
+      clickedAchiev: state.global.clickedAchiev,
     })
   );
 
@@ -62,18 +64,13 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
             }
 
             return (
-              <div
-                className="col-12 col-md-6 col-lg-4"
-                key={`achivCard-${achievmentNumber}`}
-              >
+              <div className="col-12 col-md-6 col-lg-4" key={`achivCard-${achievmentNumber}`}>
                 <div
                   className={`achivCard flexCol  ${
                     userProgress?.completed ? "completedAchievment" : ""
                   }`}
                 >
-                  <div
-                    className={`successOverlay ${completed ? "active" : ""}`}
-                  >
+                  <div className={`successOverlay ${completed ? "active" : ""}`}>
                     <span>Completed</span>
                   </div>
                   <Frame className="cardFrame" />
@@ -84,6 +81,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                       total={progressBarLength}
                     />
                     <p>{description}</p>
+                    {clickedAchiev?.includes(achievmentNumber) && !userProgress?.completed && <AchievmentLoader />}
                   </div>
 
                   {userData ? (
@@ -94,23 +92,24 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                           : achievementsHandlers[name](
                               userData,
                               achievment.getLink(),
-                              dispatch
+                              dispatch,
+                              achievmentNumber
                             )
                       }
-                      className={`secondary ${
-                        completed ? "justCompleted" : ""
-                      } ${userProgress?.completed ? "completed" : ""}`}
+                      className={`secondary ${completed ? "justCompleted" : ""} ${
+                        userProgress?.completed ? "completed" : ""
+                      }`}
                     >
                       {userProgress?.completed
                         ? "COMPLETED 🎉"
+                        : clickedAchiev?.includes(achievmentNumber)
+                        ? "Validating Achievment"
                         : achievementsBtns[name]}
                     </button>
                   ) : (
                     <button
                       className="secondary newBackground"
-                      onClick={() =>
-                        dispatch(setModal({ type: "TelegramAuth" }))
-                      }
+                      onClick={() => dispatch(setModal({ type: "TelegramAuth" }))}
                     >
                       Get started
                     </button>
