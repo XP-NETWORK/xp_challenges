@@ -1000,7 +1000,6 @@ body.showModal header .menu {
   left: 50%;
   transform: translate(-52%, -45%);
   width: 82px;
-
   z-index: 76;
 }
 
