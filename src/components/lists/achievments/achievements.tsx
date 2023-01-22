@@ -52,7 +52,8 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
             const userProgress = achievment.getUserProgress(userAchievements);
             const completed = justCompleted.includes(index);
 
-            let AchievementIcon = achievementsPics[name];
+            //@ts-ignore
+            let AchievementIcon = achievementsPics[achievmentNumber];
 
             if (Array.isArray(AchievementIcon)) {
               AchievementIcon = description.includes("Connect wallet")

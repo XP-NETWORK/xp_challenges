@@ -1,10 +1,17 @@
 import React from "react";
 import { AchivType } from "store/types";
-import { ReactComponent as TelegramAchiv } from "../../../assets/img/icons/newTelegramIcon.svg";
-import { ReactComponent as twitAchiv } from "../../../assets/img/icons/newTwitterIcon.svg";
-import { ReactComponent as bridgeAchiv } from "../../../assets/img/icons/newBridgeIcon.svg";
-import { ReactComponent as walletIcon } from "../../../assets/img/icons/newWalletIcon.svg";
 import mailIcon from "../../../assets/img/icons/maild.png";
+import invite1Telegram from "../../../assets/img/icons/invite1Telegram.png";
+import invite5Telegram from "../../../assets/img/icons/invite5Telegram.png";
+import joinXpTelegram from "../../../assets/img/icons/joinXpTelegram.png";
+import loginTwitter from "../../../assets/img/icons/loginTwitter.png";
+import followXpTwitter from "../../../assets/img/icons/followXpTwitter.png";
+import connectWallet from "../../../assets/img/icons/connectWallet.png";
+import message from "../../../assets/img/icons/message.png";
+import retweet from "../../../assets/img/icons/retweet.png";
+import bridge1 from "../../../assets/img/icons/bridge1.png";
+import bridge3 from "../../../assets/img/icons/bridge3.png";
+import bridge5 from "../../../assets/img/icons/bridge5.png";
 import { IUserAchievments, UserData } from "store/models/user";
 import person from "../../../assets/img/icons/AchivPerson.svg";
 import personCompleted from "../../../assets/img/icons/Group 3324.svg";
@@ -21,12 +28,129 @@ export type AchievementsProps = {
 };
 
 export const achievementsPics = {
-  [AchivType.Telegram]: TelegramAchiv,
-  [AchivType.Twitter]: twitAchiv,
-  [AchivType.Bridge]: [bridgeAchiv, walletIcon],
-  [AchivType.Subscribe]: () => {
+  1: () => {
+    return React.createElement("img", {
+      src: invite1Telegram,
+      className: "achivCard-pic",
+    });
+  },
+  2: () => {
+    return React.createElement("img", {
+      src: invite1Telegram,
+      className: "achivCard-pic",
+    });
+  },
+  3: () => {
+    return React.createElement("img", {
+      src: invite5Telegram,
+      className: "achivCard-pic",
+    });
+  },
+  4: () => {
+    return React.createElement("img", {
+      src: followXpTwitter,
+      className: "achivCard-pic",
+    });
+  },
+  5: () => {
+    return React.createElement("img", {
+      src: followXpTwitter,
+      className: "achivCard-pic",
+    });
+  },
+  6: () => {
+    return React.createElement("img", {
+      src: retweet,
+      className: "achivCard-pic",
+    });
+  },
+  7: () => {
+    return React.createElement("img", {
+      src: connectWallet,
+      className: "achivCard-pic",
+    });
+  },
+  8: () => {
+    return React.createElement("img", {
+      src: bridge1,
+      className: "achivCard-pic",
+    });
+  },
+  9: () => {
+    return React.createElement("img", {
+      src: bridge1,
+      className: "achivCard-pic",
+    });
+  },
+  10: () => {
+    return React.createElement("img", {
+      src: bridge3,
+      className: "achivCard-pic",
+    });
+  },
+  11: () => {
+    return React.createElement("img", {
+      src: bridge5,
+      className: "achivCard-pic",
+    });
+  },
+  12: () => {
+    return React.createElement("img", {
+      src: message,
+      className: "achivCard-pic",
+    });
+  },
+  13: () => {
+    return React.createElement("img", {
+      src: message,
+      className: "achivCard-pic",
+    });
+  },
+  14: () => {
+    return React.createElement("img", {
+      src: message,
+      className: "achivCard-pic",
+    });
+  },
+  15: () => {
+    return React.createElement("img", {
+      src: message,
+      className: "achivCard-pic",
+    });
+  },
+  16: () => {
+    return React.createElement("img", {
+      src: message,
+      className: "achivCard-pic",
+    });
+  },
+  17: () => {
+    return React.createElement("img", {
+      src: joinXpTelegram,
+      className: "achivCard-pic",
+    });
+  },
+  18: () => {
     return React.createElement("img", {
       src: mailIcon,
+      className: "achivCard-pic",
+    });
+  },
+  19: () => {
+    return React.createElement("img", {
+      src: loginTwitter,
+      className: "achivCard-pic",
+    });
+  },
+  20: () => {
+    return React.createElement("img", {
+      src: bridge3,
+      className: "achivCard-pic",
+    });
+  },
+  21: () => {
+    return React.createElement("img", {
+      src: bridge5,
       className: "achivCard-pic",
     });
   },
