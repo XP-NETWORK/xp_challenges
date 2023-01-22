@@ -19,7 +19,7 @@ import nftIcon from "../../../assets/img/icons/nftIcon.svg";
 import nftIconCompleted from "../../../assets/img/icons/completedNftIcon.svg";
 import { config } from "../../../index";
 import { Dispatch } from "hoist-non-react-statics/node_modules/@types/react";
-import { setModal, setClickedAchiev } from "store/reducer/global";
+import { setModal } from "store/reducer/global";
 import { AnyAction } from "redux";
 
 export type AchievementsProps = {
@@ -184,7 +184,8 @@ export const achievementsHandlers = {
     userData: UserData | undefined,
     link = config._DEFAULT_TWITTER_LINK,
     dispatch: Dispatch<AnyAction>,
-    achievmentNumber: number
+    achievmentNumber: number,
+    setClicked: React.Dispatch<React.SetStateAction<string[]>>
   ) => () => {
     if (!userData?.twitterUserName) {
       dispatch(
@@ -195,13 +196,16 @@ export const achievementsHandlers = {
       );
       return;
     }
-    dispatch(
-      setClickedAchiev(
-        {
-          type: "TwitterAuth",
-          achievmentNumber:achievmentNumber,
-        })
-    );
+    const clicked = localStorage.getItem('clicked');
+    if (!clicked) {
+      localStorage.setItem('clicked', JSON.stringify([String(achievmentNumber)]));
+      setClicked([String(achievmentNumber)])
+    } else {
+      const par = JSON.parse(clicked)
+      const newArr = [par[0], String(achievmentNumber)]
+      setClicked(newArr)
+      localStorage.setItem('clicked', JSON.stringify(newArr));
+    }
     return window.open(link);
 
     /*return !userData?.twitterUserName

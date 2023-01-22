@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment  */
 /* eslint-disable no-constant-condition  */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ReduxState } from "store";
 import { ReactComponent as Frame } from "../../../assets/img/icons/card-frame.svg";
@@ -16,15 +16,14 @@ import {
 import { AchievmentLoader } from "../../../components/achievmentLoader/index";
 
 function Achievements({ userAchievements, userData }: AchievementsProps) {
-  const { achievements, justCompleted, project, clickedAchiev } = useSelector(
-    (state: ReduxState) => ({
-      achievements: state.global.achievements,
-      userData: state.global.userData,
-      justCompleted: state.global.justCompleted,
-      project: state.global.project,
-      clickedAchiev: state.global.clickedAchiev,
-    })
-  );
+  const [clicked, setClicked] = useState<string[]>([]);
+  const { achievements, justCompleted, project } = useSelector((state: ReduxState) => ({
+    achievements: state.global.achievements,
+    userData: state.global.userData,
+    justCompleted: state.global.justCompleted,
+    project: state.global.project,
+    clickedAchiev: state.global.clickedAchiev,
+  }));
 
   const dispatch = useDispatch();
 
@@ -37,6 +36,11 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
       }, 3000);
     }
   }, [justCompleted]);
+
+  useEffect(() => {
+    const clicked = localStorage.getItem("clicked");
+    setClicked(JSON.parse(clicked || "[]"));
+  }, [clicked]);
 
   return (
     <div className="achievements" id="achivs">
@@ -81,7 +85,9 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                       total={progressBarLength}
                     />
                     <p>{description}</p>
-                    {clickedAchiev?.includes(achievmentNumber) && !userProgress?.completed && <AchievmentLoader />}
+                    {clicked?.includes(String(achievmentNumber)) && !userProgress?.completed && (
+                      <AchievmentLoader />
+                    )}
                   </div>
 
                   {userData ? (
@@ -93,7 +99,8 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                               userData,
                               achievment.getLink(),
                               dispatch,
-                              achievmentNumber
+                              achievmentNumber,
+                              setClicked
                             )
                       }
                       className={`secondary ${completed ? "justCompleted" : ""} ${
@@ -102,7 +109,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                     >
                       {userProgress?.completed
                         ? "COMPLETED 🎉"
-                        : clickedAchiev?.includes(achievmentNumber)
+                        : clicked?.includes(String(achievmentNumber))
                         ? "Validating Achievment"
                         : achievementsBtns[name]}
                     </button>
