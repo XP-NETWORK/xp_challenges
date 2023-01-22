@@ -7,6 +7,7 @@ import joinXpTelegram from "../../../assets/img/icons/joinXpTelegram.png";
 import loginTwitter from "../../../assets/img/icons/loginTwitter.png";
 import followXpTwitter from "../../../assets/img/icons/followXpTwitter.png";
 import connectWallet from "../../../assets/img/icons/connectWallet.png";
+import newusers from "../../../assets/img/icons/newusers.png";
 import message from "../../../assets/img/icons/message.png";
 import retweet from "../../../assets/img/icons/retweet.png";
 import bridge1 from "../../../assets/img/icons/bridge1.png";
@@ -36,7 +37,7 @@ export const achievementsPics = {
   },
   2: () => {
     return React.createElement("img", {
-      src: invite1Telegram,
+      src: newusers,
       className: "achivCard-pic",
     });
   },
