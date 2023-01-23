@@ -3,18 +3,14 @@ import Step1 from "../../assets/svgs/howItWorkSection/step1.svg";
 import Step2 from "../../assets/svgs/howItWorkSection/step2.svg";
 import Step3 from "../../assets/svgs/howItWorkSection/step3.svg";
 import ArrowLeft from "../../assets/svgs/howItWorkSection/arrowLeft.svg";
-
 import NFTList from "../../components/lists/Nfts";
 import Achievements from "../../components/lists/achievments/achievements";
 import AliceCarousel from "react-alice-carousel";
-
 import { useWindowSize } from "hooks/useSize";
-
 import { useNavigate } from "react-router-dom";
 import { HeroSection } from "components/heroSection";
 import LeaderBoard from "./LeaderBoard";
-
-import { TelegramButton } from "components/auth/TelegramButton";
+import { TelegramButtonV2 } from "components/auth/TelegramButtonV2";
 
 export const Welcome: FC = () => {
   const size = useWindowSize();
@@ -42,7 +38,7 @@ export const Welcome: FC = () => {
                 <div className="imageAssetNumber">1</div>
                 <img src={Step1} alt="introTimeline-item-1" />
                 <span>Join XP Challenge</span>
-                <TelegramButton
+                <TelegramButtonV2
                   classes={"button secondary howItWorkButtonStyle"}
                 />
               </div>,
@@ -86,7 +82,7 @@ export const Welcome: FC = () => {
 
               <img src={Step1} alt="introTimeline-item-1" />
               <span>Join XP Challenge</span>
-              <TelegramButton
+              <TelegramButtonV2
                 classes={"button secondary howItWorkButtonStyle"}
               />
             </div>
