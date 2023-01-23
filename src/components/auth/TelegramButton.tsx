@@ -14,7 +14,7 @@ export const TelegramButton = ({ classes }: { classes?: string }) => {
   return (
     <button className={classes ? classes : "accent"} onClick={openInNewTab}>
       <span>
-        <img src={Vector} />
+        <img style={{ marginRight: "2px" }} src={Vector} />
         <span> Connect with Telegram</span>
       </span>
     </button>
