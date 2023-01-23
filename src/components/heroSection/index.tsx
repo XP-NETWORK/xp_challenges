@@ -28,7 +28,7 @@ export const HeroSection: FC = () => {
             }}
             className="howWorkButtonStyle"
           >
-            HOW IT WORKS
+              <p className="HOWITWORKS">HOW IT WORKS</p>
           </button>
         </div>
         <div className="heroTimeContainer">
