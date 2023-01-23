@@ -163,6 +163,11 @@ a.button.secondary:hover {
   background-color: #353232;
 }
 
+
+.impo:hover {
+  background-color: #353232 !important;
+}
+
 button.accent > svg {
   margin-right: 14px;
 }

@@ -96,7 +96,7 @@ export const Welcome: FC = () => {
 
               <span>Collect achievements</span>
               <a
-                className="button secondary newBackground howItWorkButtonStyle"
+                className="button secondary newBackground howItWorkButtonStyle impo"
                 href="#achivs"
               >
                 Go to achievements
@@ -110,7 +110,7 @@ export const Welcome: FC = () => {
               <img src={Step3} alt="introTimeline-item-2" />
               <span>Win an NFT</span>
               <button
-                className="secondary newBackground howItWorkButtonStyle"
+                className="secondary newBackground howItWorkButtonStyle impo"
                 onClick={() => navigate("/collection")}
               >
                 VIEW THE COLLECTION
