@@ -18,10 +18,9 @@ const Footer: FC = () => {
                 <img src={logo} alt="xpLogo" className="logo" />
                 <ul className="flexRow links">
                   <li>
-                    <a href="">XPNET JS</a>
-                  </li>
-                  <li>
-                    <a href="">Disclaimer</a>
+                    <a href="https://www.npmjs.com/package/xp.network" target="_blank">
+                      XPNET JS
+                    </a>
                   </li>
                   <li>
                     <a href="">Privacy Policy</a>
@@ -32,10 +31,7 @@ const Footer: FC = () => {
                 </ul>
               </div>
               <div className="bot">
-                <span>
-                  © {new Date().getFullYear()} XP.NETWORK Ltd. All Rights
-                  Reserved
-                </span>
+                <span>© {new Date().getFullYear()} XP.NETWORK Ltd. All Rights Reserved</span>
               </div>
             </div>
           </div>
@@ -48,15 +44,8 @@ const Footer: FC = () => {
                     <img src={FooterTwitter} alt="FooterTwitter" />
                   </div>
                   <div className="footerFlex">
-                    <img
-                      src={logo}
-                      alt="xpLogo"
-                      className="logo mobileXpLogo"
-                    />
-                    <div className="yearFooterMobileText">
-                      {" "}
-                      © {new Date().getFullYear()}
-                    </div>
+                    <img src={logo} alt="xpLogo" className="logo mobileXpLogo" />
+                    <div className="yearFooterMobileText"> © {new Date().getFullYear()}</div>
                   </div>
                 </div>
               </div>
