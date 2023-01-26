@@ -40,7 +40,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
   useEffect(() => {
     const clicked = localStorage.getItem("clicked");
     setClicked(JSON.parse(clicked || "[]"));
-  }, [clicked]);
+  }, []);
 
   return (
     <div className="achievements" id="achivs">
