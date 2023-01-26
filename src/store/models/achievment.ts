@@ -64,7 +64,7 @@ class Achievment {
                     url += (/xp\.network/i.test(this.data.description)) ? `intent/user?user_id=1376812227316088832`: `intent/user?user_id=${this.project?.twitterPartnerId}`
 
                 } else {
-                    url += `anyuser/status/${this.project?.twitterPostId}`
+                    url += `intent/retweet?tweet_id=${this.project?.twitterPostId}`
                 }
 
                 break;
