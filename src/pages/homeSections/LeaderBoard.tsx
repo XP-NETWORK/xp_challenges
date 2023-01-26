@@ -1,21 +1,14 @@
-/* eslint-disable prefer-const */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { withServices, ServiceContainer } from "hocs/withServices";
-
 import { setLeaders } from "store/reducer/global";
-
 import { useDispatch, useSelector } from "react-redux";
-
 import { ReduxState } from "../../store/index";
-
 import ProgressBar from "../../components/elements/ProgressBar";
-
 import searchSVG from "../../assets/svgs/Leaderboard/searchLeaderboard.svg";
 import { ILeader } from "store/types";
-
 import { AvaratPlaceHolder } from "../../components/elements/avatarPlaceHolder";
-
+import noMatchSearch from "../../assets/img/noMatchSearch.png";
+import "./index.css";
 type Props = {
   serviceContainer: ServiceContainer;
 };
@@ -37,7 +30,7 @@ const Board = ({ serviceContainer }: Props) => {
       if (leaders) {
         Dispatch(setLeaders(leaders));
       }
-      let getTopTwo = leaders
+      const getTopTwo = leaders
         ? leaders
             .map((n) => n)
             ?.sort((a: ILeader, b: ILeader) => {
@@ -56,10 +49,8 @@ const Board = ({ serviceContainer }: Props) => {
     })();
   }, []);
 
-  let search = topUser
-    ? topUser?.filter((n) =>
-        n.user.toLowerCase().includes(`${searchUser?.toLowerCase()}`)
-      )
+  const search = topUser
+    ? topUser?.filter((n) => n.user.toLowerCase().includes(`${searchUser?.toLowerCase()}`))
     : [];
 
   const onChangeSearch = (e: any) => {
@@ -80,45 +71,53 @@ const Board = ({ serviceContainer }: Props) => {
           placeholder="Search user"
           className="inputSearchStyle"
           onChange={onChangeSearch}
+          value={searchUser}
         />
       </div>
 
       <div className="leaderBoard-pannel">
-        <div className="wrapperLeaderBoard">
-          {search
-            ?.sort((a: any, b: any) => {
-              return b?.comp - a?.comp;
-            })
-            ?.map((leader: any, index) => (
-              <div
-                key={index + leader.user}
-                className={`${leader?.top ? "topLeaders" : ""} participant`}
-              >
-                <div className="participantFlex">
-                  {leader.avatar && !badAvatars.includes(index) ? (
-                    <img
-                      src={leader.avatar}
-                      alt={"avatar" + index}
-                      className="avatarBox"
-                      onError={() => {
-                        console.log(index);
-                        setBad([...badAvatars, index]);
-                      }}
-                    />
-                  ) : (
-                    <AvaratPlaceHolder username={leader.user} />
-                  )}
-                  <div className="userNameText">@{leader.user}</div>
-                </div>
+        <div className={search.length ? "wrapperLeaderBoard" : ""}>
+          {search.length ? (
+            search
+              ?.sort((a: any, b: any) => {
+                return b?.comp - a?.comp;
+              })
+              ?.map((leader: any, index) => (
+                <div
+                  key={index + leader.user}
+                  className={`${leader?.top ? "topLeaders" : ""} participant`}
+                >
+                  <div className="participantFlex">
+                    {leader.avatar && !badAvatars.includes(index) ? (
+                      <img
+                        src={leader.avatar}
+                        alt={"avatar" + index}
+                        className="avatarBox"
+                        onError={() => {
+                          console.log(index);
+                          setBad([...badAvatars, index]);
+                        }}
+                      />
+                    ) : (
+                      <AvaratPlaceHolder username={leader.user} />
+                    )}
+                    <div className="userNameText">@{leader.user}</div>
+                  </div>
 
-                <div className="leaderBoard-progress">
-                  <ProgressBar
-                    current={leader.comp}
-                    total={achievements.length}
-                  />
+                  <div className="leaderBoard-progress">
+                    <ProgressBar current={leader.comp} total={achievements.length} />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+          ) : (
+            <div className="noMatchContainer">
+              <img className="noMatchSearch" src={noMatchSearch} alt="noMatchSearch" />
+              <p className="noMatchSearch">Your Search does not natch anything we've got</p>
+              <button onClick={(e) => onChangeSearch(e)} className="noMatchSearch b">
+                BACK TO LEADERBOARD
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

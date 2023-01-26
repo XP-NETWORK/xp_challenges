@@ -1,0 +1,15 @@
+.noMatchContainer {
+ position: relative;
+    max-width: 687px;
+    margin: 0 auto;
+    margin-bottom: 42px;
+}
+
+.noMatchSearch {
+  margin-top: 50px !important;
+  margin: auto;
+}
+
+.b {
+  background-color: rgba(255, 255, 255, 0.08);
+}
