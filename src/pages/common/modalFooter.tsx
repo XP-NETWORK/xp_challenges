@@ -8,8 +8,11 @@ const MoldalFooter = () => {
   return (
     <div className="footer flexRow">
       <div className="links">
-      <Twitter onClick={() => window.open('https://twitter.com/xpnetwork_')}/>
-        <Telegram />
+        <Twitter
+          style={{ cursor: "pointer" }}
+          onClick={() => window.open("https://twitter.com/xpnetwork_")}
+        />
+        <Telegram style={{ cursor: "pointer" }} />
       </div>
       <div className="logo">
         <Logo />

@@ -692,10 +692,10 @@ body.showModal header .menu {
   height: 100%;
 }
 
-.app.noscroll .footer,
+.app.noscroll,
 .customModal .footer {
   margin-top: 20px;
-  border-top: 1px solid var(--greyText);
+  border-top: 1px solid var(--dimText);
   padding-top: 35px;
 }
 
@@ -1549,6 +1549,4 @@ button.justCompleted {
   #twitterlogin {
     margin: auto;
   }
-
-
 }
