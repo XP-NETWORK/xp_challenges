@@ -163,7 +163,6 @@ a.button.secondary:hover {
   background-color: #353232;
 }
 
-
 .impo:hover {
   background-color: #353232 !important;
 }
@@ -427,4 +426,14 @@ button.completed {
 .lds-ellipsis div:nth-child(4) {
   left: 56px;
   animation: lds-ellipsis3 0.6s infinite;
+}
+
+.links svg:hover path {
+  fill: red;
+}
+.links svg:hover rect {
+  stroke: red;
+}
+.links svg rect {
+  stroke: transparent;
 }
