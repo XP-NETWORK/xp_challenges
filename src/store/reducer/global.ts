@@ -132,7 +132,7 @@ export const global = createSlice({
           (a) => a.achievmentNumber === progressIndex
         );
 
-        console.log(achievementData);
+        // console.log(achievementData);
 
         const project = state.userData?.projectParticipations?.find(
           (p) => p.projectNumber === payload.projectNumber
@@ -142,7 +142,7 @@ export const global = createSlice({
           (a) => a.achievmentNumber === progressIndex
         );
 
-        console.log(achievement);
+        // console.log(achievement);
 
         if (achievement && achievementData) {
           let currentStatus: boolean;
@@ -157,7 +157,7 @@ export const global = createSlice({
             achievement.progressNumber = payload.currentProgressNumber;
           }
 
-          console.log(currentStatus);
+          // console.log(currentStatus);
           if (currentStatus !== achievement.completed) {
             state.justCompleted = [
               ...state.justCompleted,

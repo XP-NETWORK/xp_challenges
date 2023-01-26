@@ -1,4 +1,4 @@
-import { useEffect, useState, FC } from "react";
+import { useEffect, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as Frame } from "../../assets/svgs/profile/profileFrame.svg";
 import { ReactComponent as Rifled } from "../../assets/img/rifled.svg";
@@ -8,13 +8,13 @@ import "./profile.css";
 import { ProjectTimer } from "components/elements/ProjectTimer";
 import { Avatar } from "components/elements/Avatar";
 
-function waitForElm(element: HTMLDivElement): Promise<HTMLDivElement> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(element);
-    }, 240);
-  });
-}
+// function waitForElm(element: HTMLDivElement): Promise<HTMLDivElement> {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(element);
+//     }, 240);
+//   });
+// }
 
 interface IProfileData {
   telegramData: any;
@@ -25,8 +25,8 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
   total,
   telegramData,
 }) => {
-  const [innerBarWidth, setWidth] = useState(0);
-  console.log(innerBarWidth);
+  // const [innerBarWidth, setWidth] = useState(0);
+  // console.log(innerBarWidth);
   const navigate = useNavigate();
 
   const size = useWindowSize();
@@ -34,11 +34,11 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
   let bar: HTMLDivElement | undefined = undefined;
 
   useEffect(() => {
-    if (bar && current && total) {
-      waitForElm(bar).then((elm) => {
-        setWidth((current * elm?.offsetWidth) / total);
-      });
-    }
+    // if (bar && current && total) {
+    //   waitForElm(bar).then((elm) => {
+    //     // setWidth((current * elm?.offsetWidth) / total);
+    //   });
+    // }
   }, [current, total, bar, size.width]);
   const goToLeaderboard = () => {
     navigate("/leaderboard");

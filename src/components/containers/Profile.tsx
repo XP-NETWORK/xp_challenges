@@ -23,19 +23,22 @@ const Container = (Profile: FC<ProfileProps>) =>
     }: { serviceContainer: ServiceContainer } = props;
     const dispatch = useDispatch();
 
-    const { userData, telegramUser, currentProject } = useSelector(
-      (state: ReduxState) => ({
-        telegramUser: state.global.telegramUser,
-        userData: state.global.userData,
-        currentProject: state.global.currentProject,
-      })
-    );
+    const { userData, telegramUser, currentProject } = useSelector((state: ReduxState) => ({
+      telegramUser: state.global.telegramUser,
+      userData: state.global.userData,
+      currentProject: state.global.currentProject,
+    }));
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
     const eventHandler = (data: AchievementsUpdateEvent) => {
-      console.log(data, "socketData");
+      console.log("SOCKETDATA " , data.achievments[0], {
+        achievments: data.achievments,
+        completed: data.completed,
+        currentProgressNumber: data.currentProgressNumber,
+      });
+      console.log("-------------------------------------");
 
       dispatch(
         updateProgress({
@@ -91,15 +94,13 @@ const Container = (Profile: FC<ProfileProps>) =>
       if (userData?.telegramUsername) {
         socketWrapper.listen(userData.telegramUsername, eventHandler);
 
-        return () =>
-          socketWrapper.mute(userData.telegramUsername, eventHandler);
+        return () => socketWrapper.mute(userData.telegramUsername, eventHandler);
       }
     }, [userData]);
 
     const achievments =
-      userData?.projectParticipations?.find(
-        (p) => p.projectNumber === currentProject
-      )?.achievments || [];
+      userData?.projectParticipations?.find((p) => p.projectNumber === currentProject)
+        ?.achievments || [];
 
     const completedAmout =
       achievments?.reduce((cur, acc) => {

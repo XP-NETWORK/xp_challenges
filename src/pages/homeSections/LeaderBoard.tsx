@@ -58,7 +58,7 @@ const Board = ({ serviceContainer }: Props) => {
     setSearchUser(value);
   };
 
-  console.log(badAvatars);
+  // console.log(badAvatars);
 
   return (
     <div className="leaderBoard">
