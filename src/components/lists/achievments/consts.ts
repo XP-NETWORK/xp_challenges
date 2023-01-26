@@ -203,9 +203,11 @@ export const achievementsHandlers = {
       setClicked([String(achievmentNumber)])
     } else {
       const par = JSON.parse(clicked)
-      const newArr = [par[0], String(achievmentNumber)]
-      setClicked(newArr)
-      localStorage.setItem('clicked', JSON.stringify(newArr));
+      if (par.indexOf(String(achievmentNumber)) === -1) {
+        par.push(String(achievmentNumber));
+        setClicked(par)
+        localStorage.setItem('clicked', JSON.stringify(par));
+      }
     }
     return window.open(link);
 
