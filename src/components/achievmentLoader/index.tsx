@@ -8,6 +8,7 @@ export const AchievmentLoader: FC = () => {
         <div className="bar bar1"></div>
         <div className="bar bar2"></div>
       </div>
+      <span className="achievmentLoaderText">Validation might take a few minutes</span>
     </>
   );
 };

@@ -49,7 +49,7 @@
   height: 7px;
   background-color: rgba(255, 255, 255, 0.15);
   position: relative;
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
   margin-top: 2rem;
   overflow: hidden;
@@ -300,4 +300,10 @@
   100% {
     left: 100%;
   }
+}
+
+
+.achievmentLoaderText{
+  font-size: 13px !important;
+  margin-top: 8px;
 }

@@ -109,8 +109,6 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                     >
                       {userProgress?.completed
                         ? "COMPLETED 🎉"
-                        : clicked?.includes(String(achievmentNumber))
-                        ? "Validating Achievment"
                         : achievmentNumber === 7
                         ? "Connect wallet"
                         : achievementsBtns[name]}
