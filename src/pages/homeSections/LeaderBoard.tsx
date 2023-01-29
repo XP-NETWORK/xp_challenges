@@ -37,7 +37,7 @@ const Board = ({ serviceContainer }: Props) => {
               return b.comp - a.comp;
             })
             ?.map((n: any, i: any) => {
-              if (i === 0 || i === 1) {
+              if ((i === 0 || i === 1) && Number(n.comp) > 0) {
                 return Object.assign({}, n, { top: true });
               } else {
                 return n;
