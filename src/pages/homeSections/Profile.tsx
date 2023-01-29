@@ -1,10 +1,7 @@
 import React from "react";
-
 import Achievements from "../../components/lists/achievments/achievements";
 import TelegramLogin from "components/auth/TelegramLogin";
-
 import Container from "components/containers/Profile";
-
 import { ProfileProps } from "components/containers/Profile";
 import LeaderBoard from "./LeaderBoard";
 import { ProfileDetails } from "components/profile";
