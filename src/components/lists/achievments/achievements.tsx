@@ -14,6 +14,7 @@ import {
   achievementsPics,
 } from "./consts";
 import { AchievmentLoader } from "../../../components/achievmentLoader/index";
+import { ReactComponent as Vector } from "../../../assets/img/icons/Vector.svg";
 
 function Achievements({ userAchievements, userData }: AchievementsProps) {
   const [clicked, setClicked] = useState<string[]>([]);
@@ -45,7 +46,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
   return (
     <div className="achievements" id="achivs">
       <h2>Achievements</h2>
-      <p style={{marginTop:"10px"}}>More completed tasks = better chances to win</p>
+      <p style={{ marginTop: "10px" }}>More completed tasks = better chances to win</p>
 
       <div className="container" style={{ marginTop: "60px" }}>
         <div className="row">
@@ -77,8 +78,14 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                   <div className={`successOverlay ${completed ? "active" : ""}`}>
                     <span>Completed</span>
                   </div>
+
+                  <div className="cont">
+                    <Vector className="vector" />
+                    <AchievementIcon className="AchievementIcon" />
+                  </div>
+
                   <Frame className="cardFrame" />
-                  <AchievementIcon className="achivCard-pic" />
+
                   <div className="achivCard-content flexCol">
                     <ProgressBar
                       current={achievment.getCurrentProgress(userProgress)}

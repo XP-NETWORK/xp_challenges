@@ -6,7 +6,7 @@ import invite5Telegram from "../../../assets/img/icons/invite5Telegram.png";
 import joinXpTelegram from "../../../assets/img/icons/joinXpTelegram.png";
 import loginTwitter from "../../../assets/img/icons/loginTwitter.png";
 import followXpTwitter from "../../../assets/img/icons/followXpTwitter.png";
-import connectWallet from "../../../assets/img/icons/connectWallet.png";
+import wallet5 from "../../../assets/img/icons/wallet5.png";
 import newusers from "../../../assets/img/icons/newusers.png";
 import message from "../../../assets/img/icons/message.png";
 import retweet from "../../../assets/img/icons/retweet.png";
@@ -32,127 +32,128 @@ export const achievementsPics = {
   1: () => {
     return React.createElement("img", {
       src: invite1Telegram,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   2: () => {
     return React.createElement("img", {
       src: newusers,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   3: () => {
     return React.createElement("img", {
       src: invite5Telegram,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   4: () => {
     return React.createElement("img", {
       src: followXpTwitter,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   5: () => {
     return React.createElement("img", {
       src: followXpTwitter,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   6: () => {
     return React.createElement("img", {
       src: retweet,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   7: () => {
+    
     return React.createElement("img", {
-      src: connectWallet,
-      className: "achivCard-pic",
+      src: wallet5,
+      className: "AchievementIcon",
     });
   },
   8: () => {
     return React.createElement("img", {
       src: bridge1,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   9: () => {
     return React.createElement("img", {
       src: bridge1,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   10: () => {
     return React.createElement("img", {
       src: bridge3,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   11: () => {
     return React.createElement("img", {
       src: bridge5,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   12: () => {
     return React.createElement("img", {
       src: message,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   13: () => {
     return React.createElement("img", {
       src: message,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   14: () => {
     return React.createElement("img", {
       src: message,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   15: () => {
     return React.createElement("img", {
       src: message,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   16: () => {
     return React.createElement("img", {
       src: message,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   17: () => {
     return React.createElement("img", {
       src: joinXpTelegram,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   18: () => {
     return React.createElement("img", {
       src: mailIcon,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   19: () => {
     return React.createElement("img", {
       src: loginTwitter,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   20: () => {
     return React.createElement("img", {
       src: bridge3,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
   21: () => {
     return React.createElement("img", {
       src: bridge5,
-      className: "achivCard-pic",
+      className: "AchievementIcon",
     });
   },
 };
