@@ -1,4 +1,3 @@
-import React from "react";
 import { IModal } from "store/types";
 import close from "../../assets/img/icons/close.svg";
 import { ReactComponent as GreenCheck } from "../../assets/img/icons/ci_check-bold.svg";
@@ -33,10 +32,12 @@ const Modal = ({ modal }: { modal: IModal }) => {
       );
       break;
     }
+    
     case "WalletList": {
       body = <WalletList close={() => dispatch(setModal(undefined))} />;
       break;
     }
+
     case "confirmReg": {
       body = (
         <ConfirmRegistrationModal
@@ -95,6 +96,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
       );
       break;
     }
+
     case "Bridge": {
       body = (
         <div className="bridgePopUp">
