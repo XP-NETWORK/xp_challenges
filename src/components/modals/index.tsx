@@ -32,7 +32,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
       );
       break;
     }
-    
+
     case "WalletList": {
       body = <WalletList close={() => dispatch(setModal(undefined))} />;
       break;
@@ -107,6 +107,27 @@ const Modal = ({ modal }: { modal: IModal }) => {
       </button>*/}
           </div>
           <BridgeWidget />
+        </div>
+      );
+      break;
+    }
+    case "AchievmentCompleted": {
+      body = (
+        <div className="subscribe">
+          <h2>Achievment Completed</h2>
+          <p>Check your transaction status in the explorer</p>
+          <button
+            className="accent"
+            onClick={() => window.open(config._TWITTER_AUTH, "_self")}
+          >
+            GO to explorer
+          </button>
+          <button
+            className="accent"
+            onClick={() => window.open(config._TWITTER_AUTH, "_self")}
+          >
+            back to achievements
+          </button>
         </div>
       );
       break;
