@@ -18,6 +18,7 @@ export const AppContainer = (App: FC) =>
           const res = await api.getData();
           dispatch(setAchievements({ achievements: res.achievements }));
           dispatch(setProject({ project: res.project }));
+          // dispatch(setModal({ type: "AchievmentCompleted" }));
         })(),
       ])
         .then(() => {

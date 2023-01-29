@@ -116,18 +116,17 @@ const Modal = ({ modal }: { modal: IModal }) => {
         <div className="subscribe">
           <h2>Achievment Completed</h2>
           <p>Check your transaction status in the explorer</p>
-          <button
-            className="accent"
-            onClick={() => window.open(config._TWITTER_AUTH, "_self")}
-          >
-            GO to explorer
-          </button>
-          <button
-            className="accent"
-            onClick={() => window.open(config._TWITTER_AUTH, "_self")}
-          >
-            back to achievements
-          </button>
+          <div className="heroButtonsSection">
+            <button
+              className="explorer"
+              onClick={() => window.open("https://explorer.xp.network/", "_blank")}
+            >
+              GO to explorer
+            </button>
+            <button className="accent some" onClick={() => dispatch(setModal(undefined))}>
+              back to achievements
+            </button>
+          </div>
         </div>
       );
       break;
@@ -139,7 +138,15 @@ const Modal = ({ modal }: { modal: IModal }) => {
   return (
     <>
       <div className="blurOver"></div>
-      <div className={`small-modal ${modal.type === "Bridge" ? "big-modal" : ""}`}>
+      <div
+        className={`small-modal ${
+          modal.type === "Bridge"
+            ? "big-modal"
+            : modal.type === "AchievmentCompleted"
+            ? "mid-modal "
+            : ""
+        }`}
+      >
         <Frame className="cardFrame modalFrame" />
         <div className={`popupHeader ${!modal.text ? "empty-header" : ""}`}>
           <div className="modal-header">{modal.text}</div>

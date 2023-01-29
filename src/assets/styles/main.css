@@ -716,6 +716,10 @@ body.showModal header .menu {
   width: 1171px;
   height: auto;
 }
+.mid-modal {
+  width: 550px;
+  height: auto;
+}
 
 .big-modal > svg {
   display: none;
