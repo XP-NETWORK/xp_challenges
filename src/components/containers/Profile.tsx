@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import { withServices, ServiceContainer } from "../../hocs/withServices";
 import { useDispatch, useSelector } from "react-redux";
 import { ReduxState } from "store";
-import { setModal, setUserData, updateProgress } from "store/reducer/global";
+import { setModal, setUserData, updateProgress, setTrxModal } from "store/reducer/global";
 import { AchievementsUpdateEvent } from "store/types";
 import { IUserAchievments, UserData } from "store/models/user";
 import { TwitterUser } from "services/twitter";
@@ -60,7 +60,7 @@ const Container = (Profile: FC<ProfileProps>) =>
         userData?.wallets &&
         userData?.wallets[0].address.toUpperCase() === data.senderAddress.toUpperCase()
       ) {
-        dispatch(setModal({ type: "AchievmentCompleted" }));
+        dispatch(setTrxModal(true));
       }
     };
 
@@ -118,16 +118,6 @@ const Container = (Profile: FC<ProfileProps>) =>
         };
       }
     }, [userData]);
-
-    // useEffect(() => {
-    //   console.log({ userData });
-
-    //   if (userData?.telegramUsername) {
-       
-
-    //     return () => explorerSocketWrapper.mute("incomingEvent", trxHandler);
-    //   }
-    // }, [userData]);
 
     const achievments =
       userData?.projectParticipations?.find((p) => p.projectNumber === currentProject)

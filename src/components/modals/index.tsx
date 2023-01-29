@@ -111,6 +111,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
       );
       break;
     }
+    
     case "AchievmentCompleted": {
       body = (
         <div className="subscribe">

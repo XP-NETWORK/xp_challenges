@@ -35,6 +35,7 @@ export type GlobalState = {
   currentProject: number;
   justCompleted: number[];
   modal: IModal | undefined;
+  trxModal: boolean;
   clickedAchiev: number[];
   project: IPROJECT | undefined;
   wallet: IWallet | undefined;
@@ -50,6 +51,7 @@ export const initialState: GlobalState = {
   currentProject: 1,
   justCompleted: [],
   modal: undefined,
+  trxModal: false,
   clickedAchiev: [],
   wallet: undefined,
   leaders: undefined,
@@ -93,6 +95,9 @@ interface AJustCompleted extends Action {
 
 interface AModal extends Action {
   payload: IModal | undefined;
+}
+interface ATrxModal extends Action {
+  payload: boolean;
 }
 
 interface ASetWallet extends Action {
@@ -178,6 +183,9 @@ export const global = createSlice({
     setModal: (state: GlobalState, action: AModal) => {
       state.modal = action.payload;
     },
+    setTrxModal: (state: GlobalState, action: ATrxModal) => {
+      state.trxModal = action.payload;
+    },
     setClickedAchiev: (state: GlobalState, action: AModal) => {
       if (action?.payload?.achievmentNumber) {
         state?.clickedAchiev.push(action?.payload?.achievmentNumber)
@@ -213,6 +221,7 @@ export const {
   updateProgress,
   setJustCompleted,
   setModal,
+  setTrxModal,
   setClickedAchiev,
   setLeaders,
   setWallet,

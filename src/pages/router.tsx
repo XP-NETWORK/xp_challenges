@@ -7,6 +7,7 @@ import Profile from "./homeSections/Profile";
 import LeaderBoard from "./homeSections/LeaderBoard";
 import Collection from "./homeSections/Collection";
 import Modal from "components/modals";
+import TrxAchivModal from "components/modals/trxAchivModal";
 import { useSelector, useDispatch } from "react-redux";
 import { ReduxState } from "store";
 import { getUserByUniqueId } from "store/reducer/global";
@@ -32,26 +33,21 @@ const PageNotFound = () => {
     }
   }, [tick]);
 
-  return (
-    <div>
-      404. Page not found. You will be redirected to main page in {tick}..
-    </div>
-  );
+  return <div>404. Page not found. You will be redirected to main page in {tick}..</div>;
 };
 
 export const Router: FC = () => {
   const location = useLocation();
 
   const nav = useNavigate();
-  const noscroll = Boolean(
-    noscrollPages.find((p) => location.pathname.includes(p))
-  );
+  const noscroll = Boolean(noscrollPages.find((p) => location.pathname.includes(p)));
 
   const dispatch = useDispatch();
-  const { telegramUser, init, modal } = useSelector((state: ReduxState) => ({
+  const { telegramUser, init, modal, trxModal } = useSelector((state: ReduxState) => ({
     telegramUser: state.global.telegramUser,
     init: state.global.init,
     modal: state.global.modal,
+    trxModal: state.global.trxModal,
   }));
 
   useEffect(() => {
@@ -91,11 +87,7 @@ export const Router: FC = () => {
       <Routes>
         <Route
           path="/"
-          element={
-            <HomePage init={init}>
-              {telegramUser ? <Profile /> : <Welcome />}
-            </HomePage>
-          }
+          element={<HomePage init={init}>{telegramUser ? <Profile /> : <Welcome />}</HomePage>}
         />
 
         <Route
@@ -119,6 +111,7 @@ export const Router: FC = () => {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       {modal && <Modal modal={modal} />}
+      {trxModal && <TrxAchivModal />}
     </div>
   );
 };
