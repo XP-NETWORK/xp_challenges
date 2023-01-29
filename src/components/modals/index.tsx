@@ -77,7 +77,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
     case "Success": {
       body = (
         <div className="successModal subscribe">
-          <h2>Sign up success!</h2>
+          <h2>Wallet Connected Successfully</h2>
           <div className="emblem flexRow">
             <GreenCheck />
             {modal.wallet ? <img src={walletConnected} alt="walletConnected" /> : <Avatar />}
@@ -90,7 +90,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
             )}
           </div>
           <button className="accent" onClick={() => dispatch(setModal(undefined))}>
-            Go to achievements
+            Go back to achievements
           </button>
         </div>
       );
@@ -111,7 +111,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
       );
       break;
     }
-    
+
     case "AchievmentCompleted": {
       body = (
         <div className="subscribe">
