@@ -52,23 +52,16 @@ const Container = (Profile: FC<ProfileProps>) =>
       console.log("SOCKETDATA -trxHandler ", data);
       console.log("-------------------------------------");
       console.log({
-        wallets: telegramUser?.wallets ? telegramUser?.wallets[0] : "No wallet",
+        wallets: userData?.wallets ? userData?.wallets[0] : "No wallet",
         sender: data.senderAddress.toUpperCase(),
       });
 
       if (
-        telegramUser?.wallets &&
-        telegramUser?.wallets[0].address.toUpperCase() === data.senderAddress.toUpperCase()
+        userData?.wallets &&
+        userData?.wallets[0].address.toUpperCase() === data.senderAddress.toUpperCase()
       ) {
         dispatch(setModal({ type: "AchievmentCompleted" }));
       }
-
-      dispatch(
-        updateProgress({
-          ...data,
-          projectNumber: Number(data.projectNumber),
-        })
-      );
     };
 
     useEffect(() => {
@@ -114,20 +107,27 @@ const Container = (Profile: FC<ProfileProps>) =>
     }, [telegramUser]);
 
     useEffect(() => {
+      console.log({ userData });
       if (userData?.telegramUsername) {
         socketWrapper.listen(userData.telegramUsername, eventHandler);
-
-        return () => socketWrapper.mute(userData.telegramUsername, eventHandler);
-      }
-    }, [userData]);
-
-    useEffect(() => {
-      if (userData?.telegramUsername) {
         explorerSocketWrapper.listen("incomingEvent", trxHandler);
 
-        return () => explorerSocketWrapper.mute("incomingEvent", trxHandler);
+        return () => {
+          explorerSocketWrapper.mute("incomingEvent", trxHandler);
+          socketWrapper.mute(userData.telegramUsername, eventHandler);
+        };
       }
     }, [userData]);
+
+    // useEffect(() => {
+    //   console.log({ userData });
+
+    //   if (userData?.telegramUsername) {
+       
+
+    //     return () => explorerSocketWrapper.mute("incomingEvent", trxHandler);
+    //   }
+    // }, [userData]);
 
     const achievments =
       userData?.projectParticipations?.find((p) => p.projectNumber === currentProject)
