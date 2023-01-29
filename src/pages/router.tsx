@@ -1,25 +1,17 @@
 import { FC, useEffect, useState } from "react";
 import { Routes, Route } from "react-router";
-
 import { useLocation } from "react-router";
-
 import HomePage from "./Home";
-
 import { Welcome } from "./homeSections/Welcome";
 import Profile from "./homeSections/Profile";
 import LeaderBoard from "./homeSections/LeaderBoard";
 import Collection from "./homeSections/Collection";
 import Modal from "components/modals";
-
-// import { ReactComponent as TopFrame } from "../assets/img/topFrame.svg";
-
 import { useSelector, useDispatch } from "react-redux";
 import { ReduxState } from "store";
 import { getUserByUniqueId } from "store/reducer/global";
 import { loadTelegramUniqueId } from "utils";
-
 import { setModal } from "store/reducer/global";
-
 import { useNavigate } from "react-router";
 
 const noscrollPages = ["signup"];
