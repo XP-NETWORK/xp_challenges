@@ -1136,7 +1136,7 @@ button.justCompleted {
 
 .leaderBoard-pannel {
   margin-top: 50px;
-  height: 750px;
+  height: auto;
   margin: 0 auto;
 }
 
