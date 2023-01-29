@@ -11,6 +11,7 @@ import ImageLoader from "./services/imageLoader";
 import Api from "./services/api";
 import TelegramService from "./services/telegram";
 import socket from "services/socket";
+import ExplorerSocket from "services/explorerSocket";
 import wallet from "services/wallet";
 import ErrorBoundary from "components/containers/ErrorBoundry";
 import "./assets/styles/reset.css";
@@ -36,6 +37,7 @@ const App = () => {
     imageLoader: ImageLoader(),
     telegram: TelegramService("XpChallengeAuth12Bot"), // must /setdomain to bot
     socketWrapper: socket("wss://xp-challenges.herokuapp.com"),
+    explorerSocketWrapper: ExplorerSocket("wss://dev-explorer-api.herokuapp.com/"),
     wallet: wallet(),
   });
 

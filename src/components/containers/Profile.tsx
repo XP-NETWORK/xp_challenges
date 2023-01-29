@@ -19,7 +19,7 @@ export type ProfileProps = {
 const Container = (Profile: FC<ProfileProps>) =>
   withServices(function Callback(props) {
     const {
-      serviceContainer: { api, socketWrapper },
+      serviceContainer: { api, socketWrapper, explorerSocketWrapper },
     }: { serviceContainer: ServiceContainer } = props;
     const dispatch = useDispatch();
 
@@ -33,12 +33,35 @@ const Container = (Profile: FC<ProfileProps>) =>
     const navigate = useNavigate();
 
     const eventHandler = (data: AchievementsUpdateEvent) => {
-      console.log("SOCKETDATA " , data.achievments[0], {
+      console.log("SOCKETDATA ", data.achievments[0], {
         achievments: data.achievments,
         completed: data.completed,
         currentProgressNumber: data.currentProgressNumber,
       });
       console.log("-------------------------------------");
+
+      dispatch(
+        updateProgress({
+          ...data,
+          projectNumber: Number(data.projectNumber),
+        })
+      );
+    };
+
+    const trxHandler = (data: any) => {
+      console.log("SOCKETDATA -trxHandler ", data);
+      console.log("-------------------------------------");
+      console.log({
+        wallets: telegramUser?.wallets ? telegramUser?.wallets[0] : "No wallet",
+        sender: data.senderAddress.toUpperCase(),
+      });
+
+      if (
+        telegramUser?.wallets &&
+        telegramUser?.wallets[0].address.toUpperCase() === data.senderAddress.toUpperCase()
+      ) {
+        dispatch(setModal({ type: "AchievmentCompleted" }));
+      }
 
       dispatch(
         updateProgress({
@@ -95,6 +118,14 @@ const Container = (Profile: FC<ProfileProps>) =>
         socketWrapper.listen(userData.telegramUsername, eventHandler);
 
         return () => socketWrapper.mute(userData.telegramUsername, eventHandler);
+      }
+    }, [userData]);
+
+    useEffect(() => {
+      if (userData?.telegramUsername) {
+        explorerSocketWrapper.listen("incomingEvent", trxHandler);
+
+        return () => explorerSocketWrapper.mute("incomingEvent", trxHandler);
       }
     }, [userData]);
 
