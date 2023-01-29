@@ -103,6 +103,7 @@ export type IModal = {
   | "confirmReg"
   | "EmailSubscribe"
   | "Success"
+  | "AchievmentCompleted"
   | "Bridge";
   text?: string;
   wallet?: string;
@@ -113,5 +114,5 @@ export type IModal = {
     [x: string]: boolean;
   };
   confirmButton?: any;
-  achievmentNumber?:number
+  achievmentNumber?: number
 };
