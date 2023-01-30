@@ -57,7 +57,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
           <h2>Twitter</h2>
           <p>To complete the achievment please login to your twitter account</p>
           <button
-            style={{ margin: "auto", marginTop: "2px" }}
+            style={{ margin: "auto", marginTop: "40px" }}
             className="accent"
             onClick={() => window.open(config._TWITTER_AUTH, "_self")}
           >

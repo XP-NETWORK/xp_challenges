@@ -1465,7 +1465,8 @@ button.justCompleted {
 }
 
 .successModal button {
-  margin: 50px auto 0;
+  margin-top: 20px !important;
+  margin: auto;
 }
 
 .successModal.subscribe h2 {
