@@ -1,11 +1,16 @@
 import close from "../../assets/img/icons/close.svg";
 import { useDispatch } from "react-redux";
-import { setTrxModal } from "store/reducer/global";
+import { setTrxModal, setModal } from "store/reducer/global";
 import { ReactComponent as Frame } from "../../assets/img/icons/card-frameSimple.svg";
 
 const TrxAchivModal = () => {
   let body: JSX.Element = <div></div>;
   const dispatch = useDispatch();
+
+  const handleClose = () => {
+    dispatch(setTrxModal(false));
+    dispatch(setModal(undefined));
+  };
 
   body = (
     <div className="subscribe">
@@ -18,7 +23,7 @@ const TrxAchivModal = () => {
         >
           GO to explorer
         </button>
-        <button className="accent some" onClick={() => dispatch(setTrxModal(false))}>
+        <button className="accent some" onClick={handleClose}>
           back to achievements
         </button>
       </div>
