@@ -27,7 +27,7 @@ export const config = {
   _DEFAULT_BRIDGE_LINK: "https://staging-bridge.xp.network?xpchallenge=true",
   _DEFAULT_TELEGRAM_LINK: "https://t.me/asdasdvacs",
   _TWITTER_AUTH: "https://support-bot-xp.herokuapp.com/twitterLogin",
-  _WIDGET: "https://widget-staging.xp.network", //https://widget-staging.xp.network
+  _WIDGET: "https://widget.xp.network", //https://widget-staging.xp.network
   _WIDGET_ID: "63bc17c8a65fd4aaf0312526",
 };
 
