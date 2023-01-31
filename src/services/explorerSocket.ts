@@ -14,7 +14,7 @@ class ExplorerSocket {
   listen(id: string, cb: (event: any) => void) {
     this.socket?.on(id, cb);
     console.log("listenig to ExplorerSocket" + id);
-    console.log(this.socket?.listeners(id));
+    // console.log(this.socket?.listeners(id));
   }
 
   mute(id: string, cb: (event: any) => void) {

@@ -21,16 +21,14 @@ const Container = (Profile: FC<ProfileProps>) =>
     const {
       serviceContainer: { api, socketWrapper, explorerSocketWrapper },
     }: { serviceContainer: ServiceContainer } = props;
+    const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const { userData, telegramUser, currentProject } = useSelector((state: ReduxState) => ({
       telegramUser: state.global.telegramUser,
       userData: state.global.userData,
       currentProject: state.global.currentProject,
     }));
-    const [loading, setLoading] = useState(false);
-
-    const navigate = useNavigate();
 
     const eventHandler = (data: AchievementsUpdateEvent) => {
       console.log("SOCKETDATA ", data.achievments[0], {
@@ -70,11 +68,8 @@ const Container = (Profile: FC<ProfileProps>) =>
           setLoading(true);
           const user = await api.getUser(telegramUser.telegramUsername);
           let ud = user?.data;
-
           const params = new URLSearchParams(location.search.replace("?", ""));
-
           const twitterParam = params.get("twitterCred");
-
           const confirmedEmail = params.get("emailConfirmed");
 
           if (twitterParam) {

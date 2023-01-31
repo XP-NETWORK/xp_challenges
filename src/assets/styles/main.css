@@ -516,7 +516,7 @@ header button {
 }
 
 .signUpContainer {
-  background-image: url("../../assets/img/userBack.png");
+  /* background-image: url("../../assets/img/userBack.png"); */
   display: flex;
   flex-direction: column;
   position: relative;

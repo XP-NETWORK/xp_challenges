@@ -15,8 +15,8 @@ class Socket {
 
   listen(id: string, cb: (event: AchievementsUpdateEvent) => void) {
     this.socket?.on(id, cb);
-    // console.log("listenig to " + id);
-    console.log(this.socket?.listeners(id));
+    console.log("listenig to " + id);
+    // console.log(this.socket?.listeners(id));
   }
 
   mute(id: string, cb: (event: AchievementsUpdateEvent) => void) {
