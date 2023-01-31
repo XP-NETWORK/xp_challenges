@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { ReduxState } from "store";
 import moment from "moment";
 import { TimeLoader } from "components/timeLoader";
+import React from "react";
 
 const period = ["days", "hours", "MIN", "sec"];
 
@@ -53,8 +54,8 @@ export const ProjectTimer: FC = () => {
         {time.length > 1 ? (
           time.map((amount, index) => {
             return (
-              <>
-                <div className={`segment ${index === time.length - 1 ? "last" : ""}`}>
+              <React.Fragment key={index}>
+                <div key={index} className={`segment ${index === time.length - 1 ? "last" : ""}`}>
                   <strong>
                     {Number(amount) >= 10 ? (Number(amount) > 0 ? amount : "0") : 0 + amount}
                   </strong>
@@ -64,7 +65,7 @@ export const ProjectTimer: FC = () => {
 
                 {index !== 3 && <span>:</span> // need to fix that
                 }
-              </>
+              </React.Fragment>
             );
           })
         ) : (
