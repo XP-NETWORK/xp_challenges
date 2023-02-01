@@ -105,7 +105,7 @@ const Board = ({ serviceContainer }: Props) => {
                   </div>
 
                   <div className="leaderBoard-progress">
-                    <ProgressBar current={leader.comp} total={achievements.length} />
+                    <ProgressBar current={leader.comp} total={achievements.length} loc={true} />
                   </div>
                 </div>
               ))

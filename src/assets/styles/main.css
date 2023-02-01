@@ -874,13 +874,12 @@ body.showModal header .menu {
 }
 
 .achivementBar .progressBar .bar {
-  width: 500px;
+  width: 530px;
 }
 
 .progressBar {
   width: 522px;
   display: inline-block;
-  padding: 0 14px;
 }
 
 .achivCard .progressBar {
@@ -894,6 +893,13 @@ body.showModal header .menu {
 .barWrap {
   padding: 18px;
   width: 100%;
+  border-radius: 80px;
+  background-color: var(--bar);
+}
+
+.secondBarWrap {
+  padding: 18px;
+  width: 66%;
   border-radius: 80px;
   background-color: var(--bar);
 }

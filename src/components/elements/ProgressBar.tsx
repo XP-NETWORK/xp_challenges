@@ -4,15 +4,12 @@ import { useWindowSize } from "../../hooks/useSize";
 export type ProgressBarProps = {
   current: number;
   total: number;
+  loc?: boolean | undefined;
 };
 
-export const ProgressBar: FC<ProgressBarProps> = ({ current, total }) => {
-  // const [innerBarWidth, setWidth] = useState(0);
-
+export const ProgressBar: FC<ProgressBarProps> = ({ current, total, loc }) => {
   const size = useWindowSize();
-
   let bar: HTMLDivElement | undefined = undefined;
-
   useEffect(() => {
     if (bar && current && total) {
       /* waitForElm(bar).then((elm) => {
@@ -23,7 +20,7 @@ export const ProgressBar: FC<ProgressBarProps> = ({ current, total }) => {
 
   return (
     <div className="progressBar ">
-      <div className="barWrap flexRow">
+      <div className={`${loc ? "secondBarWrap" : "barWrap"} flexRow`}>
         <div className="bar">
           <div
             className={`inner flexRow ${current === 0 ? "empty" : ""}`}
@@ -38,9 +35,9 @@ export const ProgressBar: FC<ProgressBarProps> = ({ current, total }) => {
               .map((_, idx) => (
                 <div
                   key={`innerSegment-${idx}-${Math.random()}`}
-                  className={`inner-segment ${
-                    idx === current - 1 ? "last" : ""
-                  } ${idx < current ? "completed" : ""}`}
+                  className={`inner-segment ${idx === current - 1 ? "last" : ""} ${
+                    idx < current ? "completed" : ""
+                  }`}
                 ></div>
               ))}
           </div>
