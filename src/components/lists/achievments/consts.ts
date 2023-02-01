@@ -8,7 +8,7 @@ import retweet12 from "../../../assets/img/retweet12.png";
 import telegram1 from "../../../assets/img/icons/telegram1.png";
 import twitter from "../../../assets/img/icons/twitter.png";
 import connectWallet1 from "../../../assets/img/icons/connectWallet1.png";
-import Amessage  from "../../../assets/img/icons/Amessage.png";
+import Amessage from "../../../assets/img/icons/Amessage.png";
 import Bmessage from "../../../assets/img/icons/Bmessages.png";
 import Cmessage from "../../../assets/img/icons/Cmessages.png";
 import Dmessage from "../../../assets/img/icons/Dmessages.png";
@@ -72,7 +72,7 @@ export const achievementsPics = {
     });
   },
   7: () => {
-    
+
     return React.createElement("img", {
       src: connectWallet1,
       className: "AchievementIcon",
@@ -190,11 +190,11 @@ export const achievementsHandlers = {
   ) => () => window.open(link),
   [AchivType.Twitter]: (
     userData: UserData | undefined,
-    link = config._DEFAULT_TWITTER_LINK,
+    link: any = config._DEFAULT_TWITTER_LINK,
     dispatch: Dispatch<AnyAction>,
     achievmentNumber: number,
     setClicked: React.Dispatch<React.SetStateAction<string[]>>
-  ) => () => {
+  ) => async () => {
     if (!userData?.twitterUserName) {
       dispatch(
         setModal({
@@ -216,11 +216,8 @@ export const achievementsHandlers = {
         localStorage.setItem('clicked', JSON.stringify(par));
       }
     }
-    return window.open(link);
-
-    /*return !userData?.twitterUserName
-      ? window.open(config._TWITTER_AUTH, "_self")
-      : window.open(link);*/
+    const lin = await link()
+    return window.open(lin);
   },
   [AchivType.Bridge]: (
     userData: UserData | undefined,

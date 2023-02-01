@@ -84,7 +84,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
 
                   <div className="cont">
                     <Vector className="vector" />
-                    <AchievementIcon  />
+                    <AchievementIcon />
                     {!noIcons.includes(Number(achievmentNumber)) && (
                       <img
                         className="xpMiniIcon"
@@ -114,7 +114,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                           ? () => false
                           : achievementsHandlers[name](
                               userData,
-                              achievment.getLink(),
+                              async () => await achievment.getLink(),
                               dispatch,
                               achievmentNumber,
                               setClicked
