@@ -332,8 +332,10 @@ header button {
   margin-top: 30px;
 }
 
-.second{
-  margin-top: 60px !important;
+.second {
+  border-top: solid 1px #2c2e33;
+  margin-top: 30px !important;
+  padding-top: 39px;
 }
 
 .achievements h2 {
