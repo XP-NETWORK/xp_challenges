@@ -6,6 +6,7 @@ import { TelegramUser } from "store/types";
 import { withServices, ServiceContainer } from "hocs/withServices";
 import { useNavigate } from "react-router-dom";
 import UserWallet from "../auth/UserWallet";
+import frame from "../../assets/img/frame.png";
 
 interface TelegramLoginProps {
   serviceContainer: ServiceContainer;
@@ -28,9 +29,7 @@ function TelegramLogin(props: TelegramLoginProps) {
 
   useEffect(() => {
     window.__GLOBAL_VAR__ = window.__GLOBAL_VAR__ || {};
-    window.__GLOBAL_VAR__.onTelegramAuth = function(
-      telegramUser: TelegramUser
-    ) {
+    window.__GLOBAL_VAR__.onTelegramAuth = function(telegramUser: TelegramUser) {
       api.verifyTelegramData(telegramUser).then(async (res) => {
         if (res) {
           //save in LS
@@ -58,20 +57,14 @@ function TelegramLogin(props: TelegramLoginProps) {
   useEffect(() => {
     let waitForIframe: any;
     if (scriptLoaded && container.current) {
-      telegramService.loadWidget(
-        container.current,
-        "window.__GLOBAL_VAR__.onTelegramAuth(user)"
-      );
+      telegramService.loadWidget(container.current, "window.__GLOBAL_VAR__.onTelegramAuth(user)");
 
       waitForIframe = setInterval(() => {
-        const iframe = container.current?.querySelector(
-          "iframe"
-        ) as HTMLIFrameElement;
+        const iframe = container.current?.querySelector("iframe") as HTMLIFrameElement;
 
         if (iframe && iframe.style.width && iframe.style.height) {
           clearInterval(waitForIframe);
-          button.current &&
-            telegramService.insertButton(iframe, button.current);
+          button.current && telegramService.insertButton(iframe, button.current);
         }
       }, 100);
     }
@@ -80,10 +73,15 @@ function TelegramLogin(props: TelegramLoginProps) {
       clearInterval(waitForIframe);
     };
   }, [scriptLoaded]);
+  console.log(vert);
 
   return (
-    <div className={`signUpContainer ${vert ? "vertical" : ""}`}>
-      {userData?.wallets?.length ? <UserWallet /> : ""}
+    // <div className={`signUpContainer ${vert ? "vertical" : ""}`}>
+    //   {userData?.wallets?.length ? <UserWallet /> : ""}
+    // </div>
+    <div className="frameImageCont">
+      <div>{userData?.wallets?.length ? <UserWallet /> : ""}</div>
+      <img className="frameImage"  src={frame} alt="asdfa" />
     </div>
   );
 }

@@ -435,11 +435,12 @@ frame top 500px
   }
   .signUpContainer {
     display: flex;
+    /* background-image: url("../../assets/img/FrameMobile.png"); */
     flex-direction: column;
-    position: fixed;
+    /* position: fixed; */
     top: 90%;
-    width: 80%;
-    left: 10%;
+    width: 90%;
+    margin: auto;
   }
   .signUpContainer .accent {
     width: 100%;

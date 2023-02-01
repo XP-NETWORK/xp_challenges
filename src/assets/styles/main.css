@@ -525,11 +525,15 @@ header button {
 }
 
 .signUpContainer {
-  background-image: url("../../assets/img/userBack1.png");
+  /* background-image: url("../../assets/img/frame.png"); */
   display: flex;
   flex-direction: column;
   position: relative;
   height: 256px;
+}
+
+.frameImage {
+  width: 1288px;
 }
 
 .signupPage .signUpContainer button {
