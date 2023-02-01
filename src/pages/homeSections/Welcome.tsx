@@ -1,7 +1,7 @@
 import { FC } from "react";
-import Step1 from "../../assets/svgs/howItWorkSection/step1.svg";
-import Step2 from "../../assets/svgs/howItWorkSection/step2.svg";
-import Step3 from "../../assets/svgs/howItWorkSection/step3.svg";
+import Step1 from "../../assets/svgs/howItWorkSection/step1.png";
+import Step2 from "../../assets/svgs/howItWorkSection/step2.png";
+import Step3 from "../../assets/svgs/howItWorkSection/step3.png";
 import ArrowLeft from "../../assets/svgs/howItWorkSection/arrowLeft.svg";
 import NFTList from "../../components/lists/Nfts";
 import Achievements from "../../components/lists/achievments/achievements";
