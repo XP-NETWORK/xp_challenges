@@ -137,7 +137,7 @@ frame top 500px
 
   .userFrameCi {
     position: absolute;
-    bottom: 310px;
+    bottom: 370px;
     left: 15px;
     width: 91px;
     height: 91px;
@@ -154,10 +154,13 @@ frame top 500px
 
   .profileTopFlex {
     order: -1;
-    margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-
+  .profileNameStyle {
+    margin-bottom: 52px;
+  }
   .profileContainer {
     width: 100%;
   }
@@ -347,7 +350,7 @@ frame top 500px
 
 @media (max-width: 600px) {
   .profileContainer {
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .achivCard .progressBar .bar {
     width: 100px !important;
