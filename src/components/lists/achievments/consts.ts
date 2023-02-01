@@ -217,7 +217,7 @@ export const achievementsHandlers = {
       }
     }
     const lin = await link()
-    return window.open(lin);
+    return window.open(lin, '_blank');
   },
   [AchivType.Bridge]: (
     userData: UserData | undefined,

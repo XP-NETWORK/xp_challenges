@@ -59,7 +59,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
           <button
             style={{ margin: "auto", marginTop: "40px" }}
             className="accent"
-            onClick={() => window.open(config._TWITTER_AUTH, "_self")}
+            onClick={() => window.open(config._TWITTER_AUTH, '_blank')}
           >
             LOG IN TO TWITTER
           </button>
