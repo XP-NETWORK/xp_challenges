@@ -28,6 +28,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
   }));
 
   const noIcons = [7, 19, 18];
+  const twitter = [4,5,6,19];
 
   const dispatch = useDispatch();
 
@@ -114,7 +115,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                           ? () => false
                           : achievementsHandlers[name](
                               userData,
-                              async () => await achievment.getLink(),
+                              twitter.includes(achievmentNumber) ?  async () => await achievment.getLink() : undefined,
                               dispatch,
                               achievmentNumber,
                               setClicked
