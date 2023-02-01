@@ -59,7 +59,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
           <button
             style={{ margin: "auto", marginTop: "40px" }}
             className="accent"
-            onClick={() => window.open(config._TWITTER_AUTH, '_blank')}
+            onClick={() => window.open(config._TWITTER_AUTH, "_blank")}
           >
             LOG IN TO TWITTER
           </button>
@@ -77,8 +77,8 @@ const Modal = ({ modal }: { modal: IModal }) => {
     case "Success": {
       body = (
         <div className="successModal subscribe">
-          <h2>Wallet Connected Successfully</h2>
-          <div className="emblem flexRow">
+          <h2>{modal.wallet ? "Wallet Connected Successfully" : "Sign up Success!"}</h2>
+          <div className="emblem flexRow down">
             <GreenCheck />
             {modal.wallet ? <img src={walletConnected} alt="walletConnected" /> : <Avatar />}
             {modal.telegramAccount ? (

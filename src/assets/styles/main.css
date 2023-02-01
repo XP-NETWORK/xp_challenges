@@ -1245,6 +1245,10 @@ button.justCompleted {
   z-index: 16;
 }
 
+.down{
+  margin-bottom: 50px !important;
+}
+
 .collection .picWrapper {
   padding: 24px 24px;
   background: #161718;
