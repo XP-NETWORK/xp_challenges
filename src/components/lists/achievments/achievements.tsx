@@ -45,8 +45,8 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
 
   return (
     <div className="achievements" id="achivs">
-      <h2>Achievements</h2>
-      <p style={{ marginTop: "10px" }}>More completed tasks = better chances to win</p>
+      {/* <h2>Achievements</h2>
+      <p style={{ marginTop: "10px" }}>More completed tasks = better chances to win</p> */}
 
       <div className="container" style={{ marginTop: "60px" }}>
         <div className="row">

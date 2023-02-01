@@ -1,5 +1,5 @@
 import { useEffect, FC } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import { ReactComponent as Frame } from "../../assets/svgs/profile/profileFrame.svg";
 import { ReactComponent as Rifled } from "../../assets/img/rifled.svg";
 import { ProgressBarProps } from "components/elements/ProgressBar";
@@ -27,7 +27,7 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
 }) => {
   // const [innerBarWidth, setWidth] = useState(0);
   // console.log(innerBarWidth);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const size = useWindowSize();
 
@@ -40,9 +40,9 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
     //   });
     // }
   }, [current, total, bar, size.width]);
-  const goToLeaderboard = () => {
-    navigate("/leaderboard");
-  };
+  // const goToLeaderboard = () => {
+  //   navigate("/leaderboard");
+  // };
   return (
     <>
       <div className="profileContainer">
@@ -51,46 +51,40 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
         <div className="flexColumnProfile">
           <Avatar />
           <div className="profileTopFlex">
+            <div className="profileNameStyle">@{telegramData?.telegramUsername}</div>
             <ProjectTimer />
-            <button className="viewLeaderBoardButton" onClick={goToLeaderboard}>
-              VIEW LEADERBOARD
-            </button>
           </div>
-          <div className="profileNameStyle">
-            @{telegramData?.telegramUsername}
-          </div>
-          <div className="progressBar profileProgressBar">
-            <div className="rate rateFlexContainer">
-              <div className="rateText">YOUR SCORE</div>
-              <div className="rateText">
-                <span>{current}</span>
-                <span className="rateTextOp">/{total}</span>
+          <div className="profileTopFlex second">
+            <div className="profileNameStyle">Achievments</div>
+            <div className="progressBar profileProgressBar">
+              <div className="rate rateFlexContainer">
+                <div className="rateText">YOUR SCORE</div>
+                <div className="rateText">
+                  <span>{current}</span>
+                  <span className="rateTextOp">/{total}</span>
+                </div>
               </div>
-            </div>
-            <div className="barWrap flexRow profileWarpBar">
-              <div className="bar profileProgressBar">
-                <div
-                  className={`inner flexRow ${current === 0 ? "empty" : ""}`}
-                  ref={(node) => {
-                    if (node) {
-                      bar = node;
-                    }
-                  }}
-                >
-                  {Array(total)
-                    .fill(true)
-                    .map((_, idx) => (
-                      <div
-                        key={`innerSegment-${idx}-${Math.random()}`}
-                        className={`inner-segment ${
-                          idx === current - 1 ? "last" : ""
-                        } ${
-                          idx < current
-                            ? "completed"
-                            : " completed notCompleted"
-                        }`}
-                      ></div>
-                    ))}
+              <div className="barWrap flexRow profileWarpBar">
+                <div className="bar profileProgressBar">
+                  <div
+                    className={`inner flexRow ${current === 0 ? "empty" : ""}`}
+                    ref={(node) => {
+                      if (node) {
+                        bar = node;
+                      }
+                    }}
+                  >
+                    {Array(total)
+                      .fill(true)
+                      .map((_, idx) => (
+                        <div
+                          key={`innerSegment-${idx}-${Math.random()}`}
+                          className={`inner-segment ${idx === current - 1 ? "last" : ""} ${
+                            idx < current ? "completed" : " completed notCompleted"
+                          }`}
+                        ></div>
+                      ))}
+                  </div>
                 </div>
               </div>
             </div>

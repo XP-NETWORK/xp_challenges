@@ -32,9 +32,9 @@
   bottom: -10px;
 }
 
-.profileProgressBar {
+/* .profileProgressBar {
   width: 100% !important;
-}
+} */
 
 .notCompleted {
   background: #f6f6f6;
@@ -52,15 +52,17 @@
 }
 
 .profileNameStyle {
-  font-family: "Kanit";
+  font-family: "Chakra Petch";
+  font-style: normal;
   font-size: 34px;
   color: #fff !important;
   letter-spacing: 0.09em;
   z-index: 999;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .profileTopFlex {
+  margin-top: 20px;
   margin-bottom: 30px;
   display: flex;
   align-items: center;
@@ -93,7 +95,11 @@
 }
 
 .profileTopFlex .flexRow {
-  width: 264px;
+  /* width: 264px; */
+}
+
+.score {
+  width: 522px;
 }
 
 .userFrameCi {
@@ -107,8 +113,8 @@
   justify-content: center;
   z-index: 9;
   position: absolute;
-  top: -107px;
-  left: 20px;
+  bottom: 230px;
+  left: 40px;
 }
 
 .participant .avatarPlaceholder {
