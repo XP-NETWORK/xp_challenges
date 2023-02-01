@@ -45,6 +45,15 @@
   text-align: center;
   white-space: nowrap;
 }
+button.howWorkButtonStyle:hover {
+  background: white;
+  color: var(--secondary);
+}
+/* button > .howWorkButtonStyle  > .HOWITWORKS:hover {
+  color: var(--secondary);
+} */
+
+
 .some {
   margin-left: 20px;
   margin-bottom: 40px;

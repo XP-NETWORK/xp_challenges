@@ -35,7 +35,7 @@ export const Welcome: FC = () => {
           <AliceCarousel
             items={[
               <div className="introTimeline-item flexCol">
-                <div className="imageAssetNumber">1</div>
+                {/* <div className="imageAssetNumber">1</div> */}
                 <img src={Step1} alt="introTimeline-item-1" />
                 <span>Join XP Challenge</span>
                 <TelegramButtonV2
@@ -43,7 +43,7 @@ export const Welcome: FC = () => {
                 />
               </div>,
               <div className="introTimeline-item flexCol">
-                <div className="imageAssetNumber">2</div>
+                {/* <div className="imageAssetNumber">2</div> */}
 
                 <img src={Step2} alt="introTimeline-item-2" />
                 <span>Collect achievements</span>
@@ -55,7 +55,7 @@ export const Welcome: FC = () => {
                 </a>
               </div>,
               <div className="introTimeline-item flexCol">
-                <div className="imageAssetNumber">3</div>
+                {/* <div className="imageAssetNumber">3</div> */}
 
                 <img src={Step3} alt="introTimeline-item-2" />
                 <span>Win an NFT</span>
@@ -78,10 +78,10 @@ export const Welcome: FC = () => {
         ) : (
           <div className="introTimeline flexRow">
             <div className="introTimeline-item flexCol">
-              <div className="imageAssetNumber">1</div>
+              {/* <div className="imageAssetNumber">1</div> */}
 
               <img src={Step1} alt="introTimeline-item-1" />
-              <span>Join XP Challenge</span>
+              <span className="upper">Join XP Challenge</span>
               <TelegramButtonV2
                 classes={"button secondary howItWorkButtonStyle"}
               />
@@ -91,10 +91,10 @@ export const Welcome: FC = () => {
               <img src={ArrowLeft} />
             </div>
             <div className="introTimeline-item flexCol">
-              <div className="imageAssetNumber">2</div>
+              {/* <div className="imageAssetNumber">2</div> */}
               <img src={Step2} alt="introTimeline-item-2" />
 
-              <span>Collect achievements</span>
+              <span className="upper">Collect achievements</span>
               <a
                 className="button secondary newBackground howItWorkButtonStyle impo"
                 href="#achivs"
@@ -106,9 +106,9 @@ export const Welcome: FC = () => {
               <img src={ArrowLeft} />
             </div>
             <div className="introTimeline-item flexCol">
-              <div className="imageAssetNumber">3</div>
+              {/* <div className="imageAssetNumber">3</div> */}
               <img src={Step3} alt="introTimeline-item-2" />
-              <span>Win an NFT</span>
+              <span className="upper">Win an NFT</span>
               <button
                 className="secondary newBackground howItWorkButtonStyle impo"
                 onClick={() => navigate("/collection")}

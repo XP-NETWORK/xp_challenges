@@ -244,9 +244,9 @@ frame top 500px
     right: -1px;
   }
 
-  .introTimeline-item span {
+  /* .introTimeline-item span {
     margin: 10px 0;
-  }
+  } */
 
   .imageAssetNumber {
     top: 70px;
