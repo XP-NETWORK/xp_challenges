@@ -105,9 +105,10 @@ header.header {
 
 .headerWrapper {
   margin: 0 auto;
-  max-width: 1620px; /* 2 */
+  max-width: 97%; /* 2 */
   padding-left: 20px;
   padding-right: 20px;
+  margin-bottom: 50px;
 }
 
 header img.logo {
@@ -516,10 +517,11 @@ header button {
 }
 
 .signUpContainer {
-  /* background-image: url("../../assets/img/userBack.png"); */
+  background-image: url("../../assets/img/userBack1.png");
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 256px;
 }
 
 .signupPage .signUpContainer button {

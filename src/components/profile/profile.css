@@ -21,7 +21,7 @@
   position: relative;
   margin: 0 auto;
   margin-top: 50px;
-  width: 768px;
+  /* width: 768px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,7 +108,7 @@
   z-index: 9;
   position: absolute;
   top: -107px;
-  left: 311px;
+  left: 20px;
 }
 
 .participant .avatarPlaceholder {
