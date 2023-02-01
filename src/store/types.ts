@@ -36,6 +36,7 @@ export interface IACHIEVMENT {
   progressBarLength: number;
   rewardAmount: number;
   link?: string;
+  miniIcon?: string | undefined
 }
 
 export enum AchivType {

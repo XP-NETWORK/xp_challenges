@@ -15,6 +15,7 @@ import {
 } from "./consts";
 import { AchievmentLoader } from "../../../components/achievmentLoader/index";
 import { ReactComponent as Vector } from "../../../assets/img/icons/Vector.svg";
+import xpMiniIcon from "../../../assets/img/xpMiniIcon.png";
 
 function Achievements({ userAchievements, userData }: AchievementsProps) {
   const [clicked, setClicked] = useState<string[]>([]);
@@ -54,7 +55,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
             //const { achievmentNumber, description, name, progressBarLength, link } = achievment
             const achievment = fabric(item, project!);
             const {
-              data: { achievmentNumber, name, progressBarLength, description },
+              data: { miniIcon, achievmentNumber, name, progressBarLength, description },
             } = achievment;
             const userProgress = achievment.getUserProgress(userAchievements);
             const completed = justCompleted.includes(index);
@@ -82,6 +83,11 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                   <div className="cont">
                     <Vector className="vector" />
                     <AchievementIcon className="AchievementIcon" />
+                    <img
+                      className="xpMiniIcon"
+                      src={miniIcon ? miniIcon : xpMiniIcon}
+                      alt="xpMiniIcon"
+                    />
                   </div>
 
                   <Frame className="cardFrame" />

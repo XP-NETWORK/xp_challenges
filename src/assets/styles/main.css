@@ -447,6 +447,11 @@ header button {
   transform: translateX(-50%);
   z-index: 200;
 }
+.xpMiniIcon {
+  position: relative;
+  margin-left: 55px;
+  z-index: 300 ;
+}
 .vector {
   position: absolute;
   left: auto;
@@ -459,7 +464,7 @@ header button {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: 100;
   width: 92px;
   height: 92px;
 }
