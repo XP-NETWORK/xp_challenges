@@ -27,6 +27,8 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
     clickedAchiev: state.global.clickedAchiev,
   }));
 
+  const noIcons = [7, 19, 18];
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -83,11 +85,13 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                   <div className="cont">
                     <Vector className="vector" />
                     <AchievementIcon className="AchievementIcon" />
-                    <img
-                      className="xpMiniIcon"
-                      src={miniIcon ? miniIcon : xpMiniIcon}
-                      alt="xpMiniIcon"
-                    />
+                    {!noIcons.includes(Number(achievmentNumber)) && (
+                      <img
+                        className="xpMiniIcon"
+                        src={miniIcon ? miniIcon : xpMiniIcon}
+                        alt="xpMiniIcon"
+                      />
+                    )}
                   </div>
 
                   <Frame className="cardFrame" />
