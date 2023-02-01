@@ -84,7 +84,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
 
                   <div className="cont">
                     <Vector className="vector" />
-                    <AchievementIcon className="AchievementIcon" />
+                    <AchievementIcon  />
                     {!noIcons.includes(Number(achievmentNumber)) && (
                       <img
                         className="xpMiniIcon"

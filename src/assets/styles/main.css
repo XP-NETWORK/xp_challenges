@@ -468,6 +468,16 @@ header button {
   width: 92px;
   height: 92px;
 }
+.AchievementIconRet {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  padding-right: 5px;
+  width: 115px;
+  height: 110px;
+}
 
 .achivCard:hover .cont svg path {
   /* fill: white !important; */

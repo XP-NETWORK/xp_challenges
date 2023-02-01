@@ -1,9 +1,10 @@
 import React from "react";
 import { AchivType } from "store/types";
 import subscribetonewsletter from "../../../assets/img/icons/subscribetonewsletter.png";
-import add1user from "../../../assets/img/icons/add1user.png";
-import add3users from "../../../assets/img/icons/add3users.png";
-import add5users from "../../../assets/img/icons/add5users.png";
+import adduserpartners from "../../../assets/img/adduserpartners.png";
+import add3userspartners from "../../../assets/img/add3userspartners.png";
+import add5userspartners from "../../../assets/img/add5userspartners.png";
+import retweet12 from "../../../assets/img/retweet12.png";
 import telegram1 from "../../../assets/img/icons/telegram1.png";
 import twitter from "../../../assets/img/icons/twitter.png";
 import connectWallet1 from "../../../assets/img/icons/connectWallet1.png";
@@ -15,6 +16,9 @@ import Emessage from "../../../assets/img/icons/Emessages.png";
 import bridge3nfts from "../../../assets/img/icons/bridge3nfts.png";
 import bridge5nfts from "../../../assets/img/icons/bridge5nfts.png";
 import bridgenft from "../../../assets/img/icons/bridgenft.png";
+import bridge3nftspartners from "../../../assets/img/bridge3nftspartners.png";
+import bridge5nftspartners from "../../../assets/img/bridge5nftspartners.png";
+import bridgenftpartners from "../../../assets/img/bridgenftpartners.png";
 import { IUserAchievments, UserData } from "store/models/user";
 import person from "../../../assets/img/icons/AchivPerson.svg";
 import personCompleted from "../../../assets/img/icons/Group 3324.svg";
@@ -33,19 +37,19 @@ export type AchievementsProps = {
 export const achievementsPics = {
   1: () => {
     return React.createElement("img", {
-      src: add1user,
+      src: adduserpartners,
       className: "AchievementIcon",
     });
   },
   2: () => {
     return React.createElement("img", {
-      src: add3users,
+      src: add3userspartners,
       className: "AchievementIcon",
     });
   },
   3: () => {
     return React.createElement("img", {
-      src: add5users,
+      src: add5userspartners,
       className: "AchievementIcon",
     });
   },
@@ -63,8 +67,8 @@ export const achievementsPics = {
   },
   6: () => {
     return React.createElement("img", {
-      src: twitter,
-      className: "AchievementIcon",
+      src: retweet12,
+      className: "AchievementIconRet",
     });
   },
   7: () => {
@@ -82,7 +86,7 @@ export const achievementsPics = {
   },
   9: () => {
     return React.createElement("img", {
-      src: bridgenft,
+      src: bridgenftpartners,
       className: "AchievementIcon",
     });
   },
@@ -148,13 +152,13 @@ export const achievementsPics = {
   },
   20: () => {
     return React.createElement("img", {
-      src: bridge3nfts,
+      src: bridge3nftspartners,
       className: "AchievementIcon",
     });
   },
   21: () => {
     return React.createElement("img", {
-      src: bridge5nfts,
+      src: bridge5nftspartners,
       className: "AchievementIcon",
     });
   },
