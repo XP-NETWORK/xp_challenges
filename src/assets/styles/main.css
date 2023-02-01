@@ -533,7 +533,8 @@ header button {
 }
 
 .frameImage {
-  width: 1288px;
+  width: 100%;
+  margin: auto;
 }
 
 .signupPage .signUpContainer button {

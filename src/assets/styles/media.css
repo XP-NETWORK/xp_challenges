@@ -136,7 +136,9 @@ frame top 500px
   }
 
   .userFrameCi {
-    position: unset;
+    position: absolute;
+    bottom: 310px;
+    left: 15px;
     width: 91px;
     height: 91px;
     margin: 0 auto;
@@ -446,7 +448,12 @@ frame top 500px
     width: 100%;
     justify-content: center !important;
   }
-
+  /* .frameImage {
+    width: 343px;
+  } */
+  .frameImageCont {
+    margin-top: 130px;
+  }
   .signUpContainer .accent svg {
     margin-right: 16px;
   }

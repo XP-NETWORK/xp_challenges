@@ -7,6 +7,7 @@ import { withServices, ServiceContainer } from "hocs/withServices";
 import { useNavigate } from "react-router-dom";
 import UserWallet from "../auth/UserWallet";
 import frame from "../../assets/img/frame.png";
+import FrameMobile from "../../assets/img/FrameMobile.png";
 
 interface TelegramLoginProps {
   serviceContainer: ServiceContainer;
@@ -26,6 +27,19 @@ function TelegramLogin(props: TelegramLoginProps) {
   const navigate = useNavigate();
   const container = useRef<HTMLDivElement | null>(null);
   const button = useRef<HTMLButtonElement | null>(null);
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 768;
 
   useEffect(() => {
     window.__GLOBAL_VAR__ = window.__GLOBAL_VAR__ || {};
@@ -81,7 +95,7 @@ function TelegramLogin(props: TelegramLoginProps) {
     // </div>
     <div className="frameImageCont">
       <div>{userData?.wallets?.length ? <UserWallet /> : ""}</div>
-      <img className="frameImage"  src={frame} alt="asdfa" />
+      <img className="frameImage" src={isMobile ? FrameMobile : frame} alt="frameImage" />
     </div>
   );
 }
