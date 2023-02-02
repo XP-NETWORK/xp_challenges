@@ -28,7 +28,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
   }));
 
   const noIcons = [7, 19, 18];
-  const twitter = [4,5,6,19];
+  const twitter = [4, 5, 6, 19];
 
   const dispatch = useDispatch();
 
@@ -49,29 +49,17 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
 
   return (
     <div className="achievements" id="achivs">
-      {/* <h2>Achievements</h2>
-      <p style={{ marginTop: "10px" }}>More completed tasks = better chances to win</p> */}
-
       <div className="container" style={{ marginTop: "60px" }}>
         <div className="row">
           {achievements.map((item, index) => {
-            //const { achievmentNumber, description, name, progressBarLength, link } = achievment
             const achievment = fabric(item, project!);
             const {
               data: { miniIcon, achievmentNumber, name, progressBarLength, description },
             } = achievment;
             const userProgress = achievment.getUserProgress(userAchievements);
             const completed = justCompleted.includes(index);
-
             //@ts-ignore
-            let AchievementIcon = achievementsPics[achievmentNumber];
-
-            if (Array.isArray(AchievementIcon)) {
-              AchievementIcon = description.includes("Connect wallet")
-                ? AchievementIcon[1]
-                : AchievementIcon[0];
-            }
-
+            const AchievementIcon = achievementsPics[achievmentNumber];
             return (
               <div className="col-12 col-md-6 col-lg-4" key={`achivCard-${achievmentNumber}`}>
                 <div
@@ -115,7 +103,9 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                           ? () => false
                           : achievementsHandlers[name](
                               userData,
-                              twitter.includes(achievmentNumber) ?  async () => await achievment.getLink() : undefined,
+                              twitter.includes(achievmentNumber)
+                                ? async () => await achievment.getLink()
+                                : undefined,
                               dispatch,
                               achievmentNumber,
                               setClicked
