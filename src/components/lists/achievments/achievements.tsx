@@ -27,8 +27,8 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
     clickedAchiev: state.global.clickedAchiev,
   }));
 
-  const noIcons = [7, 19, 18];
-  const twitter = [4, 5, 6, 19];
+  const noIcons = [1, 2, 3];
+  const twitter = [12, 13, 14, 15];
 
   const dispatch = useDispatch();
 
