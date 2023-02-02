@@ -51,12 +51,12 @@ const Container = (Profile: FC<ProfileProps>) =>
       console.log("-------------------------------------");
       console.log({
         wallets: userData?.wallets ? userData?.wallets[0] : "No wallet",
-        sender: data.senderAddress.toUpperCase(),
+        sender: data?.senderAddress?.toUpperCase(),
       });
 
       if (
         userData?.wallets &&
-        userData?.wallets[0].address.toUpperCase() === data.senderAddress.toUpperCase()
+        userData?.wallets[0]?.address?.toUpperCase() === data?.senderAddress?.toUpperCase()
       ) {
         dispatch(setTrxModal(true));
       }
