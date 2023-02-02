@@ -11,8 +11,8 @@ import connectWallet1 from "../../../assets/img/icons/connectWallet1.png";
 import Amessage from "../../../assets/img/icons/Amessage.png";
 import Bmessage from "../../../assets/img/icons/Bmessages.png";
 import Cmessage from "../../../assets/img/icons/Cmessages.png";
-import Dmessage from "../../../assets/img/icons/Dmessages.png";
-import Emessage from "../../../assets/img/icons/Emessages.png";
+// import Dmessage from "../../../assets/img/icons/Dmessages.png";
+// import Emessage from "../../../assets/img/icons/Emessages.png";
 import bridge3nfts from "../../../assets/img/icons/bridge3nfts.png";
 import bridge5nfts from "../../../assets/img/icons/bridge5nfts.png";
 import bridgenft from "../../../assets/img/icons/bridgenft.png";
@@ -37,126 +37,161 @@ export type AchievementsProps = {
 export const achievementsPics = {
   1: () => {
     return React.createElement("img", {
-      src: adduserpartners,
+      src: connectWallet1,
       className: "AchievementIcon",
     });
   },
   2: () => {
     return React.createElement("img", {
-      src: add3userspartners,
+      src: twitter,
       className: "AchievementIcon",
     });
   },
   3: () => {
     return React.createElement("img", {
-      src: add5userspartners,
+      src: subscribetonewsletter,
       className: "AchievementIcon",
     });
   },
   4: () => {
     return React.createElement("img", {
-      src: twitter,
+      src: telegram1,
       className: "AchievementIcon",
     });
   },
   5: () => {
     return React.createElement("img", {
-      src: twitter,
+      src: telegram1,
       className: "AchievementIcon",
     });
   },
   6: () => {
     return React.createElement("img", {
-      src: retweet12,
-      className: "AchievementIconRet",
+      src: adduserpartners,
+      className: "AchievementIcon",
     });
   },
   7: () => {
-
     return React.createElement("img", {
-      src: connectWallet1,
+      src: add3userspartners,
       className: "AchievementIcon",
     });
   },
   8: () => {
     return React.createElement("img", {
-      src: bridgenft,
+      src: add5userspartners,
       className: "AchievementIcon",
     });
   },
   9: () => {
     return React.createElement("img", {
-      src: bridgenftpartners,
+      src: adduserpartners,
       className: "AchievementIcon",
     });
   },
   10: () => {
     return React.createElement("img", {
-      src: bridge3nfts,
+      src: add3userspartners,
       className: "AchievementIcon",
     });
   },
   11: () => {
     return React.createElement("img", {
-      src: bridge5nfts,
+      src: add5userspartners,
       className: "AchievementIcon",
     });
   },
   12: () => {
     return React.createElement("img", {
-      src: Amessage,
+      src: twitter,
       className: "AchievementIcon",
     });
   },
   13: () => {
     return React.createElement("img", {
-      src: Bmessage,
-      className: "AchievementIcon",
+      src: retweet12,
+      className: "AchievementIconRet",
     });
   },
   14: () => {
-    return React.createElement("img", {
-      src: Cmessage,
-      className: "AchievementIcon",
-    });
-  },
-  15: () => {
-    return React.createElement("img", {
-      src: Dmessage,
-      className: "AchievementIcon",
-    });
-  },
-  16: () => {
-    return React.createElement("img", {
-      src: Emessage,
-      className: "AchievementIcon",
-    });
-  },
-  17: () => {
-    return React.createElement("img", {
-      src: telegram1,
-      className: "AchievementIcon",
-    });
-  },
-  18: () => {
-    return React.createElement("img", {
-      src: subscribetonewsletter,
-      className: "AchievementIcon",
-    });
-  },
-  19: () => {
     return React.createElement("img", {
       src: twitter,
       className: "AchievementIcon",
     });
   },
+  15: () => {
+    return React.createElement("img", {
+      src: retweet12,
+      className: "AchievementIconRet",
+    });
+  },
+  16: () => {
+    return React.createElement("img", {
+      src: Amessage,
+      className: "AchievementIcon",
+    });
+  },
+  17: () => {
+    return React.createElement("img", {
+      src: Bmessage,
+      className: "AchievementIcon",
+    });
+  },
+  18: () => {
+    return React.createElement("img", {
+      src: Cmessage,
+      className: "AchievementIcon",
+    });
+  },
+  19: () => {
+    return React.createElement("img", {
+      src: Amessage,
+      className: "AchievementIcon",
+    });
+  },
   20: () => {
+    return React.createElement("img", {
+      src: Bmessage,
+      className: "AchievementIcon",
+    });
+  },
+  21: () => {
+    return React.createElement("img", {
+      src: Cmessage,
+      className: "AchievementIcon",
+    });
+  },
+  22: () => {
+    return React.createElement("img", {
+      src: bridgenft,
+      className: "AchievementIcon",
+    });
+  },
+  23: () => {
+    return React.createElement("img", {
+      src: bridge3nfts,
+      className: "AchievementIcon",
+    });
+  },
+  24: () => {
+    return React.createElement("img", {
+      src: bridge5nfts,
+      className: "AchievementIcon",
+    });
+  },
+  25: () => {
+    return React.createElement("img", {
+      src: bridgenftpartners,
+      className: "AchievementIcon",
+    });
+  },
+  26: () => {
     return React.createElement("img", {
       src: bridge3nftspartners,
       className: "AchievementIcon",
     });
   },
-  21: () => {
+  27: () => {
     return React.createElement("img", {
       src: bridge5nftspartners,
       className: "AchievementIcon",
