@@ -62,7 +62,7 @@ class Api {
     chain: string; address: string
   }) {
     try {
-      return await axios.patch(this.base + `/addWallet?telegramUsername=${user.data.telegramUsername}&address=${wallet.address}&chain=${wallet.chain}`);
+      return await axios.patch(this.base + `/addWallet?telegramUsername=${user.data.telegramUsername}&address=${wallet?.address}&chain=${wallet?.chain}`);
     } catch (e) {
       console.log(e, 'in updateWallet')
     }

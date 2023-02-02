@@ -27,7 +27,7 @@ const UserWallet = () => {
   return (
     <div className={`userWalletWrapper ${show ? "showDD" : ""}`}>
       <div className="userWallet flexRow">
-        <span>{address.toLocaleLowerCase()}</span>
+        <span>{address?.toLocaleLowerCase()}</span>
         {fullAddress && (
           <Jazzicon diameter={22} seed={jsNumberForAddress(fullAddress)} />
         )}

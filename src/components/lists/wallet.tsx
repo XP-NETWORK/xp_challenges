@@ -24,8 +24,8 @@ const WalletList = ({ serviceContainer, close }: WalletListProps) => {
   const preserve = async (account: any) => {
     if (account && account.chain) {
       const wallet = {
-        chain: account.chain,
-        address: account.address,
+        chain: account?.chain,
+        address: account?.address,
       };
 
       if (userData) {
@@ -53,7 +53,7 @@ const WalletList = ({ serviceContainer, close }: WalletListProps) => {
     dispatch(
       setModal({
         type: "Success",
-        wallet: account.address,
+        wallet: account?.address,
       })
     );
   };
