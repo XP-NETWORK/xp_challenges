@@ -49,7 +49,7 @@ class Achievment {
             : 0
     }
 
-    async getLink() {
+    async getLink(achievmentNumber: number) {
         let url: string | undefined;
         switch (this.data.name) {
             case AchivType.Telegram: {
@@ -58,14 +58,17 @@ class Achievment {
 
             case AchivType.Twitter: {
                 url = 'https://twitter.com/';
-
                 if (/follow/i.test(this.data.description)) {
                     url += (/xp\.network/i.test(this.data.description)) ? `intent/user?user_id=1376812227316088832` : `intent/user?user_id=${this.project?.twitterPartnerId}`
 
                 } else {
-                    const lastTweet = await axios.get("https://xp-challenges.herokuapp.com/getLastTweet")
-                    console.log("this" , lastTweet.data.data);
-                    
+                    let lastTweet;
+                    if (achievmentNumber === 15) {
+                        lastTweet = await axios.get(`https://xp-challenges.herokuapp.com/getLastTweet?achievmentNumber=${achievmentNumber}`)
+                    } else {
+                        lastTweet = await axios.get("https://xp-challenges.herokuapp.com/getLastTweet")
+                    }
+                    console.log("this", lastTweet.data.data);
                     url += `intent/retweet?tweet_id=${lastTweet.data.data}`
                 }
                 break;

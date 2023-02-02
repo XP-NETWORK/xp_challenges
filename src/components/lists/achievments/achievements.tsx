@@ -104,7 +104,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                           : achievementsHandlers[name](
                               userData,
                               twitter.includes(achievmentNumber)
-                                ? async () => await achievment.getLink()
+                                ? async () => await achievment.getLink(achievmentNumber)
                                 : undefined,
                               dispatch,
                               achievmentNumber,
