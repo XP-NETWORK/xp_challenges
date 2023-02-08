@@ -52,8 +52,9 @@
 }
 
 .profileNameStyle {
-  font-family: "Chakra Petch";
+  font-family: 'chakra-petch';
   font-style: normal;
+  font-weight: 400;
   font-size: 34px;
   color: #fff !important;
   letter-spacing: 0.09em;
