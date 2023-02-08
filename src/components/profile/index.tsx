@@ -51,7 +51,7 @@ export const ProfileDetails: FC<ProgressBarProps & IProfileData> = ({
         <div className="flexColumnProfile">
           <Avatar />
           <div className="profileTopFlex">
-            <div className="profileNameStyle">@{telegramData?.telegramUsername}</div>
+            <div className="telegramUsername">@{telegramData?.telegramUsername}</div>
             <ProjectTimer />
           </div>
           <div className="profileTopFlex second">
