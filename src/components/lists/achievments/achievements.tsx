@@ -117,7 +117,7 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                     >
                       {userProgress?.completed
                         ? "COMPLETED 🎉"
-                        : achievmentNumber === 7
+                        : achievmentNumber === 1
                         ? "Connect wallet"
                         : achievementsBtns[name]}
                     </button>
