@@ -1,24 +1,24 @@
 import { ProjectTimer } from "components/elements/ProjectTimer";
 import { FC } from "react";
-import ExampleImage from "../../assets/img/heroSection/drifters.png";
 import { TelegramButton } from "components/auth/TelegramButton";
 import "./heroSection.css";
 import { useSelector } from "react-redux";
 import { ReduxState } from "store";
+import converb from "./converb.png";
 
 export const HeroSection: FC = () => {
   const { project } = useSelector((state: ReduxState) => ({
     project: state.global.project,
   }));
-
+  console.log(project);
   return (
     <>
       <section className="heroContainer">
         <div className="heroNFTname">
-          {project ? project.name : ""} <br /> NFT collection <br /> giveaway
+          {"OKC nft"} <br /> collection <br /> giveaway
         </div>
         <div className="heroCollectionStyle">
-          <img src={project ? project?.coverImage : ExampleImage} alt="nftCollectionName" />
+          <img src={converb} alt="nftCollectionName" />
         </div>
         <div className="heroButtonsSection">
           <TelegramButton />
@@ -28,7 +28,7 @@ export const HeroSection: FC = () => {
             }}
             className="howWorkButtonStyle"
           >
-              <p className="HOWITWORKS">HOW IT WORKS</p>
+            <p className="HOWITWORKS">HOW IT WORKS</p>
           </button>
         </div>
         <div className="heroTimeContainer">

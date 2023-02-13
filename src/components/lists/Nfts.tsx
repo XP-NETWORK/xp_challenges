@@ -8,6 +8,33 @@ import { useSelector } from "react-redux";
 import { ReduxState } from "store";
 import { NFT } from "store/types";
 import { importAll } from "../../utils";
+import q from "./q.png";
+import w from "./w.png";
+import e from "./e.png";
+import r from "./r.png";
+import t from "./t.png";
+import y from "./y.png";
+import u from "./u.png";
+import i from "./i.png";
+import o from "./o.png";
+import p from "./p.png";
+import a from "./a.png";
+import s from "./s.png";
+
+const images = [
+  { src: q },
+  { src: w },
+  { src: r },
+  { src: t },
+  { src: y },
+  { src: u },
+  { src: i },
+  { src: o },
+  { src: p },
+  { src: a },
+  { src: s },
+  { src: e },
+];
 
 const NFTList = () => {
   const { project } = useSelector((state: ReduxState) => ({
@@ -19,7 +46,7 @@ const NFTList = () => {
 
   const mock = pics.map((pic) => ({ src: pic.image }));
 
-  const nfts = mock.map((item) => (
+  const nfts = images.map((item) => (
     <div className="nftWrapper">
       <img src={item.src} className={`nft`} />
     </div>

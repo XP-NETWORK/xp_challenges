@@ -16,7 +16,7 @@ export const getUserByUniqueId = createAsyncThunk(
   async (uniqueId: string, thunkAPI) => {
     try {
       const response = await axiosInstance(
-        "https://xp-challenges.herokuapp.com/"
+        "https://demo-challenge.herokuapp.com/"
       ).get(`getUsersByregisteredId?registeredId=${uniqueId}`);
       return response.data;
     } catch (error) {
