@@ -451,7 +451,7 @@ header button {
   position: relative;
   margin-left: 55px;
   z-index: 300;
-  width: 24px;
+  width: 26px;
   height: 24px;
 }
 .vector {
@@ -470,6 +470,15 @@ header button {
   transform: translate(-50%, -50%);
   z-index: 100;
   width: 76px;
+  height: 88px;
+}
+.AchievementIcon1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 90px;
   height: 88px;
 }
 .AchievementIconRet {

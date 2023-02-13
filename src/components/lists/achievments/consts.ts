@@ -19,6 +19,9 @@ import bridgenft from "../../../assets/img/icons/bridgenft.png";
 import bridge3nftspartners from "../../../assets/img/bridge3nftspartners.png";
 import bridge5nftspartners from "../../../assets/img/bridge5nftspartners.png";
 import bridgenftpartners from "../../../assets/img/bridgenftpartners.png";
+import msg1 from "./msg1.png";
+import msg3 from "./msg3.png";
+import msg5 from "./msg5.png";
 import { IUserAchievments, UserData } from "store/models/user";
 import person from "../../../assets/img/icons/AchivPerson.svg";
 import personCompleted from "../../../assets/img/icons/Group 3324.svg";
@@ -127,19 +130,19 @@ export const achievementsPics = {
   },
   16: () => {
     return React.createElement("img", {
-      src: Amessage,
-      className: "AchievementIcon",
+      src: msg1,
+      className: "AchievementIcon1",
     });
   },
   17: () => {
     return React.createElement("img", {
-      src: Bmessage,
+      src: msg3,
       className: "AchievementIcon",
     });
   },
   18: () => {
     return React.createElement("img", {
-      src: Cmessage,
+      src: msg5,
       className: "AchievementIcon",
     });
   },
