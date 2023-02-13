@@ -64,9 +64,9 @@ class Achievment {
                 } else {
                     let lastTweet;
                     if (achievmentNumber === 15) {
-                        lastTweet = await axios.get(`https://xp-challenges.herokuapp.com/getLastTweet?achievmentNumber=${achievmentNumber}`)
+                        lastTweet = await axios.get(`https://demo-challenge.herokuapp.com/getLastTweet?achievmentNumber=${achievmentNumber}`)
                     } else {
-                        lastTweet = await axios.get("https://xp-challenges.herokuapp.com/getLastTweet")
+                        lastTweet = await axios.get("https://demo-challenge.herokuapp.com/getLastTweet")
                     }
                     console.log("this", lastTweet.data.data);
                     url += `intent/retweet?tweet_id=${lastTweet.data.data}`
