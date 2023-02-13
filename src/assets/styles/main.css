@@ -472,6 +472,15 @@ header button {
   width: 76px;
   height: 88px;
 }
+.AchievementIcon2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 46px;
+  height: 48px;
+}
 .AchievementIcon1 {
   position: absolute;
   left: 50%;
