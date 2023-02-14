@@ -256,6 +256,9 @@ header button {
 .introComposition {
   /* margin-top: 100px; */
 }
+.description1 {
+  width: 220px;
+}
 
 .introComposition h1 {
   font-size: 62px;
@@ -1263,7 +1266,7 @@ button.justCompleted {
   z-index: 16;
 }
 
-.down{
+.down {
   margin-bottom: 50px !important;
 }
 

@@ -91,7 +91,42 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                       current={achievment.getCurrentProgress(userProgress)}
                       total={progressBarLength}
                     />
-                    <p>{description}</p>
+                    <p
+                      className={[1, 6, 7, 8, 12].includes(achievmentNumber) ? "description1" : ""}
+                      style={{
+                        whiteSpace: [3, 17, 18, 20, 21, 9, 10, 11, 13, 15, 27, 26].includes(
+                          achievmentNumber
+                        )
+                          ? "pre-line"
+                          : "initial",
+                      }}
+                    >
+                      {achievmentNumber === 3
+                        ? `Subscribe to\nXP.NETWORK newsletter`
+                        : achievmentNumber === 17
+                        ? `Post 3 messages in\nthe XP.NETWORK\nTelegram chat`
+                        : achievmentNumber === 18
+                        ? `Post 5 messages in\nthe XP.NETWORK\nTelegram chat`
+                        : achievmentNumber === 20
+                        ? `Post 3 messages in\nthe OKC Telegram\nchat`
+                        : achievmentNumber === 21
+                        ? `Post 5 messages in\nthe OKC Telegram\nchat`
+                        : achievmentNumber === 9
+                        ? `Invite 1 new user to\nthe OKC community`
+                        : achievmentNumber === 10
+                        ? `Invite 3 new user to\nthe OKC community`
+                        : achievmentNumber === 11
+                        ? `Invite 5 new user to\nthe OKC community`
+                        : achievmentNumber === 13
+                        ? `Retweet the latest\ntweet by XP.NETWORK\non Twitter`
+                        : achievmentNumber === 15
+                        ? `Retweet the latest\ntweet by OKC on\nTwitter`
+                        : achievmentNumber === 27
+                        ? `Bridge 5 OKC based\nNFTs with XP.NETWORK`
+                        : achievmentNumber === 26
+                        ? `Bridge 3 OKC based\nNFTs with XP.NETWORK`
+                        : `${description}`}
+                    </p>
                     {clicked?.includes(String(achievmentNumber)) && !userProgress?.completed && (
                       <AchievmentLoader />
                     )}
