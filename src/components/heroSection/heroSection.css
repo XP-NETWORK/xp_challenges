@@ -17,16 +17,14 @@
 
 .heroCollectionStyle {
   position: absolute;
-  left: 45%;
+  left: 64%;
   right: auto;
-  width: 879px;
-  height: auto;
-  bottom: 0;
+  bottom: -105px;
 }
 
 .heroCollectionStyle img {
-  width: 715px;
-  height: auto;
+  width: 773px;
+  height: 826px;
 }
 
 .heroButtonsSection,
