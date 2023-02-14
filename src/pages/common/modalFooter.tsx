@@ -12,7 +12,10 @@ const MoldalFooter = () => {
           style={{ cursor: "pointer" }}
           onClick={() => window.open("https://twitter.com/xpnetwork_")}
         />
-        <Telegram style={{ cursor: "pointer" }} />
+        <Telegram
+          style={{ cursor: "pointer" }}
+          onClick={() => window.open("https://web.telegram.org/z/#-1466443295")}
+        />
       </div>
       <div className="logo">
         <Logo />
