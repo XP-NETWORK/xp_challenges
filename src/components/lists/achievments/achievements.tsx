@@ -155,6 +155,8 @@ function Achievements({ userAchievements, userData }: AchievementsProps) {
                         ? "COMPLETED 🎉"
                         : achievmentNumber === 1
                         ? "Connect wallet"
+                        : achievmentNumber === 3
+                        ? "Subscribe"
                         : achievementsBtns[name]}
                     </button>
                   ) : (
