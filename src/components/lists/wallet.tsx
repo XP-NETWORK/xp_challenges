@@ -22,9 +22,9 @@ const WalletList = ({ serviceContainer, close }: WalletListProps) => {
   }));
 
   const preserve = async (account: any) => {
-    if (account && account.chain) {
+    if (account) {
       const wallet = {
-        chain: account?.chain,
+        chain: account?.chain ? account?.chain : undefined,
         address: account?.address,
       };
 
