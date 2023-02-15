@@ -28,6 +28,17 @@ frame top 500px
   .introTimeline.flexRow {
     justify-content: space-evenly;
   }
+  .heroCollectionStyle {
+    position: absolute;
+    left: 560px;
+    right: auto;
+    bottom: -105px;
+  }
+
+  .heroCollectionStyle img {
+    width: 773px;
+    height: 826px;
+  }
 }
 
 @media only screen and (max-width: 1215px) {
@@ -45,6 +56,18 @@ frame top 500px
   }
   header nav.headerNav {
     display: none;
+  }
+
+  .heroCollectionStyle {
+    position: absolute;
+    left: 440px;
+    right: auto;
+    bottom: -105px;
+  }
+
+  .heroCollectionStyle img {
+    width: 773px;
+    height: 826px;
   }
 }
 
@@ -77,6 +100,13 @@ frame top 500px
   header button {
     margin-right: 0;
     margin-top: 10px;
+  }
+
+  .heroCollectionStyle {
+    position: absolute;
+    left: 400px;
+    right: auto;
+    bottom: -105px;
   }
 }
 
@@ -128,7 +158,7 @@ frame top 500px
   }
 
   .nftList {
-    margin-top: 28px;
+    position: absolute;
   }
   .customModal {
     padding-top: 30px !important;
@@ -146,6 +176,7 @@ frame top 500px
   }
   .profileTopFlex .clock .segment span {
     bottom: 0px;
+    margin: 25px;
   }
 
   .viewLeaderBoardButton {
@@ -160,7 +191,7 @@ frame top 500px
   }
   .profileNameStyle {
     margin-bottom: 52px;
-    font-family: 'chakra-petch';
+    font-family: "chakra-petch";
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -303,6 +334,10 @@ frame top 500px
     transform: translate(-45%, 110%);
   }
 
+  .last {
+    display: none !important;
+  }
+
   .introTimeline-item span {
     font-size: 20px;
   }
@@ -320,7 +355,7 @@ frame top 500px
     line-height: 39px;
     text-align: center;
     margin: auto;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
   }
   .howWorkButtonStyle {
     margin-top: 16px;
@@ -332,12 +367,14 @@ frame top 500px
     margin-top: 28px;
   }
   .heroCollectionStyle {
-    position: static;
-    order: 5;
+    position: relative;
+    order: 4;
     width: auto;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 25px;
+    margin: auto;
+    margin-top: 0px;
+    height: 350px;
+    top: 0px;
+    left: 0px;
   }
   .heroCollectionStyle img {
     display: block;

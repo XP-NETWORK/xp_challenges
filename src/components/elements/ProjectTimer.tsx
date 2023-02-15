@@ -63,7 +63,7 @@ export const ProjectTimer: FC = () => {
                   <span>{period[index]}</span>
                 </div>
 
-                {index !== 3 && <span>:</span> // need to fix that
+                {index !== 3 && <span  className={`${index === time.length - 2 ? "last" : ""}`}>:</span> // need to fix that
                 }
               </React.Fragment>
             );
