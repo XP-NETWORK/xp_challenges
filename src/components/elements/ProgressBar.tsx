@@ -23,7 +23,7 @@ export const ProgressBar: FC<ProgressBarProps> = ({ current, total, loc }) => {
       <div className={`${loc ? "secondBarWrap" : "barWrap"} flexRow`}>
         <div className="bar">
           <div
-            className={`inner flexRow ${current === 0 ? "empty" : ""}`}
+            className={`inner flexRow`}
             ref={(node) => {
               if (node) {
                 bar = node;
@@ -36,7 +36,7 @@ export const ProgressBar: FC<ProgressBarProps> = ({ current, total, loc }) => {
                 <div
                   key={`innerSegment-${idx}-${Math.random()}`}
                   className={`inner-segment ${idx === current - 1 ? "last" : ""} ${
-                    idx < current ? "completed" : ""
+                    idx < current ? "completed" : " completed notCompleted"
                   }`}
                 ></div>
               ))}
