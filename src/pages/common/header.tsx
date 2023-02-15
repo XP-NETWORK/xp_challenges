@@ -7,20 +7,10 @@ import Menu from "../../components/modals/menu";
 import UserWallet from "components/auth/UserWallet";
 
 import { useNavigate } from "react-router";
+import { Dummyx } from  "../../components/auth/Dummy";
 
-const BurgerBtn = ({
-  menuOpen,
-  menuHandler,
-}: {
-  menuOpen: boolean;
-  menuHandler: any;
-}) => {
-  return (
-    <div
-      onClick={menuHandler}
-      className={`burgerBtn ${menuOpen ? "close" : ""}`}
-    ></div>
-  );
+const BurgerBtn = ({ menuOpen, menuHandler }: { menuOpen: boolean; menuHandler: any }) => {
+  return <div onClick={menuHandler} className={`burgerBtn ${menuOpen ? "close" : ""}`}></div>;
 };
 
 //withTimer
@@ -43,6 +33,7 @@ export const Header: FC = () => {
           <div className="XPTitleStyle">XP.CHALLENGE</div>
         </div>
         <div className="headerWrapper-right flexRow">
+          <Dummyx />
           <UserWallet />
           <BurgerBtn menuOpen={menuOpen} menuHandler={menuHandler} />
         </div>

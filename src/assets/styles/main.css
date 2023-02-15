@@ -1098,6 +1098,38 @@ body.showModal header .menu {
   margin-left: 12px;
   border-radius: 50%;
 }
+.dummy2Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.dummy2 {
+  margin-right: 8px;
+}
+.dummy2Text {
+  margin-right: 25px;
+}
+.svg-container {
+  margin-right: 8px;
+  position: relative;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.dummy2Container:hover svg rect {
+  fill: #C71A33;
+}
+
+.svg-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
 
 .userWalletWrapper {
   display: none;
