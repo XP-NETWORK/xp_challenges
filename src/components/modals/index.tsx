@@ -96,6 +96,28 @@ const Modal = ({ modal }: { modal: IModal }) => {
       );
       break;
     }
+    case "Login": {
+      body = (
+        <div className="successModal subscribe">
+          <h2>Log in Sucsses</h2>
+          <div className="emblem flexRow down">
+            <GreenCheck />
+            {modal.wallet ? <img src={walletConnected} alt="walletConnected" /> : <Avatar />}
+            {modal.telegramAccount ? (
+              <span>@{modal.telegramAccount}</span>
+            ) : modal.wallet ? (
+              <span className="walletAddress"> {truncate(modal.wallet, 10)}</span>
+            ) : (
+              ""
+            )}
+          </div>
+          <button className="accent" onClick={() => dispatch(setModal(undefined))}>
+            Go back to achievements
+          </button>
+        </div>
+      );
+      break;
+    }
 
     case "Bridge": {
       body = (

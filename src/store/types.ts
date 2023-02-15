@@ -104,6 +104,7 @@ export type IModal = {
   | "confirmReg"
   | "EmailSubscribe"
   | "Success"
+  | "Login"
   | "AchievmentCompleted"
   | "Bridge";
   text?: string;
