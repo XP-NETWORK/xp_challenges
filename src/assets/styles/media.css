@@ -16,6 +16,17 @@
     background-size: contain;
     background-position: top;
   }
+  .heroCollectionStyle {
+    position: absolute;
+    left: 620px;
+    right: auto;
+    bottom: -105px;
+  }
+
+  .heroCollectionStyle img {
+    width: 773px;
+    height: 826px;
+  }
 }
 /*start here
 decor composition lines
