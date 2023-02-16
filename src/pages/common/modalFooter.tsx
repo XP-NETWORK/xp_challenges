@@ -14,7 +14,7 @@ const MoldalFooter = () => {
         />
         <Telegram
           style={{ cursor: "pointer" }}
-          onClick={() => window.open("https://web.telegram.org/z/#-1466443295")}
+          onClick={() => window.open("https://t.me/XP_network")}
         />
       </div>
       <div className="logo">

@@ -34,6 +34,18 @@ const images = [
   { src: a },
   { src: s },
   { src: e },
+  { src: q },
+  { src: w },
+  { src: r },
+  { src: t },
+  { src: y },
+  { src: u },
+  { src: i },
+  { src: o },
+  { src: p },
+  { src: a },
+  { src: s },
+  { src: e },
 ];
 
 const NFTList = () => {
