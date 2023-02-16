@@ -66,7 +66,7 @@ export const Router: FC = () => {
         location.pathname !== "/" && nav("/");
         dispatch(
           setModal({
-            type: "Success",
+            type: "Login",
             telegramAccount: telegramUser.telegramUsername,
             telegramPic: telegramUser.telegramPhotoUrl,
           })

@@ -99,7 +99,7 @@ const Modal = ({ modal }: { modal: IModal }) => {
     case "Login": {
       body = (
         <div className="successModal subscribe">
-          <h2>Log in Sucsses</h2>
+          <h2>Log in Success</h2>
           <div className="emblem flexRow down">
             <GreenCheck />
             {modal.wallet ? <img src={walletConnected} alt="walletConnected" /> : <Avatar />}
