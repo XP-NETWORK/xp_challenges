@@ -76,11 +76,9 @@ const { provider } = configureChains(wcSupportedChains, [
 
 const wagmiClient = createClient({
   autoConnect: true,
-
   connectors: modalConnectors({
     projectId: "81963a335abea5e800ab8bd57eaee203",
     version: "1",
-
     appName: "XP.NETWORK Multi-chain NFT bridge",
     chains: wcSupportedChains,
   }),
