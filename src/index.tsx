@@ -55,6 +55,13 @@ const App = () => {
           serviceContainer.wallet.connectMaiarExtension();
         }
       });
+    const handleBeforeUnload = () => {
+      localStorage.clear();
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, [serviceContainer]);
 
   const router = AppContainer(Router);
