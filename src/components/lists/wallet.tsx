@@ -1,4 +1,3 @@
-import React from "react";
 import metamask from "../../assets/img/icons/MetaMask.svg";
 import maiar from "../../assets/img/icons/Maiar.svg";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,6 +7,7 @@ import fabric from "../../store/models/user";
 import { setModal, setUserData, setWallet } from "../../store/reducer/global";
 import { ReactComponent as WalletIcon } from "../../assets/img/icons/teenyicons_wallet-alt-outline.svg";
 import { useWeb3Modal } from "@web3modal/react";
+import { useAccount } from "wagmi";
 
 type WalletListProps = {
   serviceContainer: ServiceContainer;
@@ -60,13 +60,20 @@ const WalletList = ({ serviceContainer, close }: WalletListProps) => {
     );
   };
 
+  useAccount({
+    onConnect({ address, connector, isReconnected }) {
+      console.log("Connected", { address, connector, isReconnected });
+      preserve(address);
+    },
+  });
+
   const metaMaskHandler = async () => {
     const userAgent = navigator.userAgent;
     if (/Safari/.test(userAgent) && !/Chrome/.test(userAgent)) {
-      await open();
+    await open();
     } else {
-      const account = await wallet.connectMetamask();
-      preserve(account);
+    const account = await wallet.connectMetamask();
+    preserve(account);
     }
   };
 
