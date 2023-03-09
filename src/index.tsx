@@ -21,6 +21,10 @@ import "./assets/styles/animations.css";
 import "./assets/styles/main.css";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./assets/styles/media.css";
+import { EthereumClient, modalConnectors, walletConnectProvider } from "@web3modal/ethereum";
+import { configureChains, createClient } from "wagmi";
+import * as allChains from "wagmi/chains";
+import { Web3Modal } from "@web3modal/react";
 
 export const config = {
   _DEFAULT_TWITTER_LINK: "https://twitter.com/xpnetwork_",
@@ -46,7 +50,7 @@ const App = () => {
   useEffect(() => {
     serviceContainer && setLoaded(true);
     false &&
-      window.addEventListener("keydown", (e) => {
+      window.addEventListener("keydown", e => {
         if (e.key === "o") {
           serviceContainer.wallet.connectMaiarExtension();
         }
@@ -62,9 +66,33 @@ const App = () => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-ignore
+const wcSupportedChains = Object.keys(allChains).map(key => allChains[key]);
+
+const { provider } = configureChains(wcSupportedChains, [
+  walletConnectProvider({ projectId: "81963a335abea5e800ab8bd57eaee203" }),
+]);
+
+const wagmiClient = createClient({
+  autoConnect: true,
+
+  connectors: modalConnectors({
+    projectId: "81963a335abea5e800ab8bd57eaee203",
+    version: "1",
+
+    appName: "XP.NETWORK Multi-chain NFT bridge",
+    chains: wcSupportedChains,
+  }),
+  provider,
+});
+
+const ethereumClient = new EthereumClient(wagmiClient, wcSupportedChains);
+
 ReactDOM.render(
   <ErrorBoundary>
     <BrowserRouter>
+      <Web3Modal projectId={"81963a335abea5e800ab8bd57eaee203"} ethereumClient={ethereumClient} />
       <App />
     </BrowserRouter>
   </ErrorBoundary>,

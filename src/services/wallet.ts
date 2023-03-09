@@ -6,11 +6,11 @@ import {
 
 import {chainName} from '../mockData'
 
-declare global {
-    interface Window { ethereum: any; }
-}
+// declare global {
+//     interface Window { ethereum: any; }
+// }
 
-window.ethereum = window.ethereum || {};
+// window.ethereum = window.ethereum || {};
 
 
 class Wallet {

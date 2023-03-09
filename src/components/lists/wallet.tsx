@@ -7,6 +7,7 @@ import { ReduxState } from "../../store/index";
 import fabric from "../../store/models/user";
 import { setModal, setUserData, setWallet } from "../../store/reducer/global";
 import { ReactComponent as WalletIcon } from "../../assets/img/icons/teenyicons_wallet-alt-outline.svg";
+import { useWeb3Modal } from "@web3modal/react";
 
 type WalletListProps = {
   serviceContainer: ServiceContainer;
@@ -16,6 +17,7 @@ type WalletListProps = {
 const WalletList = ({ serviceContainer, close }: WalletListProps) => {
   const { wallet, api } = serviceContainer;
   const dispatch = useDispatch();
+  const { open } = useWeb3Modal();
 
   const { userData } = useSelector((state: ReduxState) => ({
     userData: state.global.userData,
@@ -59,8 +61,13 @@ const WalletList = ({ serviceContainer, close }: WalletListProps) => {
   };
 
   const metaMaskHandler = async () => {
-    const account = await wallet.connectMetamask();
-    preserve(account);
+    const userAgent = navigator.userAgent;
+    if (/Safari/.test(userAgent) && !/Chrome/.test(userAgent)) {
+      await open();
+    } else {
+      const account = await wallet.connectMetamask();
+      preserve(account);
+    }
   };
 
   const maiarHandler = async () => {
