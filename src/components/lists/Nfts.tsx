@@ -8,18 +8,18 @@ import { useSelector } from "react-redux";
 import { ReduxState } from "store";
 import { NFT } from "store/types";
 import { importAll } from "../../utils";
-import q from "./q.png";
-import w from "./w.png";
-import e from "./e.png";
-import r from "./r.png";
-import t from "./t.png";
-import y from "./y.png";
-import u from "./u.png";
-import i from "./i.png";
-import o from "./o.png";
-import p from "./p.png";
-import a from "./a.png";
-import s from "./s.png";
+import q from "../../assets/img/q.png";
+import w from "../../assets/img/w.png";
+import e from "../../assets/img/e.png";
+import r from "../../assets/img/r.png";
+import t from "../../assets/img/t.png";
+import y from "../../assets/img/y.png";
+import u from "../../assets/img/u.png";
+import i from "../../assets/img/i.png";
+import o from "../../assets/img/o.png";
+import p from "../../assets/img/p.png";
+import a from "../../assets/img/a.png";
+import s from "../../assets/img/s.png";
 
 const images = [
   { src: q },
@@ -56,9 +56,9 @@ const NFTList = () => {
   const [pics, setPics] = useState<NFT[]>([]);
   const carousel = useRef<AliceCarousel | null>(null);
 
-  const mock = pics.map((pic) => ({ src: pic.image }));
+  const mock = pics.map(pic => ({ src: pic.image }));
 
-  const nfts = images.map((item) => (
+  const nfts = images.map(item => (
     <div className="nftWrapper">
       <img src={item.src} className={`nft`} />
     </div>
@@ -77,7 +77,7 @@ const NFTList = () => {
     <div className="nftList">
       <AliceCarousel
         infinite={true}
-        ref={(node) => {
+        ref={node => {
           if (node) {
             carousel.current = node;
           }

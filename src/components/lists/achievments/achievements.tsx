@@ -6,7 +6,7 @@ import { ReduxState } from "store";
 import { ReactComponent as Frame } from "../../../assets/img/icons/card-frame.svg";
 import ProgressBar from "components/elements/ProgressBar";
 import { setJustCompleted, setModal } from "../../../store/reducer/global";
-import okc from "./okc.png";
+import okc from "../../../assets/img/okc.png";
 import fabric from "../../../store/models/achievment";
 import {
   AchievementsProps,
