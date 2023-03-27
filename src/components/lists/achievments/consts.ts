@@ -11,8 +11,6 @@ import connectWallet1 from "../../../assets/img/icons/connectWallet1.png";
 import Amessage from "../../../assets/img/icons/Amessage.png";
 import Bmessage from "../../../assets/img/icons/Bmessages.png";
 import Cmessage from "../../../assets/img/icons/Cmessages.png";
-// import Dmessage from "../../../assets/img/icons/Dmessages.png";
-// import Emessage from "../../../assets/img/icons/Emessages.png";
 import bridge3nfts from "../../../assets/img/icons/bridge3nfts.png";
 import bridge5nfts from "../../../assets/img/icons/bridge5nfts.png";
 import bridgenft from "../../../assets/img/icons/bridgenft.png";
