@@ -1,5 +1,5 @@
 import React from "react";
-import dummy3 from "./dummy3.png";
+import dummy3 from "../../assets/img/dummy3.png";
 
 export const Dummyx = () => {
   return (
