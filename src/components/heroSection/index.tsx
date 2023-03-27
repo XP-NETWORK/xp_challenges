@@ -10,12 +10,13 @@ export const HeroSection: FC = () => {
   const { project } = useSelector((state: ReduxState) => ({
     project: state.global.project,
   }));
-  console.log(project);
   return (
     <>
       <section className="heroContainer">
         <div className="heroNFTname">
-          OKC nft <br /> collection <br /> giveaway
+          {project?.description.split("$").map((line, index) => (
+            <div key={index}>{line}</div>
+          ))}
         </div>
         <div className="heroCollectionStyle">
           <img src={converb} alt="nftCollectionName" />
