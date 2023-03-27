@@ -4,7 +4,7 @@ import { TelegramButton } from "components/auth/TelegramButton";
 import "./heroSection.css";
 import { useSelector } from "react-redux";
 import { ReduxState } from "store";
-import converb from "./converb.png";
+import converb from "../../assets/img/converb.png";
 
 export const HeroSection: FC = () => {
   const { project } = useSelector((state: ReduxState) => ({
