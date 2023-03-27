@@ -15,7 +15,7 @@ export const HeroSection: FC = () => {
     <>
       <section className="heroContainer">
         <div className="heroNFTname">
-          {"OKC nft"} <br /> collection <br /> giveaway
+          OKC nft <br /> collection <br /> giveaway
         </div>
         <div className="heroCollectionStyle">
           <img src={converb} alt="nftCollectionName" />
