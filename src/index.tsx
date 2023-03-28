@@ -37,10 +37,10 @@ export const config = {
 
 const App = () => {
   const [serviceContainer, setContainer] = useState<ServiceContainer>({
-    api: Api("https://demo-challenge.herokuapp.com"), //api("http://localhost:3011"), //api("https://dfiance-api.herokuapp.com"),
+    api: Api("https://xp-challenges.herokuapp.com"), //api("http://localhost:3011"), //api("https://dfiance-api.herokuapp.com"),
     imageLoader: ImageLoader(),
     telegram: TelegramService("XpChallengeAuth12Bot"), // must /setdomain to bot
-    socketWrapper: socket("wss://demo-challenge.herokuapp.com"),
+    socketWrapper: socket("wss://xp-challenges.herokuapp.com"),
     explorerSocketWrapper: ExplorerSocket("wss://dev-explorer-api.herokuapp.com/"),
     wallet: wallet(),
   });
