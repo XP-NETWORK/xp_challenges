@@ -66,7 +66,6 @@ const Collection = () => {
             )}
             <div className="row">
               {pics.map((pic, index) => {
-                console.log("pic", pic);
                 return (
                   <div
                     key={`collection-${index}`}

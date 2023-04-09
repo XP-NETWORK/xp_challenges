@@ -14,6 +14,7 @@ import { getUserByUniqueId } from "store/reducer/global";
 import { loadTelegramUniqueId } from "utils";
 import { setModal } from "store/reducer/global";
 import { useNavigate } from "react-router";
+import { ServiceContainer } from "hocs/withServices";
 
 const noscrollPages = ["signup"];
 
@@ -33,22 +34,34 @@ const PageNotFound = () => {
     }
   }, [tick]);
 
-  return <div>404. Page not found. You will be redirected to main page in {tick}..</div>;
+  return (
+    <div>
+      404. Page not found. You will be redirected to main page in {tick}..
+    </div>
+  );
 };
 
-export const Router: FC = () => {
+export const Router: FC = ({
+  serviceContainer,
+}: {
+  serviceContainer?: ServiceContainer;
+}) => {
   const location = useLocation();
 
   const nav = useNavigate();
-  const noscroll = Boolean(noscrollPages.find((p) => location.pathname.includes(p)));
+  const noscroll = Boolean(
+    noscrollPages.find((p) => location.pathname.includes(p))
+  );
 
   const dispatch = useDispatch();
-  const { telegramUser, init, modal, trxModal } = useSelector((state: ReduxState) => ({
-    telegramUser: state.global.telegramUser,
-    init: state.global.init,
-    modal: state.global.modal,
-    trxModal: state.global.trxModal,
-  }));
+  const { telegramUser, init, modal, trxModal } = useSelector(
+    (state: ReduxState) => ({
+      telegramUser: state.global.telegramUser,
+      init: state.global.init,
+      modal: state.global.modal,
+      trxModal: state.global.trxModal,
+    })
+  );
 
   useEffect(() => {
     loadData();
@@ -79,7 +92,12 @@ export const Router: FC = () => {
   }, [telegramUser]);
 
   const loadData = async () => {
-    await dispatch(getUserByUniqueId(loadTelegramUniqueId() as any) as any);
+    await dispatch(
+      getUserByUniqueId({
+        uniqueId: loadTelegramUniqueId(),
+        api: serviceContainer?.api,
+      }) as any
+    );
   };
 
   return (
@@ -87,7 +105,11 @@ export const Router: FC = () => {
       <Routes>
         <Route
           path="/"
-          element={<HomePage init={init}>{telegramUser ? <Profile /> : <Welcome />}</HomePage>}
+          element={
+            <HomePage init={init}>
+              {telegramUser ? <Profile /> : <Welcome />}
+            </HomePage>
+          }
         />
 
         <Route

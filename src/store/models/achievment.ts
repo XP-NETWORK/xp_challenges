@@ -1,10 +1,10 @@
 
 import { IACHIEVMENT, IPROJECT } from "store/types"
 import { IUserAchievments } from "./user";
-import axios from "axios";
 import { actionTypesImages, actionTypesImagesType } from "components/lists/achievments/consts";
 import { AchivType } from "store/types";
 import { config } from '../../index'
+import { Api } from "services/api";
 
 
 class Achievment {
@@ -49,7 +49,7 @@ class Achievment {
             : 0
     }
 
-    async getLink(achievmentNumber: number) {
+    async getLink(achievmentNumber: number, api?:Api) {
         let url: string | undefined;
         switch (this.data.name) {
             case AchivType.Telegram: {
@@ -64,12 +64,12 @@ class Achievment {
                 } else {
                     let lastTweet;
                     if (achievmentNumber === 15) {
-                        lastTweet = await axios.get(`https://xp-challenges.herokuapp.com/getLastTweet?achievmentNumber=${achievmentNumber}`)
+                        lastTweet = await api?.getAchievmentNumber(achievmentNumber);
                     } else {
-                        lastTweet = await axios.get("https://xp-challenges.herokuapp.com/getLastTweet")
+                        lastTweet = await api?.getLastTweet()
                     }
-                    console.log("this", lastTweet.data.data);
-                    url += `intent/retweet?tweet_id=${lastTweet.data.data}`
+                 
+                    url += `intent/retweet?tweet_id=${lastTweet?.data}`
                 }
                 break;
             }

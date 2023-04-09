@@ -5,8 +5,8 @@ export enum CardType {
   Conjured = "Conjured",
 }
 export interface NFT {
-  name: string
-  image: string
+  name: string;
+  image: string;
 }
 export interface IPROJECT {
   projectNumber: number;
@@ -20,7 +20,8 @@ export interface IPROJECT {
   twitterPartnerId: string;
   coverImage: string;
   currentProject: boolean;
-  nfts: NFT[]
+  nfts: NFT[];
+  achievments: number[];
 }
 
 export interface ILeader {
@@ -36,7 +37,7 @@ export interface IACHIEVMENT {
   progressBarLength: number;
   rewardAmount: number;
   link?: string;
-  miniIcon?: string | undefined
+  miniIcon?: string | undefined;
 }
 
 export enum AchivType {
@@ -97,16 +98,16 @@ export type AchievementsUpdateEvent = {
 
 export type IModal = {
   type:
-  | "Error"
-  | "WalletList"
-  | "TwitterAuth"
-  | "TelegramAuth"
-  | "confirmReg"
-  | "EmailSubscribe"
-  | "Success"
-  | "Login"
-  | "AchievmentCompleted"
-  | "Bridge";
+    | "Error"
+    | "WalletList"
+    | "TwitterAuth"
+    | "TelegramAuth"
+    | "confirmReg"
+    | "EmailSubscribe"
+    | "Success"
+    | "Login"
+    | "AchievmentCompleted"
+    | "Bridge";
   text?: string;
   wallet?: string;
   telegramAccount?: string;
@@ -116,5 +117,5 @@ export type IModal = {
     [x: string]: boolean;
   };
   confirmButton?: any;
-  achievmentNumber?: number
+  achievmentNumber?: number;
 };

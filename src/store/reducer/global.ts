@@ -9,16 +9,24 @@ import {
 } from "store/types";
 
 import { UserData, IWallet } from "store/models/user";
-import { axiosInstance } from "services/axios";
+
+import { Api } from "services/api";
 
 export const getUserByUniqueId = createAsyncThunk(
   "getUsersByregisteredId?registeredId",
-  async (uniqueId: string, thunkAPI) => {
+  async (
+    {
+      uniqueId,
+      api,
+    }: {
+      uniqueId: string | null;
+      api?: Api;
+    },
+    thunkAPI
+  ) => {
+    if (!uniqueId || !api) return;
     try {
-      const response = await axiosInstance(
-        "https://xp-challenges.herokuapp.com/"
-      ).get(`getUsersByregisteredId?registeredId=${uniqueId}`);
-      return response.data;
+      return await api?.getUsersDeregisteredId(uniqueId);
     } catch (error) {
       return thunkAPI.rejectWithValue(
         "An error occured ! => " + (error as { message: string }).message
@@ -188,7 +196,7 @@ export const global = createSlice({
     },
     setClickedAchiev: (state: GlobalState, action: AModal) => {
       if (action?.payload?.achievmentNumber) {
-        state?.clickedAchiev.push(action?.payload?.achievmentNumber)
+        state?.clickedAchiev.push(action?.payload?.achievmentNumber);
       }
     },
     setWallet: (state: GlobalState, action: ASetWallet) => {

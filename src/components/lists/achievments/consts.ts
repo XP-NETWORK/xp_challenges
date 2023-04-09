@@ -32,10 +32,12 @@ import { config } from "../../../index";
 import { Dispatch } from "hoist-non-react-statics/node_modules/@types/react";
 import { setModal } from "store/reducer/global";
 import { AnyAction } from "redux";
+import { ServiceContainer } from "hocs/withServices";
 
 export type AchievementsProps = {
   userAchievements?: IUserAchievments[];
   userData?: UserData | undefined;
+  serviceContainer?: ServiceContainer;
 };
 
 export const achievementsPics = {
@@ -243,20 +245,23 @@ export const achievementsHandlers = {
       );
       return;
     }
-    const clicked = localStorage.getItem('clicked');
+    const clicked = localStorage.getItem("clicked");
     if (!clicked) {
-      localStorage.setItem('clicked', JSON.stringify([String(achievmentNumber)]));
-      setClicked([String(achievmentNumber)])
+      localStorage.setItem(
+        "clicked",
+        JSON.stringify([String(achievmentNumber)])
+      );
+      setClicked([String(achievmentNumber)]);
     } else {
-      const par = JSON.parse(clicked)
+      const par = JSON.parse(clicked);
       if (par.indexOf(String(achievmentNumber)) === -1) {
         par.push(String(achievmentNumber));
-        setClicked(par)
-        localStorage.setItem('clicked', JSON.stringify(par));
+        setClicked(par);
+        localStorage.setItem("clicked", JSON.stringify(par));
       }
     }
-    const lin = await link()
-    return window.open(lin, '_blank');
+    const lin = await link();
+    return window.open(lin, "_blank");
   },
   [AchivType.Bridge]: (
     userData: UserData | undefined,

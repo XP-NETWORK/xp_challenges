@@ -79,9 +79,10 @@ class Api {
 
   async getUsersDeregisteredId(uniqueId: string) {
     try {
-      return await (await axios.get(this.base + `/getUsersByregisteredId?registeredId=${uniqueId}`)).data as ILeader[]
+      return  (await axios.get(this.base + `/getUsersByregisteredId?registeredId=${uniqueId}`)).data as ILeader[]
     } catch (e) {
       console.error(e)
+      
     }
   }
 
@@ -97,6 +98,17 @@ class Api {
       return undefined
     }
   }
+
+  async getAchievmentNumber(achievmentNumber:number) {
+    return await (await axios.get(this.base + `/getLastTweet?achievmentNumber=${achievmentNumber}`)).data as {data:string};
+  }
+
+  async getLastTweet() {
+    return await (await axios.get(this.base + `/getLastTweet`)).data  as {data:string};
+  }
+
+
+
 }
 
 export default (base: string) => new Api(base);

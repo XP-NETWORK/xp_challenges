@@ -21,15 +21,20 @@ import "./assets/styles/animations.css";
 import "./assets/styles/main.css";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./assets/styles/media.css";
-import { EthereumClient, modalConnectors, walletConnectProvider } from "@web3modal/ethereum";
+import {
+  EthereumClient,
+  modalConnectors,
+  walletConnectProvider,
+} from "@web3modal/ethereum";
 import { configureChains, createClient } from "wagmi";
 import * as allChains from "wagmi/chains";
 import { Web3Modal } from "@web3modal/react";
 
 export const config = {
-  _DEFAULT_TWITTER_LINK: "https://twitter.com/xpnetwork_",
+  _DEFAULT_TWITTER_LINK: "https://twitter.com/CyberCityInc", //"https://twitter.com/xpnetwork_",
   _DEFAULT_BRIDGE_LINK: "https://staging-bridge.xp.network?xpchallenge=true",
-  _DEFAULT_TELEGRAM_LINK: "https://t.me/XP_network",
+  _DEFAULT_TELEGRAM_LINK: "https://t.me/+NdWSm7De6jg5YWRk", //"https://t.me/XP_network",
+  _DEFAULT_REG_BOT: "XP_CyberCity_Registrationbot",
   _TWITTER_AUTH: "https://support-bot-xp.herokuapp.com/twitterLogin",
   _WIDGET: "https://widget.xp.network", //https://widget-staging.xp.network
   _WIDGET_ID: "63bc17c8a65fd4aaf0312526",
@@ -41,7 +46,9 @@ const App = () => {
     imageLoader: ImageLoader(),
     telegram: TelegramService("XpChallengeAuth12Bot"), // must /setdomain to bot
     socketWrapper: socket("wss://xp-challenges.herokuapp.com"),
-    explorerSocketWrapper: ExplorerSocket("wss://dev-explorer-api.herokuapp.com/"),
+    explorerSocketWrapper: ExplorerSocket(
+      "wss://dev-explorer-api.herokuapp.com/"
+    ),
     wallet: wallet(),
   });
 
@@ -50,7 +57,7 @@ const App = () => {
   useEffect(() => {
     serviceContainer && setLoaded(true);
     false &&
-      window.addEventListener("keydown", e => {
+      window.addEventListener("keydown", (e) => {
         if (e.key === "o") {
           serviceContainer.wallet.connectMaiarExtension();
         }
@@ -75,7 +82,7 @@ const App = () => {
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-const wcSupportedChains = Object.keys(allChains).map(key => allChains[key]);
+const wcSupportedChains = Object.keys(allChains).map((key) => allChains[key]);
 
 const { provider } = configureChains(wcSupportedChains, [
   walletConnectProvider({ projectId: "81963a335abea5e800ab8bd57eaee203" }),
@@ -97,7 +104,10 @@ const ethereumClient = new EthereumClient(wagmiClient, wcSupportedChains);
 ReactDOM.render(
   <ErrorBoundary>
     <BrowserRouter>
-      <Web3Modal projectId={"81963a335abea5e800ab8bd57eaee203"} ethereumClient={ethereumClient} />
+      <Web3Modal
+        projectId={"81963a335abea5e800ab8bd57eaee203"}
+        ethereumClient={ethereumClient}
+      />
       <App />
     </BrowserRouter>
   </ErrorBoundary>,
