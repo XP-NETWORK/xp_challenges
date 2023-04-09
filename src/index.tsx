@@ -32,7 +32,7 @@ import { Web3Modal } from "@web3modal/react";
 
 export const config = {
   _DEFAULT_TWITTER_LINK: "https://twitter.com/CyberCityInc", //"https://twitter.com/xpnetwork_",
-  _DEFAULT_BRIDGE_LINK: "https://staging-bridge.xp.network?xpchallenge=true",
+  _DEFAULT_BRIDGE_LINK: "https://bridge.xp.network?xpchallenge=true",
   _DEFAULT_TELEGRAM_LINK: "https://t.me/+NdWSm7De6jg5YWRk", //"https://t.me/XP_network",
   _DEFAULT_REG_BOT: "XP_CyberCity_Registrationbot",
   _TWITTER_AUTH: "https://support-bot-xp.herokuapp.com/twitterLogin",

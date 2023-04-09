@@ -6,7 +6,7 @@ import { ReduxState } from "store";
 import { ReactComponent as Frame } from "../../../assets/img/icons/card-frame.svg";
 import ProgressBar from "components/elements/ProgressBar";
 import { setJustCompleted, setModal } from "../../../store/reducer/global";
-import okc from "../../../assets/img/okc.png";
+import partnerLogo from "../../../assets/img/cybercityLogo.png";
 import fabric from "../../../store/models/achievment";
 import {
   AchievementsProps,
@@ -103,8 +103,10 @@ function Achievements({
                       <AchievementIcon />
                       {!noIcons.includes(Number(achievmentNumber)) && (
                         <img
-                          className="xpMiniIcon"
-                          src={miniIcon ? okc : xpMiniIcon}
+                          className={`xpMiniIcon ${
+                            miniIcon ? "bigerLogo" : ""
+                          }`}
+                          src={miniIcon ? partnerLogo : xpMiniIcon}
                           alt="xpMiniIcon"
                         />
                       )}

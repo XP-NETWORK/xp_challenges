@@ -437,3 +437,9 @@ button.completed {
 .links svg rect {
   stroke: transparent;
 }
+
+.xpMiniIcon.bigerLogo {
+  width: 36px;
+  height: 36px;
+  margin-left: 50px;
+}

@@ -18,20 +18,30 @@ const Footer: FC = () => {
                 <img src={logo} alt="xpLogo" className="logo" />
                 <ul className="flexRow links">
                   <li>
-                    <a href="https://www.npmjs.com/package/xp.network" target="_blank">
-                      XPNET JS
+                    <a href="https://bridge.xp.network/" target="_blank">
+                      XPNET Bridge
                     </a>
                   </li>
                   <li>
-                    <a href="">Privacy Policy</a>
+                    <a href="https://explorer.xp.network/" target="_blank">
+                      XPNET Explorer
+                    </a>
                   </li>
                   <li>
-                    <a href="">Terms of use</a>
+                    <a
+                      href="https://www.npmjs.com/package/xp.network"
+                      target="_blank"
+                    >
+                      XPNET JS
+                    </a>
                   </li>
                 </ul>
               </div>
               <div className="bot">
-                <span>© {new Date().getFullYear()} XP.NETWORK Ltd. All Rights Reserved</span>
+                <span>
+                  © {new Date().getFullYear()} XP.NETWORK Ltd. All Rights
+                  Reserved
+                </span>
               </div>
             </div>
           </div>
@@ -40,12 +50,23 @@ const Footer: FC = () => {
               <div className="bot">
                 <div className="mobileContainerFlex">
                   <div className="footerFlex">
-                    <img src={FooterTelegram} className="footerTelegram" alt="FooterTelegram" />
+                    <img
+                      src={FooterTelegram}
+                      className="footerTelegram"
+                      alt="FooterTelegram"
+                    />
                     <img src={FooterTwitter} alt="FooterTwitter" />
                   </div>
                   <div className="footerFlex">
-                    <img src={logo} alt="xpLogo" className="logo mobileXpLogo" />
-                    <div className="yearFooterMobileText"> © {new Date().getFullYear()}</div>
+                    <img
+                      src={logo}
+                      alt="xpLogo"
+                      className="logo mobileXpLogo"
+                    />
+                    <div className="yearFooterMobileText">
+                      {" "}
+                      © {new Date().getFullYear()}
+                    </div>
                   </div>
                 </div>
               </div>
