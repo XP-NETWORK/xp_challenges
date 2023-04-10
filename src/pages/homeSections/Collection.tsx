@@ -9,6 +9,8 @@ import { importAll } from "../../utils";
 import { ReduxState } from "store";
 import { NFT } from "store/types";
 
+import chest from "../../assets/img/chest-min.png";
+
 const Collection = () => {
   const [pics, setPics] = useState<NFT[]>([]);
 
@@ -72,7 +74,7 @@ const Collection = () => {
                     className="collection-item col-12 col-md-6 col-lg-4 col-xl-3"
                   >
                     <div className="picWrapper">
-                      <img src={pic.image} alt={`collection-${index}`} />
+                      <img src={chest} alt={`collection-${index}`} />
                       <span>{project ? pic.name : "@tyshh"}</span>
                     </div>
                   </div>
