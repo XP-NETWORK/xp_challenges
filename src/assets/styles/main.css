@@ -1,372 +1,376 @@
 .app {
-  height: 100%;
-  background: url(../img/bg-profile.png) no-repeat;
-  background-size: 100% 100vh;
-  position: relative;
-  z-index: 0;
+    height: 100%;
+    background: url(../img/bg-profile.png) no-repeat;
+    background-size: 100% 100vh;
+    position: relative;
+    z-index: 0;
 }
 
 .app.noscroll {
-  overflow-y: hidden;
+    overflow-y: hidden;
 }
 
 .app.noscroll .frame.left,
 .app.noscroll .frame.right {
-  max-height: 90vh;
+    max-height: 90vh;
 }
 
 .homePage.ghostBg::after {
-  background: rgba(var(--mainBg), 0.4);
-  height: 100vh;
-  background-size: cover;
-  z-index: -1;
+    background: rgba(var(--mainBg), 0.4);
+    height: 100vh;
+    background-size: cover;
+    z-index: -1;
 }
 
 .glowEffect {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
 }
 
 .glowEffect.ghostBg::after {
-  display: none;
-  background: url(../img/glowEffect.png) no-repeat;
-  background-size: cover;
-  background-position: right;
-  opacity: 0.8;
-  z-index: 2;
+    display: none;
+    background: url(../img/glowEffect.png) no-repeat;
+    background-size: cover;
+    background-position: right;
+    opacity: 0.8;
+    z-index: 2;
 }
 
 .frame {
-  position: absolute;
-  top: 20px;
-  z-index: 3;
-  transition: all 0.3s ease;
+    position: absolute;
+    top: 20px;
+    z-index: 3;
+    transition: all 0.3s ease;
 }
 
 .howItWorkButtonStyle {
-  font-size: 16px;
-  line-height: 21px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin-top: 26px;
-  white-space: nowrap;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-top: 26px;
+    white-space: nowrap;
 }
 
 .frame.left {
-  left: 3%;
+    left: 3%;
 }
 
 .frame.right {
-  right: 3%;
+    right: 3%;
 }
 
 .frame.top {
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
 }
 
 header.header {
-  position: relative;
-  z-index: 22;
+    position: relative;
+    z-index: 22;
 }
 
 .headerContainer {
-  position: relative;
+    position: relative;
 }
 
 .headerNav,
 .menu {
-  position: absolute;
-  left: 0;
-  top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .collectionHeader {
-  font-family: "chakra-petch" !important;
-  font-size: 62px !important;
-  margin-top: 60px !important;
-  margin-bottom: 46px !important;
+    font-family: "chakra-petch" !important;
+    font-size: 62px !important;
+    margin-top: 60px !important;
+    margin-bottom: 46px !important;
 }
 
 .headerNav {
-  left: 5%;
+    left: 5%;
 }
 
 .menu {
-  right: 0;
-  left: unset;
+    right: 0;
+    left: unset;
 }
 
 .headerWrapper {
-  margin: 0 auto;
-  max-width: 97%; /* 2 */
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 50px;
+    margin: 0 auto;
+    max-width: 97%; /* 2 */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 50px;
 }
 
 header img.logo {
-  margin-top: auto;
-  margin-bottom: 12px;
-  width: 68px;
-  height: 69px;
+    margin-top: auto;
+    margin-bottom: 12px;
+    width: 68px;
+    height: 69px;
 }
 .XPTitleStyle {
-  margin-top: 30px;
-  margin-left: 28px;
-  letter-spacing: 0.28em;
-  font-size: 15px;
-  font-family: "chakra-petch";
-  color: #fe2b4a;
-  font-size: 32px;
+    margin-top: 30px;
+    margin-left: 28px;
+    letter-spacing: 0.28em;
+    font-size: 15px;
+    font-family: "chakra-petch";
+    color: #fe2b4a;
+    font-size: 32px;
 }
 
 .iconBackground {
-  background-color: #18191ded;
-  width: 89px;
-  height: 127px;
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-  border-bottom: 1px solid rgba(48, 49, 51, 1);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  margin-top: 0px;
-  cursor: default;
-  user-select: none;
+    background-color: #18191ded;
+    width: 89px;
+    height: 127px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom: 1px solid rgba(48, 49, 51, 1);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 0px;
+    cursor: default;
+    user-select: none;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header nav svg {
-  margin: 0 10px;
-  cursor: pointer;
+    margin: 0 10px;
+    cursor: pointer;
 }
 
 header button {
-  margin-right: 12px;
+    margin-right: 12px;
 }
 
 .clock {
-  position: relative;
-  width: 300px;
+    position: relative;
+    width: 300px;
 
-  height: 100px;
-  margin-bottom: 70px;
+    height: 100px;
+    margin-bottom: 70px;
 }
 
 .profile .clock {
-  height: auto;
+    height: auto;
 }
 
 .clock .segment {
-  position: relative;
-  display: inline-block;
-  width: 50px;
+    position: relative;
+    display: inline-block;
+    width: 50px;
 }
 
 .clock .flexRow > span {
-  margin: 0;
-  transform: translateY(-25%);
-  font-family: "chakra-petch";
-  font-size: 50px;
-  transform: translate(50%, -10%);
+    margin: 0;
+    transform: translateY(-25%);
+    font-family: "chakra-petch";
+    font-size: 50px;
+    transform: translate(50%, -10%);
 }
 
 .clock .segment:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 .clock .segment strong {
-  font-family: "chakra-petch";
-  font-size: 50px;
+    font-family: "chakra-petch";
+    font-size: 50px;
 }
 .clock .segment span {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.17em;
-  transform: translate(-45%, 150%);
-  opacity: 0.6;
-  color: #ff405c;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.17em;
+    transform: translate(-45%, 150%);
+    opacity: 0.6;
+    color: #ff405c;
 }
 
 .nftWrapper {
-  width: 120px;
+    width: 120px;
 }
 .nftWrapper .nft {
-  width: 110px;
-  height: 120px;
+    width: 110px;
+    height: 120px;
 }
 
 .howItWorkSection {
-  position: relative;
-  background: #141417;
-  display: flex;
-  flex-direction: column;
-  padding-top: 114px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
+    position: relative;
+    background: #141417;
+    display: flex;
+    flex-direction: column;
+    padding-top: 114px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
 }
 
 .mobileOnly {
-  display: none;
+    display: none;
+}
+
+.dummy2Container.mobileOnly {
+    display: flex;
 }
 
 .wrapperLeaderBoard {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  max-width: 1171px;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fill, 379px);
-  grid-column-gap: 1rem;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1171px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, 379px);
+    grid-column-gap: 1rem;
+    justify-content: center;
 }
 
 .howItWorkSectionTitle,
 .howItWorkSectionSubTitle {
-  font-size: 44px;
-  line-height: 57px;
-  font-family: "chakra-petch";
+    font-size: 44px;
+    line-height: 57px;
+    font-family: "chakra-petch";
 }
 .howItWorkSectionSubTitle {
-  font-size: 18px;
-  line-height: 27px;
-  letter-spacing: 0.09em;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 66px;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.09em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 66px;
 }
 .homePage main {
-  position: relative;
-  z-index: 20;
+    position: relative;
+    z-index: 20;
 }
 
 .introComposition {
-  /* margin-top: 100px; */
+    /* margin-top: 100px; */
 }
 .description1 {
-  width: 220px;
+    width: 220px;
 }
 
 .introComposition h1 {
-  font-size: 62px;
-  line-height: 69px;
-  margin-bottom: 60px;
+    font-size: 62px;
+    line-height: 69px;
+    margin-bottom: 60px;
 }
 
 .introTimeline {
-  margin-bottom: 100px;
+    margin-bottom: 100px;
 }
 
 .introComposition .introTimeline button,
 .introComposition .introTimeline a.button {
-  padding: 10px 14px;
-  height: unset;
-  margin-top: 14px;
+    padding: 10px 14px;
+    height: unset;
+    margin-top: 14px;
 }
 .introComposition .introTimeline span {
-  margin-top: 12px;
+    margin-top: 12px;
 }
 
 .introComposition .introTimeline .progressLine {
-  margin-top: -50px;
+    margin-top: -50px;
 }
 
 .progressLine {
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
 }
 
 .introComposition button.accent > svg {
-  margin-left: 13px;
+    margin-left: 13px;
 }
 
 .nftListWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nftListContainer {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 .nftListWrapper {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 .nftListWrapper img {
-  width: 281px;
+    width: 281px;
 }
 
 .controls {
-  width: 400px;
+    width: 400px;
 }
 
 .nftList .controls img {
-  position: relative;
+    position: relative;
 }
 .nftList .controls {
-  width: 70px;
-  text-align: center;
-  margin: 10px auto;
+    width: 70px;
+    text-align: center;
+    margin: 10px auto;
 }
 
 .nftList .controls img:hover {
-  background: url("../img/icons/btnGlimer.svg");
-  background-size: cover;
+    background: url("../img/icons/btnGlimer.svg");
+    background-size: cover;
 }
 
 .achievements {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 .second {
-  border-top: solid 1px #2c2e33;
-  margin-top: 30px !important;
-  padding-top: 39px;
+    border-top: solid 1px #2c2e33;
+    margin-top: 30px !important;
+    padding-top: 39px;
 }
 
 .achievements h2 {
-  font-family: "chakra-petch";
-  font-size: 44px;
-  color: #fff;
-  text-align: center;
-  line-height: 57px;
+    font-family: "chakra-petch";
+    font-size: 44px;
+    color: #fff;
+    text-align: center;
+    line-height: 57px;
 }
 .achievements p {
-  text-align: center;
-  font-family: "chakra-petch";
-  font-size: 18px;
-  letter-spacing: 0.09em;
-  line-height: 27px;
-  color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-family: "chakra-petch";
+    font-size: 18px;
+    letter-spacing: 0.09em;
+    line-height: 27px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .proggress ul,
 .proggress {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
 }
 
 .introTimeline-item {
-  position: relative;
+    position: relative;
 }
 
 /* .imageAssetNumber {
@@ -379,8 +383,8 @@ header button {
 } */
 
 .introTimeline-item img {
-  width: 185px;
-  height: 175px;
+    width: 185px;
+    height: 175px;
 }
 
 /* .introTimeline-item span {
@@ -388,223 +392,223 @@ header button {
 } */
 
 .proggress ul {
-  width: auto;
+    width: auto;
 }
 
 .proggress .plusPic {
-  margin: 0 10px;
+    margin: 0 10px;
 }
 
 .proggress ul li img {
-  width: 24px;
-  height: 30px;
-  margin-right: 4px;
+    width: 24px;
+    height: 30px;
+    margin-right: 4px;
 }
 
 .achivCard {
-  position: relative;
-  margin: 40px auto;
-  width: 343px;
-  height: 345px;
-  padding: 36px 30px 23px 30px;
+    position: relative;
+    margin: 40px auto;
+    width: 343px;
+    height: 345px;
+    padding: 36px 30px 23px 30px;
 }
 
 .achivCard .progressBar {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .achivCard .proggress {
-  padding-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 .achivCard .progressBar .bar {
-  width: 100px;
+    width: 100px;
 }
 
 .achivCard p {
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .achivCard button {
-  width: 100%;
+    width: 100%;
 }
 
 .achivCard-content {
-  position: relative;
-  z-index: 72;
-  height: 200px;
-  width: 100%;
+    position: relative;
+    z-index: 72;
+    height: 200px;
+    width: 100%;
 }
 .cont {
-  position: absolute;
-  left: 50%;
-  top: -12%;
-  width: 85px;
-  height: 95px;
-  transform: translateX(-50%);
-  z-index: 200;
+    position: absolute;
+    left: 50%;
+    top: -12%;
+    width: 85px;
+    height: 95px;
+    transform: translateX(-50%);
+    z-index: 200;
 }
 .xpMiniIcon {
-  position: relative;
-  margin-left: 52px;
-  z-index: 300;
-  width: 26px;
-  height: 24px;
+    position: relative;
+    margin-left: 52px;
+    z-index: 300;
+    width: 26px;
+    height: 24px;
 }
 .vector {
-  position: absolute;
-  left: auto;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    left: auto;
+    width: 100%;
+    height: 100%;
 }
 .upper {
-  font-size: 20px;
+    font-size: 20px;
 }
 .AchievementIcon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  width: 76px;
-  height: 88px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 76px;
+    height: 88px;
 }
 .AchievementIcon2 {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  width: 46px;
-  height: 48px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 46px;
+    height: 48px;
 }
 .AchievementIcon1 {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  width: 90px;
-  height: 88px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 90px;
+    height: 88px;
 }
 .AchievementIconRet {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  padding-right: 5px;
-  width: 115px;
-  height: 110px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    padding-right: 5px;
+    width: 115px;
+    height: 110px;
 }
 
 .achivCard:hover .cont svg path {
-  /* fill: white !important; */
-  stroke: white !important;
+    /* fill: white !important; */
+    stroke: white !important;
 }
 
 .icon {
-  z-index: 100;
+    z-index: 100;
 }
 
 .cardFrame {
-  display: block;
-  position: absolute;
-  left: 0;
-  z-index: 70;
-  top: 0;
-  width: 100%;
-  height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    z-index: 70;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .achivCard .cardFrame > g path {
-  transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .achivCard button {
-  transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .completedAchievment p,
 .completedAchievment {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 
 .achivCard:hover button:not(.completed) {
-  background: white;
-  color: black;
+    background: white;
+    color: black;
 }
 
 .achivCard:hover button.secondary.newBackground,
 .collection button.secondary.newBackground:hover {
-  background: white !important;
-  color: black;
+    background: white !important;
+    color: black;
 }
 
 .achivCard:not(.completedAchievment):hover .cardFrame > g path,
 .achivCard:not(.completedAchievment):hover
-  .achivCard-pic:not(.frameTwitter)
-  path.frame {
-  fill: white;
+    .achivCard-pic:not(.frameTwitter)
+    path.frame {
+    fill: white;
 }
 
 .walletIcon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(150%, -200%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(150%, -200%);
 }
 
 .achivCard:not(.completedAchievment):hover .cardFrame > path:not(.inner),
 .achivCard:not(.completedAchievment):hover
-  svg.achivCard-pic
-  > path.dsa.frameTwitter {
-  stroke: white !important;
+    svg.achivCard-pic
+    > path.dsa.frameTwitter {
+    stroke: white !important;
 }
 
 .signUpContainer {
-  /* background-image: url("../../assets/img/frame.png"); */
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 256px;
+    /* background-image: url("../../assets/img/frame.png"); */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 256px;
 }
 
 .frameImage {
-  width: 100%;
-  margin: auto;
+    width: 100%;
+    margin: auto;
 }
 
 .signupPage .signUpContainer button {
-  margin: auto;
+    margin: auto;
 }
 
 .authWrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 156;
-  left: 0;
-  top: 0;
-  cursor: pointer;
-  opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 156;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    opacity: 0;
 }
 
 .userAccount img {
-  border-radius: 50%;
-  width: 52px !important;
-  height: 52px !important;
+    border-radius: 50%;
+    width: 52px !important;
+    height: 52px !important;
 }
 
 .userAccount-tgWrapper img,
 .userAccount-tgWrapper .avatarPlaceholder {
-  margin: 0 15px;
+    margin: 0 15px;
 }
 
 /* .userAccount-tgWrapper span {
@@ -620,1072 +624,1073 @@ header button {
 
 .userAccountRegText,
 .userAccountBold {
-  font-family: "chakra-petch";
-  font-size: 20px;
-  text-align: center;
-  font-weight: 400;
-  opacity: 0.9;
-  line-height: 31px;
-  letter-spacing: 0.09em;
-  width: 500px;
+    font-family: "chakra-petch";
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    opacity: 0.9;
+    line-height: 31px;
+    letter-spacing: 0.09em;
+    width: 500px;
 }
 .userAccountBold {
-  font-family: "chakra-petch-semibold";
-  font-size: 24px !important;
+    font-family: "chakra-petch-semibold";
+    font-size: 24px !important;
 }
 
 footer {
-  padding: 100px 0 30px 0;
+    padding: 100px 0 30px 0;
 }
 
 footer .bridgeBanner {
-  background: url(../img/footerPic.png) no-repeat, #1c1d1e;
-  background-size: 50%;
-  background-position: right;
-  height: 496px;
-  display: flex;
-  position: relative;
-  margin-bottom: 20px;
+    background: url(../img/footerPic.png) no-repeat, #1c1d1e;
+    background-size: 50%;
+    background-position: right;
+    height: 496px;
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 footer .bridgeBanner img.frame {
-  width: calc(100% + 5px);
-  height: calc(100% + 5px);
-  left: -2px;
-  top: -2px;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    left: -2px;
+    top: -2px;
 }
 
 footer .bridgeBanner .bridgeBanner-text {
-  width: 500px;
-  margin: auto;
-  margin-left: 100px;
+    width: 500px;
+    margin: auto;
+    margin-left: 100px;
 }
 
 footer .bridgeBanner h3,
 .menuModal .banner h3 {
-  font-size: 34px;
-  font-family: chakra-petch-semibold;
+    font-size: 34px;
+    font-family: chakra-petch-semibold;
 }
 
 footer .bridgeBanner p,
 .menuModal .banner p {
-  line-height: 30px;
-  color: var(--greyText);
-  margin: 24px 0 44px 0;
+    line-height: 30px;
+    color: var(--greyText);
+    margin: 24px 0 44px 0;
 }
 
 footer .bridgeBanner a.button {
-  width: 197px;
+    width: 197px;
 }
 
 .heroTimeContainer .clock .flexRow > span {
-  transform: translate(50%, -45%);
+    transform: translate(50%, -45%);
+    margin-left: 0;
 }
 
 .blurOver {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 999;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 footer .media {
-  margin-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
 }
 
 footer .media ul li:not(:last-child) {
-  margin-right: 34px;
+    margin-right: 34px;
 }
 
 footer .media .bot {
-  text-align: right;
-  font-family: inter;
-  color: var(--dimText);
-  font-size: 13px;
+    text-align: right;
+    font-family: inter;
+    color: var(--dimText);
+    font-size: 13px;
 }
 
 .burgerBtn {
-  cursor: pointer;
-  position: relative;
-  z-index: 999999;
-  transition: all 0.4s ease;
-  width: 56px;
-  height: 56px;
-  background: url(../img/icons/hamburger.svg) no-repeat;
-  background-size: cover;
+    cursor: pointer;
+    position: relative;
+    z-index: 999999;
+    transition: all 0.4s ease;
+    width: 56px;
+    height: 56px;
+    background: url(../img/icons/hamburger.svg) no-repeat;
+    background-size: cover;
 }
 
 .burgerBtn.close {
-  background: url(../svgs/menu/redClose.svg) no-repeat;
-  background-size: cover;
+    background: url(../svgs/menu/redClose.svg) no-repeat;
+    background-size: cover;
 }
 
 body.showModal header .menu {
-  right: 14px;
-  position: relative;
+    right: 14px;
+    position: relative;
 }
 
 .menuModal nav ul li {
-  font-size: 28px;
-  text-transform: uppercase;
-  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
-  color: var(--dimText);
-  padding: 24px 0;
-  border-bottom: 1px solid transparent;
-  display: flex;
-  align-items: center;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    color: var(--dimText);
+    padding: 24px 0;
+    border-bottom: 1px solid transparent;
+    display: flex;
+    align-items: center;
 }
 
 .menuModal nav ul li svg {
-  width: 24px;
+    width: 24px;
 }
 
 .menuModal nav ul li:hover {
-  background: rgba(199, 26, 51, 0.07);
-  border-bottom: 1px solid var(--accent);
+    background: rgba(199, 26, 51, 0.07);
+    border-bottom: 1px solid var(--accent);
 }
 
 .menuModal nav ul li:hover svg path {
-  fill: var(--accent);
-  fill-opacity: 1;
+    fill: var(--accent);
+    fill-opacity: 1;
 }
 
 .menuModal .bottomContainer {
-  position: absolute;
-  width: 100%;
-  bottom: 5%;
-  left: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+    left: 0;
 }
 
 .menuModal .banner {
-  height: 280px;
-  background: url(../img/menuBanner.png) no-repeat;
-  background-size: 100%;
-  background-position: right;
-  background-color: #1d1d1f;
-  padding: 0 44px;
-  display: flex;
+    height: 280px;
+    background: url(../img/menuBanner.png) no-repeat;
+    background-size: 100%;
+    background-position: right;
+    background-color: #1d1d1f;
+    padding: 0 44px;
+    display: flex;
 }
 
 .menuModal .banner .bridgeBanner-text {
-  width: 30%;
-  margin: auto 0;
+    width: 30%;
+    margin: auto 0;
 }
 
 .customModal .container,
 .app.noscroll .container {
-  position: relative;
-  height: 100%;
+    position: relative;
+    height: 100%;
 }
 
 .app.noscroll,
 .customModal .footer {
-  margin-top: 20px;
-  border-top: 1px solid var(--dimText);
-  padding-top: 35px;
+    margin-top: 20px;
+    border-top: 1px solid var(--dimText);
+    padding-top: 35px;
 }
 
 .customModal .footer .links svg,
 .app.noscroll .footer .links svg {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .customModal .footer .logo span,
 .app.noscroll .footer .logo span {
-  color: var(--dimText);
-  position: relative;
-  top: 10px;
-  margin-left: 20px;
+    color: var(--dimText);
+    position: relative;
+    top: 10px;
+    margin-left: 20px;
 }
 
 .big-modal {
-  width: 1171px;
-  height: auto;
+    width: 1171px;
+    height: auto;
 }
 .mid-modal {
-  width: 550px;
-  height: auto;
+    width: 550px;
+    height: auto;
 }
 
 .big-modal > svg {
-  display: none;
+    display: none;
 }
 
 .big-modal iframe {
-  border-top: 1px solid rgba(217, 217, 217, 0.1);
+    border-top: 1px solid rgba(217, 217, 217, 0.1);
 }
 
 .signupPage {
-  height: 100vh;
-  position: relative;
+    height: 100vh;
+    position: relative;
 }
 
 .app.noscroll .signupPage .footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  border-top: none;
-  padding-bottom: 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: none;
+    padding-bottom: 40px;
 }
 
 .signupPage-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .signupPage .accountWrapper {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 300px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 300px;
 }
 
 .signupPage-form {
-  margin: auto;
-  width: 470px;
-  padding-top: 100px;
+    margin: auto;
+    width: 470px;
+    padding-top: 100px;
 }
 
 .signUpContainer.vertical .userAccount-tgWrapper.flexRow {
-  flex-direction: column-reverse;
+    flex-direction: column-reverse;
 }
 
 .signUpContainer.vertical .userAccount-tgWrapper.flexRow img,
 .signUpContainer.vertical .userAccount-tgWrapper .avatarPlaceholder {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 20px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
 }
 
 .signUpContainer.vertical .userAccount-tgWrapper.flexRow span {
-  font-size: 34px;
+    font-size: 34px;
 }
 
 .signupPage .accountWrapper h2 {
-  font-size: 44px;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  text-align: center;
-  margin-bottom: 50px;
+    font-size: 44px;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
 .signupPage-form .flexCol {
-  align-items: flex-start;
-  margin-bottom: 30px;
+    align-items: flex-start;
+    margin-bottom: 30px;
 }
 
 .signupPage-form .flexCol label {
-  font-size: 14px;
-  color: var(--dimText);
+    font-size: 14px;
+    color: var(--dimText);
 }
 
 .signupPage-form .flexRow {
-  justify-content: flex-start;
-  margin: 10px 0;
+    justify-content: flex-start;
+    margin: 10px 0;
 }
 
 .signupPage-form .flexRow .checkBoxWrapper {
-  margin-right: 20px;
+    margin-right: 20px;
 }
 
 .signupPage-form button {
-  width: 100%;
+    width: 100%;
 }
 
 .signupPage-form button.accent {
-  margin-bottom: 20px;
-  margin-top: 40px;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 .signupPage-form button.transparent {
-  transform: translateY(50px);
+    transform: translateY(50px);
 }
 
 .signupPage a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .profile .signUpContainer {
-  padding-top: 100px;
+    padding-top: 100px;
 }
 
 .achivementBar {
-  margin: 20px 0;
-  text-align: center;
+    margin: 20px 0;
+    text-align: center;
 }
 
 .achivementBar .progressBar .bar {
-  width: 530px;
+    width: 530px;
 }
 
 .progressBar {
-  width: 522px;
-  display: inline-block;
+    width: 522px;
+    display: inline-block;
 }
 
 .achivCard .progressBar {
-  padding: 0;
+    padding: 0;
 }
 
 .achivCard .progressBar {
-  width: 100%;
+    width: 100%;
 }
 
 .barWrap {
-  padding: 18px;
-  width: 100%;
-  border-radius: 80px;
-  background-color: var(--bar);
+    padding: 18px;
+    width: 100%;
+    border-radius: 80px;
+    background-color: var(--bar);
 }
 
 .secondBarWrap {
-  /* padding: 18px; */
-  width: 66%;
-  border-radius: 80px;
-  /* background-color: var(--bar); */
+    /* padding: 18px; */
+    width: 66%;
+    border-radius: 80px;
+    /* background-color: var(--bar); */
 }
 
 .achivCard .barWrap,
 .leaderBoard-progress .barWrap {
-  padding: 0px;
-  background: transparent;
+    padding: 0px;
+    background: transparent;
 }
 
 .progressBar .bar {
-  border-radius: 40px;
-  width: 286px;
-  padding: 6px;
-  background-color: #201f1f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    border-radius: 40px;
+    width: 286px;
+    padding: 6px;
+    background-color: #201f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .progressBar .rate {
-  flex: 1;
-  text-align: right;
-  padding: 0 5px;
-  color: var(--dimText);
-  font-size: 24px;
+    flex: 1;
+    text-align: right;
+    padding: 0 5px;
+    color: var(--dimText);
+    font-size: 24px;
 }
 
 .progressBar .rate span {
-  color: white;
+    color: white;
 }
 
 .progressBar .inner {
-  border-radius: 33px;
-  background-color: var(--progressBarFill);
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-  height: 10px;
+    border-radius: 33px;
+    background-color: var(--progressBarFill);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    height: 10px;
 }
 
 .progressBar .inner-segment {
-  flex: 1;
-  height: 100%;
+    flex: 1;
+    height: 100%;
 }
 
 .progressBar .inner-segment.empty {
-  height: 0;
+    height: 0;
 }
 
 .progressBar .inner-segment.completed {
-  position: relative;
-  background: white;
+    position: relative;
+    background: white;
 }
 
 .progressBar .inner-segment.completed::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background-color: rgb(61, 61, 61);
-  z-index: 72;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: rgb(61, 61, 61);
+    z-index: 72;
 }
 
 .successModal .walletAddress {
-  font-size: 34px;
+    font-size: 34px;
 }
 
 .progressBar .inner-segment.last.completed::after {
-  background-color: white;
+    background-color: white;
 }
 
 .achivCard .inner,
 .leaderBoard-progress .inner {
-  height: 6px;
+    height: 6px;
 }
 
 .achivCard .inner.empty {
-  height: 0;
+    height: 0;
 }
 
 .progressBar .inner .progress {
-  background-color: honeydew;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+    background-color: honeydew;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .successOverlay {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(14, 14, 17, 0.5);
-  z-index: 75;
-  transition: all 0.3s ease;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(14, 14, 17, 0.5);
+    z-index: 75;
+    transition: all 0.3s ease;
 }
 
 .successOverlay.active {
-  display: block;
+    display: block;
 }
 
 .successOverlay span {
-  position: absolute;
-  bottom: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--green);
-  text-shadow: 0px 0.875963px 1.75193px rgba(0, 0, 0, 0.05);
-  font-size: 24px;
-  font-family: kanit;
-  text-transform: uppercase;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--green);
+    text-shadow: 0px 0.875963px 1.75193px rgba(0, 0, 0, 0.05);
+    font-size: 24px;
+    font-family: kanit;
+    text-transform: uppercase;
 }
 
 .avatarPlaceholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
 }
 
 .successOverlay::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: url(../img/icons/sil.svg) no-repeat;
-  background-size: 40%;
-  background-position: 50% 30%;
-  z-index: 65;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../img/icons/sil.svg) no-repeat;
+    background-size: 40%;
+    background-position: 50% 30%;
+    z-index: 65;
 }
 
 .identicon {
-  width: 22px !important;
-  height: 22px !important;
-  margin-left: 12px;
-  border-radius: 50%;
+    width: 22px !important;
+    height: 22px !important;
+    margin-left: 12px;
+    border-radius: 50%;
 }
 .dummy2Container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 .dummy2 {
-  margin-right: 8px;
+    margin-right: 8px;
 }
 .dummy2Text {
-  margin-right: 25px;
+    margin-right: 25px;
 }
 .svg-container {
-  margin-right: 8px;
-  position: relative;
-  width: 43px;
-  height: 43px;
-  border-radius: 50%;
-  overflow: hidden;
+    margin-right: 8px;
+    position: relative;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .dummy2Container:hover svg rect {
-  fill: #c71a33;
+    fill: #c71a33;
 }
 
 .svg-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .userWalletWrapper {
-  display: none;
+    display: none;
 }
 
 .userWalletWrapper span {
-  color: #4affc9;
-  font-size: 18px;
-  margin-right: 13px;
+    color: #4affc9;
+    font-size: 18px;
+    margin-right: 13px;
 }
 
 .walletContainer {
-  height: 70px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 }
 
 header .userWalletWrapper,
 .signupPage-container .userWalletWrapper {
-  display: block;
-  padding: 10px 20px;
-  background: #121213;
-  backdrop-filter: blur(4px);
-  border: none;
+    display: block;
+    padding: 10px 20px;
+    background: #121213;
+    backdrop-filter: blur(4px);
+    border: none;
 
-  border-radius: 90px;
-  margin-right: 30px;
+    border-radius: 90px;
+    margin-right: 30px;
 }
 
 .signupPage-container .userWalletWrapper {
-  position: relative;
-  right: 0;
-  top: 0;
-  transform: unset;
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: unset;
 }
 
 .userWallet-dropdown {
-  display: none;
-  position: absolute;
-  left: 0;
-  transform: translateY(10%);
-  width: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    transform: translateY(10%);
+    width: 100%;
 
-  background-color: rgb(24, 23, 23);
-  border-radius: 5px;
+    background-color: rgb(24, 23, 23);
+    border-radius: 5px;
 }
 
 .showDD .userWallet-dropdown {
-  display: block;
+    display: block;
 }
 
 button.justCompleted {
-  display: none;
+    display: none;
 }
 
 .leaderBoard {
-  position: relative;
-  z-index: 2;
-  padding-top: 50px;
-  text-align: center;
-  min-height: 60vh;
-  margin: auto;
-  font-family: "chakra-petch";
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    text-align: center;
+    min-height: 60vh;
+    margin: auto;
+    font-family: "chakra-petch";
 }
 
 .leaderBoard p {
-  margin-top: 16px;
-  line-height: 160%;
+    margin-top: 16px;
+    line-height: 160%;
 }
 
 .leaderBoard h2 {
-  font-size: 44px;
-  margin-bottom: 20px;
+    font-size: 44px;
+    margin-bottom: 20px;
 }
 
 .leaderBoard > p,
 .collection p {
-  font-size: 20px;
-  color: var(--dimText);
-  margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--dimText);
+    margin-bottom: 20px;
 }
 
 .leaderBoard-user > img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: url(../img/icons/Profile_avatar_placeholder_large.png) no-repeat;
-  background-size: cover;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: url(../img/icons/Profile_avatar_placeholder_large.png) no-repeat;
+    background-size: cover;
 }
 
 .leaderBoard-user > img {
-  background: none;
+    background: none;
 }
 
 .leaderBoard-pannel {
-  margin-top: 50px;
-  height: auto;
-  margin: 0 auto;
+    margin-top: 50px;
+    height: auto;
+    margin: 0 auto;
 }
 
 .participant {
-  background: #161718;
-  width: 379px;
-  height: 154px;
-  padding: 27px 22px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-  margin-left: 16px;
+    background: #161718;
+    width: 379px;
+    height: 154px;
+    padding: 27px 22px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    margin-left: 16px;
 }
 
 .participantFlex {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }
 
 .avatarBox {
-  border-radius: 28px;
-  width: 44px;
-  height: 44px;
+    border-radius: 28px;
+    width: 44px;
+    height: 44px;
 }
 .leaderBoard-progress {
-  margin-top: auto;
-  margin-right: auto;
+    margin-top: auto;
+    margin-right: auto;
 }
 .topLeaders {
-  background: linear-gradient(
-    270.75deg,
-    #161718 72.36%,
-    #413f30 109.75%
-  ) !important;
-  position: relative;
+    background: linear-gradient(
+        270.75deg,
+        #161718 72.36%,
+        #413f30 109.75%
+    ) !important;
+    position: relative;
 }
 .userNameText {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .topLeaders::after {
-  content: url("../svgs/Leaderboard/topCrown.svg");
-  position: absolute;
-  left: 50px;
-  top: 20px;
+    content: url("../svgs/Leaderboard/topCrown.svg");
+    position: absolute;
+    left: 50px;
+    top: 20px;
 }
 
 .leaderBoard-user span {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .userWallet-dropdown {
-  padding: 10px;
-  text-align: center;
+    padding: 10px;
+    text-align: center;
 }
 
 .userWallet-dropdown button {
-  margin: auto;
-  height: 30px;
-  padding: 5px;
-  width: 100%;
+    margin: auto;
+    height: 30px;
+    padding: 5px;
+    width: 100%;
 }
 
 .collection img {
-  width: 240px;
+    width: 240px;
 }
 .collection button.accent,
 .collection button.secondary {
-  z-index: 16;
+    z-index: 16;
 }
 
 .down {
-  margin-bottom: 50px !important;
+    margin-bottom: 50px !important;
 }
 
 .collection .picWrapper {
-  padding: 24px 24px;
-  background: #161718;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px 24px;
+    background: #161718;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .collection h2 {
-  font-size: 44px;
-  font-family: kanit;
-  padding-top: 100px;
-  margin-bottom: 20px;
-  text-align: center;
+    font-size: 44px;
+    font-family: kanit;
+    padding-top: 100px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .collection p {
-  text-align: center;
+    text-align: center;
 }
 
 .collection button {
-  margin: auto;
-  margin-bottom: 50px;
+    margin: auto;
+    margin-bottom: 50px;
 }
 
 .collection .picWrapper span {
-  margin-top: 20px;
-  display: inline-block;
+    margin-top: 20px;
+    display: inline-block;
 }
 
 .collection .collection-item {
-  margin-bottom: 24px;
+    margin-bottom: 24px;
 }
 
 .alice-carousel__dots-item {
-  width: 63.33px !important;
-  height: 2px !important;
+    width: 63.33px !important;
+    height: 2px !important;
 
-  background: #ffffff !important;
-  opacity: 0.15 !important;
-  border-radius: 40px !important;
+    background: #ffffff !important;
+    opacity: 0.15 !important;
+    border-radius: 40px !important;
 }
 
 .alice-carousel__dots-item.__active {
-  width: 63.33px !important;
-  height: 2px !important;
-  background: #f71d3d !important;
-  border-radius: 40px !important;
-  opacity: 1 !important;
+    width: 63.33px !important;
+    height: 2px !important;
+    background: #f71d3d !important;
+    border-radius: 40px !important;
+    opacity: 1 !important;
 }
 
 .alice-carousel__dots {
-  margin-top: 0px !important;
+    margin-top: 0px !important;
 }
 
 .searchContainer {
-  position: relative;
-  margin-top: 43px;
-  max-width: 687px;
-  margin: 0 auto;
-  margin-bottom: 42px;
-  margin-top: 50px;
+    position: relative;
+    margin-top: 43px;
+    max-width: 687px;
+    margin: 0 auto;
+    margin-bottom: 42px;
+    margin-top: 50px;
 }
 
 .searchContainer img {
-  position: absolute;
-  top: 10px;
-  left: 30px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
 }
 
 .inputSearchStyle {
-  border-left: 5px solid #c71a33;
-  padding-left: 77px;
+    border-left: 5px solid #c71a33;
+    padding-left: 77px;
 }
 
 .leaderBoardHomePage {
-  margin-top: 150px;
+    margin-top: 150px;
 }
 
 .small-modal {
-  user-select: none;
+    user-select: none;
 }
 
 .small-modal.confirmed {
-  height: 114px;
+    height: 114px;
 
-  border: 0.8523px solid #303234;
-  border-radius: 20.1349px;
-  font-size: 34px;
-  text-align: center;
-  background: url(../img/icons/ci_check-bold.svg) no-repeat,
-    linear-gradient(264.68deg, #1b1b1c 63.66%, #056b2e 222.5%);
-  background-position: 7% 50%;
-  padding-right: 30px;
+    border: 0.8523px solid #303234;
+    border-radius: 20.1349px;
+    font-size: 34px;
+    text-align: center;
+    background: url(../img/icons/ci_check-bold.svg) no-repeat,
+        linear-gradient(264.68deg, #1b1b1c 63.66%, #056b2e 222.5%);
+    background-position: 7% 50%;
+    padding-right: 30px;
 }
 
 .small-modal.confirmed .popupHeader > img,
 .big-modal .popupHeader > img {
-  position: absolute;
-  top: 50%;
-  transform: translateY(75%);
-  right: 0;
-  width: 25px;
-  margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(75%);
+    right: 0;
+    width: 25px;
+    margin: 0;
 }
 
 .TelegramButtonWrapper {
-  margin: 0;
-  text-align: center;
-  padding: 0 50px;
+    margin: 0;
+    text-align: center;
+    padding: 0 50px;
 }
 
 .TelegramButtonWrapper > img {
-  width: 85px;
+    width: 85px;
 }
 
 .TelegramButtonWrapper h2 {
-  font-size: 52px;
-  line-height: 68px;
+    font-size: 52px;
+    line-height: 68px;
 }
 
 .TelegramButtonWrapper p {
-  font-size: 18px;
-  line-height: 160%;
-  padding: 30px 0;
+    font-size: 18px;
+    line-height: 160%;
+    padding: 30px 0;
 }
 
 .TelegramButtonWrapper button {
-  margin: auto;
+    margin: auto;
 }
 
 .big-modal .popupHeader > img {
-  right: 50px;
-  border: 1px solid rgb(82, 80, 80);
-  padding: 12px;
-  width: 45px;
-  transform: translateY(20%);
+    right: 50px;
+    border: 1px solid rgb(82, 80, 80);
+    padding: 12px;
+    width: 45px;
+    transform: translateY(20%);
 }
 
 .big-modal .popupHeader > img:hover {
-  filter: brightness(110%);
+    filter: brightness(110%);
 }
 
 .small-modal.confirmed .modal-body,
 .big-modal .modal-body {
-  position: static;
+    position: static;
 }
 .subscribeConfirm::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 50px;
-  background: #d9d9d9;
-  opacity: 0.3;
-  right: 90px;
-  top: 0;
-  transform: translateY(60%);
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 50px;
+    background: #d9d9d9;
+    opacity: 0.3;
+    right: 90px;
+    top: 0;
+    transform: translateY(60%);
 }
 
 .small-modal.confirmed > svg {
-  display: none;
+    display: none;
 }
 
 .small-modal .subscribe > img {
-  width: 104px;
+    width: 104px;
 }
 
 .small-modal .subscribe h2 {
-  font-size: 52px;
-  padding: 0 0 26px 0;
-  line-height: 65px;
+    font-size: 52px;
+    padding: 0 0 26px 0;
+    line-height: 65px;
 }
 
 .empty-header {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .small-modal .subscribe {
-  position: relative;
-  z-index: 82;
-  width: 364px;
-  text-align: center;
-  margin: auto;
+    position: relative;
+    z-index: 82;
+    width: 364px;
+    text-align: center;
+    margin: auto;
 }
 
 .modal-body,
 .popupHeader {
-  position: relative;
-  z-index: 82;
+    position: relative;
+    z-index: 82;
 }
 
 .modal-body {
-  flex: 1;
+    flex: 1;
 }
 
 .small-modal .subscribe p {
-  font-size: 18px;
-  margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .small-modal .subscribe .inputWrapper {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  height: 61px;
-  padding: 0 10px;
-  position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    height: 61px;
+    padding: 0 10px;
+    position: relative;
 }
 
 .modalFrame {
-  left: -2%;
+    left: -2%;
 
-  top: -2%;
-  width: 104%;
-  height: 104%;
+    top: -2%;
+    width: 104%;
+    height: 104%;
 }
 
 .inputWrapper input {
-  background: transparent;
-  border: none;
+    background: transparent;
+    border: none;
 }
 
 .inputWrapper span {
-  display: none;
+    display: none;
 }
 
 .failed.inputWrapper {
-  border: 1px solid red !important;
+    border: 1px solid red !important;
 }
 
 .failed.inputWrapper span {
-  display: inline;
-  position: absolute;
-  left: 0;
-  bottom: -30px;
-  color: red;
-  font-size: 14px;
+    display: inline;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    color: red;
+    font-size: 14px;
 }
 
 .inputWrapper button {
-  padding: 10px 12px;
-  background: #ffffff;
-  color: #282829;
-  font-size: 16px;
-  height: 41px;
+    padding: 10px 12px;
+    background: #ffffff;
+    color: #282829;
+    font-size: 16px;
+    height: 41px;
 }
 
 .successModal .emblem {
-  background: linear-gradient(264.68deg, #1b1b1c 63.66%, #056b2e 222.5%);
-  border: 0.695691px solid #303234;
-  border-radius: 16.4351px;
-  padding: 20px 30px;
-  margin: 10px 0;
+    background: linear-gradient(264.68deg, #1b1b1c 63.66%, #056b2e 222.5%);
+    border: 0.695691px solid #303234;
+    border-radius: 16.4351px;
+    padding: 20px 30px;
+    margin: 10px 0;
 }
 
 .emblem .userFrameCi {
-  position: static;
-  width: 100px;
-  height: 100px;
-  margin-bottom: 0;
+    position: static;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0;
 }
 
 .successModal button {
-  margin-top: 20px !important;
-  margin: auto;
+    margin-top: 20px !important;
+    margin: auto;
 }
 
 .successModal.subscribe h2 {
-  font-size: 34px;
+    font-size: 34px;
 }
 
 .errorBlock {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  width: 400px;
-  height: 500px;
-  transform: translate(-50%, -50%);
-  border: 1px var(--accent) solid;
-  word-wrap: break-word;
-  overflow-y: auto;
-  padding: 7px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    border: 1px var(--accent) solid;
+    word-wrap: break-word;
+    overflow-y: auto;
+    padding: 7px;
 }
 
 .errorBlock h1 {
-  color: red;
-  margin-bottom: 15px;
+    color: red;
+    margin-bottom: 15px;
 }
 
 .greeting {
-  color: #c71a33;
+    color: #c71a33;
 }
 
 @media (max-width: 600px) {
-  .leaderBoard {
-    width: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
-    margin-top: 80px;
-  }
+    .leaderBoard {
+        width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-top: 80px;
+    }
 
-  .leaderBoardHomePage {
-    margin-top: 50px;
-  }
-  .leaderBoard-pannel ul li {
-    display: flex;
-    flex-direction: column;
-    height: 114px;
-    padding-bottom: 15px;
-    padding-top: 20px;
-  }
-  .leaderBoard-progress,
-  .progressBar,
-  .bar {
-    width: 100% !important;
-  }
+    .leaderBoardHomePage {
+        margin-top: 50px;
+    }
+    .leaderBoard-pannel ul li {
+        display: flex;
+        flex-direction: column;
+        height: 114px;
+        padding-bottom: 15px;
+        padding-top: 20px;
+    }
+    .leaderBoard-progress,
+    .progressBar,
+    .bar {
+        width: 100% !important;
+    }
 
-  .avatarPlaceholder {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 19;
-  }
+    .avatarPlaceholder {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 19;
+    }
 
-  .leaderBoard-user {
-    margin-right: auto;
-  }
+    .leaderBoard-user {
+        margin-right: auto;
+    }
 
-  footer .container {
-    height: auto;
-  }
+    footer .container {
+        height: auto;
+    }
 
-  footer .bridgeBanner {
-    text-align: center;
-    height: 767px;
-    background-position: unset;
-    background-size: contain;
-  }
-  .bridgeBanner-text {
-    margin-left: 0 !important;
-    margin-top: 100% !important;
-    padding-left: 23px;
-    padding-right: 23px;
-  }
+    footer .bridgeBanner {
+        text-align: center;
+        height: 767px;
+        background-position: unset;
+        background-size: contain;
+    }
+    .bridgeBanner-text {
+        margin-left: 0 !important;
+        margin-top: 100% !important;
+        padding-left: 23px;
+        padding-right: 23px;
+    }
 
-  .bridgeBanner-text a {
-    margin: 0 auto !important;
-  }
+    .bridgeBanner-text a {
+        margin: 0 auto !important;
+    }
 
-  .picWrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center;
-  }
-  .picWrapper img {
-    width: 100%;
-  }
-  .mobileMenu {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-  .menuModal .banner {
-    display: none;
-  }
+    .picWrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .picWrapper img {
+        width: 100%;
+    }
+    .mobileMenu {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .menuModal .banner {
+        display: none;
+    }
 
-  .row.mobileMenu .col-6 {
-    width: 100%;
-  }
-  .links.first a li,
-  .col-6 .links a li {
-    border-bottom: 1px solid #c71a33 !important;
-  }
+    .row.mobileMenu .col-6 {
+        width: 100%;
+    }
+    .links.first a li,
+    .col-6 .links a li {
+        border-bottom: 1px solid #c71a33 !important;
+    }
 
-  .footer.flexRow {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
+    .footer.flexRow {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
 
-  #twitterlogin {
-    margin: auto;
-  }
+    #twitterlogin {
+        margin: auto;
+    }
 }

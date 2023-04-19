@@ -112,7 +112,7 @@ const Board = ({ serviceContainer }: Props) => {
           ) : (
             <div className="noMatchContainer">
               <img className="noMatchSearch" src={noMatchSearch} alt="noMatchSearch" />
-              <p className="noMatchSearch">Your Search does not natch anything we've got</p>
+              <p className="noMatchSearch">Your Search does not match anything we've got</p>
               <button onClick={(e) => onChangeSearch(e)} className="noMatchSearch b">
                 BACK TO LEADERBOARD
               </button>
